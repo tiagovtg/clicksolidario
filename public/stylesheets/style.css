@@ -1,35 +1,36 @@
 @charset "iso-8859-1";
 /* CSS Document */
 
-body, html				{ height:100%; font-family: Arial, Helvetica, sans-serif; background: url(images/bg_Cores.jpg) repeat-x; }
+body, html		{ height:100%; font-family: Arial, Helvetica, sans-serif; background: url(/images/bg_Cores.jpg) repeat-x; }
 
-#wrap					{ position: relative; min-height: 100%;/* Para browsera modernos */ height: auto !important;/* Para browsera modernos */ height: 100%;/* Para o IE6 */ }
+#wrap			{ position: relative; min-height: 100%;/* Para browsera modernos */ height: auto !important;/* Para browsera modernos */ height: 100%;/* Para o IE6 */ }
 
-#barraTopo				{ height: 4px; background-color: #f4f7fa; }
+#barraTopo		{ height: 4px; background-color: #f4f7fa; }
 
-#logo					{ width: 370px; height: 81px; margin: 10px 20px; background: url(images/logo.png) no-repeat; }
+#logo			{ width: 370px; height: 81px; margin: 10px 20px; background: url(/images/logo.png) no-repeat; }
 
-#navBar					{ width: 308px; height: 40px; background-color:#f4f7fa; float: right; }
-#navBar .usuario 		{ float: left; width: auto; color: #8f8f8f; font-size: 12px; margin: 11px 0 0 10px; }
-#navBar .sair 			{ float:right; width: auto; color:#e47e1e; font-size:12px; font-weight:bold; background: url(images/sair.png) no-repeat left center; margin: 11px 10px 0 0; padding-left: 20px; }
-#navBar .sair a			{ color:#e47e1e; font-weight:bold; text-decoration: none; }
+#navBar			{ width: 308px; height: 40px; background-color:#f4f7fa; float: right; }
+#navBar .usuario 	{ float: left; width: auto; color: #8f8f8f; font-size: 12px; margin: 11px 0 0 10px; }
+#navBar .sair 		{ float:right; width: auto; color:#e47e1e; font-size:12px; font-weight:bold; background: url(/images/sair.png) no-repeat left center; margin: 11px 10px 0 0; padding-left: 20px; }
+#navBar .sair a		{ color:#e47e1e; font-weight:bold; text-decoration: none; }
 #navBar .sair a:hover	{ color:#8f8f8f; font-weight:bold; text-decoration: underline; }
 
-.MenuBar 			    { color: #FF00FF; }
-.MenuBar ul 		    { list-style: none; margin: 0px; border-top: solid 1px #fed702; padding: 9px 0 0 0 ; border-bottom: solid 4px #9ebf28; height: 28px; }
-.MenuBar li 		    { display: inline; padding-top: 9px; }
-.MenuBar li:hover	    { border-top: solid 1px #9ebf28; }
-.MenuBar a 			    { color: black; text-decoration:none; padding: 0 20px; font-size: 13px; background:url(images/pontosVerticais.gif) no-repeat right; }
-.MenuBar a:hover	    { color: #9ebf28; }
+.MenuBar 		{ color: #FF00FF; }
+.MenuBar ul 		{ list-style: none; margin: 0px; border-top: solid 1px #fed702; padding: 9px 0 0 0 ; border-bottom: solid 4px #9ebf28; height: 28px; }
+.MenuBar li 		{ display: inline; padding-top: 9px; }
+.MenuBar li:hover	{ border-top: solid 1px #9ebf28; }
+.MenuBar a 		{ color: black; text-decoration:none; padding: 0 20px; font-size: 13px; background:url(/images/pontosVerticais.gif) no-repeat right; }
+.MenuBar a:hover	{ color: #9ebf28; }
+.MenuBar a.active	{ color: green; } /* colore o menu ativo.*/
 
-#navMapa				{ height: 33px; border-bottom: solid 1px #d7e3f0; }
-#navMapa .menu			{ float: left; width: auto; margin-top: 7px; color: #000; }
-#navMapa .menu ul		{ margin: 0; list-style: none; }
-#navMapa .menu li		{ display: inline; background: url(images/setaMapa.gif) no-repeat right center; padding: 0 10px 2px 10px; }
-#navMapa .menu a		{ text-decoration: none; font-size: 12px; }
+#navMapa		{ height: 33px; border-bottom: solid 1px #d7e3f0; }
+#navMapa .menu		{ float: left; width: auto; margin-top: 7px; color: #000; }
+#navMapa .menu ul	{ margin: 0; list-style: none; }
+#navMapa .menu li	{ display: inline; background: url(/images/setaMapa.gif) no-repeat right center; padding: 0 10px 2px 10px; }
+#navMapa .menu a	{ text-decoration: none; font-size: 12px; }
 #navMapa .menu a:hover	{ color: #333; }
 
-#conteudo				{ margin-top: 30px; padding-bottom: 100px; /* Esse padding � o mesmo valor da altura do rodap� */ text-align: center; }
+#conteudo		{ margin-top: 30px; padding-bottom: 100px; /* Esse padding é o mesmo valor da altura do rodapé */ text-align: center; }
 
-#rodape					{ width: 100%; height: 50px; background-color: #eee; position: absolute; bottom: 0 !important; }
-#rodape .text			{ width: auto; margin-top: 20px; font-size: 12px; text-align: center; }
+#rodape			{ width: 100%; height: 50px; background-color: #eee; position: absolute; bottom: 0 !important; }
+#rodape .text		{ width: auto; margin-top: 20px; font-size: 12px; text-align: center; }

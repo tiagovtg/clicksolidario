@@ -15767,3 +15767,1109 @@ ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.g
   
 
 Rendered /var/lib/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 09:54:00 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (0.9ms)
+Rendered layouts/_menu.html.erb (1.2ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 47ms (Views: 13.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 09:54:00 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 09:54:00 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 09:54:00 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 09:54:00 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 09:55:28 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.5ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (1.2ms)
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (16.0ms)
+Completed 200 OK in 47ms (Views: 21.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 09:55:29 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 09:55:29 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 09:55:29 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 09:55:29 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started POST "/user_session" for 127.0.0.1 at Thu May 05 09:56:17 -0300 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"password"=>"[FILTERED]", "email"=>"admin@admin.com"}, "authenticity_token"=>"VeGvTtogeINy32Y90ZFNIs5hHC11fARbEkMh+CJgnNA=", "utf8"=>"✓"}
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT `users`.* FROM `users` WHERE (LOWER(`users`.email) = 'admin@admin.com') LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from create at /home/tiagogarcia/projetos/sgss/app/controllers/user_sessions_controller.rb:11)
+  [1m[35mSQL (0.3ms)[0m  SHOW TABLES
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2011-05-05 09:56:18', `updated_at` = '2011-05-05 09:56:18', `perishable_token` = 'K7dRmxdcSKl3XvJvzLaJ' WHERE `users`.`id` = 1[0m
+  [1m[35mSQL (52.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:14)
+  [1m[35mAREL (0.1ms)[0m  UPDATE `users` SET `last_request_at` = '2011-05-05 09:56:18', `updated_at` = '2011-05-05 09:56:18', `perishable_token` = 'TwnsgoWrfJ8b1ySnKr' WHERE `users`.`id` = 1
+  [1m[36mSQL (55.9ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 417ms
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 09:56:18 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (1.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:14)
+  [1m[35mAREL (0.2ms)[0m  UPDATE `users` SET `perishable_token` = 'kBjyOBxhZIS6Ft60zSt', `last_request_at` = '2011-05-05 09:56:18', `updated_at` = '2011-05-05 09:56:18' WHERE `users`.`id` = 1
+  [1m[36mSQL (69.7ms)[0m  [1mCOMMIT[0m
+Rendered layouts/_header.html.erb (86.8ms)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from administrador? at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:24)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.2ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'voluntario' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'voluntario' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'entidade' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (40.0ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (140.8ms)
+Completed 200 OK in 240ms (Views: 75.1ms | ActiveRecord: 182.7ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 09:56:18 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/sair.png" for 127.0.0.1 at Thu May 05 09:56:18 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/sair.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 09:56:18 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 09:56:18 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 09:56:19 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/empresas" for 127.0.0.1 at Thu May 05 09:56:30 -0300 2011
+  Processing by EmpresasController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:14)
+  [1m[35mAREL (0.2ms)[0m  UPDATE `users` SET `perishable_token` = 'iDqWrDqYxbSGU2XvUBMt', `updated_at` = '2011-05-05 09:56:30', `last_request_at` = '2011-05-05 09:56:30' WHERE `users`.`id` = 1
+  [1m[36mSQL (42.2ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  describe `roles_users`
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from service at /usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 )[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mEmpresa Load (0.2ms)[0m  SELECT `empresas`.* FROM `empresas`
+Rendered layouts/_header.html.erb (0.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'voluntario' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'voluntario' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'entidade' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1
+Rendered layouts/_menu.html.erb (13.5ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered empresas/index.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 136ms (Views: 22.6ms | ActiveRecord: 44.1ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 09:56:30 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/stylesheets/images/sair.png" for 127.0.0.1 at Thu May 05 09:56:30 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/sair.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 09:56:30 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 09:56:31 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 09:56:31 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/empresas/new" for 127.0.0.1 at Thu May 05 09:56:35 -0300 2011
+  Processing by EmpresasController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:14)
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2011-05-05 09:56:35', `perishable_token` = 'qFFNKqfl65UZRuj4mbEl', `updated_at` = '2011-05-05 09:56:35' WHERE `users`.`id` = 1[0m
+  [1m[35mSQL (48.8ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from service at /usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 )
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mEmpresa Load (0.2ms)[0m  SELECT `empresas`.* FROM `empresas` WHERE ( user_id = 1)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered generals/_model_errors.html.erb (1.7ms)
+Rendered generals/_telefones.html.erb (1.4ms)
+Rendered generals/_telefones.html.erb (1.6ms)
+Rendered generals/_telefones.html.erb (1.4ms)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_empresas__form_html_erb___431837079__618572818_439616 at /home/tiagogarcia/projetos/sgss/app/views/empresas/_form.html.erb:33)
+Rendered generals/_telefones.html.erb (1.7ms)
+Rendered empresas/_form.html.erb (26.8ms)
+Rendered layouts/_header.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'voluntario' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'voluntario' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'entidade' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (17.6ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered empresas/new.html.erb within layouts/application (129.7ms)
+Completed 200 OK in 259ms (Views: 133.4ms | ActiveRecord: 50.6ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 09:56:36 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/sair.png" for 127.0.0.1 at Thu May 05 09:56:36 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/sair.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 09:56:36 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 09:56:36 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 09:56:36 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Thu May 05 09:56:53 -0300 2011
+  Processing by UserSessionsController#destroy as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from destroy at /home/tiagogarcia/projetos/sgss/app/controllers/user_sessions_controller.rb:33)
+  [1m[35mAREL (1.3ms)[0m  UPDATE `users` SET `perishable_token` = '9xdwioTJycL75C4Edtl', `updated_at` = '2011-05-05 09:56:53', `last_request_at` = '2011-05-05 09:56:53' WHERE `users`.`id` = 1
+  [1m[36mSQL (56.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 91ms
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 09:56:53 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (3.7ms)
+Rendered layouts/_menu.html.erb (1.5ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 149ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 09:56:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.8ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 09:56:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 09:56:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 09:56:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/join" for 127.0.0.1 at Thu May 05 09:58:18 -0300 2011
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (0.5ms)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from entidade? at /home/tiagogarcia/projetos/sgss/app/models/user.rb:30)
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = NULL ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'entidade' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mRole Load (0.2ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'voluntario' AND (`roles_users`.user_id = NULL ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'voluntario' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = NULL ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+Rendered users/_form.html.erb (82.5ms)
+Rendered layouts/_header.html.erb (0.3ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered users/new.html.erb within layouts/application (94.9ms)
+Completed 200 OK in 115ms (Views: 96.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 09:58:18 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 09:58:18 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.5ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 09:58:18 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 09:58:18 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:02:30 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.6ms)[0m  [1mdescribe `roles_users`[0m
+Rendered layouts/_header.html.erb (26.8ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (32.0ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 10:02:30 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 10:02:30 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:02:30 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 10:02:30 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:07:50 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered layouts/_header.html.erb (21.0ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 32ms (Views: 31.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 10:07:50 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.7ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 10:07:50 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:07:50 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 10:07:50 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:07:51 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_menu.html.erb (1.0ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 42ms (Views: 15.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 10:07:52 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 10:07:52 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.7ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 10:07:52 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:07:52 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:07:53 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.5ms)[0m  describe `roles_users`
+Rendered layouts/_header.html.erb (107.9ms)
+Rendered layouts/_menu.html.erb (2.6ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (114.7ms)
+Completed 200 OK in 119ms (Views: 118.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stylesheets/images/bg_Cores.jpg" for 127.0.0.1 at Thu May 05 10:07:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/bg_Cores.jpg"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 10:07:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:07:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 10:07:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:08:51 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.5ms)[0m  [1mdescribe `roles_users`[0m
+Rendered layouts/_header.html.erb (26.4ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/stylesheets/images/logo.png" for 127.0.0.1 at Thu May 05 10:08:52 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/logo.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:08:52 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/stylesheets/images/setaMapa.gif" for 127.0.0.1 at Thu May 05 10:08:52 -0300 2011
+
+ActionController::RoutingError (No route matches "/stylesheets/images/setaMapa.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:09:38 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_menu.html.erb (1.0ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 38ms (Views: 16.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:09:39 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:09:43 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (0.6ms)
+Rendered layouts/_header.html.erb (1.0ms)
+Rendered layouts/_menu.html.erb (3.3ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 43ms (Views: 19.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:09:43 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:09:45 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered layouts/_header.html.erb (67.0ms)
+Rendered layouts/_menu.html.erb (1.3ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (73.8ms)
+Completed 200 OK in 77ms (Views: 76.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:09:45 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:09:47 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (1.3ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 32ms (Views: 14.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:09:48 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started POST "/user_session" for 127.0.0.1 at Thu May 05 10:09:55 -0300 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"password"=>"[FILTERED]", "email"=>"admin@admin.com"}, "authenticity_token"=>"El0a3HTvgTxblEhpmprcTkyI4NJTiZmIaaMfkW/7Zz8=", "utf8"=>"✓"}
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (3.2ms)[0m  describe `roles_users`
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (LOWER(`users`.email) = 'admin@admin.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from create at /home/tiagogarcia/projetos/sgss/app/controllers/user_sessions_controller.rb:11)
+  [1m[36mAREL (0.3ms)[0m  [1mUPDATE `users` SET `perishable_token` = 'asqTQ2NlRPi3QtiR4RAf', `updated_at` = '2011-05-05 10:09:55', `last_request_at` = '2011-05-05 10:09:55' WHERE `users`.`id` = 1[0m
+  [1m[35mSQL (43.6ms)[0m  COMMIT
+  [1m[36mUser Load (2.5ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (2.8ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:14)
+  [1m[35mAREL (2.0ms)[0m  UPDATE `users` SET `perishable_token` = 'nLpofHXD0g6h5RYINP', `updated_at` = '2011-05-05 10:09:55', `last_request_at` = '2011-05-05 10:09:55' WHERE `users`.`id` = 1
+  [1m[36mSQL (38.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 223ms
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:09:55 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (0.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.9ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:14)
+  [1m[35mAREL (0.2ms)[0m  UPDATE `users` SET `updated_at` = '2011-05-05 10:09:55', `perishable_token` = 'mDqMOBtMUXrmISZkLRX', `last_request_at` = '2011-05-05 10:09:55' WHERE `users`.`id` = 1
+  [1m[36mSQL (51.2ms)[0m  [1mCOMMIT[0m
+Rendered layouts/_header.html.erb (66.0ms)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from administrador? at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:24)
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 1 )
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'voluntario' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'voluntario' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'entidade' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 1 ) LIMIT 1[0m
+Rendered layouts/_menu.html.erb (28.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (102.3ms)
+Completed 200 OK in 129ms (Views: 53.5ms | ActiveRecord: 53.6ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:09:55 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/logout" for 127.0.0.1 at Thu May 05 10:10:32 -0300 2011
+  Processing by UserSessionsController#destroy as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+  [1m[36mUser Load (2.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from destroy at /home/tiagogarcia/projetos/sgss/app/controllers/user_sessions_controller.rb:33)
+  [1m[35mAREL (1.0ms)[0m  UPDATE `users` SET `perishable_token` = 'UJG9PjF84OzGdTdmb5V', `updated_at` = '2011-05-05 10:10:32', `last_request_at` = '2011-05-05 10:10:32' WHERE `users`.`id` = 1
+  [1m[36mSQL (64.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 99ms
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:10:32 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_menu.html.erb (1.0ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 27ms (Views: 11.8ms | ActiveRecord: 68.6ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:10:33 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:10:36 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered layouts/_header.html.erb (27.1ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (32.5ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:10:36 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:11:10 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.3ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (81.8ms)
+Rendered layouts/_header.html.erb (2.1ms)
+Rendered layouts/_menu.html.erb (1.2ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (98.1ms)
+Completed 200 OK in 119ms (Views: 101.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:11:10 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:11:26 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_menu.html.erb (1.2ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 33ms (Views: 13.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:11:26 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:14:23 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (0.6ms)
+Rendered layouts/_header.html.erb (1.1ms)
+Rendered layouts/_menu.html.erb (1.9ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 49ms (Views: 28.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:14:24 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:14:27 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (2.2ms)[0m  [1mdescribe `roles_users`[0m
+Rendered layouts/_header.html.erb (98.6ms)
+Rendered layouts/_menu.html.erb (1.3ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (105.1ms)
+Completed 200 OK in 112ms (Views: 109.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:14:28 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:14:48 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered layouts/_header.html.erb (29.1ms)
+Rendered layouts/_menu.html.erb (1.2ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 43ms (Views: 42.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:14:48 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:14:51 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (2.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (1.7ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 37ms (Views: 13.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:14:52 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.5ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:14:53 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (9.7ms)[0m  describe `roles_users`
+Rendered layouts/_header.html.erb (143.6ms)
+Rendered layouts/_menu.html.erb (2.7ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (154.4ms)
+Completed 200 OK in 162ms (Views: 151.9ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:14:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/sobre" for 127.0.0.1 at Thu May 05 10:15:50 -0300 2011
+  Processing by SobreController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered layouts/_header.html.erb (30.8ms)
+Rendered layouts/_menu.html.erb (1.1ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered sobre/index.html.erb within layouts/application (42.8ms)
+Completed 200 OK in 48ms (Views: 45.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:15:50 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:15:53 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.5ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_menu.html.erb (2.4ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 38ms (Views: 15.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:15:54 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/join" for 127.0.0.1 at Thu May 05 10:16:02 -0300 2011
+  Processing by UsersController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (0.5ms)
+  [1m[35mSQL (1.1ms)[0m  describe `roles_users`
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from entidade? at /home/tiagogarcia/projetos/sgss/app/models/user.rb:30)
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = NULL ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'entidade' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'voluntario' AND (`roles_users`.user_id = NULL ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'voluntario' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = NULL ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+Rendered users/_form.html.erb (100.7ms)
+Rendered layouts/_header.html.erb (0.3ms)
+Rendered layouts/_menu.html.erb (1.3ms)
+Rendered layouts/_mapa.html.erb (1.3ms)
+Rendered users/new.html.erb within layouts/application (122.3ms)
+Completed 200 OK in 166ms (Views: 127.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:16:03 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu May 05 10:16:04 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered layouts/_header.html.erb (0.8ms)
+Rendered layouts/_menu.html.erb (1.0ms)
+Rendered layouts/_mapa.html.erb (0.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (18.3ms)
+Completed 200 OK in 45ms (Views: 24.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/images/pontosVerticais.gif" for 127.0.0.1 at Thu May 05 10:16:05 -0300 2011
+
+ActionController::RoutingError (No route matches "/images/pontosVerticais.gif"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
