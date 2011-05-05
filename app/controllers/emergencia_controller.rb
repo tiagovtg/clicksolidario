@@ -1,11 +1,8 @@
 class EmergenciaController < ApplicationController
 
   access_control do
-    allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update], :if => (dono?)
+    allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
-
-    allow :visitor, :to => [:index, :show], :if => :right_phase_of_the_moon?
-
   end
 
   def index
@@ -45,18 +42,14 @@ class EmergenciaController < ApplicationController
 
   # GET /emergencia/1/edit
   def edit
-#    @entidade = Entidade.where(" user_id = ?", current_user.id)
-    
+
+    @entidade = Entidade.where(" user_id = ?", current_user.id)
+    logger.info "\n\n=> meleca tipo: #{@entidade[0].user_id}\n"
 #    if @entidade.user == current_user or administrador?
-      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+#      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
 #    else
 #      render :action => "index"
 #    end
-#    @entidade = Entidade.where(" user_id = ?", current_user.id)
-
-#    @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
-
-#    render :action => "index" if @emergencium.nil?
   end
 
   # POST /emergencia
@@ -106,4 +99,6 @@ class EmergenciaController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  
 end
