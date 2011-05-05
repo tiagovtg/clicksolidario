@@ -1,0 +1,55 @@
+<div class="block">
+    <div class="content">
+        <h2 class="title"> Crie Eventos (<%= " #{versao?} " %>)</h2>
+        <div class="inner">
+            <div class="content">
+                <h2 class="title">Coordenadoria de Informática - CIN - CFA</h2>
+								<hr/>
+                <div class="inner">
+                    <ul class="list">
+                        <li>
+                            <div class="left">
+                                <a href="#"><img class="avatar" src="images/next-48.png" alt="avatar" /></a>
+                            </div>
+                            <div class="item">
+                                <p><br/>
+																		<b>Projeto.<br> José Carlos - Gestor - CIN - CFA.</b>                                    
+                                </p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="left">
+                                <a href="#"><img class="avatar" src="images/next-48.png" alt="avatar" /></a>
+                            </div>
+                            <div class="item">
+                                <p><br/>
+                                    <b>Desenvolvimento, Designer, Banco de dados, Implementação, Treinamento.<br/>
+                                        Equipe:<br/>
+                                        *Grazielle Ribeiro - Analista de Banco de dados- CFA.<br/>
+                                        *Tiago Garcia - Programador Estagiario - CFA.<br/>
+                                        *Lucas - Programador - CFA.<br/>
+                                        *Edson - Analista de Sistemas - CFA.
+                                    </b>
+                                </p>
+                            </div>
+                        </li>
+												<br>
+                        <li>
+                            <div class="left">
+                                <a href="#"><img class="avatar" src="images/next-48.png" alt="avatar" /></a>
+                            </div>
+                            <div class="item">
+                                <p><b>Testes.<br/> Rspec</b>
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="actions-bar wat-cf">
+                <div class="actions">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

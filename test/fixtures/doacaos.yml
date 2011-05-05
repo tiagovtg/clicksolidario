@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  valor: 9.99
+  data: 2011-03-24
+  valida: false
+  obs: MyText
+  usuario_id: 1
+  entidade_id: 1
+  doatipo_id: 1
+
+two:
+  valor: 9.99
+  data: 2011-03-24
+  valida: false
+  obs: MyText
+  usuario_id: 1
+  entidade_id: 1
+  doatipo_id: 1

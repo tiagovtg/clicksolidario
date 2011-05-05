@@ -1,0 +1,61 @@
+<h1 class="title">
+  <%= form_tag(voluntarios_path, :method => "get") do %>
+    <!--< %= select(:filtro, ([["Nome", "nome"], ["Profissão", "profissao"], ["Cidade", "cidade"],
+          ["Estado","estado"]]), :prompt=>"Filtrar por...") %> -->
+    Listando Voluntarios
+    <select name="filtro" id="filtro">
+      <option value="" selected="selected">Buscar por...</option>
+      <option value="nome">Nome</option>
+      <option value="profissao">Profissão</option>
+      <option value="cidade">Cidade</option>
+      <option value="estado">Estado</option>
+    </select>
+    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
+    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+  <% end %>
+</h1>
+
+
+<% if @voluntarios.nil? or @voluntarios.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+  <table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>Cpf</th>
+      <th>Profissao</th>
+      <th>Endereco</th>
+      <th>Bairro</th>
+      <th>Cidade</th>
+      <th>Uf</th>
+      <th>Cep</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @voluntarios.each do |voluntario| %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= voluntario.nome %></td>
+        <td><%= voluntario.cpf %></td>
+        <td><%= voluntario.profissao %></td>
+        <td><%= voluntario.endereco %></td>
+        <td><%= voluntario.bairro %></td>
+        <td><%= voluntario.cidade %></td>
+        <td><%= voluntario.estado %></td>
+        <td><%= voluntario.cep %></td>
+        <td><%= link_to 'Show', voluntario %></td>
+        <td><%= link_to 'Edit', edit_voluntario_path(voluntario) %></td>
+        <td><%= link_to 'Destroy', voluntario, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+  <div align="right">
+    <%= will_paginate @eventos %>
+  </div>
+<% end %>
+<br />
+
+<%= link_to 'Cadastrar Voluntario', new_voluntario_path %>

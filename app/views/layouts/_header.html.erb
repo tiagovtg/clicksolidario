@@ -1,0 +1,13 @@
+<!-- barra topo -->
+<div id="barraTopo"></div>
+
+<!-- identificação usuário -->
+<% if current_user %>
+  <div id="navBar">
+    <div class="usuario"><%="seja bem vindo(a), #{current_user.nome}!"%></div>
+    <div class="sair"><a href="/logout">Sair</a></div>
+  </div>
+<% end %>
+
+<!-- logo -->
+<div id="logo"></div>

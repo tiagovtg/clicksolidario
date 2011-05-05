@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @emergencium.nome %>
+</p>
+
+<p>
+  <b>Desc:</b>
+  <%= @emergencium.desc %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @emergencium.data %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @emergencium.status %>
+</p>
+
+<p>
+  <b>Entidade:</b>
+  <%= @emergencium.entidade_id %>
+</p>
+
+
+<%= link_to 'Editar', edit_emergencium_path(@emergencium) %> |
+<%= link_to 'Voltar', emergencia_path %>

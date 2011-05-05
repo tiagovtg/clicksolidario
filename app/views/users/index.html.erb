@@ -1,0 +1,56 @@
+<div class="secondary-navigation">
+  <ul class="wat-cf">
+    <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>
+    <li><a href="<%= new_user_path %>" class="<%= current_page?(:controller => 'users', :action => 'new') == true ? 'active' : '' %>">Novo</a></li>
+  </ul>
+</div>
+
+<div class="postcontent">
+  <h1 class="title">
+    <%= form_tag(users_path, :method => "get") do %>
+      Listando Contas
+      <input id="filtro" name="filtro" type="hidden" value="email"/>
+      <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
+      <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+    <% end %>
+  </h1>
+
+
+  <% if @user.nil? or @user.empty? %>
+    <p class="busca">
+      Nenhum registro foi encontrado
+    </p>
+  <% else %>
+    <table class="table">
+      <tr>
+        <th>Email</th>
+        <th>Tipo</th>
+        <th>Data criação</th>
+        <th>Status</th>
+        <th class="last">&nbsp;</th>
+      </tr>
+      <% @user.each do |user| -%>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td><%= user.email %></td>
+          <td>
+            <%= (User.find(user.id).has_role? :administrador )? 'Administrador':'' %>
+            <%= (User.find(user.id).has_role? :entidade )? 'entidade':'' %>
+            <%= (User.find(user.id).has_role? :usuario )? 'Usuário':'' %>
+          </td>
+          <td><%= user.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+          <td><%= user.status %></td>
+          <td class="last">
+            <% if user.id != 1 %>
+              <%= link_to 'Alterar', edit_user_path(user) %> |
+              <%= link_to "Excluir", user_path(user), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
+            <% end -%>
+          </td>
+        </tr>
+      <% end -%>
+    </table>
+  <% end -%>
+  <div class="actions-bar wat-cf">
+    <div class="actions">
+    </div>
+  </div>
+</div>

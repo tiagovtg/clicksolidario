@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  data: 2011-03-30
+  entidade_id: 1
+
+two:
+  nome: MyString
+  data: 2011-03-30
+  entidade_id: 1

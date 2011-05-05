@@ -1,0 +1,57 @@
+<h1 class="title">
+  <%= form_tag(empresas_path, :method => "get") do %>
+    Listando Empresas
+    <select name="filtro" id="filtro">
+      <option value="" selected="selected">Buscar por...</option>
+      <option value="nomefantasia">Nome Fantasia</option>
+      <option value="cnpj">Cnpj</option>
+      <option value="cidade">Cidade</option>
+      <option value="estado">Estado</option>
+    </select>
+    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
+    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+  <% end %>
+</h1>
+
+
+<% if @empresas.nil? or @empresas.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+
+  <table class="table">
+    <tr>
+      <th>Razao</th>
+      <th>Fantasia</th>
+      <th>Cnpj</th>
+      <th>Ramo</th>
+      <th>Responsavel</th>
+      <th>Site</th>
+      <th>Newsletter</th>
+      <th>Endereco</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @empresas.each do |empresa| %>
+      <tr>
+        <td><%= empresa.razaosocial %></td>
+        <td><%= empresa.nomefantasia %></td>
+        <td><%= empresa.cnpj %></td>
+        <td><%= empresa.ramoatividade %></td>
+        <td><%= empresa.site %></td>
+        <td><%= empresa.newsletter %></td>
+        <td><%= empresa.user_id %></td>
+        <td><%= link_to 'Mostrar', empresa %></td>
+        <td><%= link_to 'Editar', edit_empresa_path(empresa) %></td>
+        <td><%= link_to 'Deletar', empresa, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<br />
+
+<%= link_to 'Cadastrar Empresa', new_empresa_path %>

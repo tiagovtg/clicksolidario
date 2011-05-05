@@ -1,0 +1,11 @@
+<div id="header">
+  <div id="banner">
+    <h1>
+      <%= link_to '/' do %>
+        Issue <span class="gray">Tracker</span>
+      <% end %>
+    </h1>
+  </div>
+  <%= render :partial => 'layouts/menu' %>
+  <div class="clear"></div>
+</div>

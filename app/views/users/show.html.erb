@@ -1,0 +1,38 @@
+<% if administrador? or entidade? %>
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>
+      <li><a href="<%= new_user_path %>" class="<%= current_page?(:controller => 'users', :action => 'new') == true ? 'active' : '' %>">Novo</a></li>
+    </ul>
+  </div>
+<% end %>
+
+
+<h2 class="postheader">Dados da Conta</h2>
+<div class="postcontent">
+  <div class="group">
+    <br/>
+    <p>
+      <b> Email:</b>
+      <%=h @user.email %>
+    </p>
+    <p>
+      <b> Nome:</b>
+      <%=h @user.nome %>
+    </p>
+    <p>
+      <b><%= "Tipo" %>:</b>
+      <%= (User.find(@user.id).has_role? :administrador )? 'Administrador':'' %>
+      <%= (User.find(@user.id).has_role? :entidade )? 'Entidade Filantrópica':'' %>
+      <%= (User.find(@user.id).has_role? :voluntario )? 'Voluntario':'' %>
+      <%= (User.find(@user.id).has_role? :empresa )? 'Empresa':'' %>
+    </p>
+    <div class="clear">
+    </div>
+  </div>
+  <div class="actions-bar wat-cf">
+    <div class="actions">
+      <%= image_tag("edit.png") %><%= link_to "Editar", edit_user_path(@user) %>
+    </div>
+  </div>
+</div>

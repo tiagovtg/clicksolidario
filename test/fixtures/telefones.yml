@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  numero: MyString
+  tipo: MyString
+  entidade_id: 1
+  empresa_id: 1
+  voluntario_id: 1
+
+two:
+  numero: MyString
+  tipo: MyString
+  entidade_id: 1
+  empresa_id: 1
+  voluntario_id: 1

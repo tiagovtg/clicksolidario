@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Valor:</b>
+  <%= @doacao.valor %>
+</p>
+
+<p>
+  <b>Data:</b>
+  <%= @doacao.data %>
+</p>
+
+<p>
+  <b>Valida:</b>
+  <%= @doacao.valida %>
+</p>
+
+<p>
+  <b>Obs:</b>
+  <%= @doacao.obs %>
+</p>
+
+
+<%= link_to 'Editar', edit_doacao_path(@doacao) %> |
+<%= link_to 'Voltar', doacaos_path %>

@@ -1,0 +1,41 @@
+<h1 class="title">
+  <%= form_tag(newsletters_path, :method => "get") do %>
+    Listando Newsletters
+    <select name="filtro" id="filtro">
+      <option value="" selected="selected">Buscar por...</option>
+      <option value="nome">Nome</option>
+      <option value="email">Email</option>
+    </select>
+    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
+    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+  <% end %>
+</h1>
+
+<% if @newsletters.nil? or @newsletters.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+  <table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @newsletters.each do |newsletter| %>
+      <tr>
+        <td><%= newsletter.nome %></td>
+        <td><%= newsletter.email %></td>
+        <td><%= link_to 'Mostrar', newsletter %></td>
+        <td><%= link_to 'Editar', edit_newsletter_path(newsletter) %></td>
+        <td><%= link_to 'Deletar', newsletter, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<br />
+
+<%= link_to 'Cadastrar Newsletter', new_newsletter_path %>

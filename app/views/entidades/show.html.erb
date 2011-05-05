@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @entidade.nome %>
+</p>
+
+<p>
+  <b>Cnpj:</b>
+  <%= @entidade.cnpj %>
+</p>
+
+<p>
+  <b>Cidade:</b>
+  <%= @entidade.cidade %>
+</p>
+
+<p>
+  <b>Causa:</b>
+  <%= @entidade.causa_id %>
+</p>
+
+
+<%= link_to 'Editar', edit_entidade_path(@entidade) %> |
+<%= link_to 'Voltar', entidades_path %>

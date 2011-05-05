@@ -1,0 +1,17 @@
+<% if administrador? or entidade? %>
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>
+      <li><a href="<%= new_user_path %>" class="<%= current_page?(:controller => 'users', :action => 'new') == true ? 'active' : '' %>">Novo</a></li>
+    </ul>
+  </div>
+<% end %>
+
+<div id="stylized" class="myform">
+  <h2 class="postheader">Cadastro de Conta</h2>
+  <div class="postcontent">
+    <%= form_for :user, :url => users_path, :html => { :class => :form } do |f| -%>
+      <%= render :partial => "form", :locals => {:f => f} %>
+    <% end -%>
+  </div>
+</div>

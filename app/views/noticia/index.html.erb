@@ -1,0 +1,48 @@
+<h1 class="title">
+  <%= form_tag(noticia_path, :method => "get") do %>
+    Listando Noticia
+    <select name="filtro" id="filtro">
+      <option value="" selected="selected">Buscar por...</option>
+      <option value="nome">Nome</option>
+      <option value="texto">Noticia</option>
+    </select>
+    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
+    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+  <% end %>
+</h1>
+
+
+<% if @noticia.nil? or @noticia.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+  <table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>Noticia</th>
+      <th>Data</th>
+      <th>Entidade</th>
+      <th>Validação</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @noticia.each do |noticium| %>
+      <tr>
+        <td><%= noticium.nome %></td>
+        <td><%= noticium.texto %></td>
+        <td><%= noticium.data %></td>
+        <td><%= noticium.entidade_id %></td>
+        <td><%= noticium.validacao==true ? 'Valido' : 'Invalido' %></td>
+        <td><%= link_to 'Mostrar', noticium %></td>
+        <td><%= link_to 'Editar', edit_noticium_path(noticium) %></td>
+        <td><%= link_to 'Deletar', noticium, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<br />
+
+<%= link_to 'Cadastrar Noticia', new_noticium_path %>

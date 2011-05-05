@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/epainel/!svn/ver/28/trunk/app/views/welcome
+END
+index2.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/epainel/!svn/ver/1/trunk/app/views/welcome/index2.html.erb
+END
+index.html.erb
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/epainel/!svn/ver/64/trunk/app/views/welcome/index.html.erb
+END
+denied.html
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/epainel/!svn/ver/28/trunk/app/views/welcome/denied.html
+END

@@ -1,0 +1,55 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nome:</b>
+  <%= @voluntario.nome %>
+</p>
+
+<p>
+  <b>Cpf:</b>
+  <%= @voluntario.cpf %>
+</p>
+
+<p>
+  <b>Profissao:</b>
+  <%= @voluntario.profissao %>
+</p>
+
+<p>
+  <b>Endereco:</b>
+  <%= @voluntario.endereco %>
+</p>
+
+<p>
+  <b>Bairro:</b>
+  <%= @voluntario.bairro %>
+</p>
+
+<p>
+  <b>Cidade:</b>
+  <%= @voluntario.cidade %>
+</p>
+
+<p>
+  <b>Uf:</b>
+  <%= @voluntario.estado %>
+</p>
+
+<p>
+  <b>Cep:</b>
+  <%= @voluntario.cep %>
+</p>
+
+<p>
+  <b>Newsletter:</b>
+  <%= @voluntario.newsletter %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @voluntario.user_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_voluntario_path(@voluntario) %> |
+<%= link_to 'Back', voluntarios_path %>

@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  instituicao_id: 1
+  telefone_id: 1
+
+two:
+  instituicao_id: 1
+  telefone_id: 1

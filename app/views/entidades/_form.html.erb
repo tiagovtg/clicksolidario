@@ -1,0 +1,121 @@
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery(":input:not(:hidden):first").focus();
+  });
+</script>
+<%= form_for(@entidade) do |f| %>
+  <%= render :partial => 'generals/model_errors', :locals => {:obj => @entidade}%>
+
+  <div class="field">
+    <%= f.label :nomefantasia, "Nome Fantasia" %><br />
+    <%= f.text_field :nomefantasia, :onkeypress=> 'return letrasNumeros(event)' %>
+  </div>
+  <div class="field">
+    <%= f.label :razaosocial, "Razão Social" %><br />
+    <%= f.text_field :razaosocial, :onkeypress=> 'return letrasNumeros(event)' %>
+  </div>
+  <div class="field">
+    <%= f.label :cnpj, "Cnpj" %><br />
+    <%= f.text_field :cnpj, :class=>"cnpj", :size=>"30" %>
+  </div>
+  <div class="field">
+    <%= f.label :areaatuacao, "Area Atuação" %><br />
+    <%= f.text_field :areaatuacao, :onkeypress=> 'return letrasNumeros(event)' %>
+  </div>
+  <div class="field">
+    <%= f.label :causa_id %><br/>
+    <%= collection_select(:entidade, :causa_id, Causa.all, :id, :nome, :prompt => 'Selecione uma causa') %>
+  </div>
+  <div class="field">
+    <%= f.label :datafunda, "Data da Fundação" %><br />
+    <%= f.date_select(:datafunda, :start_year => 1920, :end_year => 2050 ) %>
+  </div>
+  <div class="field">
+    <%= f.label :site, "Site" %><br />
+    <%= f.text_field :site %>
+  </div>
+  <div class="field">
+    <%= f.label :siteproprio, "Site Proprio?" %><br />
+    <%= f.radio_button(:siteproprio, "sim" ) %>&nbsp;Sim&nbsp;&nbsp;
+    <%= f.radio_button(:siteproprio, "nao" ) %>&nbsp;Não&nbsp;&nbsp;
+  </div>
+  <% f.fields_for :telefones do |builder| %>
+    <%= render 'generals/telefones', :f => builder %>
+  <% end %>
+  <div><br/><%= add_child_link "Adiciona Telefone", f, :telefones %><br/></div>
+  <% f.fields_for :conta do |builder| %>
+    <%= render 'generals/conta', :f => builder %>
+  <% end %>
+  <div><br/><%= add_child_link "Adiciona Conta", f, :conta %><br/></div>
+
+  <hr/>
+  <div class="field">
+    <%= f.label :nome, "Nome" %><br />
+    <%= f.text_field :nome, :size=>70, :maxlenght=>70, :onkeypress=> 'return SomenteLetras(event)' %>
+  </div>
+  <div class="field">
+    <%= f.label :apelido, "Como gosta de ser chamado?" %><br />
+    <%= f.text_field :apelido, :size=>30, :maxlenght=>30, :onkeypress=> 'return SomenteLetras(event)' %>
+  </div>
+  <div class="field">
+    <%= f.label :datanasc, "Data Nascimento" %><br />
+    <%= f.date_select(:datanasc, :start_year => 1920, :end_year => Time.now.year - 16, :order => [:day, :month, :year] ) %>
+  </div>
+  <div class="field">
+    <%= f.label :cpf, "Cpf" %><br />
+    <%= f.text_field :cpf, :class=>"cpf", :size=>"30" %>
+  </div>
+  <div class="field">
+    <%= f.label :sexo, "Sexo" %><br />
+    <%= f.radio_button(:sexo, value="m" ) %>&nbsp;Masculino&nbsp;&nbsp;
+    <%= f.radio_button(:sexo, value="f" ) %>&nbsp;Feminino&nbsp;&nbsp;
+  </div>
+
+  <hr/>
+  <div class="field">
+    <%= f.label :cep, "Cep" %><br />
+    <%= f.text_field :cep, :class=>"cep", :size=>"10" %>
+  </div>
+  <div class="field">
+    <%= f.label :endereco, "Endereço" %><br />
+    <%= f.text_field :endereco, :size=>70, :maxlenght=>70, :onkeypress=> 'return letrasNumeros(event)' %>
+  </div>
+  <div class="field">
+    <%= f.label :numero, "Numero" %><br />
+    <%= f.text_field :numero, :size=>10, :maxlenght=>10 %>
+  </div>
+  <div class="field">
+    <%= f.label :complemento, "Complemento" %><br />
+    <%= f.text_field :complemento %>
+  </div>
+  <div class="field">
+    <%= f.label :bairro, "Bairro" %><br />
+    <%= f.text_field :bairro %>
+  </div>
+  <div class="field">
+    <%= f.label :cidade, "Cidade" %><br />
+    <%= f.text_field :cidade, :size=>40, :maxlenght=>40, :onkeypress=> 'return SomenteLetras(event)' %>
+  </div>
+  <div class="field">
+    <%= f.label :estado, "Estado" %><br />
+    <%= f.select :estado, ([["AC", "AC"], ["AL", "AL"], ["AP", "AP"],
+        ["AM", "AM"], ["BA", "BA"], ["CE", "CE"], ["DF", "DF"], ["ES", "ES"],
+        ["GO", "GO"], ["MA", "MA"], ["MT", "MT"], ["MS", "MS"], ["MG", "MG"],
+        ["PA", "PA"], ["PB", "PB"], ["PR", "PR"], ["PE", "PE"], ["PI", "PI"],
+        ["RJ", "RJ"], ["RN", "RN"], ["RS", "RS"], ["RO", "RO"], ["RR", "RR"],
+        ["SC", "SC"], ["SP", "SP"], ["SE", "SE"], ["TO", "TO"]]) %>
+  </div>
+  <div class="field">
+    <%= f.check_box :newsletter %>
+    <%= f.label :newsletter, "Desejo receber notícias do Click Sólidario." %><br/>
+  </div>
+  <div class="field">
+    <br/><span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>
+  </div>
+
+  <br/>
+  <div class="actions">
+    <%= f.submit 'Salvar' %>
+  </div>
+  <br/>
+<% end %>

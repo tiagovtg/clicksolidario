@@ -1,0 +1,15 @@
+<% if administrador? or gestor? %>
+  <div class="secondary-navigation">
+    <ul class="wat-cf">
+      <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>
+      <li><a href="<%= new_user_path %>" class="<%= current_page?(:controller => 'users', :action => 'new') == true ? 'active' : '' %>">Novo</a></li>
+    </ul>
+  </div>
+<% end %>
+
+<h2 class="postheader"><img src="./images/postheadericon.png" width="31" height="15" alt="" />Editando Conta</h2>
+<div class="postcontent">
+  <% form_for @user, :url => user_path(@user), :html => { :class => :form } do |f| -%>
+    <%= render :partial => "form", :locals => {:f => f} %>
+  <% end -%>
+</div>

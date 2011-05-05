@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  nome: MyString
+  cnpj: MyString
+  fundacao: 2011-03-24
+  descricao: MyText
+  causa_id: 1
+  endereco_id: 1
+  conta_id: 1
+
+two:
+  nome: MyString
+  cnpj: MyString
+  fundacao: 2011-03-24
+  descricao: MyText
+  causa_id: 1
+  endereco_id: 1
+  conta_id: 1

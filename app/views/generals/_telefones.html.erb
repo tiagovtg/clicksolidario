@@ -1,0 +1,9 @@
+<div class="fields">
+  <%= f.label :numero, "Telefone" %><br />
+  <%= f.text_field :ddd,"class"=>"ddd", "size"=>"5" %>
+  <%= f.text_field :numero, "class"=>"telefone", "size"=>"25" %>
+  <%= f.select(:tipo, ([["Casa", "Casa"], ["Trabalho", "Trabalho"], ["Celular", "Celular"],
+      ["Fax","fax"]]), :prompt => 'Selecione Tipo') %>
+  <%= f.hidden_field :_destroy %>
+  <%= remove_child_link "Deletar", f %>
+</div>

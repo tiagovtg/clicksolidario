@@ -1,0 +1,26 @@
+<%= form_for(@noticium) do |f| %>
+  <%= render :partial => 'generals/model_errors', :locals => {:obj => @noticium}%>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :texto %><br />
+    <%= f.text_field :texto %>
+  </div>
+  <div class="field">
+    <%= f.label :data %><br />
+    <%= f.date_select :data %>
+  </div>
+  <% if administrador? %>
+    <div class="field"><br/>
+      <%= f.check_box :validacao %>
+      <%= f.label :validacao, "Valida Noticia." %><br/>
+    </div><br/>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit 'Salvar'%>
+  </div>
+<% end %>

@@ -1,0 +1,113 @@
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery(":input:not(:hidden):first").focus();
+  });
+</script>
+
+<div class="inner">
+  <%= render :partial => 'generals/model_errors', :locals => {:obj => @user}%>
+  <p></p>
+      <label class="label">*Email</label>
+      <%= f.text_field :email, :html => {:class => "text_field"} %>
+      <span class="description">Ex: test@example.com</span>
+  <div class="group">
+    <br/>
+    <div class="left">
+      <label class="label">*Nome</label>
+    </div>
+    <div class="right">
+      <%= f.text_field :nome, :html => {:class => "text_field"} %>
+      <span class="description">Ex: Nome que constará no Certificado.</span>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+  <div class="group">
+    <div class="left">
+      <label class="label">*Senha</label>
+    </div>
+    <div class="right">
+      <%= f.password_field :password, :html => {:class => "text_field"} %>
+      <span class="description">Ex: senha com minimo de 4 digitos</span>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+  <div class="group">
+    <div class="left">
+      <label class="label">*Confirmar senha</label>
+    </div>
+    <div class="right">
+      <%= f.password_field :password_confirmation, :html => {:class => "text_field"} %>
+      <span class="description">Ex: repetir senha</span>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+
+  <div class="group">
+    <br/>
+    <div class="left">
+      <label class="label">*Instituição de Ensino</label>
+    </div>
+    <div class="right">
+      <%= f.text_field :ies, :html => {:class => "text_field"} %>
+      <span class="description">Ex: Na qual trabalha, estuda ou estudou.</span>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="left">
+      <label class="label">*Ocupação</label>
+    </div>
+    <div class="right">
+
+      <%= f.select(:ocupacao, options_for_select([
+            ["Estudante de Administração", "estudante"], ["Estudante de outros cursos", "estudanteoutros"],
+            ["Profissional de Administração", "profissional"],
+            ["Profissional de outras áreas", "profissionaloutros"],
+            ["Professor de Administração", "professor"],
+            ["Professor de outros cursos", "professoroutros"]
+          ])) %>
+
+
+
+      <br/>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+
+  <% if administrador? %>
+    <div class="group">
+      <div class="left">
+        <label class="label">*Tipo cadastro</label>
+      </div>
+      <div class="right">
+        <%= radio_button_tag(name="tipo", value="administrador" ) %>&nbsp;Administrador&nbsp;&nbsp;
+      <% end %>
+      <% if administrador? or gestor? %>
+        <%= radio_button_tag(name="tipo", value="gestor" ) %>&nbsp;Gestor&nbsp;&nbsp;
+        <%= radio_button_tag(name="tipo", value="usuario", checked=true ) %>&nbsp;Usuário
+        <br/>
+      </div>
+      <div class="clear">
+      </div>
+    </div>
+  <% end %>
+  <div class="botao">
+    <br/>
+    <div class="left">
+      <button class="button" type="submit">
+        <img src="/images/tick.png" alt="" />Registrar&nbsp;
+      </button>
+    </div>
+    <div class="clear">
+    </div>
+  </div>
+  <br/>
+  <br/>
+  <span class="obrigatorio">*Campos de preenchimento obrigatorio!</span>
+</div>

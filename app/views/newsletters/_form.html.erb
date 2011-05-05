@@ -1,0 +1,15 @@
+<%= form_for(@newsletter) do |f| %>
+  <%= render :partial => 'generals/model_errors', :locals => {:obj => @newsletter}%>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>

@@ -1,0 +1,48 @@
+<h1 class="title">
+  <%= form_tag(entidades_path, :method => "get") do %>
+    Listando Entidades
+    <select name="filtro" id="filtro">
+      <option value="" selected="selected">Buscar por...</option>
+      <option value="nomefantasia">Nome Fantasia</option>
+      <option value="cnpj">Cnpj</option>
+      <option value="cidade">Cidade</option>
+      <option value="estado">Estado</option>
+    </select>
+    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
+    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+  <% end %>
+</h1>
+
+
+<% if @entidades.nil? or @entidades.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+  <table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>Cnpj</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @entidades.each do |entidade| %>
+      <tr>
+        <td><%= entidade.nomefantasia %></td>
+        <td><%= entidade.cnpj %></td>
+        <td><%= entidade.cidade %></td>
+        <td><%= entidade.estado %></td>
+        <td><%= link_to 'Mostrar', entidade %></td>
+        <td><%= link_to 'Editar', edit_entidade_path(entidade) %></td>
+        <td><%= link_to 'Deletar', entidade, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
+<br />
+
+<%= link_to 'Cadastrar Entidade', new_entidade_path %>

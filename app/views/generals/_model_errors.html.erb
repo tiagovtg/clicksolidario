@@ -1,0 +1,17 @@
+<% if obj.errors.any? %>
+  <div id="error_explanation">
+    <h2>
+      <% if obj.errors.count == 1 %>
+        <%= t('activerecord.errors.template.header.one', 	:model => obj.class.human_name) %>
+      <% else %>
+        <%= t('activerecord.errors.template.header.other',	:model => obj.class.human_name,
+          :count => obj.errors.size) %>
+      <% end %>
+    </h2>
+    <ul>
+      <% obj.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

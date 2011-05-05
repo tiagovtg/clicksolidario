@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  razao: MyString
+  fantasia: MyString
+  cnpj: MyString
+  ramo: MyString
+  responsavel: MyString
+  site: MyString
+  newsletter: false
+  endereco_id: 1
+  user_id: 1
+
+two:
+  razao: MyString
+  fantasia: MyString
+  cnpj: MyString
+  ramo: MyString
+  responsavel: MyString
+  site: MyString
+  newsletter: false
+  endereco_id: 1
+  user_id: 1

@@ -1,0 +1,55 @@
+<h1 class="title">
+  <%= form_tag(emergencia_path, :method => "get") do %>
+    Listando Emergencia
+    <select name="filtro" id="filtro">
+      <option value="" selected="selected">Buscar por...</option>
+      <option value="nome">Nome</option>
+      <option value="desc">Descrição</option>
+    </select>
+    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
+    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+  <% end %>
+</h1>
+
+
+<% if @emergencia.nil? or @emergencia.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+  <table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>Desc</th>
+      <th>Data</th>
+      <th>Status</th>
+      <th>Entidade</th>
+      <th>Validação</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+
+    <% @emergencia.each do |emergencium| %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= emergencium.nome %></td>
+        <td><%= emergencium.desc %></td>
+        <td><%= emergencium.data %></td>
+        <td><%= emergencium.status %></td>
+        <td><%= emergencium.entidade_id %></td>
+        <td><%= emergencium.validacao==true ? 'Valida' : 'Invalida' %></td>
+        <td><%= link_to 'Mostrar', emergencium %></td>
+        <td><%= link_to 'Editar', edit_emergencium_path(emergencium) %></td>
+        <td><%= link_to 'Deletar', emergencium, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+  <div align="right">
+    <%= will_paginate @eventos %>
+  </div>
+<% end %>
+<br />
+
+<% if entidade? %>
+  <%= link_to 'Cadastrar Emergencium', new_emergencium_path %>
+<% end %>
