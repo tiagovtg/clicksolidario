@@ -8,18 +8,18 @@ class EntidadesController < ApplicationController
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
       if administrador?
-        @entidades = Entidade.all
+        @entidades = Entidade.paginate(:page => params[:page], :order => 'cnpj')
       else
-        @entidades = Entidade.all(:conditions => [" user_id = ?", current_user.id], :limit=>1)
+        @entidades = Entidade.paginate(:page => params[:page], :order => 'cnpj', :conditions => [" user_id = ?", current_user.id], :limit=>1)
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @entidades = Entidade.all(:conditions => ['entidades.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @entidades = Entidade.paginate(:page => params[:page], :order => 'cnpj', :conditions => ['entidades.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @entidades = Entidade.all(:conditions => [" user_id = #{current_user.id}" + ' and entidades.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @entidades = Entidade.paginate(:page => params[:page], :order => 'cnpj', :conditions => [" user_id = #{current_user.id}" + ' and entidades.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end

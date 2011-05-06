@@ -8,18 +8,18 @@ class VoluntariosController < ApplicationController
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
       if administrador?
-        @voluntarios = Voluntario.all
+        @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf')
       else
-        @voluntarios = Voluntario.all(:conditions => [" user_id = ?", current_user.id], :limit=>1)
+        @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf', :conditions => [" user_id = ?", current_user.id], :limit=>1)
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @voluntarios = Voluntario.all(:conditions => ['voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf', :conditions => ['voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @voluntarios = Voluntario.all(:conditions => [" user_id = #{current_user.id}" + ' and voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf', :conditions => [" user_id = #{current_user.id}" + ' and voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end

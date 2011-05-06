@@ -10,18 +10,18 @@ class DoacaosController < ApplicationController
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
       if administrador?
-        @doacaos = Doacao.all
+        @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC')
       else
-        @doacaos = Doacao.all(:conditions => [" user_id = ?", current_user.id], :limit=>1)
+        @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" user_id = ?", current_user.id], :limit=>1)
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @doacaos = Doacao.all(:conditions => ['doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => ['doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @doacaos = Doacao.all(:conditions => [" user_id = #{current_user.id}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" user_id = #{current_user.id}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end

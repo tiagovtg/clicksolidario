@@ -8,18 +8,18 @@ class EmpresasController < ApplicationController
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
       if administrador?
-        @empresas = Empresa.all
+        @empresas = Empresa.paginate(:page => params[:page], :order => 'cnpj')
       else
-        @empresas = Empresa.all(:conditions => [" user_id = ?", current_user.id], :limit=>1)
+        @empresas = Empresa.paginate(:page => params[:page], :order => 'cnpj', :conditions => [" user_id = ?", current_user.id], :limit=>1)
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @empresas = Empresa.all(:conditions => ['empresas.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @empresas = Empresa.paginate(:page => params[:page], :order => 'cnpj', :conditions => ['empresas.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @empresas = Empresa.all(:conditions => [" user_id = #{current_user.id}" + ' and empresas.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @empresas = Empresa.paginate(:page => params[:page], :order => 'cnpj', :conditions => [" user_id = #{current_user.id}" + ' and empresas.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end
@@ -28,7 +28,12 @@ class EmpresasController < ApplicationController
   # GET /empresas/1
   # GET /empresas/1.xml
   def show
-    @empresa = Empresa.find(params[:id])
+    if administrador?
+      @empresa = Empresa.find(params[:id])
+    else
+      @empresa = Empresa.where(" user_id = ?", current_user.id) rescue nil
+      render :action => "index" if @empresa.nil?
+    end
   end
 
   def new

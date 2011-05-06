@@ -1,7 +1,7 @@
 class NoticiaController < ApplicationController
 
   access_control do
-    allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update]
+    allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
 
@@ -9,18 +9,18 @@ class NoticiaController < ApplicationController
     @entidade = Entidade.where(" user_id = ?", current_user.id)
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
       if administrador?
-        @noticia = Noticium.all
+        @noticia = Noticium.paginate(:page => params[:page], :order => 'data DESC')
       else
-        @noticia = Noticium.all(:conditions => [" entidade_id = ?", @entidade[0].id])
+        @noticia = Noticium.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = ?", @entidade[0].id])
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @noticia = Noticium.all(:conditions => ['noticia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @noticia = Noticium.paginate(:page => params[:page], :order => 'data DESC', :conditions => ['noticia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @noticia = Noticium.all(:conditions => [" entidade_id = " + "#{@entidade[0].id} " + ' and noticia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @noticia = Noticium.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = " + "#{@entidade[0].id} " + ' and noticia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end
@@ -29,7 +29,13 @@ class NoticiaController < ApplicationController
   # GET /noticia/1
   # GET /noticia/1.xml
   def show
-    @noticium = Noticium.find(params[:id])
+    if administrador?
+      @noticium = Noticium.find(params[:id])
+    else
+      @entidade = Entidade.where(" user_id = ?", current_user.id)
+      @noticium = Noticium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+      render :action => "index" if @noticium.nil?
+    end
   end
 
   # GET /noticia/new
@@ -40,7 +46,13 @@ class NoticiaController < ApplicationController
 
   # GET /noticia/1/edit
   def edit
-    @noticium = Noticium.find(params[:id])
+    if administrador?
+      @noticium = Noticium.find(params[:id])
+    else
+      @entidade = Entidade.where(" user_id = ?", current_user.id)
+      @noticium = Noticium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+      render :action => "index" if @noticium.nil?
+    end
   end
 
   # POST /noticia
@@ -64,13 +76,30 @@ class NoticiaController < ApplicationController
   # PUT /noticia/1
   # PUT /noticia/1.xml
   def update
-    @noticium = Noticium.find(params[:id])
-
-    respond_to do |format|
-      if @noticium.update_attributes(params[:noticium])
-        format.html { redirect_to(@noticium, :notice => 'Noticium was successfully updated.') }
+    if administrador?
+      @noticium = Noticium.find(params[:id])
+      respond_to do |format|
+        if @noticium.update_attributes(params[:noticium])
+          format.html { redirect_to(@noticium, :notice => 'Noticium was successfully updated.') }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @noticium.errors, :status => :unprocessable_entity }
+        end
+      end
+    else
+      @entidade = Entidade.where(" user_id = ?", current_user.id)
+      @noticium = Noticium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+      unless @noticium.nil?
+        respond_to do |format|
+          if @noticium.update_attributes(params[:emergencium])
+            format.html { redirect_to(@noticium, :notice => 'Emergencium was successfully updated.') }
+          else
+            format.html { render :action => "edit" }
+            format.xml  { render :xml => @noticium.errors, :status => :unprocessable_entity }
+          end
+        end
       else
-        format.html { render :action => "edit" }
+        render :action => "index"
       end
     end
   end
@@ -78,9 +107,25 @@ class NoticiaController < ApplicationController
   # DELETE /noticia/1
   # DELETE /noticia/1.xml
   def destroy
-    @noticium = Noticium.find(params[:id])
-    @noticium.destroy
-
-    redirect_to(noticia_url)
+    if administrador?
+      @noticium = Noticium.find(params[:id])
+      @noticium.destroy
+      respond_to do |format|
+        format.html { redirect_to(noticia_url) }
+        format.xml  { head :ok }
+      end
+    else
+      @entidade = Entidade.where(" user_id = ?", current_user.id)
+      @noticium = Noticium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+      unless @noticium.nil?
+        @noticium.destroy
+        respond_to do |format|
+          format.html { redirect_to(noticia_url) }
+          format.xml  { head :ok }
+        end
+      else
+        render :action => "index"
+      end
+    end
   end
 end

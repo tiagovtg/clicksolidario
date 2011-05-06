@@ -18,9 +18,9 @@ class EmergenciaController < ApplicationController
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @emergencia = Emergencium.paginate(:conditions => ['emergencia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @emergencia = Emergencium.paginate(:page => params[:page], :order => 'data DESC', :conditions => ['emergencia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @emergencia = Emergencium.paginate(:conditions => [" entidade_id = " + "#{@entidade[0].id} " + ' and emergencia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @emergencia = Emergencium.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = " + "#{@entidade[0].id} " + ' and emergencia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end

@@ -6,12 +6,12 @@ class NewslettersController < ApplicationController
 
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
-      @newsletters = Newsletter.all
+      @newsletters = Newsletter.paginate(:page => params[:page], :order => 'email')
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
-        @newsletters = Newsletter.all(:conditions => ['newsletters.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+        @newsletters = Newsletter.paginate(:page => params[:page], :order => 'email', :conditions => ['newsletters.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
       end
     end
   end
