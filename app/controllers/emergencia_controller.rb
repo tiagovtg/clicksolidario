@@ -1,7 +1,7 @@
 class EmergenciaController < ApplicationController
 
   access_control do
-    allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update]
+    allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
 
@@ -29,9 +29,13 @@ class EmergenciaController < ApplicationController
   # GET /emergencia/1
   # GET /emergencia/1.xml
   def show
-    @entidade = Entidade.where(" user_id = ?", current_user.id)
-    @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
-    render :action => "index" if @emergencium.nil?
+    if administrador?
+      @emergencium = Emergencium.find(params[:id])
+    else
+      @entidade = Entidade.where(" user_id = ?", current_user.id)
+      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+      render :action => "index" if @emergencium.nil?
+    end
   end
 
   # GET /emergencia/new
@@ -42,12 +46,12 @@ class EmergenciaController < ApplicationController
 
   # GET /emergencia/1/edit
   def edit
-    @entidade = Entidade.where(" user_id = ?", current_user.id)
-    if @entidade[0].user_id == current_user.id or administrador?
-      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
-#      render :action => "index" if @emergencium.nil?
+    if administrador?
+      @emergencium = Emergencium.find(params[:id])
     else
-      render :action => "index"
+      @entidade = Entidade.where(" user_id = ?", current_user.id)
+      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+      render :action => "index" if @emergencium.nil?
     end
   end
 
@@ -74,35 +78,58 @@ class EmergenciaController < ApplicationController
   # PUT /emergencia/1
   # PUT /emergencia/1.xml
   def update
-    @entidade = Entidade.where(" user_id = ?", current_user.id)
-    if @entidade[0].user_id == current_user.id or administrador?
-      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+    if administrador?
+      @emergencium = Emergencium.find(params[:id])
 
       respond_to do |format|
         if @emergencium.update_attributes(params[:emergencium])
           format.html { redirect_to(@emergencium, :notice => 'Emergencium was successfully updated.') }
-          format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
           format.xml  { render :xml => @emergencium.errors, :status => :unprocessable_entity }
         end
       end
     else
-      render :action => "index"
+      @entidade = Entidade.where(" user_id = ?", current_user.id)
+      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+      unless @emergencium.nil?
+        respond_to do |format|
+          if @emergencium.update_attributes(params[:emergencium])
+            format.html { redirect_to(@emergencium, :notice => 'Emergencium was successfully updated.') }
+          else
+            format.html { render :action => "edit" }
+            format.xml  { render :xml => @emergencium.errors, :status => :unprocessable_entity }
+          end
+        end
+      else
+        render :action => "index"
+      end
     end
   end
 
   # DELETE /emergencia/1
   # DELETE /emergencia/1.xml
   def destroy
-    @emergencium = Emergencium.find(params[:id])
-    @emergencium.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(emergencia_url) }
-      format.xml  { head :ok }
+    if administrador?
+      @emergencium = Emergencium.find(params[:id])
+      @emergencium.destroy
+      respond_to do |format|
+        format.html { redirect_to(emergencia_url) }
+        format.xml  { head :ok }
+      end
+    else
+      @entidade = Entidade.where(" user_id = ?", current_user.id)
+      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+      unless @emergencium.nil?
+        @emergencium.destroy
+        respond_to do |format|
+          format.html { redirect_to(emergencia_url) }
+          format.xml  { head :ok }
+        end
+      else
+        render :action => "index"
+      end
     end
   end
-
   
 end
