@@ -2,8 +2,8 @@ class Entidade < ActiveRecord::Base
   belongs_to :causa
   belongs_to :user
 
-  has_many :emergencium
-  has_many :noticium
+  has_many :emergencium, :dependent => :destroy
+  has_many :noticium, :dependent => :destroy
   has_many :doacao
 
   #tem muitos telefones atraves do nested
@@ -18,6 +18,8 @@ class Entidade < ActiveRecord::Base
   # Campos da entidade
   validates :nomefantasia, :razaosocial, :cnpj, :areaatuacao, :datafunda, :causa_id,
     :cep, :endereco, :numero, :cidade, :estado, :nome, :cpf, :presence => true
+
+  validates :cnpj, :uniqueness => true
 
   usar_como_cnpj :cnpj
   usar_como_cpf :cpf

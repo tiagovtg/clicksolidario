@@ -11,6 +11,8 @@ class Empresa < ActiveRecord::Base
   validates :nomefantasia, :razaosocial, :cnpj, :areaatuacao, 
     :cep, :endereco, :numero, :cidade, :estado, :nome, :cpf, :presence => true
 
+  validates :cnpj, :uniqueness => true
+  
   usar_como_cnpj :cnpj
   usar_como_cpf :cpf
 end

@@ -42,14 +42,13 @@ class EmergenciaController < ApplicationController
 
   # GET /emergencia/1/edit
   def edit
-
     @entidade = Entidade.where(" user_id = ?", current_user.id)
-    logger.info "\n\n=> meleca tipo: #{@entidade[0].user_id}\n"
-#    if @entidade.user == current_user or administrador?
-#      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
-#    else
-#      render :action => "index"
-#    end
+    if @entidade[0].user_id == current_user.id or administrador?
+      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
+#      render :action => "index" if @emergencium.nil?
+    else
+      render :action => "index"
+    end
   end
 
   # POST /emergencia
@@ -75,16 +74,21 @@ class EmergenciaController < ApplicationController
   # PUT /emergencia/1
   # PUT /emergencia/1.xml
   def update
-    @emergencium = Emergencium.find(params[:id])
+    @entidade = Entidade.where(" user_id = ?", current_user.id)
+    if @entidade[0].user_id == current_user.id or administrador?
+      @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
 
-    respond_to do |format|
-      if @emergencium.update_attributes(params[:emergencium])
-        format.html { redirect_to(@emergencium, :notice => 'Emergencium was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @emergencium.errors, :status => :unprocessable_entity }
+      respond_to do |format|
+        if @emergencium.update_attributes(params[:emergencium])
+          format.html { redirect_to(@emergencium, :notice => 'Emergencium was successfully updated.') }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @emergencium.errors, :status => :unprocessable_entity }
+        end
       end
+    else
+      render :action => "index"
     end
   end
 

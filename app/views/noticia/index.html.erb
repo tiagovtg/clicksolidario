@@ -45,4 +45,8 @@
 <% end %>
 <br />
 
-<%= link_to 'Cadastrar Noticia', new_noticium_path %>
+<% if entidade? %>
+  <%= link_to 'Cadastrar Noticia', new_noticium_path %>
+<% end %>
+
+

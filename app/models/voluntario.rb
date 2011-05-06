@@ -10,7 +10,9 @@ class Voluntario < ActiveRecord::Base
   #Campos obrigatorios
   validates :nome, :cpf, :profissao, :datanasc, :sexo, 
     :cep, :endereco, :numero, :cidade, :estado, :presence => true
-  
+
+  validates :cpf, :uniqueness => true
+
   #Valida como cpf
   usar_como_cpf :cpf
   

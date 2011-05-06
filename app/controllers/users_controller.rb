@@ -10,11 +10,12 @@ class UsersController < ApplicationController
 
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
-      @user = User.paginate :page => params[:page], :order => 'email DESC'
+      @user = User.paginate(:page => params[:page], :order => 'nome DESC')
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
+        #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
-        @user = User.paginate(:page => params[:page], :order => 'email DESC',
+        @user = User.paginate(:page => params[:page], :order => 'nome DESC',
           :conditions => ['users.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
       end
     end
