@@ -91,8 +91,8 @@ class NoticiaController < ApplicationController
       @noticium = Noticium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
       unless @noticium.nil?
         respond_to do |format|
-          if @noticium.update_attributes(params[:emergencium])
-            format.html { redirect_to(@noticium, :notice => 'Emergencium was successfully updated.') }
+          if @noticium.update_attributes(params[:noticium])
+            format.html { redirect_to(@noticium, :notice => 'Noticium was successfully updated.') }
           else
             format.html { render :action => "edit" }
             format.xml  { render :xml => @noticium.errors, :status => :unprocessable_entity }

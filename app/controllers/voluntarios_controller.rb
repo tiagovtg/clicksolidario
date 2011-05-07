@@ -1,7 +1,7 @@
 class VoluntariosController < ApplicationController
 
   access_control do
-    allow :voluntarios,   :to => [:index, :show, :new, :edit, :create, :update]
+    allow :voluntario,   :to => [:index, :show, :new, :edit, :create, :update]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
   
@@ -27,7 +27,6 @@ class VoluntariosController < ApplicationController
 
   def show
     @voluntario = Voluntario.find(params[:id])
-
     if administrador?
       @voluntario = Voluntario.find(params[:id])
     else
@@ -53,7 +52,12 @@ class VoluntariosController < ApplicationController
   end
 
   def edit
-    @voluntario = Voluntario.find(params[:id])
+    if administrador?
+      @voluntario = Voluntario.find(params[:id])
+    else
+      @voluntario = Voluntario.find(params[:id],:conditions => [" user_id = ?", current_user.id] ) rescue nil
+      render :action => "index" if @voluntario.nil?
+    end
   end
 
   def create
@@ -72,15 +76,32 @@ class VoluntariosController < ApplicationController
   end
 
   def update
-    @voluntario = Voluntario.find(params[:id])
+    if administrador?
+      @voluntario = Voluntario.find(params[:id])
 
-    respond_to do |format|
-      if @voluntario.update_attributes(params[:voluntario])
-        format.html { redirect_to(@voluntario, :notice => 'Voluntario was successfully updated.') }
-        format.xml  { head :ok }
+      respond_to do |format|
+        if @voluntario.update_attributes(params[:voluntario])
+          format.html { redirect_to(@voluntario, :notice => 'Voluntario was successfully updated.') }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @voluntario.errors, :status => :unprocessable_entity }
+        end
+      end
+    else
+      @voluntario = Voluntario.find(params[:id],:conditions => [" user_id = ?", current_user.id] ) rescue nil
+      unless @voluntario.nil?
+        respond_to do |format|
+          if @voluntario.update_attributes(params[:voluntario])
+            format.html { redirect_to(@voluntario, :notice => 'Voluntario was successfully updated.') }
+            format.xml  { head :ok }
+          else
+            format.html { render :action => "edit" }
+            format.xml  { render :xml => @voluntario.errors, :status => :unprocessable_entity }
+          end
+        end
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @voluntario.errors, :status => :unprocessable_entity }
+        render :action => "index"
       end
     end
   end

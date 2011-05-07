@@ -1,7 +1,7 @@
 class EmpresasController < ApplicationController
 
   access_control do
-    allow :empresas,      :to => [:index, :show, :new, :edit, :create, :update]
+    allow :empresa,      :to => [:index, :show, :new, :edit, :create, :update]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
 

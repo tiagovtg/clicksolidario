@@ -75,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20110429015620) do
     t.string   "nome",          :limit => 70
     t.string   "apelido",       :limit => 30
     t.date     "datanasc"
-    t.string   "cpf",           :limit => 13
+    t.string   "cpf",           :limit => 14
     t.string   "sexo",          :limit => 1
     t.string   "cep",           :limit => 10
     t.string   "endereco",      :limit => 70
@@ -101,7 +101,7 @@ ActiveRecord::Schema.define(:version => 20110429015620) do
     t.string   "nome",         :limit => 70
     t.string   "apelido",      :limit => 30
     t.date     "datanasc"
-    t.string   "cpf",          :limit => 13
+    t.string   "cpf",          :limit => 14
     t.string   "sexo",         :limit => 1
     t.string   "cep",          :limit => 10
     t.string   "endereco",     :limit => 70
@@ -180,7 +180,7 @@ ActiveRecord::Schema.define(:version => 20110429015620) do
     t.string   "nome",        :limit => 70
     t.string   "apelido",     :limit => 30
     t.date     "datanasc"
-    t.string   "cpf",         :limit => 13
+    t.string   "cpf",         :limit => 14
     t.string   "sexo",        :limit => 1
     t.string   "profissao",   :limit => 70
     t.string   "cep",         :limit => 10
