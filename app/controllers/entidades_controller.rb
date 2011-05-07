@@ -28,7 +28,12 @@ class EntidadesController < ApplicationController
   # GET /entidades/1
   # GET /entidades/1.xml
   def show
-    @entidade = Entidade.find(params[:id])
+    if administrador?
+      @entidade = Entidade.find(params[:id])
+    else
+      @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
+      render :action => "index" if @entidade.nil?
+    end
   end
 
   def new
@@ -51,7 +56,12 @@ class EntidadesController < ApplicationController
 
   # GET /entidades/1/edit
   def edit
-    @entidade = Entidade.find(params[:id])    
+    if administrador?
+      @entidade = Entidade.find(params[:id])
+    else
+      @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
+      render :action => "index" if @entidade.nil?
+    end
   end
 
   # POST /entidades
@@ -74,15 +84,31 @@ class EntidadesController < ApplicationController
   # PUT /entidades/1
   # PUT /entidades/1.xml
   def update
-    @entidade = Entidade.find(params[:id])
+    if administrador?
+      @entidade = Entidade.find(params[:id])
 
-    respond_to do |format|
-      if @entidade.update_attributes(params[:entidade])
-        format.html { redirect_to(@entidade, :notice => 'Entidade was successfully updated.') }
-        format.xml  { head :ok }
+      respond_to do |format|
+        if @entidade.update_attributes(params[:entidade])
+          format.html { redirect_to(@entidade, :notice => 'Entidade was successfully updated.') }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @entidade.errors, :status => :unprocessable_entity }
+        end
+      end
+    else
+      @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
+      unless @entidade.nil?
+        respond_to do |format|
+          if @entidade.update_attributes(params[:entidade])
+            format.html { redirect_to(@entidade, :notice => 'Emergencium was successfully updated.') }
+          else
+            format.html { render :action => "edit" }
+            format.xml  { render :xml => @entidade.errors, :status => :unprocessable_entity }
+          end
+        end
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @entidade.errors, :status => :unprocessable_entity }
+        render :action => "index"
       end
     end
   end

@@ -77,15 +77,33 @@ class EmpresasController < ApplicationController
   # PUT /empresas/1
   # PUT /empresas/1.xml
   def update
-    @empresa = Empresa.find(params[:id])
 
-    respond_to do |format|
-      if @empresa.update_attributes(params[:empresa])
-        format.html { redirect_to(@empresa, :notice => 'Empresa was successfully updated.') }
-        format.xml  { head :ok }
+
+    if administrador?
+      @empresa = Empresa.find(params[:id])
+
+      respond_to do |format|
+        if @empresa.update_attributes(params[:empresa])
+          format.html { redirect_to(@empresa, :notice => 'Empresa was successfully updated.') }
+          format.xml  { head :ok }
+        else
+          format.html { render :action => "edit" }
+          format.xml  { render :xml => @empresa.errors, :status => :unprocessable_entity }
+        end
+      end
+    else
+      @empresa = Empresa.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
+      unless @empresa.nil?
+        respond_to do |format|
+          if @empresa.update_attributes(params[:empresa])
+            format.html { redirect_to(@empresa, :notice => 'Emergencium was successfully updated.') }
+          else
+            format.html { render :action => "edit" }
+            format.xml  { render :xml => @empresa.errors, :status => :unprocessable_entity }
+          end
+        end
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @empresa.errors, :status => :unprocessable_entity }
+        render :action => "index"
       end
     end
   end
