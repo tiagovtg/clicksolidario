@@ -27,6 +27,13 @@ class VoluntariosController < ApplicationController
 
   def show
     @voluntario = Voluntario.find(params[:id])
+
+    if administrador?
+      @voluntario = Voluntario.find(params[:id])
+    else
+      @voluntario = Voluntario.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
+      render :action => "index" if @voluntario.nil?
+    end
   end
 
   def new
