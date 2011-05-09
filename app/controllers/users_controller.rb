@@ -2,7 +2,10 @@ class UsersController < ApplicationController
 
   access_control do
     allow all,            :to => [:new, :create]
-    allow logged_in,      :to => [:show, :edit, :update]
+    #    allow logged_in,      :to => [:show, :edit, :update]
+    allow :entidade,      :to => [:index, :show, :edit, :update]
+    allow :voluntario,    :to => [:index, :show, :edit, :update]
+    allow :empresa,       :to => [:index, :show, :edit, :update]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :activate_deactivate ]
   end
 
@@ -10,13 +13,22 @@ class UsersController < ApplicationController
 
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
-      @user = User.paginate(:page => params[:page], :order => 'nome')
+      if administrador?
+        @user = User.paginate(:page => params[:page], :order => 'nome')
+      else
+        @user = User.paginate(:page => params[:page], :order => 'nome', :conditions => [" id = ?", current_user.id], :limit=>1)
+      end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
-        @user = User.paginate(:page => params[:page], :order => 'nome',
-          :conditions => ['users.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+        if administrador?
+          @user = User.paginate(:page => params[:page], :order => 'nome',
+            :conditions => ['users.email'+' LIKE ?', "%#{params[:query]}%"])
+        else
+          @user = User.paginate(:page => params[:page], :order => 'nome',
+            :conditions => [" id = #{current_user.id}" + ' and users.email'+' LIKE ?', "%#{params[:query]}%"])
+        end
       end
     end
   end
@@ -65,19 +77,13 @@ class UsersController < ApplicationController
   end
 
   def show
-    if params[:id].nil?
-      @user = current_user
-    else
-      @user = User.find(params[:id])
-    end
-    respond_to do |format|
-      format.html
-      format.xml  { render :xml => @user }
-    end
+    load_user
+    render :action => "index" if @user.nil?
   end
 
   def edit
-    @user = User.find(params[:id])
+    load_user
+    render :action => "index" if @user.nil?
   end
 
   def update
@@ -144,6 +150,15 @@ class UsersController < ApplicationController
     else
       flash[:notice] = "Usuário não tem permissão para esta ação."
       redirect_to users_url
+    end
+  end
+
+  private
+  def load_user
+    if administrador?
+      @user = User.find(params[:id])
+    else
+      @user = User.find(current_user.id) rescue nil
     end
   end
 end

@@ -1,4 +1,4 @@
-<% if administrador? or entidade? %>
+<% if administrador? %>
   <div class="secondary-navigation">
     <ul class="wat-cf">
       <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>

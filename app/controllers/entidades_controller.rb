@@ -25,42 +25,26 @@ class EntidadesController < ApplicationController
     end
   end
 
-  # GET /entidades/1
-  # GET /entidades/1.xml
   def show
-    if administrador?
-      @entidade = Entidade.find(params[:id])
-    else
-      @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
-      render :action => "index" if @entidade.nil?
-    end
+    load_entidade
+    render :action => "index" if @entidade.nil?
   end
 
   def new
-    
     # verifica se ja existe uma entidade criada.
-    if administrador?
+    @entidades = Entidade.all(:conditions => [" user_id = ?", current_user.id])
+    if @entidades.nil? or @entidades.empty?
       @entidade = Entidade.new
+      2.times {@entidade.telefones.build}
+      1.times {@entidade.conta.build}
     else
-      @entidades = Entidade.all(:conditions => [" user_id = ?", current_user.id])
-      if @entidades.nil? or @entidades.empty?
-        @entidade = Entidade.new
-      else
-        redirect_to :action => "index"
-      end
+      redirect_to :action => "index"
     end
-    2.times {@entidade.telefones.build}
-    1.times {@entidade.conta.build}
   end
 
-  # GET /entidades/1/edit
   def edit
-    if administrador?
-      @entidade = Entidade.find(params[:id])
-    else
-      @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
-      render :action => "index" if @entidade.nil?
-    end
+    load_entidade
+    render :action => "index" if @entidade.nil?
   end
 
   # POST /entidades
@@ -83,32 +67,18 @@ class EntidadesController < ApplicationController
   # PUT /entidades/1
   # PUT /entidades/1.xml
   def update
-    if administrador?
-      @entidade = Entidade.find(params[:id])
-
+    load_entidade
+    unless @entidade.nil?
       respond_to do |format|
         if @entidade.update_attributes(params[:entidade])
-          format.html { redirect_to(@entidade, :notice => 'Entidade was successfully updated.') }
-          format.xml  { head :ok }
+          format.html { redirect_to(@entidade, :notice => 'Emergencium was successfully updated.') }
         else
           format.html { render :action => "edit" }
           format.xml  { render :xml => @entidade.errors, :status => :unprocessable_entity }
         end
       end
     else
-      @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
-      unless @entidade.nil?
-        respond_to do |format|
-          if @entidade.update_attributes(params[:entidade])
-            format.html { redirect_to(@entidade, :notice => 'Emergencium was successfully updated.') }
-          else
-            format.html { render :action => "edit" }
-            format.xml  { render :xml => @entidade.errors, :status => :unprocessable_entity }
-          end
-        end
-      else
-        render :action => "index"
-      end
+      render :action => "index"
     end
   end
 
@@ -123,30 +93,14 @@ class EntidadesController < ApplicationController
       format.xml  { head :ok }
     end
   end
-end
 
 
-
-def show
-  load_empresa
-  render :action => "index" if @empresa.nil?
-end
-
-def new
-  load_empresa
-  # seu código aqui...
-end
-
-def create
-  load_empresa
-  # seu código aqui...
-end
-
-private
-def load_empresa
-  if administrador?
-    @empresa = Empresa.find(params[:id])
-  else
-    @empresa = Empresa.where(" user_id = ?", current_user.id) rescue nil
+  private
+  def load_entidade
+    if administrador?
+      @entidade = Entidade.find(params[:id])
+    else
+      @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
+    end
   end
 end
