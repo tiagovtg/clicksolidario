@@ -37,21 +37,20 @@ class EntidadesController < ApplicationController
   end
 
   def new
-    @entidades = Entidade.all(:conditions => [" user_id = ?", current_user.id])
+    
     # verifica se ja existe uma entidade criada.
     if administrador?
       @entidade = Entidade.new
-      2.times {@entidade.telefones.build}
-      1.times {@entidade.conta.build}
     else
+      @entidades = Entidade.all(:conditions => [" user_id = ?", current_user.id])
       if @entidades.nil? or @entidades.empty?
         @entidade = Entidade.new
-        2.times {@entidade.telefones.build}
-        1.times {@entidade.conta.build}
       else
         redirect_to :action => "index"
       end
     end
+    2.times {@entidade.telefones.build}
+    1.times {@entidade.conta.build}
   end
 
   # GET /entidades/1/edit
@@ -123,5 +122,31 @@ class EntidadesController < ApplicationController
       format.html { redirect_to(entidades_url) }
       format.xml  { head :ok }
     end
+  end
+end
+
+
+
+def show
+  load_empresa
+  render :action => "index" if @empresa.nil?
+end
+
+def new
+  load_empresa
+  # seu código aqui...
+end
+
+def create
+  load_empresa
+  # seu código aqui...
+end
+
+private
+def load_empresa
+  if administrador?
+    @empresa = Empresa.find(params[:id])
+  else
+    @empresa = Empresa.where(" user_id = ?", current_user.id) rescue nil
   end
 end
