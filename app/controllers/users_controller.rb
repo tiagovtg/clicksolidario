@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     @user.status = "Ativo" # status A  Ativado
     
-    if (( params[:tipo]=='admistrador' and !(administrador?)) or (params[:tipo].nil? or params[:tipo].empty?))
+    if (( params[:tipo]=='administrador' and !(administrador?)) or (params[:tipo].nil? or params[:tipo].empty?))
       flag=true
     else
 
@@ -114,7 +114,6 @@ class UsersController < ApplicationController
     else
       flash[:notice] = "Administrador não pode alterar seu dados."
     end
-
   end
 
   def destroy

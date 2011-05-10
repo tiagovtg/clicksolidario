@@ -1,5 +1,4 @@
 class NewslettersController < ApplicationController
-
   access_control do
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
@@ -40,6 +39,7 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
+        NewsletterMailer.envia_email(@newsletter)
         format.html { redirect_to(@newsletter, :notice => 'Newsletter was successfully created.') }
         format.xml  { render :xml => @newsletter, :status => :created, :location => @newsletter }
       else
@@ -76,4 +76,14 @@ class NewslettersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+#  def enviar_emails
+#    @newsletters = Newsletter.all
+#    NewsletterMailer.envia_email(@newsletters).deliver
+#  end
+
+#  def importar_emails
+
+#  end
+
 end

@@ -1,4 +1,4 @@
-<% if administrador? %>
+<% if administrador? or gestor? %>
   <div class="secondary-navigation">
     <ul class="wat-cf">
       <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>
@@ -16,7 +16,6 @@
       <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
     <% end %>
   </h1>
-
 
   <% if @user.nil? or @user.empty? %>
     <p class="busca">
