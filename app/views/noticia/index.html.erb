@@ -30,7 +30,7 @@
     </tr>
 
     <% @noticia.each do |noticium| %>
-      <tr>
+      <tr class="<%= cycle("odd", "even") %>">
         <td><%= noticium.nome %></td>
         <td><%= noticium.texto %></td>
         <td><%= noticium.data %></td>

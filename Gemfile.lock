@@ -115,6 +115,7 @@ DEPENDENCIES
   authlogic
   brazilian-rails
   jquery-rails
+  mail (= 2.2.15)
   mysql2
   rails (= 3.0.5)
   rails-erd

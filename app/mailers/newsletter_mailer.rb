@@ -10,8 +10,9 @@ class NewsletterMailer < ActionMailer::Base
 
     @user = user
     @url  = "localhost:3000"
-    mail( :to => user.email,
-      :subject => "Welcome to My Awesome Site")
+    #    attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
+    mail(:to => "#{user.nome} <#{user.email}>", :subject => "Registered")
     #          :bcc => ["bcc@example.com", "Order Watcher <watcher@example.com>"])
   end
+
 end
