@@ -23,6 +23,7 @@ Sgss::Application.configure do
   # Only use best-standards-support built into browsers
   config.action_dispatch.best_standards_support = :builtin
 
+  #confiração de email.
 
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
@@ -30,11 +31,12 @@ Sgss::Application.configure do
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
     #   :enable_starttls_auto => true,
-        :address => "smtp.gmail.com",
-        :port => 587,
-        :domain => "mail.google.com",
-        :user_name => "solidarioclick@gmail.com",
-        :password => 'clicksolidario2011'
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :domain => "mail.google.com",
+    :user_name => "solidarioclick@gmail.com",
+    :password => 'clicksolidario2011'
   }
-
+#  Mail.register_interceptor(DevelopmentMailInterceptor) #if Rails.env.development?
+  #fim email.
 end
