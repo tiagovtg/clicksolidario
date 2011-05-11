@@ -13,6 +13,9 @@ Sgss::Application.routes.draw do
 
   #aqui as nao herdadas, pelo authlogic
 
+  match "busca_entidade" => "portal#busca_entidade"
+  match "busca_perfil" => "portal#busca_perfil"
+
   resources :entidades#menu
   resources :emergencia#menu
   resources :noticia#menu
@@ -21,5 +24,4 @@ Sgss::Application.routes.draw do
   resources :doacaos#menu
   resources :newsletters#nao definido
   match "sobre" => "sobre#index"
-
 end

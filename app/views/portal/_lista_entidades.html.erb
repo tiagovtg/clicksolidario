@@ -1,0 +1,25 @@
+<% if entidades.nil? or entidades.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+  <table class="table">
+    <tr>
+      <th>Nome</th>
+      <th>Cnpj</th>
+      <th>Cidade</th>
+      <th>Estado</th>
+      <th></th>
+    </tr>
+
+    <% entidades.each do |entidade| %>
+      <tr>
+        <td><%= entidade.nomefantasia %></td>
+        <td><%= entidade.cnpj %></td>
+        <td><%= entidade.cidade %></td>
+        <td><%= entidade.estado %></td>
+        <td><%= link_to 'Mostrar', entidade %></td>
+      </tr>
+    <% end %>
+  </table>
+<% end %>
