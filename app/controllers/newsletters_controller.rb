@@ -39,7 +39,8 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
-        NewsletterMailer.envia_email(@newsletter)
+        action
+        
         format.html { redirect_to(@newsletter, :notice => 'Newsletter was successfully created.') }
         format.xml  { render :xml => @newsletter, :status => :created, :location => @newsletter }
       else
@@ -77,13 +78,24 @@ class NewslettersController < ApplicationController
     end
   end
 
-#  def enviar_emails
-#    @newsletters = Newsletter.all
-#    NewsletterMailer.envia_email(@newsletters).deliver
-#  end
+  #  def enviar_emails
+  #    @newsletters = Newsletter.all
+  #    NewsletterMailer.envia_email(@newsletters).deliver
+  #  end
 
-#  def importar_emails
+  #  def importar_emails
 
-#  end
+  #  end
 
+
+  def action
+    begin
+      NewsletterMailer.envia_email(@newsletter).deliver
+      #      redirect_to :action => 'index'
+    rescue => e
+      logger.info "\n\n=> meleca message: #{e.message}\n"
+      #      flash.now[:notice] = e.message
+      #      render :action => 'action'
+    end
+  end
 end
