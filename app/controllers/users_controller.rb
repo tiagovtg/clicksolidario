@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 
   access_control do
-    allow all,            :to => [:new, :create]
-    #    allow logged_in,      :to => [:show, :edit, :update]
+    allow anonymous,      :to => [:new, :create]
     allow :entidade,      :to => [:index, :show, :edit, :update]
     allow :voluntario,    :to => [:index, :show, :edit, :update]
     allow :empresa,       :to => [:index, :show, :edit, :update]

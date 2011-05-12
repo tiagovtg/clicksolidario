@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110429015620) do
+ActiveRecord::Schema.define(:version => 20110512145628) do
 
   create_table "bancos", :force => true do |t|
     t.string   "nome",       :limit => 30
@@ -31,6 +31,12 @@ ActiveRecord::Schema.define(:version => 20110429015620) do
     t.string   "agencia",     :limit => 30
     t.integer  "entidade_id"
     t.integer  "banco_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "count_mails", :force => true do |t|
+    t.integer  "enviados"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

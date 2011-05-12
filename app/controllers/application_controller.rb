@@ -57,9 +57,10 @@ class ApplicationController < ActionController::Base
   def access_denied
     if current_user
       #TODO fazer tela de acesso negado.
-      render :template => 'welcome/denied'
+      render :template => 'generals/denied'
     else
       flash[:notice] = 'Tempo expirou ou você precisa estar logado para esse acesso.'
+      session[:return_to] = request.request_uri
       redirect_to login_path
     end
   end

@@ -39,9 +39,7 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
-        enviar
-        
-        format.html { redirect_to(@newsletter, :notice => 'Newsletter was successfully created.') }
+        format.html { redirect_to(@newsletter, :notice => 'Newsletter was successfully created.'+"#{CountMail.enviar_email(@newsletter)}") }
         format.xml  { render :xml => @newsletter, :status => :created, :location => @newsletter }
       else
         format.html { render :action => "new" }
@@ -86,16 +84,5 @@ class NewslettersController < ApplicationController
   #  def importar_emails
 
   #  end
-
-
-  def enviar
-    begin
-      NewsletterMailer.envia_email(@newsletter).deliver
-      #      redirect_to :action => 'index'
-    rescue => e
-      logger.info "\n\n=> meleca message: #{e.message}\n"
-      #      flash.now[:notice] = e.message
-      #      render :action => 'action'
-    end
-  end
+  
 end
