@@ -6,20 +6,20 @@
   <table class="table">
     <tr>
       <th>Nome</th>
-      <th>Cnpj</th>
       <th>Cidade</th>
       <th>Estado</th>
       <th></th>
     </tr>
 
     <% entidades.each do |entidade| %>
-      <tr>
-        <td><%= entidade.nomefantasia %></td>
-        <td><%= entidade.cnpj %></td>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= link_to entidade.nomefantasia, entidade %></td>
         <td><%= entidade.cidade %></td>
         <td><%= entidade.estado %></td>
-        <td><%= link_to 'Mostrar', entidade %></td>
       </tr>
     <% end %>
   </table>
+  <div align="right">
+    <%= will_paginate entidades %>
+  </div>
 <% end %>

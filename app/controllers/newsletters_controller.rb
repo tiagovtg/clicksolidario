@@ -39,7 +39,7 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.save
-        action
+        enviar
         
         format.html { redirect_to(@newsletter, :notice => 'Newsletter was successfully created.') }
         format.xml  { render :xml => @newsletter, :status => :created, :location => @newsletter }
@@ -88,7 +88,7 @@ class NewslettersController < ApplicationController
   #  end
 
 
-  def action
+  def enviar
     begin
       NewsletterMailer.envia_email(@newsletter).deliver
       #      redirect_to :action => 'index'

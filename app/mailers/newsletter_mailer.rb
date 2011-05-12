@@ -1,6 +1,6 @@
 class NewsletterMailer < ActionMailer::Base
 #http://api.rubyonrails.org/classes/ActionMailer/Base.html#method-i-mail
-  default :from => "tiagogarcia@cfa.org.br"
+#  default :from => "tiagogarcia@cfa.org.br"
   
   def envia_email(user)
     logger.info "\n\n=> meleca tipo: #{user.nome}\n"
