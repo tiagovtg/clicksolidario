@@ -54,16 +54,16 @@ class UsersController < ApplicationController
         #      Sessao.create(:user => @user, :acao => 'create')
         flash[:notice] = "Cadastrado efetuado com sucesso."
         #redireciono para a tela de acordo com o perfil.
-        if administrador?
+        if params[:tipo]=='administrador'
           redirect_to users_path
         end
-        if entidade?
+        if params[:tipo]=='entidade'
           redirect_to new_entidade_path
         end
-        if voluntario?
+        if params[:tipo]=='volunatrio'
           redirect_to new_voluntario_path
         end
-        if empresa?
+        if params[:tipo]=='empresa'
           redirect_to new_empresa_path
         end
       else

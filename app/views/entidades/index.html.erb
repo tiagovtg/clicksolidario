@@ -1,3 +1,5 @@
+<%= render :partial=> 'portal/busca_entidade', :locals=> {:entidades => @entidades } %>
+
 <h1 class="title">
   <%= form_tag(entidades_path, :method => "get") do %>
     Listando Entidades

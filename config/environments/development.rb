@@ -30,13 +30,13 @@ Sgss::Application.configure do
   config.action_mailer.default_content_type = "text/html"
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.smtp_settings = {
-    #   :enable_starttls_auto => true,
+#    :enable_starttls_auto => true,
     :address => "smtp.gmail.com",
     :port => 587,
     :domain => "mail.google.com",
     :user_name => "solidarioclick@gmail.com",
     :password => 'clicksolidario2011'
   }
-#  Mail.register_interceptor(DevelopmentMailInterceptor) #if Rails.env.development?
+  #  Mail.register_interceptor(DevelopmentMailInterceptor) #if Rails.env.development?
   #fim email.
 end

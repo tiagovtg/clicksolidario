@@ -8,16 +8,7 @@ class PortalController < ApplicationController
         @entidades = Entidade.paginate(:page => params[:page], :order => 'cnpj', :conditions => ['entidades.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
       end
     end
-
-    render :partial => 'portal/lista_entidades', :locals => {:entidades => @entidades}
-
-#    def destroy
-#      @task = Task.find(params[:id])
-#      @task.destroy
-#      flash[:notice] = "Successfully destroyed task."
-#      respond_with @task
-#    end
-
+    render :partial=> 'lista_entidades', :locals=> {:entidades => @entidades }
   end
 
   def busca_perfil
