@@ -1,4 +1,4 @@
-<% if administrador? or gestor? %>
+<% if administrador? %>
   <div class="secondary-navigation">
     <ul class="wat-cf">
       <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>
@@ -35,13 +35,15 @@
           <td><%= user.email %></td>
           <td>
             <%= (User.find(user.id).has_role? :administrador )? 'Administrador':'' %>
-            <%= (User.find(user.id).has_role? :entidade )? 'entidade':'' %>
-            <%= (User.find(user.id).has_role? :usuario )? 'Usuário':'' %>
+            <%= (User.find(user.id).has_role? :entidade )? 'Entidade':'' %>
+            <%= (User.find(user.id).has_role? :voluntario )? 'Voluntario':'' %>
+            <%= (User.find(user.id).has_role? :empresa )? 'Empresa':'' %>
           </td>
           <td><%= user.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
           <td><%= user.status %></td>
           <td class="last">
             <% if user.id != 1 %>
+              <%= link_to (user.status == "Ativo"  ? "Desativar" : "Ativar"), {:controller => :users, :action => :activate_deactivate, :id => user} %> |
               <%= link_to 'Alterar', edit_user_path(user) %> |
               <%= link_to "Excluir", user_path(user), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
             <% end -%>

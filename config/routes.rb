@@ -4,6 +4,7 @@ Sgss::Application.routes.draw do
 
   resources :users
   match "join" => "users#new"
+  match "activate_deactivate" => "users#activate_deactivate"
 
   resource :account, :controller => "users"
 

@@ -60,7 +60,7 @@ class UsersController < ApplicationController
         if params[:tipo]=='entidade'
           redirect_to new_entidade_path
         end
-        if params[:tipo]=='volunatrio'
+        if params[:tipo]=='voluntario'
           redirect_to new_voluntario_path
         end
         if params[:tipo]=='empresa'

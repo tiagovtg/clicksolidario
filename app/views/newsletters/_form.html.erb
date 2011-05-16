@@ -1,3 +1,9 @@
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+    jQuery(":input:not(:hidden):first").focus();
+  });
+</script>
+
 <%= form_for(@newsletter) do |f| %>
   <%= render :partial => 'generals/model_errors', :locals => {:obj => @newsletter}%>
 
