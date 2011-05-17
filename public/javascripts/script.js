@@ -23,20 +23,20 @@ jQuery(function(){
 
     /* mascaras*/
     Mascaras();
-    function Mascaras(){
-        $(".cpf").setMask({
+    function Mascaras($){
+        jQuery(".cpf").setMask({
             mask: '999.999.999-99'
         });
-        $(".cnpj").setMask({
+        jQuery(".cnpj").setMask({
             mask: '99.999.999/9999-99'
         });
-        $(".cep").setMask({
+        jQuery(".cep").setMask({
             mask: '99.999-999'
         });
-        $(".telefone").setMask({
+        jQuery(".telefone").setMask({
             mask: '9999-9999'
         });
-        $(".ddd").setMask({
+        jQuery(".ddd").setMask({
             mask: '99'
         });
     }

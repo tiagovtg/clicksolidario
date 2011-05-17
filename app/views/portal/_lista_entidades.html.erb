@@ -1,25 +1,27 @@
-<% if entidades.nil? or entidades.empty? %>
-  <p class="busca">
-    Nenhum registro foi encontrado
-  </p>
-<% else %>
-  <table class="table">
-    <tr>
-      <th>Nome</th>
-      <th>Cidade</th>
-      <th>Estado</th>
-      <th></th>
-    </tr>
-
-    <% entidades.each do |entidade| %>
-      <tr class="<%= cycle("odd", "even") %>">
-        <td><%= link_to entidade.nomefantasia, entidade %></td>
-        <td><%= entidade.cidade %></td>
-        <td><%= entidade.estado %></td>
+<div id="lista_entidade">
+  <% if entidades.nil? or entidades.empty? %>
+    <p class="busca">
+      Nenhum registro foi encontrado
+    </p>
+  <% else %>
+    <table class="table">
+      <tr>
+        <th>Nome</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th></th>
       </tr>
-    <% end %>
-  </table>
-  <div align="right">
-    <%= will_paginate entidades %>
-  </div>
-<% end %>
+
+      <% entidades.each do |entidade| %>
+        <tr class="<%= cycle("odd", "even") %>">
+          <td><%= link_to entidade.nomefantasia, entidade %></td>
+          <td><%= entidade.cidade %></td>
+          <td><%= entidade.estado %></td>
+        </tr>
+      <% end %>
+    </table>
+    <div align="right">
+      <%= will_paginate entidades %>
+    </div>
+  <% end %>
+</div>

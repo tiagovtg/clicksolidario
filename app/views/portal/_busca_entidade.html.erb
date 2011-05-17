@@ -1,19 +1,13 @@
 <%= javascript_tag do %>
-    $('queryImage').observe(
-      'click',
-      function(el, value) {
-        $('formQuery').request({
-          onSuccess: function(busca_entidade) {
-            eval(alert('teste'))
-          }
-        })
-      }
-    );
-<% end %>
 
-<h1 class="title">Busca por Entidade</h1>
-<%= form_tag(busca_entidade_path, :method => "get", :remote => true, id="formQuery") do %>
-  <input type="hidden" name="filtro" id="filtro" value="nome" />
-  <input id="query" class="search" type="text" value="Digite aqui o nome da entidade..." name="query" onfocus="this.value='';" size="25"/><br/>
-  <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+
+
 <% end %>
+<div id="busca_entidade">
+  <h1 class="title">Busca por Entidade</h1>
+  <%= form_tag(busca_entidade_path, :method => "get", :remote => true) do %>
+    <input type="hidden" name="filtro" id="filtro" value="nome" />
+    <input id="query" class="search" type="text" value="Digite aqui o nome da entidade..." name="query" onfocus="this.value='';" size="25"/><br/>
+    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+  <% end %>
+</div>
