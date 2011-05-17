@@ -3,11 +3,43 @@
 
 
 <% end %>
+
+<%= form_remote_tag(busca_entidade_path, :html => { :method => :get, :class => "submittable"}) do %>
+    <h3 class="title">Busca por Entidade</h3>
+    <input type="hidden" id="filtroNome" value="nome" />
+    <input id="query" class="search" type="text" value="Digite aqui o nome da entidade..." name="query" onfocus="this.value='';" size="25"/><br/>
+    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
+  <% end %>
+
 <div id="busca_entidade">
-  <h1 class="title">Busca por Entidade</h1>
-  <%= form_tag(busca_entidade_path, :method => "get", :remote => true) do %>
-    <input type="hidden" name="filtro" id="filtro" value="nome" />
+  <%= form_tag(busca_entidade_path, :html => { :method => :get, :class => "submittable"}, :remote => true) do %>
+    <h1 class="title">Busca por Entidade</h1>
+    <p>O click solidario precisa de sua ajuda!<br/>
+      Escolha uma entidade:</p>
+
+    <h3 class="title">Busca por Perfil</h3>
+    <select name="filtroPerfil" id="filtroPerfil">
+      <option value="" selected="selected">Escolha a causa</option>
+      <option value="nomefantasia">Saúde</option>
+      <option value="cnpj">Educação</option>
+      <option value="cidade">Ambiental</option>
+      <option value="estado">Arte & Cultura</option>
+      <option value="estado">Social</option>
+    </select>
+      <br/>
+      <br/>
+    <%= select("filtroUF", "", ([["AC", "AC"], ["AL", "AL"], ["AP", "AP"],
+        ["AM", "AM"], ["BA", "BA"], ["CE", "CE"], ["DF", "DF"], ["ES", "ES"],
+        ["GO", "GO"], ["MA", "MA"], ["MT", "MT"], ["MS", "MS"], ["MG", "MG"],
+        ["PA", "PA"], ["PB", "PB"], ["PR", "PR"], ["PE", "PE"], ["PI", "PI"],
+        ["RJ", "RJ"], ["RN", "RN"], ["RS", "RS"], ["RO", "RO"], ["RR", "RR"],
+        ["SC", "SC"], ["SP", "SP"], ["SE", "SE"], ["TO", "TO"]]), { :prompt => 'Escolha a região' }) %>
+    <hr size="3" width="20%" align="center"/>
+    <h3 class="title">Busca por Entidade</h3>
+    <input type="hidden" id="filtroNome" value="nome" />
     <input id="query" class="search" type="text" value="Digite aqui o nome da entidade..." name="query" onfocus="this.value='';" size="25"/><br/>
     <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
   <% end %>
 </div>
+
+

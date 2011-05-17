@@ -2,6 +2,9 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
 
+#Prototype Legacy Helper
+#gem 'prototype_legacy_helper', '~>0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -25,7 +28,7 @@ gem "will_paginate", "~> 3.0.pre2"
 
 # Usando jquery inves de prototype.
 # para instalar, digite tambem no root do projeto, rails g jquery:intall
-gem 'jquery-rails'
+gem 'jquery-rails', '0.2.7'
 
 #Gem para ReCapctha by google
 #gem 'recaptcha', :require => 'recaptcha/rails'
