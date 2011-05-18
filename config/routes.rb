@@ -1,6 +1,6 @@
 Sgss::Application.routes.draw do
   #todas rotas necessarias para rodar o authlogic
-  root :to => "user_sessions#new"
+  root :to => "portal#index"
 
   resources :users
   match "join" => "users#new"

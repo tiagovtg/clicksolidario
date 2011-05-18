@@ -1,5 +1,10 @@
 class PortalController < ApplicationController
 
+  def index
+    
+  end
+
+
   def busca_entidade
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
       @entidades = Entidade.paginate(:page => params[:page], :order => 'cnpj')
