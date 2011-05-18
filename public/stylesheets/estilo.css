@@ -1,0 +1,243 @@
+@charset "iso-8859-1";
+/* CSS Document */
+
+body				{ margin: 0; font-family: Arial, Helvetica, sans-serif; }
+
+#navBar				{ height: 40px; background-color: #f4f7fa; }
+#navBar .barra			{ width: 940px; margin: auto; }
+#navBar .login			{ float: left; width: auto; margin-top: 13px; padding-right: 10px; background:url(/images/setaLogin.png) no-repeat right center; font-family: arial; font-size: 12px; font-weight: bold; color: #e47e1e; cursor: pointer; }
+#navBar .loginBarra		{ position: absolute; background: #fc8800; width:940px; height: 40px; top: 40px; display: none; border-top: 1px solid #d1d1d1; border-bottom: 1px solid #d1d1d1; }
+#navBar .traco			{ float: left; width: 1px; height: 11px; margin: 16px 12px 0 12px; background: url(/images/barraLogin.gif) no-repeat; }
+#navBar .entidade		{ float: left; width: auto; margin-top: 13px; padding-right: 10px; background: url(/images/setaLogin.png) no-repeat right center; font-family: arial; font-size: 12px; font-weight: bold; color: #e47e1e; cursor: pointer; }
+#navBar .entidadeBarra          { position : absolute; background-color: #F90; width:940px; height: 40px; top: 40px; display: none; border-top: 1px solid #d1d1d1; border-bottom: 1px solid #d1d1d1; }
+#navBar .mapaPortal		{ float: left; width: auto; margin-top: 13px; padding-right: 10px; font-family: arial; font-size: 12px; font-weight: bold; color: #e47e1e; }
+#navBar .mapaPortal a	{ color: #e47e1e; text-decoration: none; }
+
+#navlist  			{ float: left; margin: 0; }
+#navlist ul 			{ float: left; list-style: none; margin: 0; }
+#navlist li			{ display: inline; padding-right: 10px; color:#fff; font-size: 12px; }
+#navlist .input			{ border: 1px solid #e2e3ea; border-top: 1px solid #abadb3; height: 12px; color: #0c2236; padding: 5px 7px 8px 5px; margin: 6px 0 0 5px;}
+#navlist .botaoLogin            { width: 50px; height: 28px; color: #7e7e7e; font-family: arial; font-size: 11px; font-weight: bold; border: #fff; background: #dfdfdf; cursor: pointer; }
+#navlist a  			{ color: #fff; text-decoration: none; }
+#navlist a:hover		{ color: #fff; text-decoration: underline; }
+
+/* rede social  */
+#twitter			{ float: right; margin: 9px 0 0 0; width: 24px; height: 23px; }
+#twitter a			{ position:absolute; display: block; margin: 0; background: url(/images/imgTwitte.png) no-repeat; width: 24px; height: 23px; }
+#twitter a:hover		{ position:absolute; margin: 0; background: url(/images/imgTwitte2.png) no-repeat; width: 24px; height: 23px; }
+
+/* rede social  */
+#facebook			{ float: right; margin: 9px 15px 0 15px; width: 24px; height: 23px; }
+#facebook a			{ position:absolute; display: block; margin: 0; background: url(/images/imgFacebook.png) no-repeat; width: 24px; height: 23px; }
+#facebook a:hover		{ position:absolute; margin: 0; background: url(/images/imgFacebook2.png) no-repeat; width: 24px; height: 23px; }
+
+/* rede social  */
+#feed				{ float: right; margin: 9px 0 0 0; width: 24px; height: 23px; }
+#feed a				{ position:absolute; display: block; margin: 0; background: url(/images/imgFeed.png) no-repeat; width: 24px; height: 23px; }
+#feed a:hover			{ position:absolute; margin: 0; background: url(/images/imgFeed2.png) no-repeat; width: 24px; height: 23px; }
+
+#corpoSite			{ background-image:url('/images/bg_Cores.jpg'); background-repeat: repeat-x; height: 2100px; }
+#corpoSite .cabecalho           { width: 940px; margin: auto; padding: 30px 0 0 0 ; }
+#corpoSite .logo		{ background: url(/images/Logo_ClickSolidario.png); width: 233px; height: 68px; }
+
+#conteudo			{ width: 100%; }
+
+#colunaEsquerda			{ width: 179px; float: left; }
+
+#colunaDireita			{ width: 720px; float:right; }
+
+/* menu topo  */
+.MenuBar 			{ color: #ff00ff; margin: 23px 0 0 0; border-bottom: solid 4px #9ebf28; height: 38px; margin-bottom: 40px; }
+.MenuBar ul                     { list-style: none; margin: 0px; border-top: solid 1px #fed702; padding: 8px 0 0 0 ;  }
+.MenuBar li                     { display: inline; padding-top: 9px; }
+.MenuBar li:hover               { border-top: solid 1px #9ebf28;  }
+.MenuBar a 			{ color:black; text-decoration:none; padding: 0 20px; font-size: 13px; background:url(/images/pontosVerticais.gif) no-repeat right; }
+.MenuBar a:hover                { color:#9ebf28; }
+
+/*Busca Solidaria  */
+#buscaSolidaria			{ }
+#buscaSolidaria h1		{ font-weight:bold; font-size: 22px; color: #4b4d4a; margin:0; }
+#buscaSolidaria h5		{ color: #e47e1e; font-size: 13px; margin: 5px 0; }
+#buscaSolidaria p		{ font-size: 13px; color: #4b4d4a; }
+#buscaSolidaria select          { background-color:#dfdfdf; border: solid 1px #dfdfdf; padding: 2px 5px; margin: 0 0 7px 0; width: 100%; }
+#buscaSolidaria-campo           { width: 93%; background-color: #faefd8; border: solid 1px #faefd8; font-size: 11px; color: #4b4d4a; padding: 5px; margin-bottom: 5px; }
+#buscaSolidaria .pontos         { height: 1px; margin: 15px 0; background: url(/images/pontosHorizontais.gif) repeat-x bottom; }
+
+/*Menu Lateral*/
+#MenuLateral                    { border-top:solid 2px #000000; margin: 40px 0 0 0; }
+.sidebarmenu ul                 { margin: 0; padding: 0; list-style-type: none; font: 13px arial; width: 179px; }
+.sidebarmenu ul li              { position: relative; }
+.sidebarmenu ul li a            { display: block; overflow: auto; color: #000; text-decoration: none; padding: 10px; border-bottom: 1px ; background: url(/images/pontosHorizontais.gif) repeat-x bottom; }
+.sidebarmenu ul li a:link, .sidebarmenu ul li a:visited, .sidebarmenu ul li a:active{ background-color: #fff; border-left: 4px solid #fff; }
+.sidebarmenu ul li a:visited    { color: #455650; }
+.sidebarmenu ul li a:hover      { color: #e47e1e; background-color: #fff; border-left: 4px solid #e47e1e; }
+.sidebarmenu ul li ul           { position: absolute; width: 170px; top: 0; visibility: hidden; }
+.sidebarmenu a.subfolderstyle   { background: url(/images/right.gif) no-repeat 97% 50%; }
+* html .sidebarmenu ul li       { float: left; height: 1%; }
+* html .sidebarmenu ul li a     { height: 1%; }
+
+/*Conhe�a Iniciativas */
+#ConhecaIniciativas             { border-top:solid 2px #000000; margin: 40px 0 0 0;}
+#ConhecaIniciativas h1          { color: #9ebf28; font-size: 22px; }
+#ConhecaIniciativas p           { color: #4b4d4a; font-size: 13px; }
+#ConhecaIniciativas ul          { list-style: none; padding:0px; }
+#ConhecaIniciativas li          { padding: 0 0 0 15px; background:url('/images/ConhecaIniciativa-Seta.gif')no-repeat left center; margin: 15px 0; }
+#ConhecaIniciativas a           { font-size: 13px; color:#4b4d4a; text-decoration:none; }
+#ConhecaIniciativas a:hover     { text-decoration:underline; }
+
+
+/*Saiba Como*/
+#SaibaComo			{ border-top:solid 2px #000000; margin: 40px 0 40px 0; }
+#SaibaComo h1			{ color: #006bb9; font-size: 22px;  }
+
+/*Veja Como*/
+#VejaComo			{ }
+#VejaComo h1			{ color: #e47e1e; font-size: 22px; }
+#VejaComo p			{ background:url('/images/vejaComo-Seta.gif')no-repeat left center; padding: 0 0 0 15px; margin:8px 0 0 0; }
+#VejaComo-campo			{ width: 93%; background-color: #faefd8; border: solid 1px #faefd8; font-size: 11px; color: #4b4d4a; padding: 5px; margin-bottom: 5px; }
+#VejaComo a			{ color: #4b4d4a; font-size: 13px; text-decoration:none; }
+#VejaComo a:hover		{ color: #4b4d4a; font-size: 13px; text-decoration:underline; }
+
+/* Eu apoio*/
+#EuApoio			{ border-top:solid 2px #000000; margin: 40px 0 0 0;  }
+#EuApoio h1			{ color: #006bb9; font-size: 22px; }
+#EuApoio p			{ color: #4b4d4a; font-size: 13px; }
+#EuApoio a			{ color: #006bb9; font-size: 13px; text-decoration:none; }
+#EuApoio a:hover		{ color: #006bb9; font-size: 13px; text-decoration:underline; }
+
+/*Indique Amigo*/
+#IndiqueAmigo			{ border-top:solid 2px #000000; margin: 40px 0 0 0;  }
+#IndiqueAmigo h1		{ color: #4b4d4a; font-size: 22px; }
+#IndiqueAmigo p			{ color: #4b4d4a; font-size: 13px; }
+#IndiqueAmigo a			{ color: #4b4d4a; font-size: 13px; text-decoration:none; }
+#IndiqueAmigo a:hover           { color: #4b4d4a; font-size: 13px; text-decoration:underline; }
+
+
+/*Como Ajudar*/
+#ComoAjudar			{ height: 45px; margin-top: 20px; background-image: url('//images/ComoAjudar-Bg.jpg'); background-repeat: repeat-x; border: solid 1px #dfdfdf ; border-left: solid 1px #e37e1d; padding: 0 10px;}
+#ComoAjudar p			{ margin-top: 14px; float: left; color: #e47e1e; font-weight: bold; }
+#ComoAjudar ul			{ float: right; margin-top: 14px; }
+#ComoAjudar li			{ display: inline; }
+#ComoAjudar	a		{ color: #e47e1e; text-decoration: none; padding: 0 20px; background: url(/images/pontosVerticais.gif) no-repeat right; }
+#ComoAjudar	a:hover		{ color: #999; text-decoration: none; }
+
+
+/* Colunas - Not�cias & Emerg�ncia*/
+#ConteudoColunas		{ padding-top: 40px; height: 962px}
+
+#Noticias			{ float: left; width: 345px;  background-color:white; }
+#Noticias ul			{ list-style: none; margin: 0; padding:0; }
+#Noticias li			{ padding: 20px 0; height: 124px; background: url(/images/pontosHorizontaisCinza.gif) repeat-x top; }
+#Noticias li:hover		{ background: #f5f5f5; }
+#Noticias p				{ float: left; width: 63px; font-size: 13px; color: #999999; }
+#Noticias h2			{ float: right; color: #e47e1e; font-size: 14px; width: 283px;}
+#Noticias h1			{ color: #e47e1e;  font-size: 22px; font-weight: bold; }
+#Noticias span			{ float: right; font-size: 14px; color: #999999; width: 283px; }
+
+#NoticiasBoxLink		{ padding: 15px 0 15px 10px; border-top: dotted 1px #c1c1c0; border-bottom: dotted 1px #c1c1c0; }
+#NoticiasBoxLink	a	{ font-size: 14px; color: #e47e1e; text-decoration:none; }
+#NoticiasBoxLink:hover          { background-color:#EFEFEF; color: #e47e1e; }
+
+
+#Emergencia			{ float: right; background-color:#FFFFFF; width: 345px; }
+#Emergencia h1			{ font-size: 22px; }
+#Emergencia ul			{ padding: 0px; margin: 0; list-style: none; }
+#Emergencia li			{ padding: 20px 0;  background: url(/images/pontosHorizontaisCinza.gif) repeat-x top; height: 169px;}
+#Emergencia li:hover            { background: #f5f5f5; }
+#Emergencia p			{ float: left; color: #999999; font-size: 13px; width: 63px; }
+#Emergencia h2			{ font-size: 14px; font-weight: bold; }
+#Emergencia	span		{ color: #999999; font-size: 14px;  }
+
+#EmergenciaBoxLink		{ padding: 15px 0 15px 10px; border-top: dotted 1px #c1c1c0; border-bottom: dotted 1px #c1c1c0; font-size: 14px; color: #333333; text-decoration:none; }
+#EmergenciaBoxLink	a	{font-size: 14px; color: #333333; text-decoration:none; }
+#EmergenciaBoxLink:hover        { background-color:#EFEFEF; }
+
+#Emergencia	.botao		{ padding-top: 14px; text-align: center; }
+
+
+#Apadrinhe			{ height: 298px; }
+#Apadrinhe h1			{ font-size: 22px; color: #9ebf28; margin: 56px 0 36px 0; float: left;  }
+#Apadrinhe p			{ margin:0;  }
+
+#ApadrinheBox			{ width: 152px; float: right; }
+#ApadrinheBox p			{ width: 150px; color: #9ebf28; font-weight:bold; }
+#Apadrinhe span			{ font-size: 14px; width: 150px; margin: 10px 0; }
+
+#ApadrinheBoxLink		{ padding: 15px 0 15px 10px; border-top: dotted 1px #c1c1c0;  border-bottom: dotted 1px #c1c1c0; font-size: 14px; color: #333333; text-decoration:none; }
+#ApadrinheBoxLink	a	{ font-size: 14px; color: #9ebf28; text-decoration:none; }
+#ApadrinheBoxLink:hover         { background-color:#EFEFEF; }
+
+#FacaComo			{ background-color:#fff;  }
+#FacaComo h1			{ font-size: 22px; font-weight: bold; color: #006bb9; }
+#FacaComo ul			{ padding: 0; margin: 0; }
+#FacaComo li			{ display:inline; background-color: orange; width: 251px; height: 150px;    }
+
+#FacaComoTb			{ width: 235px; padding:0 0 0 5px;}
+#FacaComoTb h1			{ color: #333333; font-weight: bold; font-size: 14px; margin: 5px 0; }
+#FacaComo span			{ color: #999999; font-size: 13px; }
+#FacaComo img			{ border: 0; }
+
+#FacaComoTb01 h1, #FacaComoTb02 h1, #FacaComoTb03 h1 { font-size: 14px; color:black; }
+#FacaComoTb01 p, #FacaComoTb02 p, #FacaComoTb03 p 	 { border-top: dotted 1px #c1c1c0; padding-top: 20px; margin: 0;  }
+
+#FacaComoTb01			{ float: left;  width: 222px; padding:0 12px 0 0; }
+#FacaComoTb01 a			{ text-decoration: none; }
+#FacaComoTb01 a:hover           { text-decoration: underline; color: #ccc; }
+
+#FacaComoTb02			{ float: left;  width: 222px; padding:0 13px ; border-left: dotted 1px gray; border-right: dotted 1px #c1c1c0; }
+#FacaComoTb02 a			{ text-decoration: none; }
+#FacaComoTb02 a:hover           { text-decoration: underline; color: #ccc; }
+
+#FacaComoTb03			{ float: right; width: 222px; padding: 0; }
+#FacaComoTb03 a			{ text-decoration: none; }
+#FacaComoTb03 a:hover           { text-decoration: underline; color: #ccc; }
+
+#FacaComoBoxLink		{ padding: 15px 0 15px 10px; border-top: dotted 1px #c1c1c0; border-bottom: dotted 1px #c1c1c0; font-size: 14px; color: #333333; text-decoration:none; }
+#FacaComoBoxLink a		{ font-size: 14px; color: #006bb9; text-decoration:none; }
+#FacaComoBoxLink:hover          { background-color:#EFEFEF; }
+
+/* Depoimento */
+#depoimentos			{ background-color: #f5f5f5; width: 100%; margin: auto; height: 350px; }
+#depoimentos h1			{ color: #e10174; font-weight: normal; margin:0; }
+#depoimentos h2			{ font-size: 14px; padding-top: 20px; padding-bottom: 20px; margin-bottom: 20px; background: url(/images/pontosHorizontaisCinza.gif) repeat-x bottom; }
+#depoimentos .tamanho		{ width: 940px; margin: auto; padding-top: 40px; border-top: solid 4px #e10174; }
+#depoimentos .ladoEsquerdo	{ float: left; margin-bottom: 20px; width: 470px; border-right: 1px dotted #c1c1c0; }
+#depoimentos .ladoDireito	{ float: right; margin-bottom: 20px; width: 469px; }
+#depoimentos .texto		{ margin: 0 24px 0 0; padding-left: 67px; background: url(/images/aspasMaior.png) no-repeat; font-family: arial; font-size: 14px; text-align: justify; }
+#depoimentos .texto a		{ color: #000; text-decoration: none; }
+#depoimentos .texto a:hover	{ color: #e64296; text-decoration: none; }
+#depoimentos .texto2		{ margin: 0 0 0 24px; padding-left: 67px; background: url(/images/aspasMaior.png) no-repeat; font-family: arial; font-size: 14px; text-align: justify; }
+#depoimentos .texto2 a		{ color: #000; text-decoration: none; }
+#depoimentos .texto2 a:hover    { color: #e64296; text-decoration: none; }
+#depoimentos span		{ display: block; padding-bottom: 5px; color: #e64296; font-weight: bold; }
+
+#depoimentosBoxLink		{ width: 940px; margin: auto; padding: 15px 0 15px 10px; border-top: dotted 1px #c1c1c0; border-bottom: dotted 1px #c1c1c0; font-size: 14px; color: #e64296; text-decoration: none; }
+#depoimentosBoxLink a		{ font-size: 14px; color: #e64296; text-decoration: none; }
+#depoimentosBoxLink:hover	{ background-color: #efefef; }
+
+/* rodap� */
+#rodape				{ background-color: #ebebeb; width: 100%; margin: auto; height: 105px; }
+#rodape .tamanho		{ width: 940px; margin: auto; padding-top: 15px; }
+#rodape .logoRodape		{ float: left; padding: 20px 25px 20px 0; margin-right: 10px; background: url(/images/logoRodape.png) no-repeat left center; width: 130px; height: 38px; border-right: dotted 1px #c1c1c0; }
+
+#rodape .rodaLatDir		{ float: right; width: 774px; }
+#rodape .menuRod 		{ text-align: left; color: #ff00ff; margin: 0 0 0 0; height: 38px; }
+#rodape .menuRod ul             { list-style: none; margin: 0px; padding: 8px 0 0 0 ; }
+#rodape .menuRod li             { display: inline; }
+#rodape .menuRod a 	    	{ color: #686868; text-decoration: none; padding: 0 18px; font-size: 13px; background: url(/images/pontosVerticais.gif) no-repeat right; }
+#rodape .menuRod a:hover   	{ color: #000; }
+#rodape .pontMenuRod		{ border-bottom: dotted 1px #c1c1c0; }
+
+#rodapeFinal			{ background-color: #ddd; width: 100%; margin: auto; height: 40px; }
+#rodapeFinal .tamanho		{ width: 940px; margin: auto; padding-top: 12px; font-family: arial; font-size: 12px; color: #686868; }
+
+.clear				{ clear: both; }
+
+/* slide */
+.homepageSlider                 { width: 720px; height: 300px; margin-right: auto; margin-left: auto; z-index: 777;}
+.slideA                         { background: url("/images/Banner_MeninaFeliz.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
+.slideB                         { background: url("/images/Banner_MeninaFeliz2.jpg"); width: 720px; height: 300px; float: left;}
+.slideC                         { background: url("/images/Banner_MeninaFeliz3.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
+.slideD                         { background: url("/images/Banner_MeninaFeliz.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
+.slideE                         { background: url("/images/Banner_MeninaFeliz2.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
+.slideF                         { background: url("/images/Banner_MeninaFeliz3.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}

@@ -1,0 +1,134 @@
+.anythingSlider {
+    margin: 0px; padding: 0px; width: 720px; height: 300px; position: relative;
+}
+.anythingSlider .wrapper {
+    margin: 0px; left: 0px; top: 0px; width: 720px; height: 300px; overflow: hidden; position: absolute;
+}
+.anythingSlider .wrapper ul {
+    list-style: none; margin: 0px; padding: 0px; left: 0px; top: 0px; width: 20000px; position: absolute;
+}
+.anythingSlider ul li {
+    margin: 0px; padding: 0px; width: 720px; height: 300px; float: left; display: block;
+}
+.anythingSlider .arrow {
+    visibility: hidden;
+}
+.anythingSlider .forward {
+    visibility: hidden;
+}
+.anythingSlider .back {
+    visibility: hidden;
+}
+
+#thumbNav {
+    background: url("../images/home/slider/nav.png") no-repeat; margin: 0px; padding: 32px 0px 0px 500px; top: 230px; width: 244px; height: 69px; position: absolute;
+}
+
+#thumbNav a {
+    background: url("images/nav-buttons.png") no-repeat left; margin: 0px 3px; padding: 0px; width: 30px; height: 30px; text-align: center; text-indent: -9999px; display: inline-block;
+}
+#thumbNav a:hover {
+    background: url("images/nav-buttons.png") no-repeat center;
+}
+#thumbNav a:active {
+    background: url("images/nav-buttons.png") no-repeat left;
+}
+#thumbNav a.cur {
+    background: url("images/nav-buttons.png") no-repeat right;
+}
+#start-stop {
+    visibility: hidden;
+}
+.playing#start-stop {
+    visibility: hidden;
+}
+#start-stop:hover {
+    visibility: hidden;
+}
+.anythingSlider .wrapper ul ul {
+    margin: 0px; border: 0px currentColor; width: auto; overflow: visible; position: static;
+}
+.anythingSlider .wrapper ul ul li {
+    width: auto; height: auto; float: none;
+}
+.slider-wrap {
+    position: relative;
+}
+.csw {
+    width: 631px; height: 546px; overflow: hidden; position: relative;
+}
+.csw .loading {
+    width: 631px; height: 546px; text-align: center; color: rgb(255, 255, 255); position: absolute; z-index: 1000;
+}
+.stripViewer {
+    margin: auto; width: 631px; height: 546px; overflow: hidden; clear: both; position: relative;
+}
+.stripViewer .panelContainer {
+    width: 631px; position: relative;
+}
+.stripViewer .panelContainer .panel {
+    width: 631px; height: 546px; float: left; position: relative;
+}
+.stripViewer .panelContainer .panel .wrapper {
+    padding: 0px;
+}
+.stripNav {
+    margin: 0px; position: absolute; z-index: 100;
+}
+.stripNavL {
+    width: 316px; height: 546px; text-indent: -9000px; clear: both; float: left; position: absolute; z-index: 200;
+}
+.stripNavR {
+    width: 631px; height: 546px; text-indent: -9000px; clear: both; float: right; position: absolute; z-index: 100;
+}
+.stripNavL a {
+    background: url("images/arrow_left.png") no-repeat left; width: 316px; height: 546px; display: block;
+}
+.stripNavL a:hover {
+    opacity: 0.8; -moz-opacity: .80;
+}
+.stripNavL a:active {
+    opacity: 0.5; -moz-opacity: .50;
+}
+.stripNavR a {
+    background: url("images/arrow_right.png") no-repeat right; width: 315px; height: 546px; float: right; display: block;
+}
+.stripNavR a:hover {
+    opacity: 0.8; -moz-opacity: .80;
+}
+.stripNavR a:active {
+    opacity: 0.5; -moz-opacity: .50;
+}
+.teamSliderWrapp {
+    width: 748px; height: 410px; clear: none; float: left;
+}
+.teamSlider {
+    width: 748px; height: 410px; clear: both; float: left;
+}
+.teamSlider ul {
+    width: 748px; height: 410px;
+}
+.teamSlider ul li {
+    width: 748px; height: 410px; position: relative;
+}
+.teamSliderNav {
+    width: 96px; height: 42px; margin-top: 340px; margin-left: 242px; display: inline-block; position: absolute; z-index: 100;
+}
+.prev a {
+    background: url("images/nav.png") no-repeat left; margin: 0px 3px; padding: 0px; width: 42px; height: 42px; text-indent: -9999px; clear: none; font-size: 11px; float: left; display: inline;
+}
+.prev a:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; -moz-opacity: .80;
+}
+.prev a:active {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; -moz-opacity: .50;
+}
+.next a {
+    background: url("images/nav.png") no-repeat right; margin: 0px 3px; padding: 0px; width: 42px; height: 42px; text-indent: -9999px; clear: none; font-size: 11px; float: left; display: inline;
+}
+.next a:hover {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80); opacity: 0.8; -moz-opacity: .80;
+}
+.next a:active {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; -moz-opacity: .50;
+}

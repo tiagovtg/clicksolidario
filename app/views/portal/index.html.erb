@@ -1,0 +1,491 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#login").toggle(function(){
+      $("#divLogin").slideDown('slow');
+    },function(){
+      $("#divLogin").slideUp('slow');
+    });
+
+    $("#entidade").toggle(function(){
+      $("#divEntidade").slideDown('slow');
+    },function(){
+      $("#divEntidade").slideUp('slow');
+    });
+  });
+</script>
+
+<!-- NavBar -->
+<div id="navBar">
+
+  <div class="barra">
+
+    <!-- login usuário -->
+    <div id="login" class="login">login</div>
+
+    <div id="divLogin" class="loginBarra">
+      <ul id="navlist">
+        <li>usuário:<input name="usuario" type="text" style="width: 149px;" class="input" /></li>
+        <li>senha:<input name="senha" type="password" style="width: 149px" class="input" /></li>
+        <li><input name="botao"  type="button"  value="ok »" class="botaoLogin" /></li>
+        <li><a href="#">esqueci minha senha</a></li>
+        <li>|</li>
+        <li><a href="#">esqueci meu usuário</a></li>
+      </ul>
+    </div>
+
+    <div class="traco"></div>
+
+    <!-- login entidades -->
+    <div id="entidade" class="entidade">área das entidades</div>
+
+    <div id="divEntidade" class="entidadeBarra">
+      <ul id="navlist">
+        <li>usuário:<input name="usuario" type="text" style="width: 149px;" class="input" /></li>
+        <li>senha:<input name="senha" type="password" style="width: 149px" class="input" /></li>
+        <li><input name="botao"  type="button"  value="ok »" class="botaoLogin" /></li>
+        <li><a href="#">esqueci minha senha</a></li>
+        <li>|</li>
+        <li><a href="#">esqueci meu usuário</a></li>
+      </ul>
+    </div>
+
+    <div class="traco"></div>
+
+    <!-- mapa do portal -->
+    <div class="mapaPortal"><a href="#">mapa do portal</a></div>
+
+
+    <!-- rede social -->
+    <div id="feed"><a href="#" title="feed"></a></div>
+    <div id="facebook"><a href="#" title="facebook"></a></div>
+    <div id="twitter"><a href="#" title="twitter"></a></div>
+
+  </div>
+
+</div>
+
+
+<!-- Corpo do Site -->
+<div id="corpoSite">
+
+  <div class="cabecalho">
+
+    <div class="logo"></div>
+
+    <div class="MenuBar">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Ajude Agora</a></li>
+        <li><a href="#">Conheça o Click Solidário</a></li>
+        <li><a href="#">Cadastre-se</a></li>
+        <li><a href="#">Dúvidas</a></li>
+        <li><a href="#">Contato</a></li>
+      </ul>
+    </div>
+
+    <!-- CorpoConteudo -->
+    <div id="conteudo">
+
+      <div id="colunaEsquerda">
+
+        <!-- Busca Solidariav -->
+        <div  id="buscaSolidaria">
+
+          <h1>Busca Solidaria</h1>
+          <p>O Click Solidário precisa da sua ajuda!  Escolha uma Entidade:</p>
+
+          <h5>Buscar por perfil</h5>
+
+          <!-- Campos de seleção -->
+          <form>
+            <select name="Select1">
+              <option>Escolha a causa</option>
+            </select>
+
+            <select name="Select2">
+              <option>Escolha a região</option>
+            </select>
+
+            <div class="pontos"></div>
+
+            <!-- Campode Pesquisa  -->
+            <h5>Buscar por Entidade</h5>
+            <input name="Text1" type="text" id="buscaSolidaria-campo" />
+
+            <!-- Botão Buscar -->
+            <input name="Button1" type="image" src="images/Bt_BuscarSolidaria.gif" value="Buscar" />
+
+          </form>
+        </div>
+
+        <!-- Menu Lateral -->
+        <div id="MenuLateral">
+
+          <div class="sidebarmenu">
+            <ul id="sidebarmenu1">
+              <li><a href="#">Quem Somos</a></li>
+              <li><a href="#">Apoiadores</a></li>
+              <li><a href="#">Divulgue o Click Solidário</a></li>
+              <li><a href="#">Publicidade Solidária</a></li>
+              <li><a href="#">Impressa</a></li>
+              <li><a href="#">Newsletter</a></li>
+              <li><a href="#">Dúvidas</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Conheça essas Iniciativas -->
+        <div id="ConhecaIniciativas">
+
+          <h1>Conheça essas Iniciativas</h1>
+          <p>Todo més 3 importantes ações no Click Solidário serão destacadas.</p>
+
+          <ul>
+            <li><a href="#">UniGente</a></li>
+            <li><a href="#">Vida Gente</a></li>
+            <li><a href="#">Cont. Responsável</a></li>
+          </ul>
+        </div>
+
+        <!-- Saiba Como -->
+        <div id="SaibaComo">
+          <h1>Saiba Como</h1>
+
+          <div class="sidebarmenu">
+            <ul id="sidebarmenu1">
+              <li><a href="#">Adotar uma Criança</a></li>
+              <li><a href="#">Conviver com o Meio Ambiente</a></li>
+              <li><a href="#">Ser uma Empresa Cidadã</a></li>
+              <li><a href="#">Ser um doador de Orgãos</a></li>
+              <li><a href="#">Reciclar seu lixo</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Veja Como -->
+        <div id="VejaComo">
+          <h1>Veja como você Ajudou</h1>
+          <form>
+            <input id="VejaComo-campo" name="Text1" type="text" />
+            <input id="VejaComo-campo" name="Text2" type="text" />
+
+            <p><a href="$">Esqueci o login</a></p>
+            <p><a href="$">Esqueci a senha</a></p>
+
+            <input name="Submit1" type="image"  src="images/Bt_BuscarEntrar.gif" value="enviar" style="margin-top: 8px;" />
+
+          </form>
+        </div>
+
+
+        <!-- Eu apóio o Click Solidário -->
+        <div id="EuApoio">
+          <h1>Eu apóio o Click Solidário</h1>
+          <p>Seu apoio é fundamental para o crescimento desse movimento.
+            <a href="#">» Participe!</a></p>
+        </div>
+
+        <!--Indique Um Amigo -->
+        <div id="IndiqueAmigo">
+          <h1>Eu apóio o Click Solidário</h1>
+          <p>Seu apoio é fundamental para o crescimento desse movimento.
+            <a href="#">» Indique</a></p>
+        </div>
+
+      </div>
+
+      <!-- COLUNA DIREITA -->
+      <div id="colunaDireita">
+
+        <!-- Banner jQuery -->
+        <div class="homepageSlider">
+          <div class="anythingSlider">
+            <div class="wrapper">
+              <ul>
+                <li><div class="slideA"></div></li>
+                <li><div class="slideB"></div></li>
+                <li><div class="slideC"></div></li>
+                <li><div class="slideD"></div></li>
+                <li><div class="slideE"></div></li>
+                <li><div class="slideF"></div></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        
+        <SCRIPT type="text/javascript">
+          function formatText(index, panel) {
+            return index + "";
+          }
+
+          $(function () {
+
+            $('.anythingSlider').anythingSlider({
+              easing: "easeInOutExpo",        // Anything other than "linear" or "swing" requires the easing plugin
+              autoPlay: true,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
+              delay: 4000,                    // How long between slide transitions in AutoPlay mode
+              startStopped: false,            // If autoPlay is on, this can force it to start stopped
+              animationTime: 1100,             // How long the slide transition takes
+              hashTags: true,                 // Should links change the hashtag in the URL?
+              buildNavigation: true,          // If true, builds and list of anchor links to link to each slide
+              pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
+              startText: "Go",             // Start text
+              stopText: "Stop",               // Stop text
+              navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
+            });
+
+            $("#slide-jump").click(function(){
+              $('.anythingSlider').anythingSlider(4);
+            });
+          });
+        </SCRIPT>
+
+
+        <!-- Menu - Escolha Como Ajudar -->
+        <div id="ComoAjudar">
+          <p>Escolha como Ajudar</p>
+          <ul>
+            <li><a href="#">Sangue</a></li>
+            <li><a href="#">Donativos</a></li>
+            <li><a href="#">Bens</a></li>
+            <li><a href="#">Voluntários</a></li>
+          </ul>
+        </div>
+
+        <!-- Colunas - Notícias & Emergência  -->
+        <div id="ConteudoColunas">
+
+          <!-- Notícias & Cidadania -->
+          <div id="Noticias">
+
+
+            <h1>Notícias de Cidadania</h1>
+
+            <ul>
+              <li>
+                <a href="#">
+                  <p>13h24</p>
+                  <div style="float: right; width: 268px;">
+                    <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
+                    <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais vontade de cuidar da saúde e ficar em forma.</span>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <p>13h24</p>
+                <div style="float: right; width: 268px;">
+                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
+                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais vontade de cuidar da saúde e ficar em forma.</span>
+                </div>
+              </li>
+              <li>
+                <p>13h24</p>
+                <div style="float: right; width: 268px;">
+                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
+                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais vontade de cuidar da saúde e ficar em forma.</span>
+                </div>
+              </li>
+            </ul>
+            <!-- Mais Notícias De Cidadania -->
+            <div id="NoticiasBoxLink" ><a href="#">Veja mais notícias de cidadania »</a></div>
+
+            <!-- Apadrinhe uma Criança -->
+            <div id="Apadrinhe">
+              <h1>Apadrinhe uma Criança</h1>
+              <div>
+                <img src="images/Apadrinhe_Foto.jpg" style=" float:left;" />
+                <div id="ApadrinheBox">
+                  <p>Anderson vive uma realidade trágica que já tirou a vida do irmãozinho dele</p>
+                  <span>Ainda há tempo de mudarmos o fim dessa história.</span>
+                  <img src="images/Apadrinhe_bt.gif" style="float:right;" />
+                </div>
+              </div>
+
+            </div>
+            <!-- Apadrinhe Link -->
+            <div id="ApadrinheBoxLink" ><a href="#">Veja mais notícias de Emergência</a></div>
+
+
+
+          </div>
+
+          <!-- Emergência -->
+          <div id="Emergencia">
+
+            <h1>Emergência</h1>
+
+            <ul>
+              <li>
+                <p>13h24</p>
+                <div style="float: left;">
+                  <img src="images/emergencia_Foto.jpg"/><br />
+                  <div class="botao"><img src="images/emergencia_Bt.jpg" /></div>
+                </div>
+                <div style="float:right; width: 170px; ">
+                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
+                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais.</span>
+                </div>
+              </li>
+
+              <li>
+                <p>13h24</p>
+                <div style="float: left;">
+                  <img src="images/emergencia_Foto.jpg"/><br />
+                  <div class="botao"><img src="images/emergencia_Bt.jpg" /></div>
+                </div>
+                <div style="float:right; width: 170px; ">
+                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
+                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais.</span>
+                </div>
+              </li>
+
+              <li>
+                <p>13h24</p>
+                <div style="float: left;">
+                  <img src="images/emergencia_Foto.jpg"/><br />
+                  <div class="botao"><img src="images/emergencia_Bt.jpg" /></div>
+                </div>
+                <div style="float:right; width: 170px; ">
+                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
+                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais.</span>
+                </div>
+              </li>
+              <li>
+                <p>13h24</p>
+                <div style="float: left;">
+                  <img src="images/emergencia_Foto.jpg"/><br />
+                  <div class="botao"><img src="images/emergencia_Bt.jpg" /></div>
+                </div>
+                <div style="float:right; width: 170px; ">
+                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
+                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais.</span>
+                </div>
+              </li>
+            </ul>
+
+            <div id="EmergenciaBoxLink" ><a href="$">Veja mais notícias de Emergência</a></div>
+
+          </div>
+        </div>
+
+        <!-- Faça Como Eles -->
+        <div id="FacaComo">
+
+          <h1>Faça como eles</h1>
+
+          <div style="height: 274px">
+            <div id="FacaComoTb01">
+              <a href="#">
+                <p><img src="images/FaçaComo-Foto01.jpg" /></p>
+                <h1>O problema é que a AIDS saiu de moda</h1>
+                <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
+              </a>
+            </div>
+            <div id="FacaComoTb02">
+              <a href="#">
+                <p><img src="images/FaçaComo-Foto02.jpg" /></p>
+                <h1>O problema é que a AIDS saiu de moda</h1>
+                <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
+              </a>
+            </div>
+            <div id="FacaComoTb03" style="float: right;">
+              <a href="#">
+                <p><img src="images/FaçaComo-Foto03.jpg" /></p>
+                <h1>O problema é que a AIDS saiu de moda</h1>
+                <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
+              </a>
+            </div>
+          </div>
+          <!-- Botão - Veja mais o que podemos fazert -->
+          <div id="FacaComoBoxLink" ><a href="#">Veja mais o que pode fazer »</a></div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Depoimento -->
+<div id="depoimentos">
+  <div class="tamanho">
+    <h1>Depoimentos</h1>
+    <h2>Leia os depoimentos de entidades e usuários do Click Solidário:</h2>
+
+    <div class="ladoEsquerdo">
+      <div class="texto">
+        <a href="#">
+          <span>Terra dos Homens</span>
+          Entendo que o trabalho desenvolvido pelo Portal Click Solidário contribui para estreitar a relação entre as organizações e a sociedade.(..) <img src="images/aspasMenor.png" width="25" height="18" border="0" />
+        </a>
+      </div>
+    </div>
+
+    <div class="ladoDireito">
+      <div class="texto2">
+        <a href="#">
+          <span>Aparecida Silva</span>
+          O trabalho voluntário não tem preço. É uma dádiva poder ajudar e, uma pequena colaboração faz uma grande diferença!(..) <img src="images/aspasMenor.png" width="25" height="18" border="0" />
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="clear"></div>
+  <div id="depoimentosBoxLink"><a href="#">Veja mais depoimentos »</a></div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- rodapé -->
+<div id="rodape">
+  <div class="tamanho">
+
+    <div class="logoRodape"></div>
+
+    <div class="rodaLatDir">
+
+      <div class="menuRod">
+        <ul>
+          <li><a href="#">Quem Somos</a></li>
+          <li><a href="#">Apoiadores</a></li>
+          <li><a href="#">Divulgue o Click Solidário</a></li>
+          <li><a href="#">Públicidade Solidária</a></li>
+          <li><a href="#">Imprensa</a></li>
+          <li><a href="#">Newsletter</a></li>
+        </ul>
+      </div>
+
+      <div class="pontMenuRod"></div>
+
+      <div class="menuRod">
+        <ul>
+          <li><a href="#">Dúvida</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Cadastre-se</a></li>
+          <li><a href="#">Ajude Agora</a></li>
+          <li><a href="#">Adotar uma Criança</a></li>
+          <li><a href="#">Contato</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div id="rodapeFinal">
+  <div class="tamanho">© Copyright 2011 Click Solidário - Nossas crianças, nosso futuro</div>
+</div>
+
