@@ -21,20 +21,20 @@
 }
 
 #thumbNav {
-    background: url("../images/home/slider/nav.png") no-repeat; margin: 0px; padding: 32px 0px 0px 500px; top: 230px; width: 244px; height: 69px; position: absolute;
+    background: url("/images/nav.png") no-repeat; margin: 0px; padding: 32px 0px 0px 500px; top: 230px; width: 244px; height: 69px; position: absolute;
 }
 
 #thumbNav a {
-    background: url("images/nav-buttons.png") no-repeat left; margin: 0px 3px; padding: 0px; width: 30px; height: 30px; text-align: center; text-indent: -9999px; display: inline-block;
+    background: url("/images/nav-buttons.png") no-repeat left; margin: 0px 3px; padding: 0px; width: 30px; height: 30px; text-align: center; text-indent: -9999px; display: inline-block;
 }
 #thumbNav a:hover {
-    background: url("images/nav-buttons.png") no-repeat center;
+    background: url("/images/nav-buttons.png") no-repeat center;
 }
 #thumbNav a:active {
-    background: url("images/nav-buttons.png") no-repeat left;
+    background: url("/images/nav-buttons.png") no-repeat left;
 }
 #thumbNav a.cur {
-    background: url("images/nav-buttons.png") no-repeat right;
+    background: url("/images/nav-buttons.png") no-repeat right;
 }
 #start-stop {
     visibility: hidden;

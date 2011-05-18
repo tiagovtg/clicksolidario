@@ -17,9 +17,11 @@ class VoluntariosController < ApplicationController
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf', :conditions => ['voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf',
+            :conditions => ['voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf', :conditions => [" user_id = #{current_user.id}" + ' and voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf',
+            :conditions => [" user_id = #{current_user.id}" + ' and voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end

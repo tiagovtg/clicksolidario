@@ -53,6 +53,7 @@ body				{ margin: 0; font-family: Arial, Helvetica, sans-serif; }
 .MenuBar li:hover               { border-top: solid 1px #9ebf28;  }
 .MenuBar a 			{ color:black; text-decoration:none; padding: 0 20px; font-size: 13px; background:url(/images/pontosVerticais.gif) no-repeat right; }
 .MenuBar a:hover                { color:#9ebf28; }
+.MenuBar a.active               { color: green; } /* colore o menu ativo.*/
 
 /*Busca Solidaria  */
 #buscaSolidaria			{ }

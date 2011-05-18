@@ -20,20 +20,7 @@
   <div class="barra">
 
     <!-- login usuário -->
-    <div id="login" class="login">login</div>
-
-    <div id="divLogin" class="loginBarra">
-      <ul id="navlist">
-        <li>usuário:<input name="usuario" type="text" style="width: 149px;" class="input" /></li>
-        <li>senha:<input name="senha" type="password" style="width: 149px" class="input" /></li>
-        <li><input name="botao"  type="button"  value="ok »" class="botaoLogin" /></li>
-        <li><a href="#">esqueci minha senha</a></li>
-        <li>|</li>
-        <li><a href="#">esqueci meu usuário</a></li>
-      </ul>
-    </div>
-
-    <div class="traco"></div>
+    <%= render :partial => 'portal/login' %>
 
     <!-- login entidades -->
     <div id="entidade" class="entidade">área das entidades</div>
@@ -56,9 +43,7 @@
 
 
     <!-- rede social -->
-    <div id="feed"><a href="#" title="feed"></a></div>
-    <div id="facebook"><a href="#" title="facebook"></a></div>
-    <div id="twitter"><a href="#" title="twitter"></a></div>
+    <%= render :partial => 'portal/rede_social' %>
 
   </div>
 
@@ -72,16 +57,8 @@
 
     <div class="logo"></div>
 
-    <div class="MenuBar">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Ajude Agora</a></li>
-        <li><a href="#">Conheça o Click Solidário</a></li>
-        <li><a href="#">Cadastre-se</a></li>
-        <li><a href="#">Dúvidas</a></li>
-        <li><a href="#">Contato</a></li>
-      </ul>
-    </div>
+    <!-- menu -->
+    <%= render :partial => 'portal/menu' %>
 
     <!-- CorpoConteudo -->
     <div id="conteudo">
@@ -217,8 +194,8 @@
         </div>
 
 
-        
-        <SCRIPT type="text/javascript">
+
+        <script type="text/javascript">
           function formatText(index, panel) {
             return index + "";
           }
@@ -243,7 +220,7 @@
               $('.anythingSlider').anythingSlider(4);
             });
           });
-        </SCRIPT>
+        </script>
 
 
         <!-- Menu - Escolha Como Ajudar -->
@@ -323,8 +300,8 @@
               <li>
                 <p>13h24</p>
                 <div style="float: left;">
-                  <img src="images/emergencia_Foto.jpg"/><br />
-                  <div class="botao"><img src="images/emergencia_Bt.jpg" /></div>
+                  <img src="images/emergencia_Foto.jpg" alt=""/><br />
+                  <div class="botao"><img src="images/emergencia_Bt.jpg" alt=""/></div>
                 </div>
                 <div style="float:right; width: 170px; ">
                   <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
@@ -335,8 +312,8 @@
               <li>
                 <p>13h24</p>
                 <div style="float: left;">
-                  <img src="images/emergencia_Foto.jpg"/><br />
-                  <div class="botao"><img src="images/emergencia_Bt.jpg" /></div>
+                  <img src="images/emergencia_Foto.jpg" alt="" /><br />
+                  <div class="botao"><img src="images/emergencia_Bt.jpg" alt=""/></div>
                 </div>
                 <div style="float:right; width: 170px; ">
                   <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
@@ -347,8 +324,8 @@
               <li>
                 <p>13h24</p>
                 <div style="float: left;">
-                  <img src="images/emergencia_Foto.jpg"/><br />
-                  <div class="botao"><img src="images/emergencia_Bt.jpg" /></div>
+                  <img src="images/emergencia_Foto.jpg" alt=""/><br />
+                  <div class="botao"><img src="images/emergencia_Bt.jpg" alt=""/></div>
                 </div>
                 <div style="float:right; width: 170px; ">
                   <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
@@ -358,8 +335,8 @@
               <li>
                 <p>13h24</p>
                 <div style="float: left;">
-                  <img src="images/emergencia_Foto.jpg"/><br />
-                  <div class="botao"><img src="images/emergencia_Bt.jpg" /></div>
+                  <img src="images/emergencia_Foto.jpg" alt=""/><br />
+                  <div class="botao"><img src="images/emergencia_Bt.jpg" alt=""/></div>
                 </div>
                 <div style="float:right; width: 170px; ">
                   <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
@@ -381,28 +358,30 @@
           <div style="height: 274px">
             <div id="FacaComoTb01">
               <a href="#">
-                <p><img src="images/FaçaComo-Foto01.jpg" /></p>
+                <p><img src="images/FaçaComo-Foto01.jpg" alt=""/></p>
                 <h1>O problema é que a AIDS saiu de moda</h1>
                 <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
               </a>
             </div>
             <div id="FacaComoTb02">
               <a href="#">
-                <p><img src="images/FaçaComo-Foto02.jpg" /></p>
+                <p><img src="images/FaçaComo-Foto02.jpg" alt=""/></p>
                 <h1>O problema é que a AIDS saiu de moda</h1>
                 <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
               </a>
             </div>
             <div id="FacaComoTb03" style="float: right;">
               <a href="#">
-                <p><img src="images/FaçaComo-Foto03.jpg" /></p>
+                <p><img src="images/FaçaComo-Foto03.jpg" alt=""/></p>
                 <h1>O problema é que a AIDS saiu de moda</h1>
                 <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
               </a>
             </div>
           </div>
           <!-- Botão - Veja mais o que podemos fazert -->
-          <div id="FacaComoBoxLink" ><a href="#">Veja mais o que pode fazer »</a></div>
+          <div id="FacaComoBoxLink" >
+            <a href="#">Veja mais o que pode fazer »</a>
+          </div>
 
         </div>
       </div>
@@ -443,10 +422,6 @@
 
 </div>
 
-</div>
-
-</div>
-
 <!-- rodapé -->
 <div id="rodape">
   <div class="tamanho">
@@ -478,9 +453,7 @@
           <li><a href="#">Contato</a></li>
         </ul>
       </div>
-
     </div>
-
   </div>
 </div>
 
@@ -488,4 +461,3 @@
 <div id="rodapeFinal">
   <div class="tamanho">© Copyright 2011 Click Solidário - Nossas crianças, nosso futuro</div>
 </div>
-
