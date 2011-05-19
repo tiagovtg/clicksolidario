@@ -13,10 +13,16 @@ Sgss::Application.routes.draw do
   match "logout" => "user_sessions#destroy"
 
   #aqui as nao herdadas, pelo authlogic
-
+  #
+  #portal
   match "busca_entidade" => "portal#busca_entidade"
-  match "busca_perfil" => "portal#busca_perfil"
+  match "busca_perfil"  => "portal#busca_perfil"
+  match "ajuda"         => "ajuda#index"
+  match "conheca"       => "conheca#index"
+  match "contato"       => "contato#index"
+  match "duvida"        => "duvida#index"
 
+  #sgs
   resources :entidades#menu
   resources :emergencia#menu
   resources :noticia#menu
