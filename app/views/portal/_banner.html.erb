@@ -1,0 +1,41 @@
+<div class="homepageSlider">
+  <div class="anythingSlider">
+    <div class="wrapper">
+      <ul>
+        <li><div class="slideA"></div></li>
+        <li><div class="slideB"></div></li>
+        <li><div class="slideC"></div></li>
+        <li><div class="slideD"></div></li>
+        <li><div class="slideE"></div></li>
+        <li><div class="slideF"></div></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  function formatText(index, panel) {
+    return index + "";
+  }
+
+  $(function () {
+    $('.anythingSlider').anythingSlider({
+      easing: "easeInOutExpo",        // Anything other than "linear" or "swing" requires the easing plugin
+      autoPlay: true,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
+      delay: 4000,                    // How long between slide transitions in AutoPlay mode
+      startStopped: false,            // If autoPlay is on, this can force it to start stopped
+      animationTime: 1100,             // How long the slide transition takes
+      hashTags: true,                 // Should links change the hashtag in the URL?
+      buildNavigation: true,          // If true, builds and list of anchor links to link to each slide
+      pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
+      startText: "Go",             // Start text
+      stopText: "Stop",               // Stop text
+      navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
+    });
+
+    $("#slide-jump").click(function(){
+      $('.anythingSlider').anythingSlider(4);
+    });
+  });
+</script>

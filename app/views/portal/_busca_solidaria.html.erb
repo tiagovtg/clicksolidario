@@ -1,0 +1,39 @@
+<div id="buscaSolidaria">
+
+  <h1>Busca Solidaria</h1>
+  <p>O Click Solidário precisa da sua ajuda!  Escolha uma Entidade:</p>
+
+  <h5>Buscar por Perfil</h5>
+
+  <!-- Campos de seleção -->
+  <%= form_tag(busca_entidade_path, :html => { :method => :get, :class => "submittable"}, :remote => true) do %>
+    <select name="filtroPerfil" id="filtroPerfil">
+      <option value="" selected="selected">Escolha a causa</option>
+      <option value="nomefantasia">Saúde</option>
+      <option value="cnpj">Educação</option>
+      <option value="cidade">Ambiental</option>
+      <option value="estado">Arte & Cultura</option>
+      <option value="estado">Social</option>
+    </select>
+
+    <%= select("filtroUF", "", ([["Acre-AC", "AC"], ["Alagoas-AL", "AL"], ["Amapá-AP", "AP"],
+          ["Amazonas-AM", "AM"], ["Bahia-BA", "BA"], ["Ceara-CE", "CE"], ["Distrito Federal-DF", "DF"], ["Espirito Santo-ES", "ES"],
+          ["Goias-GO", "GO"], ["Maranhão-MA", "MA"], ["Mato Grosso-MT", "MT"], ["Mato Grosso do Sul-MS", "MS"], ["Minas Gerais-MG", "MG"],
+          ["Para-PA", "PA"], ["Paraiba-PB", "PB"], ["Parana-PR", "PR"], ["Pernabuco-PE", "PE"], ["Piaui-PI", "PI"],
+          ["Rio de Janeiro-RJ", "RJ"], ["Rio Grande do Norte-RN", "RN"], ["Rio Grande do Sul-RS", "RS"], ["Rondonia-RO", "RO"], ["Roraima-RR", "RR"],
+          ["Santa Catarina-SC", "SC"], ["São Paulo-SP", "SP"], ["Sergipe-SE", "SE"], ["Tocantins-TO", "TO"]]), { :prompt => 'Escolha a região' }) %>
+
+    <div class="pontos"></div>
+
+    <!-- Campode Pesquisa  -->
+    <h5>Buscar por Entidade</h5>
+    <input type="hidden" id="filtroNome" value="nome" />
+    <input id="buscaSolidaria-campo" name="query" type="text" value="Digite aqui o nome da entidade..." onfocus="this.value='';" />
+
+    <!-- Botão Buscar -->
+    <input name="Button1" type="image" src="images/Bt_BuscarSolidaria.gif" value="Buscar" />
+
+  <% end %>
+
+</div>
+<%= javascript_include_tag 'javascripts/views/portal/busca_entidade' %>
