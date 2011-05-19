@@ -17,7 +17,7 @@ Sgss::Application.routes.draw do
   #portal
   match "busca_entidade" => "portal#busca_entidade"
   match "busca_perfil"  => "portal#busca_perfil"
-  match "ajuda"         => "ajuda#index"
+  match "ajude"         => "ajude#index"
   match "conheca"       => "conheca#index"
   match "contato"       => "contato#index"
   match "duvida"        => "duvida#index"

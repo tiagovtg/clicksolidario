@@ -41,7 +41,6 @@
     <!-- mapa do portal -->
     <div class="mapaPortal"><a href="#">mapa do portal</a></div>
 
-
     <!-- rede social -->
     <%= render :partial => 'portal/rede_social' %>
 
@@ -66,34 +65,7 @@
       <div id="colunaEsquerda">
 
         <!-- Busca Solidariav -->
-        <div  id="buscaSolidaria">
-
-          <h1>Busca Solidaria</h1>
-          <p>O Click Solidário precisa da sua ajuda!  Escolha uma Entidade:</p>
-
-          <h5>Buscar por perfil</h5>
-
-          <!-- Campos de seleção -->
-          <form>
-            <select name="Select1">
-              <option>Escolha a causa</option>
-            </select>
-
-            <select name="Select2">
-              <option>Escolha a região</option>
-            </select>
-
-            <div class="pontos"></div>
-
-            <!-- Campode Pesquisa  -->
-            <h5>Buscar por Entidade</h5>
-            <input name="Text1" type="text" id="buscaSolidaria-campo" />
-
-            <!-- Botão Buscar -->
-            <input name="Button1" type="image" src="images/Bt_BuscarSolidaria.gif" value="Buscar" />
-
-          </form>
-        </div>
+        <%= render :partial => 'portal/busca_solidaria' %>
 
         <!-- Menu Lateral -->
         <div id="MenuLateral">
@@ -178,168 +150,22 @@
       <div id="colunaDireita">
 
         <!-- Banner jQuery -->
-        <div class="homepageSlider">
-          <div class="anythingSlider">
-            <div class="wrapper">
-              <ul>
-                <li><div class="slideA"></div></li>
-                <li><div class="slideB"></div></li>
-                <li><div class="slideC"></div></li>
-                <li><div class="slideD"></div></li>
-                <li><div class="slideE"></div></li>
-                <li><div class="slideF"></div></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-
-
-        <script type="text/javascript">
-          function formatText(index, panel) {
-            return index + "";
-          }
-
-          $(function () {
-
-            $('.anythingSlider').anythingSlider({
-              easing: "easeInOutExpo",        // Anything other than "linear" or "swing" requires the easing plugin
-              autoPlay: true,                 // This turns off the entire FUNCTIONALY, not just if it starts running or not.
-              delay: 4000,                    // How long between slide transitions in AutoPlay mode
-              startStopped: false,            // If autoPlay is on, this can force it to start stopped
-              animationTime: 1100,             // How long the slide transition takes
-              hashTags: true,                 // Should links change the hashtag in the URL?
-              buildNavigation: true,          // If true, builds and list of anchor links to link to each slide
-              pauseOnHover: true,             // If true, and autoPlay is enabled, the show will pause on hover
-              startText: "Go",             // Start text
-              stopText: "Stop",               // Stop text
-              navigationFormatter: formatText       // Details at the top of the file on this use (advanced use)
-            });
-
-            $("#slide-jump").click(function(){
-              $('.anythingSlider').anythingSlider(4);
-            });
-          });
-        </script>
-
+        <%= render :partial => 'portal/banner' %>
 
         <!-- Menu - Escolha Como Ajudar -->
         <%= render :partial => 'portal/menu_como_ajudar' %>
 
+
         <!-- Colunas - Notícias & Emergência  -->
         <div id="ConteudoColunas">
-
           <!-- Notícias & Cidadania -->
-          <div id="Noticias">
-
-
-            <h1>Notícias de Cidadania</h1>
-
-            <ul>
-              <li>
-                <a href="#">
-                  <p>13h24</p>
-                  <div style="float: right; width: 268px;">
-                    <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
-                    <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais vontade de cuidar da saúde e ficar em forma.</span>
-                  </div>
-                </a>
-              </li>
-              <li>
-                <p>13h24</p>
-                <div style="float: right; width: 268px;">
-                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
-                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais vontade de cuidar da saúde e ficar em forma.</span>
-                </div>
-              </li>
-              <li>
-                <p>13h24</p>
-                <div style="float: right; width: 268px;">
-                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
-                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais vontade de cuidar da saúde e ficar em forma.</span>
-                </div>
-              </li>
-            </ul>
-            <!-- Mais Notícias De Cidadania -->
-            <div id="NoticiasBoxLink" ><a href="#">Veja mais notícias de cidadania »</a></div>
-
-            <!-- Apadrinhe uma Criança -->
-            <div id="Apadrinhe">
-              <h1>Apadrinhe uma Criança</h1>
-              <div>
-                <img src="images/Apadrinhe_Foto.jpg" style=" float:left;" />
-                <div id="ApadrinheBox">
-                  <p>Anderson vive uma realidade trágica que já tirou a vida do irmãozinho dele</p>
-                  <span>Ainda há tempo de mudarmos o fim dessa história.</span>
-                  <img src="images/Apadrinhe_bt.gif" style="float:right;" />
-                </div>
-              </div>
-
-            </div>
-            <!-- Apadrinhe Link -->
-            <div id="ApadrinheBoxLink" ><a href="#">Veja mais notícias de Emergência</a></div>
-
-          </div>
+          <%= render :partial => 'portal/noticia' %>
 
           <!-- Emergência -->
-          <div id="Emergencia">
-
-            <h1>Emergência</h1>
-
-            <ul>
-              <li>
-                <p>13h24</p>
-                <div style="float: left;">
-                  <img src="images/emergencia_Foto.jpg" alt=""/><br />
-                  <div class="botao"><img src="images/emergencia_Bt.jpg" alt=""/></div>
-                </div>
-                <div style="float:right; width: 170px; ">
-                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
-                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais.</span>
-                </div>
-              </li>
-
-              <li>
-                <p>13h24</p>
-                <div style="float: left;">
-                  <img src="images/emergencia_Foto.jpg" alt="" /><br />
-                  <div class="botao"><img src="images/emergencia_Bt.jpg" alt=""/></div>
-                </div>
-                <div style="float:right; width: 170px; ">
-                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
-                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais.</span>
-                </div>
-              </li>
-
-              <li>
-                <p>13h24</p>
-                <div style="float: left;">
-                  <img src="images/emergencia_Foto.jpg" alt=""/><br />
-                  <div class="botao"><img src="images/emergencia_Bt.jpg" alt=""/></div>
-                </div>
-                <div style="float:right; width: 170px; ">
-                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
-                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais.</span>
-                </div>
-              </li>
-              <li>
-                <p>13h24</p>
-                <div style="float: left;">
-                  <img src="images/emergencia_Foto.jpg" alt=""/><br />
-                  <div class="botao"><img src="images/emergencia_Bt.jpg" alt=""/></div>
-                </div>
-                <div style="float:right; width: 170px; ">
-                  <h2>Praticar esportes na areia alivia o estresse e ameniza impacto do corpo</h2>
-                  <span>Preparador José Rubens D’Elia falou das vantagens desse tipo de exercício. No verão, as pessoas têm mais.</span>
-                </div>
-              </li>
-            </ul>
-
-            <div id="EmergenciaBoxLink" ><a href="$">Veja mais notícias de Emergência</a></div>
-
-          </div>
+          <%= render :partial => 'portal/emergencia' %>
         </div>
 
+        
         <!-- Faça Como Eles -->
         <div id="FacaComo">
 
@@ -383,71 +209,8 @@
 </div>
 
 <!-- Depoimento -->
-<div id="depoimentos">
-  <div class="tamanho">
-    <h1>Depoimentos</h1>
-    <h2>Leia os depoimentos de entidades e usuários do Click Solidário:</h2>
+<%= render :partial => 'portal/depoimento' %>
 
-    <div class="ladoEsquerdo">
-      <div class="texto">
-        <a href="#">
-          <span>Terra dos Homens</span>
-          Entendo que o trabalho desenvolvido pelo Portal Click Solidário contribui para estreitar a relação entre as organizações e a sociedade.(..) <img src="images/aspasMenor.png" width="25" height="18" border="0" />
-        </a>
-      </div>
-    </div>
-
-    <div class="ladoDireito">
-      <div class="texto2">
-        <a href="#">
-          <span>Aparecida Silva</span>
-          O trabalho voluntário não tem preço. É uma dádiva poder ajudar e, uma pequena colaboração faz uma grande diferença!(..) <img src="images/aspasMenor.png" width="25" height="18" border="0" />
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <div class="clear"></div>
-  <div id="depoimentosBoxLink"><a href="#">Veja mais depoimentos »</a></div>
-
-</div>
 
 <!-- rodapé -->
-<div id="rodape">
-  <div class="tamanho">
-
-    <div class="logoRodape"></div>
-
-    <div class="rodaLatDir">
-
-      <div class="menuRod">
-        <ul>
-          <li><a href="#">Quem Somos</a></li>
-          <li><a href="#">Apoiadores</a></li>
-          <li><a href="#">Divulgue o Click Solidário</a></li>
-          <li><a href="#">Públicidade Solidária</a></li>
-          <li><a href="#">Imprensa</a></li>
-          <li><a href="#">Newsletter</a></li>
-        </ul>
-      </div>
-
-      <div class="pontMenuRod"></div>
-
-      <div class="menuRod">
-        <ul>
-          <li><a href="#">Dúvida</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Cadastre-se</a></li>
-          <li><a href="#">Ajude Agora</a></li>
-          <li><a href="#">Adotar uma Criança</a></li>
-          <li><a href="#">Contato</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-<div id="rodapeFinal">
-  <div class="tamanho">© Copyright 2011 Click Solidário - Nossas crianças, nosso futuro</div>
-</div>
+<%= render :partial => 'portal/rodape' %>
