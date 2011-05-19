@@ -6,17 +6,16 @@
       <p></p>
       <label>Email</label>
       <%= f.text_field :email, :html => {:class => "text_field"} %>
-
+      <br/>
       <label>Senha</label>
       <%= f.password_field :password, :html => {:class => "text_field"} %>
-
       <br/>
       <button type="submit">
-        <img src="images/key.png" alt="Acessar" /> Logar
+        <img src="images/key.png" alt="Acessar" style="width: 28px; height: 27px;"/> Logar
       </button> ou
 
       <%= link_to(:controller => "users", :action => "new") do %>
-        <strong><%= image_tag("tick.png") %> </strong><span>Cadastrar-se</span>
+        <strong><%= image_tag("tick.png", :style=>"width: 28px; height: 27px;") %> </strong><span>Cadastrar-se</span>
       <% end %>
       <div class="clear"></div>
     <% end %>

@@ -1,24 +1,29 @@
 class NewslettersController < ApplicationController
   access_control do
+    allow anonymous,      :to => [:index, :show, :new, :create]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
 
   def index
-    if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
-      @newsletters = Newsletter.paginate(:page => params[:page], :order => 'email')
-    else
-      if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
-        #        flash[:notice] = "Favor preencher o campo de busca por..."
+    if administrador?
+      if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
+        @newsletters = Newsletter.paginate(:page => params[:page], :order => 'email')
       else
-        @newsletters = Newsletter.paginate(:page => params[:page], :order => 'email', :conditions => ['newsletters.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+        if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
+          #        flash[:notice] = "Favor preencher o campo de busca por..."
+        else
+          @newsletters = Newsletter.paginate(:page => params[:page], :order => 'email', :conditions => ['newsletters.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+        end
       end
+    else
+      redirect_to root_url
     end
   end
 
   # GET /newsletters/1
   # GET /newsletters/1.xml
   def show
-    @newsletter = Newsletter.find(params[:id])
+    redirect_to newsletters_url
   end
 
   # GET /newsletters/new

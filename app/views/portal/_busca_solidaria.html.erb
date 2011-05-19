@@ -1,3 +1,11 @@
+<script type="text/javascript">
+  $('#form_busca_solidaria').submit(function() {
+    //fazer sua chamada ajax
+    buscaSolidaria();
+    return false;
+  });
+</script>
+
 <div id="buscaSolidaria">
 
   <h1>Busca Solidaria</h1>
@@ -6,7 +14,7 @@
   <h5>Buscar por Perfil</h5>
 
   <!-- Campos de seleção -->
-  <%= form_tag(busca_entidade_path, :html => { :method => :get, :class => "submittable"}, :remote => true) do %>
+  <%= form_tag(busca_entidade_path, :id=>"form_busca_solidaria", :method => :get, :remote => true) do %>
     <select name="filtroPerfil" id="filtroPerfil">
       <option value="" selected="selected">Escolha a causa</option>
       <option value="nomefantasia">Saúde</option>
@@ -31,9 +39,8 @@
     <input id="buscaSolidaria-campo" name="query" type="text" value="Digite aqui o nome da entidade..." onfocus="this.value='';" />
 
     <!-- Botão Buscar -->
-    <input name="Button1" type="image" src="images/Bt_BuscarSolidaria.gif" value="Buscar" />
+    <input name="Button1" type="image" src="images/Bt_BuscarSolidaria.gif" value="Buscar" class ="submittable" />
 
   <% end %>
 
 </div>
-<%= javascript_include_tag 'javascripts/views/portal/busca_entidade' %>
