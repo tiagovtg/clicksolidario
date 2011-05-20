@@ -27,6 +27,18 @@ class Entidade < ActiveRecord::Base
   validates :cnpj, :uniqueness => true
 
   usar_como_cnpj :cnpj
-#  usar_como_cpf :cpf
+  #  usar_como_cpf :cpf
+
+  def self.busca(query, uf, causa)
+    query = 'entidades.nome LIKE ?', "%#{params[query]}% "
+    uf = 'and entidades.uf LIKE ?', "%#{params[uf]}% "
+    query = 'entidades. LIKE ?', "%#{params[causa]}% "
+    paginate(:page => params[:page], :order => 'cnpj',
+    :conditions => ['entidades.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+  end
+
+  def self.search(query)
+    where("name like ?", "%#{query}%")
+  end
   
 end

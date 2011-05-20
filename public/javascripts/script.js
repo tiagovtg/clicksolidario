@@ -110,24 +110,8 @@ jQuery(function(){
     }
 
 
-    /* adicionar mais js daqui */
+/* adicionar mais js daqui */
 
-    function buscaSolidaria(){
-        // chama o metodo buscaSolidaria na controler portal.
-        jQuery.ajax({
-            type: "POST",
-            url: "busca_solidaria",
-            data: {
-                filtro: jQuery("#filtroNome").val(),
-                 query: jQuery('#buscaSolidaria-campo').text()
-            },
-            success: function(){
-                //recarrega a pagina.
-                //location.reload()
-                alert('sucesso!')
-            }
-        });
-    }
 });
 
 

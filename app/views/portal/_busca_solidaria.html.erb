@@ -7,13 +7,13 @@
 
   <!-- Campos de seleção -->
   <%= form_tag(busca_solidaria_path, :id=>"form_busca_solidaria", :method => :get, :remote => true) do %>
-    <select name="filtroPerfil" id="filtroPerfil">
+    <select name="filtroCausa" id="filtroCausa">
       <option value="" selected="selected">Escolha a causa</option>
-      <option value="nomefantasia">Saúde</option>
-      <option value="cnpj">Educação</option>
-      <option value="cidade">Ambiental</option>
-      <option value="estado">Arte & Cultura</option>
-      <option value="estado">Social</option>
+      <option value="1">Saúde</option>
+      <option value="2">Educação</option>
+      <option value="3">Ambiental</option>
+      <option value="4">Arte & Cultura</option>
+      <option value="5">Social</option>
     </select>
 
     <%= select("filtroUF", "", ([["Acre-AC", "AC"], ["Alagoas-AL", "AL"], ["Amapá-AP", "AP"],
@@ -27,7 +27,6 @@
 
     <!-- Campode Pesquisa  -->
     <h5>Buscar por Entidade</h5>
-    <input type="hidden" id="filtroNome" value="nome" />
     <input id="buscaSolidaria-campo" name="query" type="text" value="Digite aqui o nome da entidade..." onfocus="this.value='';" />
 
     <!-- Botão Buscar -->
