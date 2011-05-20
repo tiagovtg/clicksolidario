@@ -1,4 +1,9 @@
 class Entidade < ActiveRecord::Base
+
+  #Itens por página (will_paginate)
+  cattr_reader :per_page
+  @@per_page = 10
+
   belongs_to :causa
   belongs_to :user
 

@@ -1,5 +1,5 @@
 
-<% if entidades.nil? or entidades.empty? %>
+<% if @entidades.nil? or @entidades.empty? %>
   <p class="busca">
     Nenhum registro foi encontrado
   </p>
@@ -12,7 +12,7 @@
       <th></th>
     </tr>
 
-    <% entidades.each do |entidade| %>
+    <% @entidades.each do |entidade| %>
       <tr class="<%= cycle("odd", "even") %>">
         <td><%= link_to entidade.nomefantasia, entidade %></td>
         <td><%= entidade.cidade %></td>
@@ -21,6 +21,6 @@
     <% end %>
   </table>
   <div align="right">
-    <%= will_paginate entidades %>
+    <%= will_paginate @entidades %>
   </div>
 <% end %>
