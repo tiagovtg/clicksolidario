@@ -29,16 +29,28 @@ class Entidade < ActiveRecord::Base
   usar_como_cnpj :cnpj
   #  usar_como_cpf :cpf
 
-  def self.busca(query, uf, causa)
-    query = 'entidades.nome LIKE ?', "%#{params[query]}% "
-    uf = 'and entidades.uf LIKE ?', "%#{params[uf]}% "
-    query = 'entidades. LIKE ?', "%#{params[causa]}% "
-    paginate(:page => params[:page], :order => 'cnpj',
-    :conditions => ['entidades.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
-  end
+  #Metodo de busca, Busca_solidaria
+  def self.busca_solidaria(query, uf, causa, page)
+    logger.info "\n\n=> meleca : #{query} \n"
+    logger.info "\n\n=> meleca : #{uf} \n"
+    logger.info "\n\n=> meleca : #{causa} \n"
 
-  def self.search(query)
-    where("name like ?", "%#{query}%")
+    if query.nil? or query.empty? or query=="Digite aqui o nome da entidade..."
+      query=nil
+    end
+    if uf.nil? or uf.empty? or uf==""
+      uf=nil
+    end
+    if causa.nil? or causa.empty? or causa==""
+      causa=nil
+    end
+    query1 = (query.nil? ? '' : "entidades.nome LIKE"+" '%#{query}%' ")
+    uf1 = (uf.nil? ? '' : " entidades.estado LIKE"+ " '%#{uf}%' ")
+    causa1= (causa.nil? ? '' : " entidades.causa_id == #{causa} ")
+
+    a = query1 << (uf.nil? ? '' : ' and ' << uf1) << (causa == "" ? '' : ' and ' << causa1)
+    logger.info "\n\n=> meleca : #{a} \n"
+    paginate(:page => page, :order => 'cnpj', :conditions => [".", "#{a}"])
   end
   
 end
