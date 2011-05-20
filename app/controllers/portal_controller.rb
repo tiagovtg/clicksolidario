@@ -17,7 +17,7 @@ class PortalController < ApplicationController
     respond_to do |format|
       format.js {
         render :update do |page|
-          page.insert_html :bottom, 'ConteudoColunas' , :partial => 'portal/lista_entidades', :locals=> {:entidades => @entidades}
+          page.replace_html 'ConteudoColunas' , :partial => 'portal/lista_entidades', :locals=> {:entidades => @entidades}
         end
       }
     end
@@ -30,6 +30,7 @@ class PortalController < ApplicationController
     #      page.replace_html 'ConteudoColunas', :partial=> 'portal/lista_entidades',
     #        :locals=> {:entidades => @entidades}
     #    end
+#    $("#products").html("<%= escape_javascript(render(@products)) %>");
   end
 
   def busca_perfil
