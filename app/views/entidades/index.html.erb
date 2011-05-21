@@ -1,6 +1,6 @@
-<h1 class="title">
-  <%= form_tag(entidades_path, :method => "get") do %>
-    Listando Entidades
+<%= form_tag(entidades_path, :method => "get") do %>
+  <div id="buscaDados"><span>Listando Entidades</span></div>
+  <div id="buscaDados">
     <select name="filtro" id="filtro">
       <option value="" selected="selected">Buscar por...</option>
       <option value="nomefantasia">Nome Fantasia</option>
@@ -8,41 +8,43 @@
       <option value="cidade">Cidade</option>
       <option value="estado">Estado</option>
     </select>
-    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
-    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
-  <% end %>
-</h1>
+  </div>
+  <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
+  <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
+<% end %>
 
-<div id="lista_entidade">
-
-</div>
+<br/><br/>
+<br/>
 <% if @entidades.nil? or @entidades.empty? %>
   <p class="busca">
     Nenhum registro foi encontrado
   </p>
 <% else %>
-  <table class="table">
+  <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
       <th>Nome</th>
       <th>Cnpj</th>
       <th>Cidade</th>
       <th>Estado</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><img src="/images/file_document.png" alt=""/></th>
+      <th><img src="/images/file_edit.png" alt=""/></th>
+      <th><img src="/images/file_exclude.png" alt=""/></th>
     </tr>
 
     <% @entidades.each do |entidade| %>
-      <tr>
+      <tr class="<%= cycle("odd", "even") %>">
         <td><%= entidade.nomefantasia %></td>
         <td><%= entidade.cnpj %></td>
         <td><%= entidade.cidade %></td>
         <td><%= entidade.estado %></td>
-        <td><%= link_to 'Mostrar', entidade %></td>
-        <td><%= link_to 'Editar', edit_entidade_path(entidade) %></td>
-        <td><%= link_to 'Deletar', entidade, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+        <td class="edicao"><%= link_to 'Mostrar', entidade %></td>
+        <td class="edicao"><%= link_to 'Editar', edit_entidade_path(entidade) %></td>
+        <td class="edicao"><%= link_to 'Deletar', entidade, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>
   </table>
+  <div align="right">
+    <%= will_paginate @entidades %>
+  </div>
 <% end %>
 <br />

@@ -1,48 +1,52 @@
-<h1 class="title">
-  <%= form_tag(doacaos_path, :method => "get") do %>
-    Listando Doações
-    <% if administrador? %>
+<%= form_tag(doacaos_path, :method => "get") do %>
+  <% if administrador? %>
+    <div id="buscaDados"><span>Listando Doações</span></div>
+    <div id="buscaDados">
       <select name="filtro" id="filtro">
         <option value="" selected="selected">Buscar por...</option>
         <option value="entidade">Entidade</option>
         <option value="voluntario">Voluntario</option>
         <option value="empresa">Empresa</option>
       </select>
-      <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
-      <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
-    <% end %>
+    </div>
+    <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
+    <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
   <% end %>
-</h1>
+<% end %>
 
-
+<br/><br/>
+<br/>
 <% if @doacaos.nil? or @doacaos.empty? %>
   <p class="busca">
     Nenhum registro foi encontrado
   </p>
 <% else %>
-  <table class="table">
+  <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
       <th>Valor</th>
       <th>Data</th>
       <th>Valida</th>
       <th>Obs</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><img src="/images/file_document.png" alt=""/></th>
+      <th><img src="/images/file_edit.png" alt=""/></th>
+      <th><img src="/images/file_exclude.png" alt=""/></th>
     </tr>
 
     <% @doacaos.each do |doacao| %>
-      <tr>
+      <tr class="<%= cycle("odd", "even") %>">
         <td><%= doacao.valor %></td>
         <td><%= doacao.data %></td>
         <td><%= doacao.valida %></td>
         <td><%= doacao.obs %></td>
-        <td><%= link_to 'Mostrar', doacao %></td>
-        <td><%= link_to 'Editar', edit_doacao_path(doacao) %></td>
-        <td><%= link_to 'Deletar', doacao, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+        <td class="edicao"><%= link_to 'Mostrar', doacao %></td>
+        <td class="edicao"><%= link_to 'Editar', edit_doacao_path(doacao) %></td>
+        <td class="edicao"><%= link_to 'Deletar', doacao, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>
   </table>
+  <div align="right">
+    <%= will_paginate @doacaos %>
+  </div>
 <% end %>
 
 <br />

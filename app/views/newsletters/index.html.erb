@@ -1,36 +1,37 @@
-<h1 class="title">
-  <%= form_tag(newsletters_path, :method => "get") do %>
-    Listando Newsletters
+<%= form_tag(newsletters_path, :method => "get") do %>
+  <div id="buscaDados"><span>Listando Newsletters</span></div>
+  <div id="buscaDados">
     <select name="filtro" id="filtro">
       <option value="" selected="selected">Buscar por...</option>
       <option value="nome">Nome</option>
       <option value="email">Email</option>
     </select>
-    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
-    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
-  <% end %>
-</h1>
+  </div>
+  <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
+  <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
+<% end %>
 
+<br/><br/>
+<br/>
 <% if @newsletters.nil? or @newsletters.empty? %>
   <p class="busca">
     Nenhum registro foi encontrado
   </p>
 <% else %>
-  <table class="table">
+  <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
       <th>Nome</th>
       <th>Email</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><img src="/images/file_edit.png" alt=""/></th>
+      <th><img src="/images/file_exclude.png" alt=""/></th>
     </tr>
 
     <% @newsletters.each do |newsletter| %>
       <tr class="<%= cycle("odd", "even") %>">
         <td><%= newsletter.nome %></td>
         <td><%= newsletter.email %></td>
-        <td><%= link_to 'Editar', edit_newsletter_path(newsletter) %></td>
-        <td><%= link_to 'Deletar', newsletter, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+        <td class="edicao"><%= link_to 'Editar', edit_newsletter_path(newsletter) %></td>
+        <td class="edicao"><%= link_to 'Deletar', newsletter, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>
   </table>

@@ -4,19 +4,22 @@
     Nenhum registro foi encontrado
   </p>
 <% else %>
-  <table class="table">
+  <table width="720px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
       <th>Nome</th>
+      <th>Cnpj</th>
       <th>Cidade</th>
       <th>Estado</th>
-      <th></th>
+      <th><img src="/images/file_document.png" alt=""/></th>
     </tr>
 
     <% @entidades.each do |entidade| %>
       <tr class="<%= cycle("odd", "even") %>">
-        <td><%= link_to entidade.nomefantasia, entidade %></td>
+        <td><%= entidade.nomefantasia %></td>
+        <td><%= entidade.cnpj %></td>
         <td><%= entidade.cidade %></td>
         <td><%= entidade.estado %></td>
+        <td class="edicao"><%= link_to 'Mostrar', entidade %></td>
       </tr>
     <% end %>
   </table>

@@ -1,5 +1,5 @@
 <%= form_tag(emergencia_path, :method => "get") do %>
-  <div id="buscaDados"><span>Listando Notícias</span></div>
+  <div id="buscaDados"><span>Listando Emergencias</span></div>
   <div id="buscaDados">
     <select name="filtro" id="filtro">
       <option value="" selected="selected">Buscar por...</option>
@@ -52,5 +52,5 @@
 <br />
 
 <% if entidade? %>
-  <%= link_to 'Cadastrar Emergencium', new_emergencium_path %>
+  <%= link_to 'Cadastrar Emergencia', new_emergencium_path %>
 <% end %>

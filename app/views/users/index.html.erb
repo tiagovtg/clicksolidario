@@ -7,52 +7,56 @@
   </div>
 <% end %>
 
-<div class="postcontent">
-  <h1 class="title">
-    <%= form_tag(users_path, :method => "get") do %>
-      Listando Contas
-      <input id="filtro" name="filtro" type="hidden" value="email"/>
-      <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
-      <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
-    <% end %>
-  </h1>
+<%= form_tag(users_path, :method => "get") do %>
+  <div id="buscaDados"><span>Listando Usuários</span></div>
+  <div id="buscaDados">
+    <input id="filtro" name="filtro" type="hidden" value="email"/>
+  </div>
+  <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
+  <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
+<% end %>
 
-  <% if @user.nil? or @user.empty? %>
-    <p class="busca">
-      Nenhum registro foi encontrado
-    </p>
-  <% else %>
-    <table class="table">
-      <tr>
-        <th>Email</th>
-        <th>Tipo</th>
-        <th>Data criação</th>
-        <th>Status</th>
-        <th class="last">&nbsp;</th>
+<br/><br/>
+<br/>
+<% if @user.nil? or @user.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+  <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
+    <tr>
+      <th>Email</th>
+      <th>Tipo</th>
+      <th>Data criação</th>
+      <th>Status</th>
+      <th><img src="/images/file_document.png" alt=""/></th>
+      <th><img src="/images/file_edit.png" alt=""/></th>
+      <th><img src="/images/file_exclude.png" alt=""/></th>
+    </tr>
+    <% @user.each do |user| %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= user.email %></td>
+        <td>
+          <%= (User.find(user.id).has_role? :administrador )? 'Administrador':'' %>
+          <%= (User.find(user.id).has_role? :entidade )? 'Entidade':'' %>
+          <%= (User.find(user.id).has_role? :voluntario )? 'Voluntario':'' %>
+          <%= (User.find(user.id).has_role? :empresa )? 'Empresa':'' %>
+        </td>
+        <td><%= user.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+        <td><%= user.status %></td>
+        <% if user.id != 1 %>
+          <td  class="edicao"><%= link_to (user.status == "Ativo"  ? "Desativar" : "Ativar"), {:controller => :users, :action => :activate_deactivate, :id => user} %></td>
+          <td  class="edicao"><%= link_to 'Alterar', edit_user_path(user) %></td>
+          <td  class="edicao"><%= link_to "Excluir", user_path(user), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %></td>
+        <% else %>
+          <td  class="edicao"></td>
+          <td  class="edicao"></td>
+          <td  class="edicao"></td>
+        <% end -%>
       </tr>
-      <% @user.each do |user| -%>
-        <tr class="<%= cycle("odd", "even") %>">
-          <td><%= user.email %></td>
-          <td>
-            <%= (User.find(user.id).has_role? :administrador )? 'Administrador':'' %>
-            <%= (User.find(user.id).has_role? :entidade )? 'Entidade':'' %>
-            <%= (User.find(user.id).has_role? :voluntario )? 'Voluntario':'' %>
-            <%= (User.find(user.id).has_role? :empresa )? 'Empresa':'' %>
-          </td>
-          <td><%= user.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
-          <td><%= user.status %></td>
-          <td class="last">
-            <% if user.id != 1 %>
-              <%= link_to (user.status == "Ativo"  ? "Desativar" : "Ativar"), {:controller => :users, :action => :activate_deactivate, :id => user} %> |
-              <%= link_to 'Alterar', edit_user_path(user) %> |
-              <%= link_to "Excluir", user_path(user), :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}" %>
-            <% end -%>
-          </td>
-        </tr>
-      <% end -%>
-    </table>
-    <div align="right">
-      <%= will_paginate @user %>
-    </div>
-  <% end -%>
-</div>
+    <% end -%>
+  </table>
+  <div align="right">
+    <%= will_paginate @user %>
+  </div>
+<% end %>

@@ -6,12 +6,6 @@
       <li>Email:<%= f.text_field :email, :class=> "input", :style=>"width: 149px;" %></li>
       <li>Senha:<%= f.password_field :password, :class=> "input", :style=>"width: 149px;" %></li>
       <li><input name="botao"  type="submit"  value="ok »" class="botaoLogin" /></li>
-      <li><a href="#">esqueci minha senha ou usúario</a></li>
-      <li>|</li>
-      <li><%= link_to(:controller => "users", :action => "new") do %>
-          <strong><%= image_tag("tick.png", :style=>"width: 28px; height: 17px;") %> </strong><span>Cadastrar-se</span>
-        <% end %>
-      </li>
     </ul>
   <% end %>
 </div>

@@ -1,8 +1,6 @@
-<h1 class="title">
-  <%= form_tag(voluntarios_path, :method => "get") do %>
-    <!--< %= select(:filtro, ([["Nome", "nome"], ["Profissão", "profissao"], ["Cidade", "cidade"],
-          ["Estado","estado"]]), :prompt=>"Filtrar por...") %> -->
-    Listando Voluntarios
+<%= form_tag(voluntarios_path, :method => "get") do %>
+  <div id="buscaDados"><span>Listando Voluntarios</span></div>
+  <div id="buscaDados">
     <select name="filtro" id="filtro">
       <option value="" selected="selected">Buscar por...</option>
       <option value="nome">Nome</option>
@@ -10,18 +8,19 @@
       <option value="cidade">Cidade</option>
       <option value="estado">Estado</option>
     </select>
-    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
-    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
-  <% end %>
-</h1>
+  </div>
+  <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
+  <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
+<% end %>
 
-
+<br/><br/>
+<br/>
 <% if @voluntarios.nil? or @voluntarios.empty? %>
   <p class="busca">
     Nenhum registro foi encontrado
   </p>
 <% else %>
-  <table class="table">
+  <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
       <th>Nome</th>
       <th>Cpf</th>
@@ -31,9 +30,9 @@
       <th>Cidade</th>
       <th>Uf</th>
       <th>Cep</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><img src="/images/file_document.png" alt=""/></th>
+      <th><img src="/images/file_edit.png" alt=""/></th>
+      <th><img src="/images/file_exclude.png" alt=""/></th>
     </tr>
 
     <% @voluntarios.each do |voluntario| %>
@@ -46,14 +45,14 @@
         <td><%= voluntario.cidade %></td>
         <td><%= voluntario.estado %></td>
         <td><%= voluntario.cep %></td>
-        <td><%= link_to 'Show', voluntario %></td>
-        <td><%= link_to 'Editar', edit_voluntario_path(voluntario) %></td>
-        <td><%= link_to 'Destroy', voluntario, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td class="edicao"><%= link_to 'Show', voluntario %></td>
+        <td class="edicao"><%= link_to 'Editar', edit_voluntario_path(voluntario) %></td>
+        <td class="edicao"><%= link_to 'Destroy', voluntario, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
   </table>
   <div align="right">
-    <%= will_paginate @eventos %>
+    <%= will_paginate @voluntarios %>
   </div>
 <% end %>
 <br />
