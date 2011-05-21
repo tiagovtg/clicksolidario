@@ -30,27 +30,46 @@ class Entidade < ActiveRecord::Base
   #  usar_como_cpf :cpf
 
   #Metodo de busca, Busca_solidaria
-  def self.busca_solidaria(query, uf, causa, page)
-    logger.info "\n\n=> meleca : #{query} \n"
-    logger.info "\n\n=> meleca : #{uf} \n"
-    logger.info "\n\n=> meleca : #{causa} \n"
-
+  def self.busca_solidaria(query, uf, causa)
+    q=false
+    u=false
+    c=false
     if query.nil? or query.empty? or query=="Digite aqui o nome da entidade..."
-      query=nil
+      query=""
+    else
+      query=" entidades.nome LIKE"+" '%#{query}%' "
+      q=true
     end
-    if uf.nil? or uf.empty? or uf==""
-      uf=nil
-    end
-    if causa.nil? or causa.empty? or causa==""
-      causa=nil
-    end
-    query1 = (query.nil? ? '' : "entidades.nome LIKE"+" '%#{query}%' ")
-    uf1 = (uf.nil? ? '' : " entidades.estado LIKE"+ " '%#{uf}%' ")
-    causa1= (causa.nil? ? '' : " entidades.causa_id == #{causa} ")
 
-    a = query1 << (uf.nil? ? '' : ' and ' << uf1) << (causa == "" ? '' : ' and ' << causa1)
-    logger.info "\n\n=> meleca : #{a} \n"
-    paginate(:page => page, :order => 'cnpj', :conditions => [".", "#{a}"])
+    if uf.nil? or uf.empty? or uf==""
+      uf=""
+    else
+      uf=" entidades.estado LIKE"+ " '%#{uf}%' "
+      u=true
+    end
+
+    if causa.nil? or causa.empty? or causa==""
+      causa=""
+    else
+      causa=" entidades.causa_id = #{causa} "
+      c=true
+    end
+
+    if q and u
+      query << ' and '
+    end
+    if q and c and !u
+      query << ' and '
+    end
+    if u and c
+      uf << ' and '
+    end
+
+    a = query << uf << causa
+    
+    #    paginate(:page => 10,  :order => 'cnpj')
+    #:conditions => ["#{a}"],
+    where(a).order('cnpj').limit(10)
   end
   
 end

@@ -21,7 +21,7 @@ body, html		{ height:100%; font-family: Arial, Helvetica, sans-serif; background
 .MenuBar li:hover	{ border-top: solid 1px #9ebf28; }
 .MenuBar a 		{ color: black; text-decoration:none; padding: 0 20px; font-size: 13px; background:url(/images/pontosVerticais.gif) no-repeat right; }
 .MenuBar a:hover	{ color: #9ebf28; }
-.MenuBar a.active	{ color: green; } /* colore o menu ativo.*/
+.MenuBar a.active	{ color:#006bb9; } /* colore o menu ativo.*/
 
 #navMapa		{ height: 33px; border-bottom: solid 1px #d7e3f0; }
 #navMapa .menu		{ float: left; width: auto; margin-top: 7px; color: #000; }
@@ -35,3 +35,15 @@ body, html		{ height:100%; font-family: Arial, Helvetica, sans-serif; background
 #rodape			{ width: 100%; height: 50px; background-color: #eee; position: absolute; bottom: 0 !important; }
 #rodape .text		{ width: auto; margin-top: 20px; font-size: 12px; text-align: center; }
 
+table.bordasimples		{ border-collapse: collapse; font-family: arial; font-size: 12px;  }
+table.bordasimples tr td	{ border: 1px solid #dfdfdf; }
+table.bordasimples th		{ height: 30px; padding: 10px; border: 1px solid #dfdfdf; font-size: 15px; color: #8f8f8f; background: #f4f7fa; }
+table.bordasimples .edicao	{ font-size: 12px; color: #fc8800; text-align: center; text-decoration: underline; }
+table.bordasimples .edicao a	{ color: #fc8800; }
+td				{ padding: 10px 5px 10px 5px; }
+
+#buscaDados		{ float: left; margin: 0 10px 20px 0; }
+
+input			{ padding: 5px 10px 5px 10px; height: 18px; border: solid 1px #d8ced7; background: url(/images/formBackground.gif) repeat-x; font-family: arial; font-size: 13px; color: #4b4d4a; }
+select			{ padding: 5px 10px 5px 10px; height: 30px; border: solid 1px #d8ced7; background: url(/images/formBackground.gif) repeat-x; font-family: arial; font-size: 13px; color: #4b4d4a; }
+span			{ color: #e47e1e; font-family: arial; font-size: 22px; font-weight: bold; }

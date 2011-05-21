@@ -1,23 +1,24 @@
-<h1 class="title">
-  <%= form_tag(emergencia_path, :method => "get") do %>
-    Listando Emergencia
+<%= form_tag(emergencia_path, :method => "get") do %>
+  <div id="buscaDados"><span>Listando Notícias</span></div>
+  <div id="buscaDados">
     <select name="filtro" id="filtro">
       <option value="" selected="selected">Buscar por...</option>
       <option value="nome">Nome</option>
       <option value="desc">Descrição</option>
     </select>
-    <input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/>
-    <input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/>
-  <% end %>
-</h1>
+  </div>
+  <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
+  <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
+<% end %>
 
-
+<br/><br/>
+<br/>
 <% if @emergencia.nil? or @emergencia.empty? %>
-  <p class="busca">
+  <p class="buscaDados">
     Nenhum registro foi encontrado
   </p>
 <% else %>
-  <table class="table">
+  <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
       <th>Nome</th>
       <th>Desc</th>
@@ -25,9 +26,9 @@
       <th>Status</th>
       <th>Entidade</th>
       <th>Validação</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th><img src="/images/file_document.png" alt=""/></th>
+      <th><img src="/images/file_edit.png" alt=""/></th>
+      <th><img src="/images/file_exclude.png" alt=""/></th>
     </tr>
 
     <% @emergencia.each do |emergencium| %>
@@ -38,9 +39,9 @@
         <td><%= emergencium.status %></td>
         <td><%= emergencium.entidade_id %></td>
         <td><%= emergencium.validacao==true ? 'Valida' : 'Invalida' %></td>
-        <td><%= link_to 'Mostrar', emergencium %></td>
-        <td><%= link_to 'Editar', edit_emergencium_path(emergencium) %></td>
-        <td><%= link_to 'Deletar', emergencium, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+        <td class="edicao"><%= link_to 'Mostrar', emergencium %></td>
+        <td class="edicao"><%= link_to 'Editar', edit_emergencium_path(emergencium) %></td>
+        <td class="edicao"><%= link_to 'Deletar', emergencium, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>
   </table>

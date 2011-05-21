@@ -1,7 +1,7 @@
 class CreateEmergencia < ActiveRecord::Migration
   def self.up
     create_table :emergencia do |t|
-      t.string :nome,         :limite => 70
+      t.string :nome,        :limit => 255
       t.text :desc
       t.date :data
       t.string :status,       :limite => 20

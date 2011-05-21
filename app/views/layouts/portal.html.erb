@@ -3,7 +3,7 @@
 
   <head>
     <meta http-equiv="Content-Language" content="pt-br" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
     <title>Click Solidario</title>
 
     <%= stylesheet_link_tag 'estilo' %>
@@ -18,7 +18,7 @@
     <%= yield %>
 
     <div id="rodapeFinal">
-      <div class="tamanho">© Copyright 2011 Click Solidário - Nossas crianças, nosso futuro</div>
+      <div class="tamanho">© Copyright 2011 <%= "- #{Date.today.year}" if Date.today.year != 2011 %>Click Solidário - Nossas crianças, nosso futuro.</div>
     </div>
 
   </body>

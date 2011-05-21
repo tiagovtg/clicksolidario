@@ -11,7 +11,7 @@ body				{ margin: 0; font-family: Arial, Helvetica, sans-serif; }
 #navBar .entidade		{ float: left; width: auto; margin-top: 13px; padding-right: 10px; background: url(/images/setaLogin.png) no-repeat right center; font-family: arial; font-size: 12px; font-weight: bold; color: #e47e1e; cursor: pointer; }
 #navBar .entidadeBarra          { position : absolute; background-color: #F90; width:940px; height: 40px; top: 40px; display: none; border-top: 1px solid #d1d1d1; border-bottom: 1px solid #d1d1d1; }
 #navBar .mapaPortal		{ float: left; width: auto; margin-top: 13px; padding-right: 10px; font-family: arial; font-size: 12px; font-weight: bold; color: #e47e1e; }
-#navBar .mapaPortal a	{ color: #e47e1e; text-decoration: none; }
+#navBar .mapaPortal a           { color: #e47e1e; text-decoration: none; }
 
 #navlist  			{ float: left; margin: 0; }
 #navlist ul 			{ float: left; list-style: none; margin: 0; }
@@ -44,7 +44,7 @@ body				{ margin: 0; font-family: Arial, Helvetica, sans-serif; }
 
 #colunaEsquerda			{ width: 179px; float: left; }
 
-#colunaDireita			{ width: 720px; float:right; }
+#colunaDireita			{ float: right; width: 720px; font-family: arial; font-size: 14px; color: #4b4d4a; }
 
 /* menu topo  */
 .MenuBar 			{ color: #ff00ff; margin: 23px 0 0 0; border-bottom: solid 4px #9ebf28; height: 38px; margin-bottom: 40px; }
@@ -53,7 +53,7 @@ body				{ margin: 0; font-family: Arial, Helvetica, sans-serif; }
 .MenuBar li:hover               { border-top: solid 1px #9ebf28;  }
 .MenuBar a 			{ color:black; text-decoration:none; padding: 0 20px; font-size: 13px; background:url(/images/pontosVerticais.gif) no-repeat right; }
 .MenuBar a:hover                { color:#9ebf28; }
-.MenuBar a.active               { color: green; } /* colore o menu ativo.*/
+.MenuBar a.active               { color:#006bb9; } /* colore o menu ativo.*/
 
 /*Busca Solidaria  */
 #buscaSolidaria			{ }
@@ -239,6 +239,53 @@ body				{ margin: 0; font-family: Arial, Helvetica, sans-serif; }
 .slideA                         { background: url("/images/Banner_MeninaFeliz.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
 .slideB                         { background: url("/images/Banner_MeninaFeliz2.jpg"); width: 720px; height: 300px; float: left;}
 .slideC                         { background: url("/images/Banner_MeninaFeliz3.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
-.slideD                         { background: url("/images/Banner_MeninaFeliz.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
-.slideE                         { background: url("/images/Banner_MeninaFeliz2.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
-.slideF                         { background: url("/images/Banner_MeninaFeliz3.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
+.slideD                         { background: url("/images/Banner_MeninaFeliz4.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
+.slideE                         { background: url("/images/Banner_MeninaFeliz5.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
+.slideF                         { background: url("/images/Banner_MeninaFeliz6.jpg") no-repeat 0px 0px; width: 720px; height: 300px; float: left;}
+
+#barraIdentificacao             { width: 720px; height: 45px; margin-bottom: 40px; background: url(/images/backgroundMigAce.gif) no-repeat; }
+
+/* migalhas de pão */
+#breadCrumb			{ margin: 0; padding: 0; float: left; display: block; overflow: hidden; width: auto; padding: 13px; font-size: 18px; }
+#breadCrumb ul			{ margin: 0; padding: 0; height: 21px; display: block; }
+#breadCrumb ul li		{ display: block; float: left;	position: relative;	height: 21px; overflow: hidden; line-height: 21px; margin: 0px 6px 0px 0; padding: 0px 10px 0px 0; font-size: .9167em; background: url(/images/Chevron.gif) no-repeat 100% 0; }
+#breadCrumb ul li div.chevronOverlay	{ position: absolute; right: 0;	top: 0;	z-index: 2; }
+#breadCrumb ul li span					{ display: block; overflow: hidden; }
+#breadCrumb ul li a						{ display: block; position: relative; height: 21px; line-height: 21px; overflow: hidden; float: left; color: #999; text-decoration: none; }
+#breadCrumb ul li.first a				{ height: 16px !important;	text-indent: -1000em; width: 16px; padding: 0; margin-top: 2px; overflow: hidden; background: url(/images/IconHome.gif) no-repeat 0 0; }
+#breadCrumb ul li.first a:hover			{ background-position: 0 -16px; }
+#breadCrumb ul li.last					{ background: none; margin-right: 0; padding-right: 0; color: #e47e1e; font-weight: bold; }
+#chevronOverlay							{ display: none; background: url(/images/ChevronOverlay.png) no-repeat 100% 0; width: 13px;	height: 20px; }
+
+/* acessibilidade */
+#tFonte				{ float: right; margin-top: 14px; font-family: arial; font-size: 14px; color: #e47e1e; }
+
+#aMenos				{ float: right; margin: 10px 0 0 10px; width: 25px; height: 25px; }
+#aMenos a			{ position: absolute; display: block; margin: 0; background: url(/images/aMenos.gif) no-repeat; width: 25px; height: 25px; }
+#aMenos a:hover                 { position: absolute; margin: 0; background: url(/images/aMenosHover.gif) no-repeat; width: 25px; height: 25px; }
+
+#aMais				{ float: right; margin: 10px 10px 0 5px; width: 25px; height: 25px; }
+#aMais a			{ position: absolute; display: block; margin: 0; background: url(/images/aMais.gif) no-repeat; width: 25px; height: 25px; }
+#aMais a:hover                  { position: absolute; margin: 0; background: url(/images/aMaisHover.gif) no-repeat; width: 25px; height: 25px; }
+
+
+p, a				{ color: #4b4d4a; }
+.laranja			{ color: #e47e1e; font-weight: bold; }
+.cinza				{ font-weight: bold; }
+
+/* página de cadastro */
+#cadastro				{ font-size: 14px; }
+#cadastro .iPessoais            { width: 700px; height: 35px; margin-bottom: 20px; padding: 10px 0 0 20px; background: url(/images/cadastreSeBarra01.png) no-repeat; color: #9ebf28; font-weight: bold; }
+#cadastro .endereco		{ width: 700px; height: 35px; margin-bottom: 20px; padding: 10px 0 0 20px; background: url(/images/cadastreSeBarra02.png) no-repeat; color: #006bb9; font-weight: bold; }
+#cadastro .aPortal		{ width: 700px; height: 35px; margin-bottom: 20px; padding: 10px 0 0 20px; background: url(/images/cadastreSeBarra02.png) no-repeat; color: #006bb9; font-weight: bold; }
+#cadastro .dEmpresa		{ width: 700px; height: 35px; margin-bottom: 20px; padding: 10px 0 0 20px; background: url(/images/cadastreSeBarra03.png) no-repeat; color: #7e7e7e; font-weight: bold; }
+#cadastro .dEntidade            { width: 700px; height: 35px; margin-bottom: 20px; padding: 10px 0 0 20px; background: url(/images/cadastreSeBarra03.png) no-repeat; color: #7e7e7e; font-weight: bold; }
+#cadastro input			{ padding: 5px 10px 5px 10px; height: 18px; border: solid 1px #d8ced7; background: url(/images/formBackground.gif) repeat-x; font-family: arial; font-size: 13px; color: #4b4d4a; }
+#cadastro select		{ padding: 5px 10px 5px 10px; height: 30px; border: solid 1px #d8ced7; background: url(/images/formBackground.gif) repeat-x; font-family: arial; font-size: 13px; color: #4b4d4a; }
+#cadastro .exData		{ width: auto; padding: 0 20px 0 10px; font-size: 11px; color: #9ebf28; }
+#cadastro .exDataFun            { width: auto; padding: 0 20px 0 10px; font-size: 11px; color: #4b4d4a; }
+#cadastro .cep			{ width: auto; padding: 0 20px 0 10px; font-size: 11px; color: #006bb9; }
+#cadastro .cep a		{ color: #006bb9; }
+#cadastro .cepTraco		{ width: auto; padding: 0 5px 0 5px; font-size: 14px; color: #006bb9; }
+#cadastro .botaoLimpar          { float: right; width: 80px; height: 26px; background: url(/images/cadastroBotLimpar.gif) no-repeat; padding: 0; border: 0; }
+#cadastro .botaoEnviar          { float: left; width: 84px; height: 26px; background: url(/images/cadastroBotEnviar.gif) no-repeat; padding: 0; border: 0; }

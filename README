@@ -1,7 +1,7 @@
 #Requisitos para rodar a aplicação, se necessario.
 
 #Ajax
-    # o nome da action, tem que conter na mesma pasta, um arquivo com extensao, js.erb, de nome da action.
+    # o nome da action, tem que conter na pasta da view, um arquivo com extensao, js.erb, de nome da action.
     # o nome da variavel de instancia, dentro do js.erb, e na action, tem que ser o nome da partial, que
     # tera o nome da classe e ficara dentro da view da classe. ex view/pessoa/_pessoa.html.erb, variavel @pessoas
     # para mostrar, na .js  $("# div a trocar").html("<%= escape_javascript(render(@pessoas)) %>");

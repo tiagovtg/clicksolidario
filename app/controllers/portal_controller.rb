@@ -5,13 +5,8 @@ class PortalController < ApplicationController
   end
 
   def busca_solidaria
-
-    logger.info "\n\n=> meleca query: #{params[:query]}\n"
-    logger.info "\n\n=> meleca uf: #{params[:filtroUF]}\n"
-    logger.info "\n\n=> meleca causa: #{params[:filtroCausa]}\n\n"
-    
-
-    @entidades = Entidade.busca_solidaria(params[:query], params[:filtroUF], params[:filtroCausa], params[:page])
+#    @entidades = Entidade.all
+    @entidades = Entidade.busca_solidaria(params[:query], params[:filtroUF][0], params[:filtroCausa])
   end
 
 end
