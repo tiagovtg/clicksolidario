@@ -37,7 +37,7 @@ class Entidade < ActiveRecord::Base
     if query.nil? or query.empty? or query=="Digite aqui o nome da entidade..."
       query=""
     else
-      query=" entidades.nome LIKE"+" '%#{query}%' "
+      query=" entidades.nomefantasia LIKE"+" '%#{query}%' "
       q=true
     end
 

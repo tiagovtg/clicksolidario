@@ -1,0 +1,191 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#login").toggle(function(){
+      $("#divLogin").slideDown('slow');
+    },function(){
+      $("#divLogin").slideUp('slow');
+    });
+    $("#entidade").toggle(function(){
+      $("#divEntidade").slideDown('slow');
+    },function(){
+      $("#divEntidade").slideUp('slow');
+    });
+  });
+
+  //Aumenta e reduz o tamanho da fonte
+  $(document).ready(function(){
+    var fonte = 14;
+    $("#aumenta_fonte").click(function(){
+      if (fonte<18){
+        fonte = fonte+1;
+        $("#colunaDireita").css({"font-size" : fonte+"px"});
+      }
+    });
+    $("#reduz_fonte").click(function(){
+      if (fonte>9){
+        fonte = fonte-1;
+        $("#colunaDireita").css({"font-size" : fonte+"px"});
+      }
+    });
+  });
+</script>
+
+<!-- NavBar -->
+<div id="navBar">
+
+  <div class="barra">
+
+    <!-- login usuário -->
+    <%= render :partial => 'portal/login' %>
+
+    <!-- login entidades -->
+    <div id="entidade" class="entidade">área das entidades</div>
+
+    <div id="divEntidade" class="entidadeBarra">
+      <ul id="navlist">
+        <li>usuário:<input name="usuario" type="text" style="width: 149px;" class="input" /></li>
+        <li>senha:<input name="senha" type="password" style="width: 149px" class="input" /></li>
+        <li><input name="botao"  type="button"  value="ok »" class="botaoLogin" /></li>
+        <li><a href="#">esqueci minha senha</a></li>
+        <li>|</li>
+        <li><a href="#">esqueci meu usuário</a></li>
+      </ul>
+    </div>
+
+    <div class="traco"></div>
+
+    <!-- mapa do portal -->
+    <div class="mapaPortal"><a href="#">mapa do portal</a></div>
+
+    <!-- rede social -->
+    <%= render :partial => 'portal/rede_social' %>
+
+  </div>
+
+</div>
+
+
+<!-- Corpo do Site -->
+<div id="corpoSite">
+
+  <div class="cabecalho">
+
+    <div class="logo"></div>
+
+    <!-- menu -->
+    <%= render :partial => 'portal/menu' %>
+
+    <!-- CorpoConteudo -->
+    <div id="conteudo">
+
+      <div id="colunaEsquerda">
+
+        <!-- Busca Solidaria -->
+        <%= render :partial => 'portal/busca_solidaria' %>
+
+        <!-- Menu Lateral -->
+        <%= render :partial => 'portal/menu_lateral' %>
+
+        <!-- Conheça essas Iniciativas -->
+        <div id="ConhecaIniciativas">
+
+          <h1>Conheça essas Iniciativas</h1>
+          <p>Todo més 3 importantes ações no Click Solidário serão destacadas.</p>
+
+          <ul>
+            <li><a href="#">UniGente</a></li>
+            <li><a href="#">Vida Gente</a></li>
+            <li><a href="#">Cont. Responsável</a></li>
+          </ul>
+        </div>
+
+        <!-- Saiba Como -->
+        <div id="SaibaComo">
+          <h1>Saiba Como</h1>
+
+          <div class="sidebarmenu">
+            <ul id="sidebarmenu1">
+              <li><a href="adotarUmaCrianca.htm" title="Adotar uma Criança">Adotar uma Criança</a></li>
+              <li><a href="conviverComMeioAmbiente.htm" title="Conviver com o Meio Ambiente">Conviver com o Meio Ambiente</a></li>
+              <li><a href="serUmaEmpresaCidada.htm" title="Ser uma Empresa Cidadã">Ser uma Empresa Cidadã</a></li>
+              <li><a href="serUmdoadorDeOrgaos.htm" title="Ser um doador de Orgãos">Ser um doador de Orgãos</a></li>
+              <li><a href="reciclarSeuLixo.htm" title="Reciclar seu lixo">Reciclar seu lixo</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Veja Como -->
+        <div id="VejaComo">
+          <h1>Veja como você Ajudou</h1>
+          <form>
+            <input id="VejaComo-campo" name="Text1" type="text" />
+            <input id="VejaComo-campo" name="Text2" type="text" />
+
+            <p><a href="$">Esqueci o login</a></p>
+            <p><a href="$">Esqueci a senha</a></p>
+
+            <input name="Submit1" type="image"  src="images/Bt_BuscarEntrar.gif" value="enviar" style="margin-top: 8px;" />
+
+          </form>
+        </div>
+
+
+        <!-- Eu apóio o Click Solidário -->
+        <div id="EuApoio">
+          <h1>Eu apóio o Click Solidário</h1>
+          <p>Seu apoio é fundamental para o crescimento desse movimento.
+            <a href="#">» Participe!</a></p>
+        </div>
+
+        <!--Indique Um Amigo -->
+        <div id="IndiqueAmigo">
+          <h1>Indique um Amigo</h1>
+          <p>Indique o Click Solidário para seus amigos. <a href="#">» Indique</a></p>
+        </div>
+
+      </div>
+
+      <!-- COLUNA DIREITA -->
+      <div id="colunaDireita">
+
+        <!-- div resultado da pesquisa do busca solidaria -->
+        <div id="resultado_busca_solidaria">
+        </div>
+
+        <div id="barraIdentificacao">
+
+          <!-- migalhas de pão -->
+          <div id="breadCrumb">
+            <ul>
+              <li class="first" title="Voltar para página Inicial"><a href="default.htm" title="Voltar para página Inicial">Página Inicial</a></li>
+              <li class="last" title="Dúvidas">Dúvidas</li>
+            </ul>
+          </div>
+
+          <!-- acessibilidade -->
+          <div id="aMais"><a href="#" title="Aumenta tamanho da fonte" id="aumenta_fonte"></a></div>
+          <div id="aMenos"><a href="#" title="Diminue tamanho da fonte" id="reduz_fonte"></a></div>
+          <div id="tFonte">tamanho da fonte</div>
+
+        </div>
+
+
+        <p>Aguarde!</p>
+
+        <div class="clear"></div>
+
+      </div>
+      <div class="clear"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Depoimento -->
+<%= render :partial => 'portal/depoimento' %>
+
+
+<!-- rodapé -->
+<%= render :partial => 'portal/rodape' %>

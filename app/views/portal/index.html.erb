@@ -5,11 +5,27 @@
     },function(){
       $("#divLogin").slideUp('slow');
     });
-
     $("#entidade").toggle(function(){
       $("#divEntidade").slideDown('slow');
     },function(){
       $("#divEntidade").slideUp('slow');
+    });
+  });
+
+  //Aumenta e reduz o tamanho da fonte
+  $(document).ready(function(){
+    var fonte = 14;
+    $("#aumenta_fonte").click(function(){
+      if (fonte<18){
+        fonte = fonte+1;
+        $("#colunaDireita").css({"font-size" : fonte+"px"});
+      }
+    });
+    $("#reduz_fonte").click(function(){
+      if (fonte>9){
+        fonte = fonte-1;
+        $("#colunaDireita").css({"font-size" : fonte+"px"});
+      }
     });
   });
 </script>
@@ -64,7 +80,7 @@
 
       <div id="colunaEsquerda">
 
-        <!-- Busca Solidariav -->
+        <!-- Busca Solidaria -->
         <%= render :partial => 'portal/busca_solidaria' %>
 
         <!-- Menu Lateral -->
@@ -89,11 +105,11 @@
 
           <div class="sidebarmenu">
             <ul id="sidebarmenu1">
-              <li><a href="#">Adotar uma Criança</a></li>
-              <li><a href="#">Conviver com o Meio Ambiente</a></li>
-              <li><a href="#">Ser uma Empresa Cidadã</a></li>
-              <li><a href="#">Ser um doador de Orgãos</a></li>
-              <li><a href="#">Reciclar seu lixo</a></li>
+              <li><a href="adotarUmaCrianca.htm" title="Adotar uma Criança">Adotar uma Criança</a></li>
+              <li><a href="conviverComMeioAmbiente.htm" title="Conviver com o Meio Ambiente">Conviver com o Meio Ambiente</a></li>
+              <li><a href="serUmaEmpresaCidada.htm" title="Ser uma Empresa Cidadã">Ser uma Empresa Cidadã</a></li>
+              <li><a href="serUmdoadorDeOrgaos.htm" title="Ser um doador de Orgãos">Ser um doador de Orgãos</a></li>
+              <li><a href="reciclarSeuLixo.htm" title="Reciclar seu lixo">Reciclar seu lixo</a></li>
             </ul>
           </div>
 
@@ -124,25 +140,28 @@
 
         <!--Indique Um Amigo -->
         <div id="IndiqueAmigo">
-          <h1>Eu apóio o Click Solidário</h1>
-          <p>Seu apoio é fundamental para o crescimento desse movimento.
-            <a href="#">» Indique</a></p>
+          <h1>Indique um Amigo</h1>
+          <p>Indique o Click Solidário para seus amigos. <a href="#">» Indique</a></p>
         </div>
 
       </div>
 
       <!-- COLUNA DIREITA -->
       <div id="colunaDireita">
-        <div id="resultado_busca_solidaria"></div>
+
+        <!-- div resultado da pesquisa do busca solidaria -->
+        <div id="resultado_busca_solidaria">
+        </div>
+
         <!-- Banner jQuery -->
         <%= render :partial => 'portal/banner' %>
 
         <!-- Menu - Escolha Como Ajudar -->
         <%= render :partial => 'portal/menu_como_ajudar' %>
 
-
         <!-- Colunas - Notícias & Emergência  -->
         <div id="ConteudoColunas">
+
           <!-- Notícias & Cidadania -->
           <%= render :partial => 'portal/noticia' %>
 
@@ -152,41 +171,10 @@
 
 
         <!-- Faça Como Eles -->
-        <div id="FacaComo">
-
-          <h1>Faça como eles</h1>
-
-          <div style="height: 274px">
-            <div id="FacaComoTb01">
-              <a href="#">
-                <p><img src="images/FaçaComo-Foto01.jpg" alt=""/></p>
-                <h1>O problema é que a AIDS saiu de moda</h1>
-                <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
-              </a>
-            </div>
-            <div id="FacaComoTb02">
-              <a href="#">
-                <p><img src="images/FaçaComo-Foto02.jpg" alt=""/></p>
-                <h1>O problema é que a AIDS saiu de moda</h1>
-                <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
-              </a>
-            </div>
-            <div id="FacaComoTb03" style="float: right;">
-              <a href="#">
-                <p><img src="images/FaçaComo-Foto03.jpg" alt=""/></p>
-                <h1>O problema é que a AIDS saiu de moda</h1>
-                <span>As pessoas acham que a AIDS é uma doença que basta tomar um remédio e tudo bem, mas infelizmente não é bem assim.</span>
-              </a>
-            </div>
-          </div>
-          <!-- Botão - Veja mais o que podemos fazert -->
-          <div id="FacaComoBoxLink" >
-            <a href="#">Veja mais o que pode fazer »</a>
-          </div>
-
-        </div>
+        <%= render :partial => 'portal/faca_como' %>
+        
       </div>
-
+      <div class="clear"></div>
     </div>
 
   </div>
