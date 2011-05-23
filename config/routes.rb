@@ -1,7 +1,8 @@
 Sgss::Application.routes.draw do
-  #todas rotas necessarias para rodar o authlogic
+  # rota principal
   root :to => "portal#index"
 
+  #todas rotas necessarias para rodar o authlogic
   resources :users
   match "join" => "users#new"
   match "activate_deactivate" => "users#activate_deactivate"
@@ -12,14 +13,31 @@ Sgss::Application.routes.draw do
   match "login" => "user_sessions#new"
   match "logout" => "user_sessions#destroy"
 
-  #aqui as nao herdadas, pelo authlogic
-  
   #portal
   match "busca_solidaria"   => "portal#busca_solidaria"
+
+  #menu principal
   match "ajude"             => "ajude#index"
   match "conheca"           => "conheca#index"
-  match "contato"           => "contato#index"
   match "duvida"            => "duvida#index"
+  match "contato"           => "contato#index"
+
+  #menu esquerdo
+  match "quemsomos"        => "quemsomos#index"
+  match "apoiadores"        => "apoiadores#index"
+  match "divulgue"          => "divulgue#index"
+  match "publicidade"       => "publicidade#index"
+  match "imprensa"          => "imprensa#index"
+  
+  #saiba como
+  match "adotar"            => "adotar#index"
+  match "conviver"          => "conviver#index"
+  match "reciclar"          => "reciclar#index"
+  match "empresacidada"     => "empresacidada#index"
+  match "doadororgaos"      => "doadororgaos#index"
+  
+  #
+  match "veja_como"         => "vejacomo#index"
 
   #sgs
   resources :entidades#menu

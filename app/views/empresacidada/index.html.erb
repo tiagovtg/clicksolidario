@@ -1,0 +1,155 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("#login").toggle(function(){
+      $("#divLogin").slideDown('slow');
+    },function(){
+      $("#divLogin").slideUp('slow');
+    });
+    $("#entidade").toggle(function(){
+      $("#divEntidade").slideDown('slow');
+    },function(){
+      $("#divEntidade").slideUp('slow');
+    });
+  });
+
+  //Aumenta e reduz o tamanho da fonte
+  $(document).ready(function(){
+    var fonte = 14;
+    $("#aumenta_fonte").click(function(){
+      if (fonte<18){
+        fonte = fonte+1;
+        $("#colunaDireita").css({"font-size" : fonte+"px"});
+      }
+    });
+    $("#reduz_fonte").click(function(){
+      if (fonte>9){
+        fonte = fonte-1;
+        $("#colunaDireita").css({"font-size" : fonte+"px"});
+      }
+    });
+  });
+</script>
+
+<!-- NavBar -->
+<div id="navBar">
+
+  <div class="barra">
+
+    <!-- login usuário -->
+    <%= render :partial => 'portal/login' %>
+
+    <!-- login entidades -->
+    <div id="entidade" class="entidade">área das entidades</div>
+
+    <div id="divEntidade" class="entidadeBarra">
+      <ul id="navlist">
+        <li>usuário:<input name="usuario" type="text" style="width: 149px;" class="input" /></li>
+        <li>senha:<input name="senha" type="password" style="width: 149px" class="input" /></li>
+        <li><input name="botao"  type="button"  value="ok »" class="botaoLogin" /></li>
+        <li><a href="#">esqueci minha senha</a></li>
+        <li>|</li>
+        <li><a href="#">esqueci meu usuário</a></li>
+      </ul>
+    </div>
+
+    <div class="traco"></div>
+
+    <!-- mapa do portal -->
+    <div class="mapaPortal"><a href="#">mapa do portal</a></div>
+
+    <!-- rede social -->
+    <%= render :partial => 'portal/rede_social' %>
+
+  </div>
+
+</div>
+
+
+<!-- Corpo do Site -->
+<div id="corpoSite">
+
+  <div class="cabecalho">
+
+    <div class="logo"></div>
+
+    <!-- menu -->
+    <%= render :partial => 'portal/menu' %>
+
+    <!-- CorpoConteudo -->
+    <div id="conteudo">
+
+      <div id="colunaEsquerda">
+
+        <!-- Busca Solidaria -->
+        <%= render :partial => 'portal/busca_solidaria' %>
+
+        <!-- Menu Lateral -->
+        <%= render :partial => 'portal/menu_lateral' %>
+
+        <!-- Conheça essas Iniciativas -->
+        <%= render :partial => 'portal/conheca_iniciativas' %>
+
+        <!-- Saiba Como -->
+        <%= render :partial => 'portal/saiba_como' %>
+
+        <!-- Veja Como -->
+        <%= render :partial => 'portal/veja_como' %>
+
+        <!-- Eu apóio o Click Solidário -->
+        <div id="EuApoio">
+          <h1>Eu apóio o Click Solidário</h1>
+          <p>Seu apoio é fundamental para o crescimento desse movimento.
+            <a href="#">» Participe!</a></p>
+        </div>
+
+        <!--Indique Um Amigo -->
+        <div id="IndiqueAmigo">
+          <h1>Indique um Amigo</h1>
+          <p>Indique o Click Solidário para seus amigos. <a href="#">» Indique</a></p>
+        </div>
+
+      </div>
+
+      <!-- COLUNA DIREITA -->
+      <div id="colunaDireita">
+
+        <!-- div resultado da pesquisa do busca solidaria -->
+        <div id="resultado_busca_solidaria">
+        </div>
+
+        <div id="barraIdentificacao">
+
+          <!-- migalhas de pão -->
+          <div id="breadCrumb">
+            <ul>
+              <li class="first" title="Voltar para página Inicial"><a href="default.htm" title="Voltar para página Inicial">Página Inicial</a></li>
+              <li title="Saiba Como">Saiba Como</li>
+              <li class="last" title="Ser uma Empresa Cidadã">Ser uma Empresa Cidadã</li>
+            </ul>
+          </div>
+
+          <!-- acessibilidade -->
+          <div id="aMais"><a href="#" title="Aumenta tamanho da fonte" id="aumenta_fonte"></a></div>
+          <div id="aMenos"><a href="#" title="Diminue tamanho da fonte" id="reduz_fonte"></a></div>
+          <div id="tFonte">tamanho da fonte</div>
+
+        </div>
+
+
+        <p>Aguarde!</p>
+
+
+      </div>
+      <div class="clear"></div>
+    </div>
+
+  </div>
+
+</div>
+
+<!-- Depoimento -->
+<%= render :partial => 'portal/depoimento' %>
+
+
+<!-- rodapé -->
+<%= render :partial => 'portal/rodape' %>

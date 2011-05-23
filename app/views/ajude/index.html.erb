@@ -87,49 +87,13 @@
         <%= render :partial => 'portal/menu_lateral' %>
 
         <!-- Conheça essas Iniciativas -->
-        <div id="ConhecaIniciativas">
-
-          <h1>Conheça essas Iniciativas</h1>
-          <p>Todo més 3 importantes ações no Click Solidário serão destacadas.</p>
-
-          <ul>
-            <li><a href="#">UniGente</a></li>
-            <li><a href="#">Vida Gente</a></li>
-            <li><a href="#">Cont. Responsável</a></li>
-          </ul>
-        </div>
+        <%= render :partial => 'portal/conheca_iniciativas' %>
 
         <!-- Saiba Como -->
-        <div id="SaibaComo">
-          <h1>Saiba Como</h1>
-
-          <div class="sidebarmenu">
-            <ul id="sidebarmenu1">
-              <li><a href="adotarUmaCrianca.htm" title="Adotar uma Criança">Adotar uma Criança</a></li>
-              <li><a href="conviverComMeioAmbiente.htm" title="Conviver com o Meio Ambiente">Conviver com o Meio Ambiente</a></li>
-              <li><a href="serUmaEmpresaCidada.htm" title="Ser uma Empresa Cidadã">Ser uma Empresa Cidadã</a></li>
-              <li><a href="serUmdoadorDeOrgaos.htm" title="Ser um doador de Orgãos">Ser um doador de Orgãos</a></li>
-              <li><a href="reciclarSeuLixo.htm" title="Reciclar seu lixo">Reciclar seu lixo</a></li>
-            </ul>
-          </div>
-
-        </div>
+        <%= render :partial => 'portal/saiba_como' %>
 
         <!-- Veja Como -->
-        <div id="VejaComo">
-          <h1>Veja como você Ajudou</h1>
-          <form>
-            <input id="VejaComo-campo" name="Text1" type="text" />
-            <input id="VejaComo-campo" name="Text2" type="text" />
-
-            <p><a href="$">Esqueci o login</a></p>
-            <p><a href="$">Esqueci a senha</a></p>
-
-            <input name="Submit1" type="image"  src="images/Bt_BuscarEntrar.gif" value="enviar" style="margin-top: 8px;" />
-
-          </form>
-        </div>
-
+        <%= render :partial => 'portal/veja_como' %>
 
         <!-- Eu apóio o Click Solidário -->
         <div id="EuApoio">
@@ -177,6 +141,7 @@
 
         <div class="clear"></div>
 
+
       </div>
       <div class="clear"></div>
     </div>
@@ -191,3 +156,7 @@
 
 <!-- rodapé -->
 <%= render :partial => 'portal/rodape' %>
+
+        
+
+      
