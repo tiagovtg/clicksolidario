@@ -110,6 +110,27 @@ jQuery(function(){
     }
 
 
+    //Aumenta e reduz o tamanho da fonte Aa
+    $(document).ready(function(){
+        var fonte = 14;
+        $("#aumenta_fonte").click(function(){
+            if (fonte<18){
+                fonte = fonte+1;
+                $("#colunaDireita").css({
+                    "font-size" : fonte+"px"
+                    });
+            }
+        });
+        $("#reduz_fonte").click(function(){
+            if (fonte>9){
+                fonte = fonte-1;
+                $("#colunaDireita").css({
+                    "font-size" : fonte+"px"
+                    });
+            }
+        });
+    });
+    
 /* adicionar mais js daqui */
 
 });
