@@ -5,7 +5,7 @@ class CreateVoluntarios < ActiveRecord::Migration
       t.string :apelido,        :limit => 30
       t.date   :datanasc
       t.string :cpf,            :limit => 14
-      t.string :sexo,           :limit => 1
+      t.string :sexo,           :limit => 9
 
       t.string :profissao,      :limit => 70
       

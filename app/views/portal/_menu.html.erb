@@ -1,10 +1,10 @@
 <div class="MenuBar">
   <ul>
     <li><a href="/" class="<%= controller.controller_path == 'portal' ? 'active' : '' %>">Home</a></li>
-    <li><a href="/ajude">Ajude Agora</a></li>
-    <li><a href="/conheca">Conheça o Click Solidário</a></li>
+    <li><a href="/ajude" class="<%= controller.controller_path == 'ajude' ? 'active' : '' %>">Ajude Agora</a></li>
+    <li><a href="/conheca" class="<%= controller.controller_path == 'conheca' ? 'active' : '' %>">Conheça o Click Solidário</a></li>
     <li><a href="/join" class="<%= controller.controller_path == 'users' ? 'active' : '' %>">Cadastre-se</a></li>
-    <li><a href="/duvida">Dúvidas</a></li>
-    <li><a href="/contato">Contato</a></li>
+    <li><a href="/duvida" class="<%= controller.controller_path == 'duvida' ? 'active' : '' %>">Dúvidas</a></li>
+    <li><a href="/contato"  class="<%= controller.controller_path == 'contato' ? 'active' : '' %>">Contato</a></li>
   </ul>
 </div>
