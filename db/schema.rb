@@ -65,6 +65,10 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
     t.text     "desc"
     t.date     "data"
     t.string   "status"
+    t.string   "imagem_file_name",    :null => false
+    t.string   "imagem_content_type", :null => false
+    t.integer  "imagem_file_size",    :null => false
+    t.datetime "imagem_updated_at",   :null => false
     t.boolean  "validacao"
     t.integer  "entidade_id"
     t.datetime "created_at"
@@ -82,7 +86,7 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
     t.string   "apelido",       :limit => 30
     t.date     "datanasc"
     t.string   "cpf",           :limit => 14
-    t.string   "sexo",          :limit => 1
+    t.string   "sexo",          :limit => 9
     t.string   "cep",           :limit => 10
     t.string   "endereco",      :limit => 70
     t.string   "numero",        :limit => 10
@@ -108,7 +112,7 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
     t.string   "apelido",      :limit => 30
     t.date     "datanasc"
     t.string   "cpf",          :limit => 14
-    t.string   "sexo",         :limit => 1
+    t.string   "sexo",         :limit => 9
     t.string   "cep",          :limit => 10
     t.string   "endereco",     :limit => 70
     t.string   "numero",       :limit => 10
@@ -131,8 +135,8 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "noticia", :force => true do |t|
-    t.string   "nome",        :limit => 15
-    t.string   "texto",       :limit => 100
+    t.string   "nome"
+    t.text     "texto"
     t.date     "data"
     t.boolean  "validacao"
     t.integer  "entidade_id"
@@ -187,7 +191,7 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
     t.string   "apelido",     :limit => 30
     t.date     "datanasc"
     t.string   "cpf",         :limit => 14
-    t.string   "sexo",        :limit => 1
+    t.string   "sexo",        :limit => 9
     t.string   "profissao",   :limit => 70
     t.string   "cep",         :limit => 10
     t.string   "endereco",    :limit => 70

@@ -24,7 +24,7 @@ class UserSessionsController < ApplicationController
           redirect_to session[:return_to]
           session[:return_to] = nil
         else
-          redirect_to login_url
+          redirect_to users_url
         end
       end
     else

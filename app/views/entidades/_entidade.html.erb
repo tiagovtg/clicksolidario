@@ -7,6 +7,7 @@
   <table width="720px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
       <th>Nome</th>
+      <th>Causa</th>
       <th>Cnpj</th>
       <th>Cidade</th>
       <th>Estado</th>
@@ -16,6 +17,7 @@
     <% @entidades.each do |entidade| %>
       <tr class="<%= cycle("odd", "even") %>">
         <td><%= entidade.nomefantasia %></td>
+        <td><%= entidade.causa.nome %></td>
         <td><%= entidade.cnpj %></td>
         <td><%= entidade.cidade %></td>
         <td><%= entidade.estado %></td>

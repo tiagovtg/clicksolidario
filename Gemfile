@@ -8,6 +8,10 @@ gem 'rails', '3.0.5'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
+# Gem para auxiliar processo de upload
+gem "paperclip", "~> 2.3"
+gem "rmagick"
+
 #email
 gem "mail", "2.2.15"
 

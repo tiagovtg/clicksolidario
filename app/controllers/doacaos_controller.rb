@@ -49,7 +49,7 @@ class DoacaosController < ApplicationController
 
     respond_to do |format|
       if @doacao.save
-        format.html { redirect_to(@doacao, :notice => 'Doacao was successfully created.') }
+        format.html { redirect_to(@doacao, :notice => 'Doacao criado(a) com sucesso.') }
         format.xml  { render :xml => @doacao, :status => :created, :location => @doacao }
       else
         format.html { render :action => "new" }

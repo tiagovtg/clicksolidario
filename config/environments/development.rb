@@ -39,4 +39,7 @@ Sgss::Application.configure do
   }
   #  Mail.register_interceptor(DevelopmentMailInterceptor) #if Rails.env.development?
   #fim email.
+
+#  Paperclip.options[:command_path] = "usr/bin/"
+  Paperclip.options[:image_magick_path] = "/usr/bin"
 end

@@ -55,7 +55,7 @@ class EntidadesController < ApplicationController
 
     respond_to do |format|
       if @entidade.save
-        format.html { redirect_to(@entidade, :notice => 'Entidade was successfully created.') }
+        format.html { redirect_to(@entidade, :notice => 'Entidade criado(a) com sucesso.') }
         format.xml  { render :xml => @entidade, :status => :created, :location => @entidade }
       else
         format.html { render :action => "new" }

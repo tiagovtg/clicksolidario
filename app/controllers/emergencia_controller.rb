@@ -66,7 +66,7 @@ class EmergenciaController < ApplicationController
 
     respond_to do |format|
       if @emergencium.save
-        format.html { redirect_to(@emergencium, :notice => 'Emergencium was successfully created.') }
+        format.html { redirect_to(@emergencium, :notice => 'Emergencium criado(a) com sucesso.') }
         format.xml  { render :xml => @emergencium, :status => :created, :location => @emergencium }
       else
         format.html { render :action => "new" }
@@ -93,6 +93,8 @@ class EmergenciaController < ApplicationController
       @entidade = Entidade.where(" user_id = ?", current_user.id)
       @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
       unless @emergencium.nil?
+#       se for feita alguma alteração que nao seje pelo adm, a emergencia volta a ser invalida.
+        @emergencium.validacao=false
         respond_to do |format|
           if @emergencium.update_attributes(params[:emergencium])
             format.html { redirect_to(@emergencium, :notice => 'Emergencium was successfully updated.') }

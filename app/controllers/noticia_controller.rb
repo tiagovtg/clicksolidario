@@ -66,7 +66,7 @@ class NoticiaController < ApplicationController
 
     respond_to do |format|
       if @noticium.save
-        format.html { redirect_to(@noticium, :notice => 'Noticium was successfully created.') }
+        format.html { redirect_to(@noticium, :notice => 'Noticia criado(a) com sucesso.') }
       else
         format.html { render :action => "new" }
       end
@@ -80,7 +80,7 @@ class NoticiaController < ApplicationController
       @noticium = Noticium.find(params[:id])
       respond_to do |format|
         if @noticium.update_attributes(params[:noticium])
-          format.html { redirect_to(@noticium, :notice => 'Noticium was successfully updated.') }
+          format.html { redirect_to(@noticium, :notice => 'Noticia alterado(a) com sucesso.') }
         else
           format.html { render :action => "edit" }
           format.xml  { render :xml => @noticium.errors, :status => :unprocessable_entity }
@@ -90,9 +90,11 @@ class NoticiaController < ApplicationController
       @entidade = Entidade.where(" user_id = ?", current_user.id)
       @noticium = Noticium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
       unless @noticium.nil?
+#        se for feita alguma alteração no noticia que nao seje pelo adm, ela volta a ser invalida.
+        @noticium.validacao=false
         respond_to do |format|
           if @noticium.update_attributes(params[:noticium])
-            format.html { redirect_to(@noticium, :notice => 'Noticium was successfully updated.') }
+            format.html { redirect_to(@noticium, :notice => 'Noticia alterado(a) com sucesso.') }
           else
             format.html { render :action => "edit" }
             format.xml  { render :xml => @noticium.errors, :status => :unprocessable_entity }

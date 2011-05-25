@@ -24,6 +24,10 @@
   <b>Entidade:</b>
   <%= @emergencium.entidade_id %>
 </p>
+<p>
+  <%= image_tag @emergencium.imagem.url(:thumb) %>
+</p>
+
 
 
 <%= link_to 'Editar', edit_emergencium_path(@emergencium) %> |

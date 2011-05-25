@@ -1,33 +1,5 @@
 <script type="text/javascript">
-  $(document).ready(function() {
-    $("#login").toggle(function(){
-      $("#divLogin").slideDown('slow');
-    },function(){
-      $("#divLogin").slideUp('slow');
-    });
-    $("#entidade").toggle(function(){
-      $("#divEntidade").slideDown('slow');
-    },function(){
-      $("#divEntidade").slideUp('slow');
-    });
-  });
 
-  //Aumenta e reduz o tamanho da fonte
-  $(document).ready(function(){
-    var fonte = 14;
-    $("#aumenta_fonte").click(function(){
-      if (fonte<18){
-        fonte = fonte+1;
-        $("#colunaDireita").css({"font-size" : fonte+"px"});
-      }
-    });
-    $("#reduz_fonte").click(function(){
-      if (fonte>9){
-        fonte = fonte-1;
-        $("#colunaDireita").css({"font-size" : fonte+"px"});
-      }
-    });
-  });
 </script>
 
 <!-- NavBar -->
@@ -39,20 +11,7 @@
     <%= render :partial => 'portal/login' %>
 
     <!-- login entidades -->
-    <div id="entidade" class="entidade">área das entidades</div>
-
-    <div id="divEntidade" class="entidadeBarra">
-      <ul id="navlist">
-        <li>usuário:<input name="usuario" type="text" style="width: 149px;" class="input" /></li>
-        <li>senha:<input name="senha" type="password" style="width: 149px" class="input" /></li>
-        <li><input name="botao"  type="button"  value="ok »" class="botaoLogin" /></li>
-        <li><a href="#">esqueci minha senha</a></li>
-        <li>|</li>
-        <li><a href="#">esqueci meu usuário</a></li>
-      </ul>
-    </div>
-
-    <div class="traco"></div>
+    <%= render :partial => 'portal/login_entidade' %>
 
     <!-- mapa do portal -->
     <div class="mapaPortal"><a href="#">mapa do portal</a></div>
@@ -127,15 +86,21 @@
         <div id="ConteudoColunas">
 
           <!-- Notícias & Cidadania -->
-          <%= render :partial => 'portal/noticia' %>
+          <div id="Noticias">
+            <%= render :partial => 'portal/noticia', :locals=> {:noticias=> @noticias} %>
+            <%= render :partial => 'portal/apadrinhe' %>
+          </div>
 
           <!-- Emergência -->
-          <%= render :partial => 'portal/emergencia' %>
+          <div id="Emergencia">
+            <%= render :partial => 'portal/emergencia', :locals=> {:emergencias=> @emergencias} %>
+          </div>
+
         </div>
 
         <!-- Faça Como Eles -->
         <%= render :partial => 'portal/faca_como' %>
-        
+
       </div>
       <div class="clear"></div>
     </div>

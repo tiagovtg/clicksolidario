@@ -1,0 +1,56 @@
+<%= form_tag(noticia_path, :method => "get") do %>
+  <div id="buscaDados"><span>Listando Noticia</span></div>
+  <div id="buscaDados">
+    <select name="filtro" id="filtro">
+      <option value="" selected="selected">Buscar por...</option>
+      <option value="nome">Nome</option>
+      <option value="texto">Noticia</option>
+    </select>
+  </div>
+  <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
+  <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
+<% end %>
+
+<br/><br/>
+<br/>
+<% if @noticia.nil? or @noticia.empty? %>
+  <p class="busca">
+    Nenhum registro foi encontrado
+  </p>
+<% else %>
+  <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
+    <tr>
+      <th>Nome</th>
+      <th>Noticia</th>
+      <th>Data</th>
+      <th>Entidade</th>
+      <th>Validação</th>
+      <th><img src="/images/file_document.png" alt=""/></th>
+      <th><img src="/images/file_edit.png" alt=""/></th>
+      <th><img src="/images/file_exclude.png" alt=""/></th>
+    </tr>
+
+    <% @noticia.each do |noticium| %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= noticium.nome %></td>
+        <td><%= noticium.texto %></td>
+        <td><%= noticium.data %></td>
+        <td><%= noticium.entidade_id %></td>
+        <td><%= noticium.validacao==true ? 'Valido' : 'Invalido' %></td>
+        <td class="edicao"><%= link_to 'Mostrar', noticium %></td>
+        <td class="edicao"><%= link_to 'Editar', edit_noticium_path(noticium) %></td>
+        <td class="edicao"><%= link_to 'Deletar', noticium, :confirm => 'Voce tem certeza?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+  <div align="right">
+    <%= will_paginate @noticia %>
+  </div>
+<% end %>
+<br />
+
+<% if entidade? %>
+  <%= link_to 'Cadastrar Noticia', new_noticium_path %>
+<% end %>
+
+

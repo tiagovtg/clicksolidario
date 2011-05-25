@@ -1,4 +1,4 @@
-<%= form_for(@emergencium) do |f| %>
+<%= form_for(@emergencium, :html=>{:multipart=> true}) do |f| %>
   <%= render :partial => 'generals/model_errors', :locals => {:obj => @emergencium}%>
 
   <div class="field">
@@ -17,12 +17,17 @@
     <%= f.label :status %><br />
     <%= f.text_field :status %>
   </div>
+  <div class="field">
+    <%= f.file_field :imagem %>
+    <span class="description">Ex: Imagem.</span>
+  </div>
   <% if administrador? %>
     <div class="field"><br/>
       <%= f.check_box :validacao %>
       <%= f.label :validacao, "Valida Emergencia." %><br/>
     </div><br/>
   <% end %>
+
   <div class="actions">
     <%= f.submit 'Salvar' %>
   </div>

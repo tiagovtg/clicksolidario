@@ -5,6 +5,12 @@ class CreateEmergencia < ActiveRecord::Migration
       t.text :desc
       t.date :data
       t.string :status,       :limite => 20
+
+      t.string :imagem_file_name,             :null => false
+      t.string :imagem_content_type,          :null => false
+      t.integer :imagem_file_size,            :null => false
+      t.datetime :imagem_updated_at,          :null => false
+      
       t.boolean :validacao
       t.integer :entidade_id
 
