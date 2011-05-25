@@ -22,7 +22,6 @@ class CreateEmpresas < ActiveRecord::Migration
       t.string :cidade,         :limit => 40
       t.string :estado,         :limit => 2
 
-      t.boolean :newsletter
       t.integer :user_id
       t.timestamps
     end

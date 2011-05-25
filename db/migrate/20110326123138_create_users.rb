@@ -11,7 +11,8 @@ class CreateUsers < ActiveRecord::Migration
       t.datetime :last_request_at
       t.string :current_login_ip,                     :limit => 30
       t.string :status,               :null => false, :limit => 10
-      t.string :nome,                                 :limit => 50
+      t.string :nome,                                 :limit => 100
+      t.boolean :newsletter
 
       t.timestamps
     end

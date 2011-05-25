@@ -20,8 +20,7 @@ class CreateEntidades < ActiveRecord::Migration
       t.string :complemento,    :limit => 70
       t.string :bairro,         :limit => 70
       t.string :cidade,         :limit => 40
-      t.string :estado,         :limit => 2
-      t.boolean :newsletter
+      t.string :estado,         :limit => 2      
       t.integer :causa_id
       t.integer :user_id
       t.timestamps

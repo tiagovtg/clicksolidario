@@ -94,7 +94,6 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
     t.string   "bairro",        :limit => 70
     t.string   "cidade",        :limit => 40
     t.string   "estado",        :limit => 2
-    t.boolean  "newsletter"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -120,7 +119,6 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
     t.string   "bairro",       :limit => 70
     t.string   "cidade",       :limit => 40
     t.string   "estado",       :limit => 2
-    t.boolean  "newsletter"
     t.integer  "causa_id"
     t.integer  "user_id"
     t.datetime "created_at"
@@ -171,17 +169,18 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "email",               :limit => 70,                :null => false
-    t.string   "crypted_password",                                 :null => false
-    t.string   "password_salt",                                    :null => false
-    t.string   "persistence_token",                                :null => false
-    t.string   "single_access_token",                              :null => false
-    t.string   "perishable_token",                                 :null => false
-    t.integer  "failed_login_count",                :default => 0, :null => false
+    t.string   "email",               :limit => 70,                 :null => false
+    t.string   "crypted_password",                                  :null => false
+    t.string   "password_salt",                                     :null => false
+    t.string   "persistence_token",                                 :null => false
+    t.string   "single_access_token",                               :null => false
+    t.string   "perishable_token",                                  :null => false
+    t.integer  "failed_login_count",                 :default => 0, :null => false
     t.datetime "last_request_at"
     t.string   "current_login_ip",    :limit => 30
-    t.string   "status",              :limit => 10,                :null => false
-    t.string   "nome",                :limit => 50
+    t.string   "status",              :limit => 10,                 :null => false
+    t.string   "nome",                :limit => 100
+    t.boolean  "newsletter"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -200,7 +199,6 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
     t.string   "bairro",      :limit => 70
     t.string   "cidade",      :limit => 40
     t.string   "estado",      :limit => 2
-    t.boolean  "newsletter"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

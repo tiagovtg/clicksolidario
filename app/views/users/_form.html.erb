@@ -19,61 +19,39 @@
   }
 </script>
 
-<div class="inner">
-  <%= render :partial => 'generals/model_errors', :locals => {:obj => @user}%>
-  <p></p>
-  <div class="group">
-    <br/>
-    <div class="left">
-      <label class="label">*Email</label>
-    </div>
-    <div class="right">
-      <%= f.text_field :email, :onkeypress=> 'return SomenteEmail(event)' %>
-      <span class="description">Ex: test@example.com</span>
-    </div>
-    <div class="clear">
-    </div>
-  </div>
-  <div class="group">
-    <br/>
-    <div class="left">
-      <label class="label">*Nome</label>
-    </div>
-    <div class="right">
-      <%= f.text_field :nome, :html => {:class => "text_field"} %>
-      <span class="description">Ex: Nome que constará no Certificado.</span>
-    </div>
-    <div class="clear">
-    </div>
-  </div>
-  <div class="group">
-    <div class="left">
-      <label class="label">*Senha</label>
-    </div>
-    <div class="right">
-      <%= f.password_field :password, :html => {:class => "text_field"} %>
-      <span class="description">Ex: senha com minimo de 4 digitos</span>
-    </div>
-    <div class="clear">
-    </div>
-  </div>
-  <div class="group">
-    <div class="left">
-      <label class="label">*Confirmar senha</label>
-    </div>
-    <div class="right">
-      <%= f.password_field :password_confirmation, :html => {:class => "text_field"} %>
-      <span class="description">Ex: repetir senha</span>
-    </div>
-    <div class="clear">
-    </div>
-  </div>
+<%= render :partial => 'generals/model_errors', :locals => {:obj => @user}%>
 
-  <div class="group"><br/>
-    <div class="left">
-      <label class="label">*Tipo cadastro</label>
-    </div>
-    <div class="right">
+<div class="aPortal">Acesso ao Portal</div>
+
+<!-- tabela acesso ao portal inicio -->
+<table width="720px" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="../images/dot.gif" width="20px" height="1" /></td>
+    <td>
+
+      <table width="700px" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style=" padding-bottom: 10px; ">*E-mail</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">*Senha</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">*Redigite a Senha</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">*Nome</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :email, :style=>" width: 334px ", :onkeypress=> 'return SomenteEmail(event)' %></td>
+          <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+          <td><%= f.password_field :password, :style=>" width: 130px " %></td>
+          <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+          <td><%= f.password_field :password_confirmation, :style=>" width: 130px " %></td>
+          <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+          <td><%= f.text_field :nome, :style=>" width: 334px " %></td>
+        </tr>
+      </table>
+      <br/>
+      *Tipo de Cadastro
       <% if administrador? or entidade? %>
         <%= radio_button_tag(:tipo, value="administrador", @user.administrador? ? checked=true : checked=false ) %>&nbsp;Administrador&nbsp;&nbsp;
       <% end %>
@@ -81,22 +59,26 @@
       <%= radio_button_tag(:tipo, value="voluntario", @user.voluntario? ? checked=true : checked=false ) %>&nbsp;Voluntário
       <%= radio_button_tag(:tipo, value="empresa", @user.empresa? ? checked=true : checked=false ) %>&nbsp;Empresa
       <br/>
-    </div>
-    <div class="clear">
-    </div>
-  </div>
-  <div class="botao">
-    <br/>
-    <div class="left">
-      <button class="button" type="submit" onclick="javascript: verificaTipo();">
-        <img src="/images/tick.png" alt="" />Registrar&nbsp;
-      </button>
-    </div>
-    <div class="clear">
-    </div>
-  </div>
-  <br/>
-  <br/>
-  <span class="obrigatorio">*Campos de preenchimento obrigatorio!</span>
-</div>
-
+      <br/>
+      <%= f.check_box :newsletter %>&nbsp;&nbsp;Desejo receber notícias do Click Solidário
+      <br/>
+      <br/>
+      <span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><button class="button" type="submit" onclick="javascript: verificaTipo();">
+      <img src="/images/tick.png" alt="" width="30px" height="30px"/>Registrar&nbsp;
+    </button>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="../images/dot.gif" width="1px" height="70" alt=""/></td>
+  </tr>
+</table>
