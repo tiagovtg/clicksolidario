@@ -35,7 +35,7 @@
         <td><%= noticium.nome %></td>
         <td><%= noticium.texto %></td>
         <td><%= noticium.data %></td>
-        <td><%= noticium.entidade_id %></td>
+        <td><%= noticium.entidade.nomefantasia %></td>
         <td><%= noticium.validacao==true ? 'Valido' : 'Invalido' %></td>
         <td class="edicao"><%= link_to 'Mostrar', noticium %></td>
         <td class="edicao"><%= link_to 'Editar', edit_noticium_path(noticium) %></td>

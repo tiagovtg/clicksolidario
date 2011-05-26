@@ -2,7 +2,7 @@ class Emergencium < ActiveRecord::Base
 
   #Itens por página (will_paginate)
   cattr_reader :per_page
-  @@per_page = 2
+  @@per_page = 10
 
 
   belongs_to :entidade

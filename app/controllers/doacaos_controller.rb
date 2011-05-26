@@ -41,11 +41,11 @@ class DoacaosController < ApplicationController
 
   def create
     @doacao = Doacao.new(params[:doacao])
-#    @doacao.voluntario_id
-#    @doacao.empresa_id
-#    @doacao.entidade_id
+    #    @doacao.voluntario_id
+    #    @doacao.empresa_id
+    #    @doacao.entidade_id
 
-#       @voluntario.user_id = current_user.id
+    #       @voluntario.user_id = current_user.id
 
     respond_to do |format|
       if @doacao.save

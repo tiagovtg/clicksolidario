@@ -9,18 +9,18 @@ class NoticiaController < ApplicationController
     @entidade = Entidade.where(" user_id = ?", current_user.id)
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
       if administrador?
-        @noticia = Noticium.paginate(:page => params[:page], :order => 'data DESC')
+        @noticia = Noticium.paginate(:page => params[:page], :order => 'validacao, data DESC')
       else
-        @noticia = Noticium.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = ?", @entidade[0].id])
+        @noticia = Noticium.paginate(:page => params[:page], :order => 'validacao, data DESC', :conditions => [" entidade_id = ?", @entidade[0].id])
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @noticia = Noticium.paginate(:page => params[:page], :order => 'data DESC', :conditions => ['noticia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @noticia = Noticium.paginate(:page => params[:page], :order => 'validacao, data DESC', :conditions => ['noticia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @noticia = Noticium.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = " + "#{@entidade[0].id} " + ' and noticia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @noticia = Noticium.paginate(:page => params[:page], :order => 'validacao, data DESC', :conditions => [" entidade_id = " + "#{@entidade[0].id} " + ' and noticia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end
@@ -90,7 +90,7 @@ class NoticiaController < ApplicationController
       @entidade = Entidade.where(" user_id = ?", current_user.id)
       @noticium = Noticium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
       unless @noticium.nil?
-#        se for feita alguma alteração no noticia que nao seje pelo adm, ela volta a ser invalida.
+        #        se for feita alguma alteração no noticia que nao seje pelo adm, ela volta a ser invalida.
         @noticium.validacao=false
         respond_to do |format|
           if @noticium.update_attributes(params[:noticium])

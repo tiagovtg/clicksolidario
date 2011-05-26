@@ -21,7 +21,7 @@
 }
 
 #thumbNav {
-    background: url("/images/nav.png") no-repeat; margin: 0px; padding: 32px 0px 0px 500px; top: 230px; width: 244px; height: 69px; position: absolute;
+    margin: 0px; padding: 32px 0px 0px 500px; top: 230px; width: 244px; height: 69px; position: absolute;
 }
 
 #thumbNav a {

@@ -78,7 +78,7 @@
   </div>
   <div class="field">
     <%= f.label :endereco, "Endereço" %><br />
-    <%= f.text_field :endereco, :size=>70, :maxlenght=>70, :onkeypress=> 'return letrasNumeros(event)' %>
+    <%= f.text_field :endereco, :class=>"endereco", :size=>70, :maxlenght=>70, :onkeypress=> 'return letrasNumeros(event)' %>
   </div>
   <div class="field">
     <%= f.label :numero, "Numero" %><br />
@@ -86,15 +86,15 @@
   </div>
   <div class="field">
     <%= f.label :complemento, "Complemento" %><br />
-    <%= f.text_field :complemento %>
+    <%= f.text_field :complemento, :class=>"complemento" %>
   </div>
   <div class="field">
     <%= f.label :bairro, "Bairro" %><br />
-    <%= f.text_field :bairro %>
+    <%= f.text_field :bairro, :class=>"bairro" %>
   </div>
   <div class="field">
     <%= f.label :cidade, "Cidade" %><br />
-    <%= f.text_field :cidade, :size=>40, :maxlenght=>40, :onkeypress=> 'return SomenteLetras(event)' %>
+    <%= f.text_field :cidade, :class=>"cidade", :size=>40, :maxlenght=>40, :onkeypress=> 'return SomenteLetras(event)' %>
   </div>
   <div class="field">
     <%= f.label :estado, "Estado" %><br />
@@ -103,13 +103,14 @@
         ["GO", "GO"], ["MA", "MA"], ["MT", "MT"], ["MS", "MS"], ["MG", "MG"],
         ["PA", "PA"], ["PB", "PB"], ["PR", "PR"], ["PE", "PE"], ["PI", "PI"],
         ["RJ", "RJ"], ["RN", "RN"], ["RS", "RS"], ["RO", "RO"], ["RR", "RR"],
-        ["SC", "SC"], ["SP", "SP"], ["SE", "SE"], ["TO", "TO"]]) %>
+        ["SC", "SC"], ["SP", "SP"], ["SE", "SE"], ["TO", "TO"]]), :class=>"estado" %>
   </div>
   <div class="field">
     <br/><span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>
   </div>
 
   <br/>
+  <div id="resultado"></div>
   <div class="actions">
     <%= f.submit 'Salvar' %>
   </div>

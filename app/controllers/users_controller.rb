@@ -45,6 +45,14 @@ class UsersController < ApplicationController
     else
 
       if @user.save
+        #cria um newsletter caso o user tenha aceitado a opção.
+        if @user.newsletter
+          @email = Newsletter.new(:nome=>@user.nome, :email=>@user.email)
+          @email.save
+          #          logger.info "\n\n=> meleca email: #{CountMail.enviar_email(@email)}\n"
+          CountMail.enviar_email(@email)
+        end
+
         #limpa todas as regras antes.
         @user.has_no_roles!
         #cria regras
@@ -97,10 +105,24 @@ class UsersController < ApplicationController
     if @user.id != 1
       # Altera dados do usuário
       # usuario so pode alterar sua propria conta.
-      if @user.id == current_user.id
+      if @user.id == current_user.id or administrador?
         if @user.update_attributes(params[:user])
+          #se o usuario nao quiser mais o newsletter....
+          unless @user.newsletter
+            if @email = Newsletter.find_by_email(@user.email) rescue nil              
+              unless @email.nil?
+                @email.destroy
+              end
+            end
+          else
+            #usuario quer incluir de novo o email.
+            if @user.newsletter
+              @email = Newsletter.new(:nome=>@user.nome, :email=>@user.email)
+              @email.save
+            end
+          end
           flash[:notice] = "Dados do usuário alterados com sucesso."
-          redirect_to(@user)
+          redirect_to users_url
         else
           respond_to do |format|
             format.html { render :action => "edit" }
@@ -118,6 +140,12 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     if @user.id != 1
+      #ao deletar o usuario, deleta tambem, seu email
+      if @email = Newsletter.find_by_email(@user.email) rescue nil
+        unless @email.nil?
+          @email.destroy
+        end
+      end
       @user.destroy
       flash[:notice] = "Usuario excluído com sucesso."
       redirect_to users_url

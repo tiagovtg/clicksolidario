@@ -1,4 +1,9 @@
 class Empresa < ActiveRecord::Base
+
+  #Itens por página (will_paginate)
+  cattr_reader :per_page
+  @@per_page = 10
+
   belongs_to :user
   has_many :doacao
 
@@ -14,5 +19,5 @@ class Empresa < ActiveRecord::Base
   validates :cnpj, :uniqueness => true
   
   usar_como_cnpj :cnpj
-#  usar_como_cpf :cpf
+  #  usar_como_cpf :cpf
 end

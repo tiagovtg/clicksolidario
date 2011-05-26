@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
 
   #Itens por página (will_paginate)
   cattr_reader :per_page
-  @@per_page = 2
+  @@per_page = 10
 
   #  Tempo para deslogar automaticamente nos ambientes abaixo.
   acts_as_authentic do |c|

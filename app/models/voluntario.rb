@@ -1,6 +1,10 @@
 class Voluntario < ActiveRecord::Base
-  belongs_to :user
 
+  #Itens por página (will_paginate)
+  cattr_reader :per_page
+  @@per_page = 10
+
+  belongs_to :user
   has_many :doacao
 
   #tem muitos telefones atraves do nested

@@ -37,7 +37,7 @@
         <td><%= emergencium.desc %></td>
         <td><%= emergencium.data %></td>
         <td><%= emergencium.status %></td>
-        <td><%= emergencium.entidade_id %></td>
+        <td><%= emergencium.entidade.nomefantasia %></td>
         <td><%= emergencium.validacao==true ? 'Valida' : 'Invalida' %></td>
         <td class="edicao"><%= link_to 'Mostrar', emergencium %></td>
         <td class="edicao"><%= link_to 'Editar', edit_emergencium_path(emergencium) %></td>

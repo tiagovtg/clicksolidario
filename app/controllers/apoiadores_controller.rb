@@ -1,5 +1,5 @@
 class ApoiadoresController < ApplicationController
-   layout 'portal'
+  layout 'portal'
    
   def index
     @user_session = UserSession.new

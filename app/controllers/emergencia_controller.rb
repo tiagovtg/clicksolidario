@@ -9,18 +9,18 @@ class EmergenciaController < ApplicationController
     @entidade = Entidade.where(" user_id = ?", current_user.id)
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
       if administrador?
-        @emergencia = Emergencium.paginate(:page => params[:page], :order => 'data DESC')
+        @emergencia = Emergencium.paginate(:page => params[:page], :order => 'validacao, data DESC')
       else
-        @emergencia = Emergencium.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = ?", @entidade[0].id])
+        @emergencia = Emergencium.paginate(:page => params[:page], :order => 'validacao, data DESC', :conditions => [" entidade_id = ?", @entidade[0].id])
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
         if administrador?
-          @emergencia = Emergencium.paginate(:page => params[:page], :order => 'data DESC', :conditions => ['emergencia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @emergencia = Emergencium.paginate(:page => params[:page], :order => 'validacao, data DESC', :conditions => ['emergencia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @emergencia = Emergencium.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = " + "#{@entidade[0].id} " + ' and emergencia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          @emergencia = Emergencium.paginate(:page => params[:page], :order => 'validacao, data DESC', :conditions => [" entidade_id = " + "#{@entidade[0].id} " + ' and emergencia.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         end
       end
     end
@@ -93,7 +93,7 @@ class EmergenciaController < ApplicationController
       @entidade = Entidade.where(" user_id = ?", current_user.id)
       @emergencium = Emergencium.find(params[:id], :conditions => [" entidade_id = ?", @entidade[0].id]) rescue nil
       unless @emergencium.nil?
-#       se for feita alguma alteração que nao seje pelo adm, a emergencia volta a ser invalida.
+        #       se for feita alguma alteração que nao seje pelo adm, a emergencia volta a ser invalida.
         @emergencium.validacao=false
         respond_to do |format|
           if @emergencium.update_attributes(params[:emergencium])
