@@ -39,7 +39,7 @@
         <td><%= doacao.valida %></td>
         <td><%= doacao.obs %></td>
         <td class="edicao"><%= link_to 'Mostrar', doacao %></td>
-        <td class="edicao"><%= link_to 'Editar', edit_doacao_path(doacao) %></td>
+        <td class="edicao"><%= link_to 'Alterar', edit_doacao_path(doacao) %></td>
         <td class="edicao"><%= link_to 'Deletar', doacao, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>

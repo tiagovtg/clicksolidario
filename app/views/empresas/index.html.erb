@@ -47,7 +47,7 @@
         <td><%= empresa.newsletter %></td>
         <td><%= empresa.user_id %></td>
         <td class="edicao"><%= link_to 'Mostrar', empresa %></td>
-        <td class="edicao"><%= link_to 'Editar', edit_empresa_path(empresa) %></td>
+        <td class="edicao"><%= link_to 'Alterar', edit_empresa_path(empresa) %></td>
         <td class="edicao"><%= link_to 'Deletar', empresa, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>

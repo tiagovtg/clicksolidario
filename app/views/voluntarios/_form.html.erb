@@ -2,26 +2,11 @@
   jQuery(document).ready(function(){
     jQuery(":input:not(:hidden):first").focus();
   });
+
 </script>
+
 <%= form_for(@voluntario) do |f| %>
   <%= render :partial => 'generals/model_errors', :locals => {:obj => @voluntario}%>
-
-
-  <div class="field">
-    <%= f.label :profissao, "Profissão" %><br />
-    <%= f.text_field :profissao, :size=>70, :maxlenght=>70, :onkeypress=> 'return SomenteLetras(event)' %>
-  </div>
-
-
-
-
-  <br/>
-  <div class="actions">
-    <%= f.submit 'Salvar' %>
-  </div>
-  <br/>
-
-
   <div id="cadastro">
 
 
@@ -38,11 +23,16 @@
               <td style=" padding-bottom: 10px; ">Nome Completo</td>
               <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
               <td style=" padding-bottom: 10px; ">Como Gostaria de ser Chamado</td>
+              <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+              <td style=" padding-bottom: 10px; ">Profissão</td>
+
             </tr>
             <tr>
               <td><%= f.text_field :nome, :style=>"width: 403px", :onkeypress=> 'return SomenteLetras(event)' %></td>
               <td>&nbsp;</td>
               <td><%= f.text_field :apelido, :style=>"width: 233px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+              <td>&nbsp;</td>
+              <td><%= f.text_field :profissao, :size=>70, :maxlenght=>70, :onkeypress=> 'return SomenteLetras(event)' %></td>
             </tr>
           </table>
 
@@ -119,7 +109,7 @@
               <td style=" padding-bottom: 10px; ">Número</td>
             </tr>
             <tr>
-              <td><%= f.text_field :cep, :style=>"width: 58px", :class=>"cep" %></td>
+              <td><%= f.text_field :cep, :style=>"width: 58px; height: 30px;", :class=>"cep" %></td>
               <td class="cep"><a href="#">Não sei meu CEP</a></td>
               <td><%= f.text_field :endereco, :style=>"width: 348px", :onkeypress=> 'return letrasNumeros(event)' %></td>
               <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
@@ -148,20 +138,20 @@
               <td style=" padding-bottom: 10px; ">Estado</td>
             </tr>
             <tr>
-              <td><%= f.text_field :complemento :style=>" width: 204px " %></td>
+              <td><%= f.text_field :complemento, :style=>" width: 204px " %></td>
               <td><img src="../images/dot.gif" width="20px" height="1" /></td>
-              <td><%= f.text_field :bairro :style=>" width: 150px " %></td>
+              <td><%= f.text_field :bairro, :style=>" width: 150px " %></td>
               <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
               <td><%= f.text_field :cidade, :style=>" width: 150px ", :onkeypress=> 'return SomenteLetras(event)' %></td>
               <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
               <td>
-                <%= f.select :estado, :style=>" width: 70px ", ([["AC", "AC"], ["AL", "AL"], ["AP", "AP"],
-                    ["AM", "AM"], ["BA", "BA"], ["CE", "CE"], ["DF", "DF"], ["ES", "ES"],
-                    ["GO", "GO"], ["MA", "MA"], ["MT", "MT"], ["MS", "MS"], ["MG", "MG"],
-                    ["PA", "PA"], ["PB", "PB"], ["PR", "PR"], ["PE", "PE"], ["PI", "PI"],
-                    ["RJ", "RJ"], ["RN", "RN"], ["RS", "RS"], ["RO", "RO"], ["RR", "RR"],
-                    ["SC", "SC"], ["SP", "SP"], ["SE", "SE"], ["TO", "TO"]]) %>
-              </td>
+                <%= f.select :estado, ([["Acre-AC", "AC"], ["Alagoas-AL", "AL"], ["Amapá-AP", "AP"],
+                      ["Amazonas-AM", "AM"], ["Bahia-BA", "BA"], ["Ceara-CE", "CE"], ["Distrito Federal-DF", "DF"], ["Espirito Santo-ES", "ES"],
+                      ["Goias-GO", "GO"], ["Maranhão-MA", "MA"], ["Mato Grosso-MT", "MT"], ["Mato Grosso do Sul-MS", "MS"], ["Minas Gerais-MG", "MG"],
+                      ["Para-PA", "PA"], ["Paraiba-PB", "PB"], ["Parana-PR", "PR"], ["Pernabuco-PE", "PE"], ["Piaui-PI", "PI"],
+                      ["Rio de Janeiro-RJ", "RJ"], ["Rio Grande do Norte-RN", "RN"], ["Rio Grande do Sul-RS", "RS"], ["Rondonia-RO", "RO"], ["Roraima-RR", "RR"],
+                      ["Santa Catarina-SC", "SC"], ["São Paulo-SP", "SP"], ["Sergipe-SE", "SE"], ["Tocantins-TO", "TO"]]), { :prompt => 'Escolha a região' } %>
+              </td>              
             </tr>
           </table>
         </td>
@@ -173,59 +163,6 @@
     </table>
     <!-- tabela endereço fim -->
 
-
-    <div class="aPortal">Acesso ao Portal</div>
-
-    <!-- tabela acesso ao portal inicio -->
-    <table width="720px" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-        <td><img src="../images/dot.gif" width="20px" height="1" /></td>
-        <td>
-
-          <table width="700px" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td style=" padding-bottom: 10px; ">E-mail</td>
-              <td>&nbsp;</td>
-              <td style=" padding-bottom: 10px; ">Senha</td>
-              <td>&nbsp;</td>
-              <td style=" padding-bottom: 10px; ">Redigite a Senha</td>
-            </tr>
-            <tr>
-              <td><input name="" type="text" style=" width: 334px " /></td>
-              <td><img src="../images/dot.gif" width="20px" height="1" /></td>
-              <td><input name="" type="password" style=" width: 130px " /></td>
-              <td><img src="../images/dot.gif" width="20px" height="1" /></td>
-              <td><input name="" type="password" style=" width: 130px " /></td>
-            </tr>
-          </table>
-
-        </td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>&nbsp;</td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td>
-
-          <table width="700px" border="0" cellspacing="0" cellpadding="0">
-            <tr>
-              <td style=" width: 10px; "><%= f.check_box :newsletter %></td>
-              <td>Desejo receber notícias do Click Solidário</td>
-            </tr>
-            <br/><span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>
-          </table>
-
-        </td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td><img src="../images/dot.gif" width="1px" height="70" /></td>
-      </tr>
-    </table>
-    <!-- tabela acesso ao portal fim -->
-
     <!-- tabela envio inicio -->
     <table width="720" border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -236,6 +173,10 @@
     </table>
     <!-- tabela envio fim -->
   </div>
+<br/>
+<br/>
+<br/>
+<br/>
 
 <% end %>
 <div class="clear"></div>

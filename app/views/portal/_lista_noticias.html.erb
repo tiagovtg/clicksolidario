@@ -38,7 +38,7 @@
         <td><%= noticium.entidade_id %></td>
         <td><%= noticium.validacao==true ? 'Valido' : 'Invalido' %></td>
         <td class="edicao"><%= link_to 'Mostrar', noticium %></td>
-        <td class="edicao"><%= link_to 'Editar', edit_noticium_path(noticium) %></td>
+        <td class="edicao"><%= link_to 'Alterar', edit_noticium_path(noticium) %></td>
         <td class="edicao"><%= link_to 'Deletar', noticium, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>

@@ -98,12 +98,12 @@
   </div>
   <div class="field">
     <%= f.label :estado, "Estado" %><br />
-    <%= f.select :estado, ([["AC", "AC"], ["AL", "AL"], ["AP", "AP"],
-        ["AM", "AM"], ["BA", "BA"], ["CE", "CE"], ["DF", "DF"], ["ES", "ES"],
-        ["GO", "GO"], ["MA", "MA"], ["MT", "MT"], ["MS", "MS"], ["MG", "MG"],
-        ["PA", "PA"], ["PB", "PB"], ["PR", "PR"], ["PE", "PE"], ["PI", "PI"],
-        ["RJ", "RJ"], ["RN", "RN"], ["RS", "RS"], ["RO", "RO"], ["RR", "RR"],
-        ["SC", "SC"], ["SP", "SP"], ["SE", "SE"], ["TO", "TO"]]), :class=>"estado" %>
+    <%= f.select :estado, ([["Acre-AC", "AC"], ["Alagoas-AL", "AL"], ["Amapá-AP", "AP"],
+        ["Amazonas-AM", "AM"], ["Bahia-BA", "BA"], ["Ceara-CE", "CE"], ["Distrito Federal-DF", "DF"], ["Espirito Santo-ES", "ES"],
+        ["Goias-GO", "GO"], ["Maranhão-MA", "MA"], ["Mato Grosso-MT", "MT"], ["Mato Grosso do Sul-MS", "MS"], ["Minas Gerais-MG", "MG"],
+        ["Para-PA", "PA"], ["Paraiba-PB", "PB"], ["Parana-PR", "PR"], ["Pernabuco-PE", "PE"], ["Piaui-PI", "PI"],
+        ["Rio de Janeiro-RJ", "RJ"], ["Rio Grande do Norte-RN", "RN"], ["Rio Grande do Sul-RS", "RS"], ["Rondonia-RO", "RO"], ["Roraima-RR", "RR"],
+        ["Santa Catarina-SC", "SC"], ["São Paulo-SP", "SP"], ["Sergipe-SE", "SE"], ["Tocantins-TO", "TO"]]), { :prompt => 'Escolha a região' } %>
   </div>
   <div class="field">
     <br/><span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>

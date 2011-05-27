@@ -38,7 +38,7 @@
         <td><%= entidade.cidade %></td>
         <td><%= entidade.estado %></td>
         <td class="edicao"><%= link_to 'Mostrar', entidade %></td>
-        <td class="edicao"><%= link_to 'Editar', edit_entidade_path(entidade) %></td>
+        <td class="edicao"><%= link_to 'Alterar', edit_entidade_path(entidade) %></td>
         <td class="edicao"><%= link_to 'Deletar', entidade, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>

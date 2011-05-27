@@ -246,16 +246,16 @@ body				{ margin: 0; font-family: Arial, Helvetica, sans-serif; }
 #barraIdentificacao             { width: 720px; height: 45px; margin-bottom: 40px; background: url(/images/backgroundMigAce.gif) no-repeat; }
 
 /* migalhas de pão */
-#breadCrumb			{ margin: 0; padding: 0; float: left; display: block; overflow: hidden; width: auto; padding: 13px; font-size: 18px; }
-#breadCrumb ul			{ margin: 0; padding: 0; height: 21px; display: block; }
-#breadCrumb ul li		{ display: block; float: left;	position: relative;	height: 21px; overflow: hidden; line-height: 21px; margin: 0px 6px 0px 0; padding: 0px 10px 0px 0; font-size: .9167em; background: url(/images/Chevron.gif) no-repeat 100% 0; }
+#breadCrumb                             { margin: 0; padding: 0; float: left; display: block; overflow: hidden; width: auto; padding: 13px; font-size: 18px; }
+#breadCrumb ul                          { margin: 0; padding: 0; height: 21px; display: block; }
+#breadCrumb ul li                       { display: block; float: left;	position: relative;	height: 21px; overflow: hidden; line-height: 21px; margin: 0px 6px 0px 0; padding: 0px 10px 0px 0; font-size: .9167em; background: url(/images/Chevron.gif) no-repeat 100% 0; }
 #breadCrumb ul li div.chevronOverlay	{ position: absolute; right: 0;	top: 0;	z-index: 2; }
-#breadCrumb ul li span					{ display: block; overflow: hidden; }
-#breadCrumb ul li a						{ display: block; position: relative; height: 21px; line-height: 21px; overflow: hidden; float: left; color: #999; text-decoration: none; }
-#breadCrumb ul li.first a				{ height: 16px !important;	text-indent: -1000em; width: 16px; padding: 0; margin-top: 2px; overflow: hidden; background: url(/images/IconHome.gif) no-repeat 0 0; }
-#breadCrumb ul li.first a:hover			{ background-position: 0 -16px; }
-#breadCrumb ul li.last					{ background: none; margin-right: 0; padding-right: 0; color: #e47e1e; font-weight: bold; }
-#chevronOverlay							{ display: none; background: url(/images/ChevronOverlay.png) no-repeat 100% 0; width: 13px;	height: 20px; }
+#breadCrumb ul li span			{ display: block; overflow: hidden; }
+#breadCrumb ul li a			{ display: block; position: relative; height: 21px; line-height: 21px; overflow: hidden; float: left; color: #999; text-decoration: none; }
+#breadCrumb ul li.first a		{ height: 16px !important;	text-indent: -1000em; width: 16px; padding: 0; margin-top: 2px; overflow: hidden; background: url(/images/IconHome.gif) no-repeat 0 0; }
+#breadCrumb ul li.first a:hover		{ background-position: 0 -16px; }
+#breadCrumb ul li.last			{ background: none; margin-right: 0; padding-right: 0; color: #e47e1e; font-weight: bold; }
+#chevronOverlay				{ display: none; background: url(/images/ChevronOverlay.png) no-repeat 100% 0; width: 13px;	height: 20px; }
 
 /* acessibilidade */
 #tFonte				{ float: right; margin-top: 14px; font-family: arial; font-size: 14px; color: #e47e1e; }
@@ -274,7 +274,7 @@ p, a				{ color: #4b4d4a; }
 .cinza				{ font-weight: bold; }
 
 /* página de cadastro */
-#cadastro				{ font-size: 14px; }
+#cadastro			{ font-size: 14px; }
 #cadastro .iPessoais            { width: 700px; height: 35px; margin-bottom: 20px; padding: 10px 0 0 20px; background: url(/images/cadastreSeBarra01.png) no-repeat; color: #9ebf28; font-weight: bold; }
 #cadastro .endereco		{ width: 700px; height: 35px; margin-bottom: 20px; padding: 10px 0 0 20px; background: url(/images/cadastreSeBarra02.png) no-repeat; color: #006bb9; font-weight: bold; }
 #cadastro .aPortal		{ width: 700px; height: 35px; margin-bottom: 20px; padding: 10px 0 0 20px; background: url(/images/cadastreSeBarra02.png) no-repeat; color: #006bb9; font-weight: bold; }

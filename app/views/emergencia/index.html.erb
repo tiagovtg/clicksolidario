@@ -40,7 +40,7 @@
         <td><%= emergencium.entidade.nomefantasia %></td>
         <td><%= emergencium.validacao==true ? 'Valida' : 'Invalida' %></td>
         <td class="edicao"><%= link_to 'Mostrar', emergencium %></td>
-        <td class="edicao"><%= link_to 'Editar', edit_emergencium_path(emergencium) %></td>
+        <td class="edicao"><%= link_to 'Alterar', edit_emergencium_path(emergencium) %></td>
         <td class="edicao"><%= link_to 'Deletar', emergencium, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>

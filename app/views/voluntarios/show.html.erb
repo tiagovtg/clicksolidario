@@ -40,16 +40,5 @@
   <%= @voluntario.cep %>
 </p>
 
-<p>
-  <b>Newsletter:</b>
-  <%= @voluntario.newsletter %>
-</p>
-
-<p>
-  <b>User:</b>
-  <%= @voluntario.user_id %>
-</p>
-
-
-<%= link_to 'Editar', edit_voluntario_path(@voluntario) %> |
+<%= link_to 'Alterar', edit_voluntario_path(@voluntario) %> |
 <%= link_to 'Voltar', voluntarios_path %>

@@ -45,9 +45,9 @@
         <td><%= voluntario.cidade %></td>
         <td><%= voluntario.estado %></td>
         <td><%= voluntario.cep %></td>
-        <td class="edicao"><%= link_to 'Show', voluntario %></td>
-        <td class="edicao"><%= link_to 'Editar', edit_voluntario_path(voluntario) %></td>
-        <td class="edicao"><%= link_to 'Destroy', voluntario, :confirm => 'Are you sure?', :method => :delete %></td>
+        <td class="edicao"><%= link_to 'Mostrar', voluntario %></td>
+        <td class="edicao"><%= link_to 'Alterar', edit_voluntario_path(voluntario) %></td>
+        <td class="edicao"><%= link_to 'Deletar', voluntario, :confirm => 'Are you sure?', :method => :delete %></td>
       </tr>
     <% end %>
   </table>

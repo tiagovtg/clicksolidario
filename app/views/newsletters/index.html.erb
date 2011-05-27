@@ -30,7 +30,7 @@
       <tr class="<%= cycle("odd", "even") %>">
         <td><%= newsletter.nome %></td>
         <td><%= newsletter.email %></td>
-        <td class="edicao"><%= link_to 'Editar', edit_newsletter_path(newsletter) %></td>
+        <td class="edicao"><%= link_to 'Alterar', edit_newsletter_path(newsletter) %></td>
         <td class="edicao"><%= link_to 'Deletar', newsletter, :confirm => 'Voce tem certeza?', :method => :delete %></td>
       </tr>
     <% end %>
