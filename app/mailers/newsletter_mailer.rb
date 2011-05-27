@@ -11,14 +11,14 @@ class NewsletterMailer < ActionMailer::Base
   end
 
   def recupera_sehna(user)
-@user = user
+    @user = user
     @url  = "localhost:3000"
     mail(:to => "#{user.nome} <#{user.email}>", :subject => "Recuperação de senha do Click Solidario.",
       :body=>"Por motivos de segurança, usuario(#{user.email}), não temos acesso a sua senha, então foi resetado e gerado uma senha temporaria: 1234")
 
-     @user = User.find(user.id)
-     if @user.update_attributes(params[:user])
-        redirect_to root
-     end
+    @user = User.find(user.id)
+    if @user.update_attributes(params[:user])
+      redirect_to root
+    end
   end
 end

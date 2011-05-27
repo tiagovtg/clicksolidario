@@ -66,7 +66,8 @@ class NoticiaController < ApplicationController
 
     respond_to do |format|
       if @noticium.save
-        format.html { redirect_to(@noticium, :notice => 'Noticia criado(a) com sucesso.') }
+        flash[:notice] = 'Noticia criado(a) com sucesso.'
+        format.html { redirect_to(@noticium) }
       else
         format.html { render :action => "new" }
       end
@@ -80,7 +81,8 @@ class NoticiaController < ApplicationController
       @noticium = Noticium.find(params[:id])
       respond_to do |format|
         if @noticium.update_attributes(params[:noticium])
-          format.html { redirect_to(@noticium, :notice => 'Noticia alterado(a) com sucesso.') }
+          flash[:notice] ='Noticia alterado(a) com sucesso.'
+          format.html { redirect_to(@noticiumS) }
         else
           format.html { render :action => "edit" }
           format.xml  { render :xml => @noticium.errors, :status => :unprocessable_entity }
@@ -94,7 +96,8 @@ class NoticiaController < ApplicationController
         @noticium.validacao=false
         respond_to do |format|
           if @noticium.update_attributes(params[:noticium])
-            format.html { redirect_to(@noticium, :notice => 'Noticia alterado(a) com sucesso.') }
+            flash[:notice] ='Noticia alterado(a) com sucesso.'
+            format.html { redirect_to(@noticium) }
           else
             format.html { render :action => "edit" }
             format.xml  { render :xml => @noticium.errors, :status => :unprocessable_entity }

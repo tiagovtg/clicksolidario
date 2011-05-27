@@ -84,7 +84,7 @@ class EmpresasController < ApplicationController
 
       respond_to do |format|
         if @empresa.update_attributes(params[:empresa])
-          format.html { redirect_to(@empresa, :notice => 'Empresa was successfully updated.') }
+          format.html { redirect_to(@empresa, :notice => 'Empresa foi alterado(a) com sucesso.') }
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
@@ -96,7 +96,7 @@ class EmpresasController < ApplicationController
       unless @empresa.nil?
         respond_to do |format|
           if @empresa.update_attributes(params[:empresa])
-            format.html { redirect_to(@empresa, :notice => 'Emergencium was successfully updated.') }
+            format.html { redirect_to(@empresa, :notice => 'Emergencium foi alterado(a) com sucesso.') }
           else
             format.html { render :action => "edit" }
             format.xml  { render :xml => @empresa.errors, :status => :unprocessable_entity }

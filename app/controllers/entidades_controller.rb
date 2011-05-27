@@ -71,7 +71,7 @@ class EntidadesController < ApplicationController
     unless @entidade.nil?
       respond_to do |format|
         if @entidade.update_attributes(params[:entidade])
-          format.html { redirect_to(@entidade, :notice => 'Emergencium was successfully updated.') }
+          format.html { redirect_to(@entidade, :notice => 'Emergencium foi alterado(a) com sucesso.') }
         else
           format.html { render :action => "edit" }
           format.xml  { render :xml => @entidade.errors, :status => :unprocessable_entity }

@@ -83,7 +83,7 @@ class VoluntariosController < ApplicationController
 
       respond_to do |format|
         if @voluntario.update_attributes(params[:voluntario])
-          format.html { redirect_to(@voluntario, :notice => 'Voluntario was successfully updated.') }
+          format.html { redirect_to(@voluntario, :notice => 'Voluntario foi alterado(a) com sucesso.') }
           format.xml  { head :ok }
         else
           format.html { render :action => "edit" }
@@ -95,7 +95,7 @@ class VoluntariosController < ApplicationController
       unless @voluntario.nil?
         respond_to do |format|
           if @voluntario.update_attributes(params[:voluntario])
-            format.html { redirect_to(@voluntario, :notice => 'Voluntario was successfully updated.') }
+            format.html { redirect_to(@voluntario, :notice => 'Voluntario foi alterado(a) com sucesso.') }
             format.xml  { head :ok }
           else
             format.html { render :action => "edit" }

@@ -83,7 +83,7 @@ class EmergenciaController < ApplicationController
 
       respond_to do |format|
         if @emergencium.update_attributes(params[:emergencium])
-          format.html { redirect_to(@emergencium, :notice => 'Emergencium was successfully updated.') }
+          format.html { redirect_to(@emergencium, :notice => 'Emergencium foi alterado(a) com sucesso.') }
         else
           format.html { render :action => "edit" }
           format.xml  { render :xml => @emergencium.errors, :status => :unprocessable_entity }
@@ -97,7 +97,7 @@ class EmergenciaController < ApplicationController
         @emergencium.validacao=false
         respond_to do |format|
           if @emergencium.update_attributes(params[:emergencium])
-            format.html { redirect_to(@emergencium, :notice => 'Emergencium was successfully updated.') }
+            format.html { redirect_to(@emergencium, :notice => 'Emergencium foi alterado(a) com sucesso.') }
           else
             format.html { render :action => "edit" }
             format.xml  { render :xml => @emergencium.errors, :status => :unprocessable_entity }

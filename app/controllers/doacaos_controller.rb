@@ -63,7 +63,7 @@ class DoacaosController < ApplicationController
 
     respond_to do |format|
       if @doacao.update_attributes(params[:doacao])
-        format.html { redirect_to(@doacao, :notice => 'Doacao was successfully updated.') }
+        format.html { redirect_to(@doacao, :notice => 'Doacao foi alterado(a) com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

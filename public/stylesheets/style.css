@@ -48,3 +48,7 @@ table.bordasimples tr.even      { background: #ebebeb; }
 input			{ padding: 5px 10px 5px 10px; height: 18px; border: solid 1px #d8ced7; background: url(/images/formBackground.gif) repeat-x; font-family: arial; font-size: 13px; color: #4b4d4a; }
 select			{ padding: 5px 10px 5px 10px; height: 30px; border: solid 1px #d8ced7; background: url(/images/formBackground.gif) repeat-x; font-family: arial; font-size: 13px; color: #4b4d4a; }
 span			{ color: #e47e1e; font-family: arial; font-size: 22px; font-weight: bold; }
+
+
+#message.alert       { border-radius: 6px 6px 6px 6px; width: 600px; margin: 0px auto 0px; text-align: center; background-color: #FFDDDD; border: 1px solid #FFBBBB; }
+#message.notice      { border-radius: 6px 6px 6px 6px; width: 600px; margin: 0px auto 0px; text-align: center; background-color: #BBFFB6; border: 1px solid #1FDF00; }

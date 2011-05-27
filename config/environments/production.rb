@@ -46,4 +46,23 @@ Sgss::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  #confiração de email.
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.default_content_type = "text/html"
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.smtp_settings = {
+    #    :enable_starttls_auto => true,
+    :address => "smtp.gmail.com",
+    :port => 25, #587
+    :domain => "mail.google.com",
+    :user_name => "solidarioclick@gmail.com",
+    :password => 'clicksolidario2011'
+  }
+  #  Mail.register_interceptor(DevelopmentMailInterceptor) #if Rails.env.development?
+  #fim email.
+
+  #  Paperclip.options[:command_path] = "usr/bin/"
+  Paperclip.options[:image_magick_path] = "/usr/bin"
 end

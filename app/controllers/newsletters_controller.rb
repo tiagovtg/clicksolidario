@@ -61,7 +61,7 @@ class NewslettersController < ApplicationController
 
     respond_to do |format|
       if @newsletter.update_attributes(params[:newsletter])
-        format.html { redirect_to(@newsletter, :notice => 'Newsletter was successfully updated.') }
+        format.html { redirect_to(@newsletter, :notice => 'Newsletter foi alterado(a) com sucesso.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
