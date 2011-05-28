@@ -31,7 +31,7 @@ class EmpresasController < ApplicationController
     if administrador?
       @empresa = Empresa.find(params[:id])
     else
-      @empresa = Empresa.where(" user_id = ?", current_user.id) rescue nil
+      @empresa = Empresa.find_by_user_id(current_user.id) rescue nil
       redirect_to empresas_path if @empresa.nil?
     end
   end

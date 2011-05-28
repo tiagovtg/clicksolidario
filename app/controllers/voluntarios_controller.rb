@@ -28,7 +28,6 @@ class VoluntariosController < ApplicationController
   end
 
   def show
-    @voluntario = Voluntario.find(params[:id])
     if administrador?
       @voluntario = Voluntario.find(params[:id])
     else
