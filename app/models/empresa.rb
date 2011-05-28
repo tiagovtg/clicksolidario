@@ -19,5 +19,5 @@ class Empresa < ActiveRecord::Base
   validates :cnpj, :uniqueness => true
   
   usar_como_cnpj :cnpj
-  #  usar_como_cpf :cpf
+  usar_como_cpf :cpf
 end

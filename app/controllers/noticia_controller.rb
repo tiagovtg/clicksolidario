@@ -82,7 +82,7 @@ class NoticiaController < ApplicationController
       respond_to do |format|
         if @noticium.update_attributes(params[:noticium])
           flash[:notice] ='Noticia alterado(a) com sucesso.'
-          format.html { redirect_to(@noticiumS) }
+          format.html { redirect_to(@noticium) }
         else
           format.html { render :action => "edit" }
           format.xml  { render :xml => @noticium.errors, :status => :unprocessable_entity }

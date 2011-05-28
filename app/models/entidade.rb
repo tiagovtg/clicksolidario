@@ -27,7 +27,7 @@ class Entidade < ActiveRecord::Base
   validates :cnpj, :uniqueness => true
 
   usar_como_cnpj :cnpj
-  #  usar_como_cpf :cpf
+  usar_como_cpf :cpf
 
   #Metodo de busca, Busca_solidaria
   def self.busca_solidaria(query, uf, causa)
