@@ -27,11 +27,6 @@
       <th>Fantasia</th>
       <th>Cnpj</th>
       <th>Ramo</th>
-      <th>Responsavel</th>
-      <th>Site</th>
-      <th>Newsletter</th>
-      <th>Endereco</th>
-      <th>User</th>
       <th><img src="/images/file_document.png" alt=""/></th>
       <th><img src="/images/file_edit.png" alt=""/></th>
       <th><img src="/images/file_exclude.png" alt=""/></th>
@@ -43,9 +38,6 @@
         <td><%= empresa.nomefantasia %></td>
         <td><%= empresa.cnpj %></td>
         <td><%= empresa.ramoatividade %></td>
-        <td><%= empresa.site %></td>
-        <td><%= empresa.newsletter %></td>
-        <td><%= empresa.user_id %></td>
         <td class="edicao"><%= link_to 'Mostrar', empresa %></td>
         <td class="edicao"><%= link_to 'Alterar', edit_empresa_path(empresa) %></td>
         <td class="edicao"><%= link_to 'Deletar', empresa, :confirm => 'Voce tem certeza?', :method => :delete %></td>

@@ -1,0 +1,285 @@
+
+<div class="dEmpresa">Dados da Empresa</div>
+
+<!-- tabela dados da empresa inicio -->
+<table width="720px" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="_img/dot.gif" width="20px" height="1" /></td>
+    <td>
+
+      <table width="700px" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style=" padding-bottom: 10px; ">Nome Fantasia</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Razão Social</td>
+        </tr>
+        <tr>
+          <td><input name="" type="text" style=" width: 318px " /></td>
+          <td><img src="_img/dot.gif" width="20px" height="1" /></td>
+          <td><input name="" type="text" style=" width: 318px " /></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="_img/dot.gif" width="1px" height="30" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <table width="700px" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style=" padding-bottom: 10px; ">CNPJ</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Ramo de Atividade</td>
+        </tr>
+        <tr>
+          <td><input name="" type="text" style=" width: 205px " /></td>
+          <td><img src="_img/dot.gif" width="20px" height="1" /></td>
+          <td><input name="" type="text" style=" width: 431px " /></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="_img/dot.gif" width="1px" height="30" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <table width="700px" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style=" padding-bottom: 10px; ">Área de Atuação</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Site</td>
+        </tr>
+        <tr>
+          <td><input name="" type="text" style=" width: 318px " /></td>
+          <td><img src="_img/dot.gif" width="20px" height="1" /></td>
+          <td><input name="" type="text" style=" width: 318px " /></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="_img/dot.gif" width="1px" height="30" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <table width="700" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style=" padding-bottom: 10px; " colspan="3">Telefone Comercial</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Ramal</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Fax</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Ramal</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td><input name="" type="text" style=" width: 15px " /></td>
+          <td><img src="_img/dot.gif" width="10px" height="1" alt=""/></td>
+          <td><input name="" type="text" style=" width: 151px " /></td>
+          <td><img src="_img/dot.gif" width="20px" height="1" /></td>
+          <td><input name="" type="text" style=" width: 40px " /></td>
+          <td><img src="_img/dot.gif" width="50px" height="1" alt=""/></td>
+          <td><input name="" type="text" style=" width: 15px " /></td>
+          <td><img src="_img/dot.gif" width="10px" height="1" alt=""/></td>
+          <td><input name="" type="text" style=" width: 151px " /></td>
+          <td><img src="_img/dot.gif" width="20px" height="1" alt=""/></td>
+          <td><input name="" type="text" style=" width: 40px " /></td>
+          <td><img src="_img/dot.gif" width="40px" height="1" alt=""/></td>
+        </tr>
+      </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="_img/dot.gif" width="1px" height="42" /></td>
+  </tr>
+</table>
+<!-- tabela dados da empresa fim -->
+
+
+<div class="iPessoais">Informações Pessoais</div>
+
+<!-- tabela informações pessoais inicio -->
+<table width="720px" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Nome Completo</td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td style=" padding-bottom: 10px; ">Como Gostaria de ser Chamado</td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td style=" padding-bottom: 10px; ">Profissão</td>
+
+          </tr>
+          <tr>
+            <td><%= f.text_field :nome, :style=>"width: 403px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+            <td>&nbsp;</td>
+            <td><%= f.text_field :apelido, :style=>"width: 233px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+            <td>&nbsp;</td>
+            <td><%= f.text_field :profissao, :size=>70, :maxlenght=>70, :onkeypress=> 'return SomenteLetras(event)' %></td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="../images/dot.gif" width="1px" height="30" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Data de Nascimento</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">CPF</td>
+            <td>&nbsp;</td>
+            <td colspan="5" style=" padding-bottom: 10px; ">Sexo</td>
+          </tr>
+          <tr>
+            <td><%= f.date_select(:datanasc, :style=>"width: 130px", :start_year => 1920, :end_year => Time.now.year - 16, :order => [:day, :month, :year] ) %></td>
+            <td class="exData">Ex: 02/01/1979</td>
+            <td><%= f.text_field :cpf, :style=>"width: 231px", :class=>"cpf" %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+            <td><%= f.radio_button(:sexo, value="Masculino" ) %></td>
+            <td>Masculino</td>
+            <td><img src="../images/dot.gif" width="10px" height="1" alt="" /></td>
+            <td><%= f.radio_button(:sexo, value="Feminino" ) %></td>
+            <td>Feminino</td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="../images/dot.gif" width="1px" height="30" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+        <% f.fields_for :telefones do |builder| %>
+          <%= render 'generals/telefones', :f => builder %>
+        <% end %>
+        <div><br/><%= add_child_link "Adiciona Telefone", f, :telefones %><br/></div>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="../images/dot.gif" width="1px" height="42" alt=""/></td>
+    </tr>
+  </table>
+<!-- tabela informações pessoais fim -->
+
+
+<div class="endereco">Endereço</div>
+
+<!-- tabela endereço inicio -->
+<table width="720px" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="_img/dot.gif" width="20px" height="1" /></td>
+    <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">CEP</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Endereço</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Número</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :cep, :style=>"width: 58px; height: 30px;", :class=>"cep" %></td>
+            <td class="cep"><a href="#">Não sei meu CEP</a></td>
+            <td><%= f.text_field :endereco, :style=>"width: 348px", :onkeypress=> 'return letrasNumeros(event)' %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+            <td><%= f.text_field :numero, :style=>"width: 60px" %></td>
+          </tr>
+        </table>
+
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="_img/dot.gif" width="1px" height="30" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>
+
+      <table width="700px" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td style=" padding-bottom: 10px; ">Complemento</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Bairro</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Cidade</td>
+          <td>&nbsp;</td>
+          <td style=" padding-bottom: 10px; ">Estado</td>
+        </tr>
+        <tr>
+          <td><%= f.text_field :complemento, :style=>" width: 204px " %></td>
+          <td><img src="../images/dot.gif" width="20px" height="1" /></td>
+          <td><%= f.text_field :bairro, :style=>" width: 150px " %></td>
+          <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+          <td><%= f.text_field :cidade, :style=>" width: 150px ", :onkeypress=> 'return SomenteLetras(event)' %></td>
+          <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+          <td>
+            <%= f.select :estado, ([["Acre-AC", "AC"], ["Alagoas-AL", "AL"], ["Amapá-AP", "AP"],
+                ["Amazonas-AM", "AM"], ["Bahia-BA", "BA"], ["Ceara-CE", "CE"], ["Distrito Federal-DF", "DF"], ["Espirito Santo-ES", "ES"],
+                ["Goias-GO", "GO"], ["Maranhão-MA", "MA"], ["Mato Grosso-MT", "MT"], ["Mato Grosso do Sul-MS", "MS"], ["Minas Gerais-MG", "MG"],
+                ["Para-PA", "PA"], ["Paraiba-PB", "PB"], ["Parana-PR", "PR"], ["Pernabuco-PE", "PE"], ["Piaui-PI", "PI"],
+                ["Rio de Janeiro-RJ", "RJ"], ["Rio Grande do Norte-RN", "RN"], ["Rio Grande do Sul-RS", "RS"], ["Rondonia-RO", "RO"], ["Roraima-RR", "RR"],
+                ["Santa Catarina-SC", "SC"], ["São Paulo-SP", "SP"], ["Sergipe-SE", "SE"], ["Tocantins-TO", "TO"]]), { :prompt => 'Escolha a região' } %>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><img src="../images/dot.gif" width="1px" height="42" alt="" /></td>
+  </tr>
+</table>
+<!-- tabela endereço fim -->
+
+<!-- tabela envio inicio -->
+<table width="720" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><input type="reset" name="limpar" value="" class="botaoLimpar" /></td>
+    <td style=" width: 20px; "><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+    <td><input type="image" name="enviar" value="" class="botaoEnviar" /></td>
+  </tr>
+</table>
+<!-- tabela envio fim -->
+<br/>
+<br/>
+<br/>
+<br/>
+<!-- tabela endereço fim -->
+

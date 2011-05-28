@@ -1,7 +1,7 @@
 class EmpresasController < ApplicationController
 
   access_control do
-    allow :empresa,      :to => [:index, :show, :new, :edit, :create, :update]
+    allow :empresa,       :to => [:index, :show, :new, :edit, :create, :update]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
 
@@ -32,7 +32,7 @@ class EmpresasController < ApplicationController
       @empresa = Empresa.find(params[:id])
     else
       @empresa = Empresa.where(" user_id = ?", current_user.id) rescue nil
-      render :action => "index" if @empresa.nil?
+      redirect_to empresas_path if @empresa.nil?
     end
   end
 
