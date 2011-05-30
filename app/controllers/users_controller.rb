@@ -156,7 +156,7 @@ class UsersController < ApplicationController
   end
 
   #Função para ativar e desativar usuário
-  def activate_deactivate
+  def valida_usuario
     @user = User.find(params[:id])
     # Verifica se o usuário não é administrador
     if @user.id != 1

@@ -40,7 +40,13 @@
         <td><%= emergencium.data %></td>
         <td><%= emergencium.status %></td>
         <td><%= emergencium.entidade.nomefantasia %></td>
-        <td><%= emergencium.validacao==true ? 'Valida' : 'Invalida' %></td>
+
+        <%  if administrador? %>
+          <td class="edicao"><%= link_to (emergencium.validacao==true ? 'Valido' : 'Invalido'), {:controller => :emergencia, :action => :valida_emergencia, :id => emergencium} %></td>
+        <% else %>
+          <td><%= emergencium.validacao==true ? 'Valida' : 'Invalida' %></td>
+        <% end %>
+
         <td class="edicao"><%= link_to 'Mostrar', emergencium %></td>
         <td class="edicao"><%= link_to 'Alterar', edit_emergencium_path(emergencium) %></td>
         <td class="edicao"><%= link_to 'Deletar', emergencium, :confirm => 'Voce tem certeza?', :method => :delete %></td>

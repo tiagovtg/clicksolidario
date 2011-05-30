@@ -38,7 +38,11 @@
         <td><%= noticium.noticia %></td>
         <td><%= noticium.data %></td>
         <td><%= noticium.entidade.nomefantasia %></td>
-        <td><%= noticium.validacao==true ? 'Valido' : 'Invalido' %></td>
+        <%  if administrador? %>
+          <td class="edicao"><%= link_to (noticium.validacao==true ? 'Valido' : 'Invalido'), {:controller => :noticia, :action => :valida_noticia, :id => noticium} %></td>
+        <% else %>
+          <td><%= noticium.validacao==true ? 'Valido' : 'Invalido' %></td>
+        <% end %>
         <td class="edicao"><%= link_to 'Mostrar', noticium %></td>
         <td class="edicao"><%= link_to 'Alterar', edit_noticium_path(noticium) %></td>
         <td class="edicao"><%= link_to 'Deletar', noticium, :confirm => 'Voce tem certeza?', :method => :delete %></td>

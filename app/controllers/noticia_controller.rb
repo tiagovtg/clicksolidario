@@ -2,7 +2,7 @@ class NoticiaController < ApplicationController
 
   access_control do
     allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
-    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
+    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :valida_noticia ]
   end
 
   def index
@@ -133,4 +133,25 @@ class NoticiaController < ApplicationController
       end
     end
   end
+
+  #Função para validar noticia
+  def valida_noticia
+    @noticium = Noticium.find(params[:id])
+
+    if @noticium.validacao==true
+      @noticium.validacao = false
+      flash[:notice] = "Validado com sucesso."
+    else
+      @noticium.validacao = true
+      flash[:notice] = "Invalidado com sucesso."
+    end
+
+    if @noticium.update_attributes(params[:noticium])
+      redirect_to noticia_url
+    else
+      flash[:alert] = "Erro na tentiva de alteração."
+    end
+  end
+
+
 end

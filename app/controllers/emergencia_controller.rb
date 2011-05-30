@@ -2,7 +2,7 @@ class EmergenciaController < ApplicationController
 
   access_control do
     allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
-    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
+    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :valida_emergencia ]
   end
 
   def index
@@ -133,5 +133,25 @@ class EmergenciaController < ApplicationController
       end
     end
   end
+
+  #Função para validar noticia
+  def valida_emergencia
+   @emergencium = Emergencium.find(params[:id])
+
+    if @emergencium.validacao==true
+      @emergencium.validacao = false
+      flash[:notice] = "Validado com sucesso."
+    else
+      @emergencium.validacao = true
+      flash[:notice] = "Invalidado com sucesso."
+    end
+
+    if @emergencium.update_attributes(params[:emergencium])
+      redirect_to emergencia_url
+    else
+      flash[:alert] = "Erro na tentiva de alteração."
+    end
+  end
+
   
 end
