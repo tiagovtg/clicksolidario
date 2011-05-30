@@ -20,7 +20,8 @@
 <% else %>
   <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
-      <th>Nome</th>
+      <th>Titulo</th>
+      <th>Resumo</th>
       <th>Noticia</th>
       <th>Data</th>
       <th>Entidade</th>
@@ -32,8 +33,9 @@
 
     <% @noticia.each do |noticium| %>
       <tr class="<%= cycle("odd", "even") %>">
-        <td><%= noticium.nome %></td>
-        <td><%= noticium.texto %></td>
+        <td><%= noticium.titulo %></td>
+        <td><%= noticium.resumo %></td>
+        <td><%= noticium.noticia %></td>
         <td><%= noticium.data %></td>
         <td><%= noticium.entidade.nomefantasia %></td>
         <td><%= noticium.validacao==true ? 'Valido' : 'Invalido' %></td>

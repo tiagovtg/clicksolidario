@@ -20,8 +20,9 @@
 <% else %>
   <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
-      <th>Nome</th>
-      <th>Desc</th>
+      <th>Titulo</th>
+      <th>Resumo</th>
+      <th>Emergencia</th>
       <th>Data</th>
       <th>Status</th>
       <th>Entidade</th>
@@ -33,8 +34,9 @@
 
     <% @emergencia.each do |emergencium| %>
       <tr class="<%= cycle("odd", "even") %>">
-        <td><%= emergencium.nome %></td>
-        <td><%= emergencium.desc %></td>
+        <td><%= emergencium.titulo %></td>
+        <td><%= emergencium.resumo %></td>
+        <td><%= emergencium.emergencia %></td>
         <td><%= emergencium.data %></td>
         <td><%= emergencium.status %></td>
         <td><%= emergencium.entidade.nomefantasia %></td>

@@ -2,12 +2,17 @@
 
 <p>
   <b>Nome:</b>
-  <%= @emergencium.nome %>
+  <%= @emergencium.titulo %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @emergencium.resumo %>
 </p>
 
 <p>
   <b>Desc:</b>
-  <%= @emergencium.desc %>
+  <%= @emergencium.emergencia %>
 </p>
 
 <p>
@@ -16,19 +21,8 @@
 </p>
 
 <p>
-  <b>Status:</b>
-  <%= @emergencium.status %>
-</p>
-
-<p>
-  <b>Entidade:</b>
-  <%= @emergencium.entidade_id %>
-</p>
-<p>
   <%= image_tag @emergencium.imagem.url(:thumb) %>
 </p>
-
-
 
 <%= link_to 'Alterar', edit_emergencium_path(@emergencium) %> |
 <%= link_to 'Voltar', emergencia_path %>

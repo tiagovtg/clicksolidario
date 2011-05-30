@@ -1,25 +1,24 @@
 <%= render :partial => 'generals/message' %>
 
 <p>
-  <b>Nome:</b>
-  <%= @noticium.nome %>
+  <b>Titulo:</b>
+  <%= @noticium.titulo %>
 </p>
 
 <p>
   <b>Nome:</b>
-  <%= @noticium.texto %>
+  <%= @noticium.resumo %>
+</p>
+
+<p>
+  <b>Nome:</b>
+  <%= @noticium.noticia %>
 </p>
 
 <p>
   <b>Data:</b>
   <%= @noticium.data %>
 </p>
-
-<p>
-  <b>Entidade:</b>
-  <%= @noticium.entidade_id %>
-</p>
-
 
 <%= link_to 'Alterar', edit_noticium_path(@noticium) %> |
 <%= link_to 'Voltar', noticia_path %>

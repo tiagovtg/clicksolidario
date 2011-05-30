@@ -61,8 +61,9 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "emergencia", :force => true do |t|
-    t.string   "nome"
-    t.text     "desc"
+    t.string   "titulo"
+    t.string   "resumo"
+    t.text     "emergencia"
     t.date     "data"
     t.string   "status"
     t.string   "imagem_file_name",    :null => false
@@ -133,8 +134,9 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "noticia", :force => true do |t|
-    t.string   "nome"
-    t.text     "texto"
+    t.string   "titulo"
+    t.string   "resumo"
+    t.text     "noticia"
     t.date     "data"
     t.boolean  "validacao"
     t.integer  "entidade_id"

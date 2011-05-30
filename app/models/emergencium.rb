@@ -8,7 +8,7 @@ class Emergencium < ActiveRecord::Base
   belongs_to :entidade
   
   # Campos obrigatorios
-  validates :nome, :desc, :data, :presence => true
+  validates :titulo, :resumo, :emergencia, :data, :presence => true
 
   # Definições do Paperclip
   has_attached_file :imagem, :styles => { :thumb => "100x100>" }

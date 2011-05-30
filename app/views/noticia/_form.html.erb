@@ -2,12 +2,16 @@
   <%= render :partial => 'generals/model_errors', :locals => {:obj => @noticium}%>
 
   <div class="field">
-    <%= f.label :nome %><br />
-    <%= f.text_field :nome %>
+    <%= f.label :titulo, 'Titulo' %><br />
+    <%= f.text_field :titulo %>
   </div>
   <div class="field">
-    <%= f.label :texto %><br />
-    <%= f.text_area :texto %>
+    <%= f.label :resumo, 'Resumo' %><br />
+    <%= f.text_field :resumo %>
+  </div>
+  <div class="field">
+    <%= f.label :noticia, 'Noticia' %><br />
+    <%= f.text_area :noticia %>
   </div>
   <div class="field">
     <%= f.label :data %><br />
