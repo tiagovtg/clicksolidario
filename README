@@ -56,8 +56,8 @@
     Enviando as atualizações
     git push
 
-    Enviando as atualizações para o GitHub
-    git push origin master
+    Forçando as atualizações para o GitHub
+    git push origin master -ff
 
 
 #IMGKit
