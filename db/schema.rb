@@ -187,6 +187,8 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
     t.datetime "updated_at"
   end
 
+  add_index "users", ["email"], :name => "index_users_on_email"
+
   create_table "voluntarios", :force => true do |t|
     t.string   "nome",        :limit => 70
     t.string   "apelido",     :limit => 30

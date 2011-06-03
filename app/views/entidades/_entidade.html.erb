@@ -25,7 +25,6 @@
       <tr>
         <th>Nome</th>
         <th>Causa</th>
-        <th>Cnpj</th>
         <th>Cidade</th>
         <th>Estado</th>
         <th><img src="/images/file_document.png" alt=""/></th>
@@ -35,7 +34,6 @@
         <tr class="<%= cycle("odd", "even") %>">
           <td><%= entidade.nomefantasia %></td>
           <td><%= entidade.causa.nome %></td>
-          <td><%= entidade.cnpj %></td>
           <td><%= entidade.cidade %></td>
           <td><%= entidade.estado %></td>
           <td class="edicao"><%= link_to 'Mostrar', entidade %></td>

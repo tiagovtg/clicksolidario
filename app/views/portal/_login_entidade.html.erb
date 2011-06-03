@@ -1,7 +1,7 @@
 <div id="entidade" class="entidade">área das entidades</div>
 
 <div id="divEntidade" class="entidadeBarra">
-  <%= form_for @user_session, :url => user_session_path, :class => "loginBarra" do |f| %>
+  <%= form_for @user_session=UserSession.new, :url => user_session_path, :class => "loginBarra" do |f| %>
     <ul id="navlist">
       <li>Email:<%= f.text_field :email, :class=> "input", :style=>"width: 149px;" %></li>
       <li>Senha:<%= f.password_field :password, :class=> "input", :style=>"width: 149px;" %></li>

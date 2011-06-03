@@ -19,66 +19,92 @@
   }
 </script>
 
+
+<div id="barraIdentificacao">
+
+  <!-- migalhas de pão -->
+  <div id="breadCrumb">
+    <ul>
+      <li class="first" title="Voltar para página Inicial"><a href="/" title="Voltar para página Inicial">Página Inicial</a></li>
+      <li class="last" title="Cadastre-se">Cadastre-se</li>
+    </ul>
+  </div>
+
+  <!-- acessibilidade -->
+  <div id="aMais"><a href="#" title="Aumenta tamanho da fonte" id="aumenta_fonte"></a></div>
+  <div id="aMenos"><a href="#" title="Diminue tamanho da fonte" id="reduz_fonte"></a></div>
+  <div id="tFonte">tamanho da fonte</div>
+
+</div>
+
+
 <%= render :partial => 'generals/model_errors', :locals => {:obj => @user}%>
 
-<div class="aPortal">Acesso ao Portal</div>
+<div id="cadastro">
+  <!-- tabela acesso ao portal inicio -->
 
-<!-- tabela acesso ao portal inicio -->
-<table width="720px" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
-    <td>
+  <div class="aPortal">Acesso ao Portal</div>
 
-      <table width="700px" border="0" cellspacing="0" cellpadding="0">
-        <tr>
-          <td style=" padding-bottom: 10px; ">*E-mail</td>
-          <td>&nbsp;</td>
-          <td style=" padding-bottom: 10px; ">*Senha</td>
-          <td>&nbsp;</td>
-          <td style=" padding-bottom: 10px; ">*Redigite a Senha</td>
-          <td>&nbsp;</td>
-          <td style=" padding-bottom: 10px; ">*Nome</td>
-          <td>&nbsp;</td>
-        </tr>
-        <tr>
-          <td><%= f.text_field :email, :style=>" width: 334px ", :onkeypress=> 'return SomenteEmail(event)' %></td>
-          <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
-          <td><%= f.password_field :password, :style=>" width: 130px " %></td>
-          <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
-          <td><%= f.password_field :password_confirmation, :style=>" width: 130px " %></td>
-          <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
-          <td><%= f.text_field :nome, :style=>" width: 334px " %></td>
-        </tr>
-      </table>
-      <br/>
-      *Tipo de Cadastro
-      <% if administrador? or entidade? %>
-        <%= radio_button_tag(:tipo, value="administrador", @user.administrador? ? checked=true : checked=false ) %>&nbsp;Administrador&nbsp;&nbsp;
-      <% end %>
-      <%= radio_button_tag(:tipo, value="entidade", @user.entidade? ? checked=true : checked=false ) %>&nbsp;Entidade Filantrópica&nbsp;&nbsp;
-      <%= radio_button_tag(:tipo, value="voluntario", @user.voluntario? ? checked=true : checked=false ) %>&nbsp;Voluntário
-      <%= radio_button_tag(:tipo, value="empresa", @user.empresa? ? checked=true : checked=false ) %>&nbsp;Empresa
-      <br/>
-      <br/>
-      <%= f.check_box :newsletter %>&nbsp;&nbsp;Desejo receber notícias do Click Solidário
-      <br/>
-      <br/>
-      <span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><button class="button" type="submit" onclick="javascript: verificaTipo();">
-      <img src="/images/tick.png" alt="" width="30px" height="30px"/>Registrar&nbsp;
-    </button>
-    </td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td><img src="../images/dot.gif" width="1px" height="70" alt=""/></td>
-  </tr>
-</table>
+  <%= render :partial => 'generals/model_errors', :locals => {:obj => @user}%>
+  <!-- tabela acesso ao portal inicio -->
+  <table width="720px" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">*E-mail</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">*Senha</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">*Redigite a Senha</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :email, :style=>" width: 334px ", :onkeypress=> 'return SomenteEmail(event)' %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+            <td><%= f.password_field :password, :style=>" width: 130px " %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td><%= f.password_field :password_confirmation, :style=>" width: 130px " %></td>
+          </tr>
+        </table>
+                <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">*Nome</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :nome, :style=>" width: 334px " %></td>
+          </tr>
+        </table>
+        <br/>
+        *Tipo de Cadastro
+        <% if administrador? or entidade? %>
+          <%= radio_button_tag(:tipo, value="administrador", @user.administrador? ? checked=true : checked=false ) %>&nbsp;Administrador&nbsp;&nbsp;
+        <% end %>
+        <%= radio_button_tag(:tipo, value="entidade", @user.entidade? ? checked=true : checked=false ) %>&nbsp;Entidade Filantrópica&nbsp;&nbsp;
+        <%= radio_button_tag(:tipo, value="voluntario", @user.voluntario? ? checked=true : checked=false ) %>&nbsp;Voluntário
+        <%= radio_button_tag(:tipo, value="empresa", @user.empresa? ? checked=true : checked=false ) %>&nbsp;Empresa
+        <br/>
+        <br/>
+        <%= f.check_box :newsletter %>&nbsp;&nbsp;Desejo receber notícias do Click Solidário
+        <br/>
+        <br/>
+        <span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>
+      </td>
+    </tr>
+  </table>
+
+  <!-- tabela envio inicio -->
+  <table width="720" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><input type="reset" name="limpar" value="" class="botaoLimpar" /></td>
+      <td style=" width: 20px; "><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+      <td><input type="image" name="enviar" value="" class="botaoEnviar" /></td>
+    </tr>
+  </table>
+  <!-- tabela envio fim -->
+  <br/>
+  <br/>
+  <br/>
+</div>

@@ -39,7 +39,7 @@ body, html		{ height:100%; font-family: Arial, Helvetica, sans-serif; background
 
 input			{ padding: 5px 10px 5px 10px; height: 18px; border: solid 1px #d8ced7; background: url(/images/formBackground.gif) repeat-x; font-family: arial; font-size: 13px; color: #4b4d4a; }
 select			{ padding: 5px 10px 5px 10px; height: 30px; border: solid 1px #d8ced7; background: url(/images/formBackground.gif) repeat-x; font-family: arial; font-size: 13px; color: #4b4d4a; }
-span			{ color: #e47e1e; font-family: arial; font-size: 22px; font-weight: bold; }
+span			{ color: #e47e1e; font-family: arial; font-size: 16px; font-weight: bold; }
 
 #barraIdentificacao             { width: 720px; height: 45px; margin-bottom: 40px; background: url(/images/backgroundMigAce.gif) no-repeat; }
 

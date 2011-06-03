@@ -1,0 +1,199 @@
+<script type="text/javascript">
+  jQuery(document).ready(function(){
+
+    jQuery("INPUT[id='tipo_entidade']").click(function() {
+      jQuery("#divCadastroLogin").show();
+      jQuery("#divCadastroEntidade").show();
+      jQuery("#divCadastroVoluntario").hide();
+      jQuery("#divCadastroEmpresa").hide();
+      jQuery("#divSelecaoCadastro").hide();
+    });
+    jQuery("INPUT[id='tipo_voluntario']").click(function() {
+      jQuery("#divCadastroLogin").show();
+      jQuery("#divCadastroEntidade").hide();
+      jQuery("#divCadastroVoluntario").show();
+      jQuery("#divCadastroEmpresa").hide();
+      jQuery("#divSelecaoCadastro").hide();
+    });
+    jQuery("INPUT[id='tipo_empresa']").click(function() {
+      jQuery("#divCadastroLogin").show();
+      jQuery("#divCadastroEntidade").hide();
+      jQuery("#divCadastroVoluntario").hide();
+      jQuery("#divCadastroEmpresa").show();
+      jQuery("#divSelecaoCadastro").hide();
+    });
+  });
+</script>
+
+<div id="divSelecaoCadastro">
+  <div id="barraIdentificacao">
+
+    <!-- migalhas de pão -->
+    <div id="breadCrumb">
+      <ul>
+        <li class="first" title="Voltar para página Inicial"><a href="/" title="Voltar para página Inicial">Página Inicial</a></li>
+        <li class="last" title="Cadastre-se">Cadastre-se</li>
+      </ul>
+    </div>
+
+    <!-- acessibilidade -->
+    <div id="aMais"><a href="#" title="Aumenta tamanho da fonte" id="aumenta_fonte"></a></div>
+    <div id="aMenos"><a href="#" title="Diminue tamanho da fonte" id="reduz_fonte"></a></div>
+    <div id="tFonte">tamanho da fonte</div>
+
+  </div>
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td colspan="6" style=" padding-bottom: 20px; ">Selecione uma opção</td>
+    </tr>
+    <tr>
+      <td style=" width: 10px; "><%= radio_button_tag(:tipo, value="voluntario", @user.voluntario? ? checked=true : checked=false ) %></td>
+      <td>Voluntario</td>
+      <td style=" width: 10px; "><%= radio_button_tag(:tipo, value="entidade", @user.entidade? ? checked=true : checked=false ) %></td>
+      <td>Entidade</td>
+      <td style=" width: 10px; "><%= radio_button_tag(:tipo, value="empresa", @user.empresa? ? checked=true : checked=false ) %></td>
+      <td>Empresa</td>
+    </tr>
+    <tr>
+      <td colspan="6"><img src="images/dot.gif" width="1px" height="40" alt="" /></td>
+    </tr>
+  </table>
+</div>
+
+<div id="divCadastroEntidade" style="display: none;">
+  ole mundo
+</div>
+
+
+<div id="divCadastroVoluntario" style="display: none;">
+  <% f.fields_for @voluntarios do |builder| %>
+    <%= render 'voluntarios', :f => builder %>
+  <% end %>
+  ola mundo
+</div>
+
+
+<div id="divCadastroEmpresa" style="display: none;">
+ohaio mundo
+</div>
+
+
+<div id="divCadastroLogin" style="display: none;">
+
+  <div id="cadastro">
+    <div class="iPessoais">Informações Pessoais</div>
+
+    <!-- tabela informações pessoais inicio -->
+    <table width="720px" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+        <td>
+
+          <table width="700px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td style=" padding-bottom: 10px; ">Nome Completo</td>
+              <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+              <td style=" padding-bottom: 10px; ">Como Gostaria de ser Chamado</td>
+            </tr>
+            <tr>
+              <td><%= f.text_field :nome, :style=>"width: 403px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+              <td>&nbsp;</td>
+              <td><%= f.text_field :apelido, :style=>"width: 233px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><img src="../images/dot.gif" width="1px" height="30" alt=""/></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+
+          <table width="700px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td style=" padding-bottom: 10px; ">Data de Nascimento</td>
+              <td>&nbsp;</td>
+              <td style=" padding-bottom: 10px; ">CPF</td>
+              <td>&nbsp;</td>
+              <td colspan="5" style=" padding-bottom: 10px; ">Sexo</td>
+            </tr>
+            <tr>
+              <td><%= f.date_select(:datanasc, :style=>"width: 130px", :start_year => 1920, :end_year => Time.now.year - 16, :order => [:day, :month, :year] ) %></td>
+              <td class="exData">Ex: 02/01/1979</td>
+              <td><%= f.text_field :cpf, :style=>"width: 231px", :class=>"cpf" %></td>
+              <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+              <td><%= f.radio_button(:sexo, value="Masculino" ) %></td>
+              <td>Masculino</td>
+              <td><img src="../images/dot.gif" width="10px" height="1" alt="" /></td>
+              <td><%= f.radio_button(:sexo, value="Feminino" ) %></td>
+              <td>Feminino</td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><img src="../images/dot.gif" width="1px" height="30" alt=""/></td>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td><img src="../images/dot.gif" width="1px" height="42" alt=""/></td>
+      </tr>
+    </table>
+
+    <!-- tabela informações pessoais fim -->
+
+
+    <div class="aPortal">Acesso ao Portal</div>
+
+    <%= render :partial => 'generals/model_errors', :locals => {:obj => @user}%>
+    <!-- tabela acesso ao portal inicio -->
+    <table width="720px" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td>&nbsp;</td>
+        <td>
+          <table width="700px" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td style=" padding-bottom: 10px; ">*E-mail</td>
+              <td>&nbsp;</td>
+              <td style=" padding-bottom: 10px; ">*Senha</td>
+              <td>&nbsp;</td>
+              <td style=" padding-bottom: 10px; ">*Redigite a Senha</td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td><%= f.text_field :email, :style=>" width: 334px ", :onkeypress=> 'return SomenteEmail(event)' %></td>
+              <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+              <td><%= f.password_field :password, :style=>" width: 130px " %></td>
+              <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+              <td><%= f.password_field :password_confirmation, :style=>" width: 130px " %></td>
+            </tr>
+          </table>
+          <br/>
+          <%= f.check_box :newsletter %>&nbsp;&nbsp;Desejo receber notícias do Click Solidário
+          <br/>
+          <br/>
+          <span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>
+        </td>
+      </tr>
+    </table>
+
+    <!-- tabela envio inicio -->
+    <table width="720" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><input type="reset" name="limpar" value="" class="botaoLimpar" /></td>
+        <td style=" width: 20px; "><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+        <td><input type="image" name="enviar" value="" class="botaoEnviar" /></td>
+      </tr>
+    </table>
+    <!-- tabela envio fim -->
+    <br/>
+    <br/>
+    <br/>
+  </div>
+</div>

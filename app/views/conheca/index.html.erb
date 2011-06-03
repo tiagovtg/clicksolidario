@@ -1,182 +1,49 @@
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("#login").toggle(function(){
-      $("#divLogin").slideDown('slow');
-    },function(){
-      $("#divLogin").slideUp('slow');
-    });
-    $("#entidade").toggle(function(){
-      $("#divEntidade").slideDown('slow');
-    },function(){
-      $("#divEntidade").slideUp('slow');
-    });
-  });
+<!-- div resultado da pesquisa do busca solidaria -->
+<div id="resultado_busca_solidaria">
+</div>
 
-  //Aumenta e reduz o tamanho da fonte
-  $(document).ready(function(){
-    var fonte = 14;
-    $("#aumenta_fonte").click(function(){
-      if (fonte<18){
-        fonte = fonte+1;
-        $("#colunaDireita").css({"font-size" : fonte+"px"});
-      }
-    });
-    $("#reduz_fonte").click(function(){
-      if (fonte>9){
-        fonte = fonte-1;
-        $("#colunaDireita").css({"font-size" : fonte+"px"});
-      }
-    });
-  });
-</script>
+<div id="barraIdentificacao">
 
-<!-- NavBar -->
-<div id="navBar">
-
-  <div class="barra">
-
-    <!-- login usuário -->
-    <%= render :partial => 'portal/login' %>
-
-    <!-- login entidades -->
-    <div id="entidade" class="entidade">área das entidades</div>
-
-    <div id="divEntidade" class="entidadeBarra">
-      <ul id="navlist">
-        <li>usuário:<input name="usuario" type="text" style="width: 149px;" class="input" /></li>
-        <li>senha:<input name="senha" type="password" style="width: 149px" class="input" /></li>
-        <li><input name="botao"  type="button"  value="ok »" class="botaoLogin" /></li>
-        <li><a href="#">esqueci minha senha</a></li>
-        <li>|</li>
-        <li><a href="#">esqueci meu usuário</a></li>
-      </ul>
-    </div>
-
-    <div class="traco"></div>
-
-    <!-- mapa do portal -->
-    <div class="mapaPortal"><a href="#">mapa do portal</a></div>
-
-    <!-- rede social -->
-    <%= render :partial => 'portal/rede_social' %>
-
+  <!-- migalhas de pão -->
+  <div id="breadCrumb">
+    <ul>
+      <li class="first" title="Voltar para página Inicial"><a href="default.htm" title="Voltar para página Inicial">Página Inicial</a></li>
+      <li class="last" title="Conheça o Click Solidário">Conheça o Click Solidário</li>
+    </ul>
   </div>
+
+  <!-- acessibilidade -->
+  <div id="aMais"><a href="#" title="Aumenta tamanho da fonte" id="aumenta_fonte"></a></div>
+  <div id="aMenos"><a href="#" title="Diminue tamanho da fonte" id="reduz_fonte"></a></div>
+  <div id="tFonte">tamanho da fonte</div>
 
 </div>
 
 
-<!-- Corpo do Site -->
-<div id="corpoSite">
-
-  <div class="cabecalho">
-
-    <div class="logo"></div>
-
-    <!-- menu -->
-    <%= render :partial => 'portal/menu' %>
-
-    <!-- CorpoConteudo -->
-    <div id="conteudo">
-
-      <div id="colunaEsquerda">
-
-        <!-- Busca Solidaria -->
-        <%= render :partial => 'portal/busca_solidaria' %>
-
-        <!-- Menu Lateral -->
-        <%= render :partial => 'portal/menu_lateral' %>
-
-        <!-- Conheça essas Iniciativas -->
-        <%= render :partial => 'portal/conheca_iniciativas' %>
-
-        <!-- Saiba Como -->
-        <%= render :partial => 'portal/saiba_como' %>
-
-        <!-- Veja Como -->
-        <%= render :partial => 'portal/veja_como' %>
-
-        <!-- Eu apóio o Click Solidário -->
-        <div id="EuApoio">
-          <h1>Eu apóio o Click Solidário</h1>
-          <p>Seu apoio é fundamental para o crescimento desse movimento.
-            <a href="#">» Participe!</a></p>
-        </div>
-
-        <!--Indique Um Amigo -->
-        <div id="IndiqueAmigo">
-          <h1>Indique um Amigo</h1>
-          <p>Indique o Click Solidário para seus amigos. <a href="#">» Indique</a></p>
-        </div>
-
-      </div>
-
-      <!-- COLUNA DIREITA -->
-      <div id="colunaDireita">
-
-        <!-- div resultado da pesquisa do busca solidaria -->
-        <div id="resultado_busca_solidaria">
-        </div>
-
-        <div id="barraIdentificacao">
-
-          <!-- migalhas de pão -->
-          <div id="breadCrumb">
-            <ul>
-              <li class="first" title="Voltar para página Inicial"><a href="default.htm" title="Voltar para página Inicial">Página Inicial</a></li>
-              <li class="last" title="Conheça o Click Solidário">Conheça o Click Solidário</li>
-            </ul>
-          </div>
-
-          <!-- acessibilidade -->
-          <div id="aMais"><a href="#" title="Aumenta tamanho da fonte" id="aumenta_fonte"></a></div>
-          <div id="aMenos"><a href="#" title="Diminue tamanho da fonte" id="reduz_fonte"></a></div>
-          <div id="tFonte">tamanho da fonte</div>
-
-        </div>
-
-
-        <p>O Click Solidário é uma ação que tem como objetivo facilitar o encontro entre quem quer ajudar e as entidades que precisam de apoio, usando a Internet como principal meio. Através do Portal do Click Solidário, os usuários podem consultar informações sobre várias entidades atuantes no País, que são minunciosamente avaliadas antes de serem liberadas, e ajuda-las fazendo doações em dinheiro, doações de bens ou tornando-se um voluntário. Para as doações em dinheiro, os usuários poderão receber feedback da entidades, com informações sobre o uso do dinheiro doado. Além de estar constantemente dedicado a suprir as necessidades das entidades, o Click Solidário realizará também campanhas sazonais e emergenciais em casos de catástrofes.</p>
-        <p>O Portal conta com um banco ativo de entidades filantrópicas pré-selecionadas por profissionais experientes do terceiro setor. O Click Solidário conta, já em seu lançamento, com apoio do (colocar patrocinadores do Portal). Além disso, o concelho do Click Solidário reúne personalidades conhecidas por seu interesse pelas causas humanitárias e pessoas empenhadas em dar a sua contribuição para que o Brasil se torne um país melhor.</p>
-        <p>O Brasil possui inúmeras comunidades carentes de apoio, de todos os tipos em todas as partes, e tem grande necessidade de assistência na área social, de saúde e de educação. A população conhece tais necessidades e tem o desejo instintivo de ajudar e colabora, no entanto, não há uma cultura de massa de atuação social.</p>
-        <p class="laranja">Objetivo</p>
-        <p>O Brasil possui inúmeras comunidades carentes de apoio, de todos os tipos, em todas as partes e tem grande necessidade de assistência na área social, de saúde e educação e também nas questões ambientais, arte e cultura, entre muitas outras.</p>
-        <p class="laranja">Informações sobre as principais entidades atuantes no Brasil</p>
-        <p>O Click Solidário disponibiliza para todos os usuários do Portal informações sobre as principais entidades que atuam no Brasil, fornecendo diversas opções para potenciais doadores e voluntários, que muitas vezes querem contribuir para uma causa, mas não sabem como fazer e nem quem ajudar.</p>
-        <p>O Click Solidário estimula seus usuários a contribuírem de forma consciente, fornecendo dados para que eles possam conhecer em pouco melhor as entidades e escolher qual delas ajudar, tais como: área de atuação temática, serviço prestado, público-alvo, principais objetivos, descrição de atividades e projetos realizados, religião à qual a entidades está vinculada, data de fundação, a área de atuação geográfica, tipo de doação de que necessita, se está registrada no Cadastro Nacional de Assistência Social (CNAS), se é reconhecida como de utilidade pública nos três níveis de governo (municipal, estadual e federal), entre outros.</p>
-        <p>Para ver informações sobre as entidades participantes do Click Solidário, selecione o perfil de entidades do seu interesse na caixa "Busca Solidária", situada no topo da barra lateral esquerda do Portal, ou faça uma bisca por entidade, situada logo abaixo da caixa "Busca Solidária".</p>
-        <p class="laranja">Doações em dinheiro</p>
-        <p>Ao optar por fazer uma doação em dinheiro através do Click Solidário, você deverá se cadastrar no Portal e, em seguida, preencher o Formulário de Doação em Dinheiro informando o valor que irá doar, a data da doação, a entidades que deseja ajudar e o projeto especifico da entidade ao qual sua doação se destina (caso você tenha preferência por ajudar algum projeto em particular).</p>
-        <p>Você poderá indicar se deseja fazer uma doação anônima, dessa forma, somente seu login ficará disponível para a entidade beneficiada. Você também pode optar por criar um apelido, caso seu login seja muito parecido como seu nome. Uma vez preenchido o Formulário, o Click Solidário irá informar-lhe os dados bancários da entidade para a realização da doação.</p>
-        <p>A Entidade será informada pelo Click Solidário sobre a doação declarada, sendo orientada a verificar o recebimento da mesma e, uma vez recebida a doação, a emitir um feedback para você, informando-o sobre como ela foi usada. Depois de receber o feedback, você poderá avaliar a entidade. A média das avaliações de cada entidade será disponibilizada para os demais usuários no Click Solidário, ao lado das informações dessa entidade, orientando-os na hora de escolher qual entidade ajudar.</p>
-        <p><span class="cinza">Importante:</span> caso você faça uma doação em uma data diferente daquela que você inseriu no Formulário de Doações em Dinheiro ou caso você faça uma doação de um valor diferente do declarado, você deverá atualizar as informações na seção Minhas Doações em Dinheiro. Caso contrário, a entidade não terá como verificar se a sua doação foi recebida.</p>
-        <p class="laranja">Doação de Bens</p>
-        <p>Ao optar por fazer doação de bens através do Click Solidário, você deverá se cadastrar o Portal e, em seguida preencher o Formulário de Doação de Bens informando o bem que deseja doar, as entidades que deseja ajudar e se deseja disponibilizar seu nome e telefone para as entidades ou se deseja permanecer anônimo (neste caso, somente seu login e e-mail serão disponibilizados). Caso você não tenha uma escolha definida de qual entidade deseja ajudar, você deverá apontar a (s) área (s) de atuação temática e região (ões) para a qual deseja doar seu bem. Preenchido o Formulário, seu bem estará cadastrado no Banco de Doação de Bens. Todas as entidades que se encaixarem no perfil definido poderão visualizar seu bem no Banco de Doações de Bens e entrar em contato com você via e-mail caso tenha interesse no mesmo.</p>
-        <p><span class="cinza">Importante:</span> seu bem estará disponível somente para a entidade selecionada ou para as entidades que se encaixarem no perfil escolhido.</p>
-        <p class="laranja">Voluntariado</p>
-        <p>Ao optar por ser tornar um voluntário através do Click Solidário, você deverá se cadastrar no Portal e, em seguida, preencher o Formulário de Voluntariado, informando qual (is) entidade (s) deseja ajudar como voluntário, qual o tempo disponível, qual local você prefere para ajudar (na entidade, fora da entidade, via Internet) e se deseja disponibilizar seu telefone para a entidade poder contatá-lo mais rapidamente. Preenchido o Formulário, você estará cadastrado no banco de voluntários. Caso alguma entidade tenha interesse em tê-lo como voluntário, ela entrará em contato com você via e-mail ou por telefone (se você tiver disponibilizado o número). O Click Solidário também poderá entrar em contato com você a pedido da entidade.</p>
-        <p><span class="cinza">Importante:</span> seu cadastro estará disponível somente para as entidades que se encaixarem no perfil escolhido.</p>
-        <p>Uma vez alocado como voluntário, você deverá retirar o seu cadastro do Banco de voluntários. Para isso, efetue seu login no Click Solidário, clique em "Minha Ajuda" e depois em "Meu Cadastro de Voluntário". Lá você encontra a opção "Atualizar status". Clique nesse link e informe a data de alocação, a entidade e o projeto beneficiados e a data estimada de término.</p>
-        <p>Quando o seu trabalho voluntário terminar, você deverá atualizar novamente as informações do seu cadastro de voluntário. Para isso, efetue seu login no Click Solidário, clique em "Minha Ajuda" e depois em "Meu Cadastro de Voluntário". Nessa página, clique em finalizar voluntariado.</p>
-        <p class="laranja">Campanhas em Destaque - Emergência</p>
-        <p>O Click Solidário, além de destacar importantes campanhas andamento no País, realiza campanhas sazonais e emergenciais em casos de catástrofes. Consultando a seção Emergência, em destaque na primeira página do Portal, você poderá consultar informações sobre essas campanhas e receber orientações sobre como ajudar.</p>
-        <p class="laranja">Apresentação do Click Solidário</p>
-        <p>Para baixar a apresentação do Click Solidário, click no link abaixo e faça o download.</p>
-        <p><a href="#">Apresentação Click Solidário</a>.</p>
-
-        <div class="clear"></div>
-
-      </div>
-      <div class="clear"></div>
-    </div>
-
-  </div>
-
-</div>
-
-<!-- Depoimento -->
-<%= render :partial => 'portal/depoimento' %>
-
-
-<!-- rodapé -->
-<%= render :partial => 'portal/rodape' %>
-        
+<p>O Click Solidário é uma ação que tem como objetivo facilitar o encontro entre quem quer ajudar e as entidades que precisam de apoio, usando a Internet como principal meio. Através do Portal do Click Solidário, os usuários podem consultar informações sobre várias entidades atuantes no País, que são minunciosamente avaliadas antes de serem liberadas, e ajuda-las fazendo doações em dinheiro, doações de bens ou tornando-se um voluntário. Para as doações em dinheiro, os usuários poderão receber feedback da entidades, com informações sobre o uso do dinheiro doado. Além de estar constantemente dedicado a suprir as necessidades das entidades, o Click Solidário realizará também campanhas sazonais e emergenciais em casos de catástrofes.</p>
+<p>O Portal conta com um banco ativo de entidades filantrópicas pré-selecionadas por profissionais experientes do terceiro setor. O Click Solidário conta, já em seu lançamento, com apoio do (colocar patrocinadores do Portal). Além disso, o concelho do Click Solidário reúne personalidades conhecidas por seu interesse pelas causas humanitárias e pessoas empenhadas em dar a sua contribuição para que o Brasil se torne um país melhor.</p>
+<p>O Brasil possui inúmeras comunidades carentes de apoio, de todos os tipos em todas as partes, e tem grande necessidade de assistência na área social, de saúde e de educação. A população conhece tais necessidades e tem o desejo instintivo de ajudar e colabora, no entanto, não há uma cultura de massa de atuação social.</p>
+<p class="laranja">Objetivo</p>
+<p>O Brasil possui inúmeras comunidades carentes de apoio, de todos os tipos, em todas as partes e tem grande necessidade de assistência na área social, de saúde e educação e também nas questões ambientais, arte e cultura, entre muitas outras.</p>
+<p class="laranja">Informações sobre as principais entidades atuantes no Brasil</p>
+<p>O Click Solidário disponibiliza para todos os usuários do Portal informações sobre as principais entidades que atuam no Brasil, fornecendo diversas opções para potenciais doadores e voluntários, que muitas vezes querem contribuir para uma causa, mas não sabem como fazer e nem quem ajudar.</p>
+<p>O Click Solidário estimula seus usuários a contribuírem de forma consciente, fornecendo dados para que eles possam conhecer em pouco melhor as entidades e escolher qual delas ajudar, tais como: área de atuação temática, serviço prestado, público-alvo, principais objetivos, descrição de atividades e projetos realizados, religião à qual a entidades está vinculada, data de fundação, a área de atuação geográfica, tipo de doação de que necessita, se está registrada no Cadastro Nacional de Assistência Social (CNAS), se é reconhecida como de utilidade pública nos três níveis de governo (municipal, estadual e federal), entre outros.</p>
+<p>Para ver informações sobre as entidades participantes do Click Solidário, selecione o perfil de entidades do seu interesse na caixa "Busca Solidária", situada no topo da barra lateral esquerda do Portal, ou faça uma bisca por entidade, situada logo abaixo da caixa "Busca Solidária".</p>
+<p class="laranja">Doações em dinheiro</p>
+<p>Ao optar por fazer uma doação em dinheiro através do Click Solidário, você deverá se cadastrar no Portal e, em seguida, preencher o Formulário de Doação em Dinheiro informando o valor que irá doar, a data da doação, a entidades que deseja ajudar e o projeto especifico da entidade ao qual sua doação se destina (caso você tenha preferência por ajudar algum projeto em particular).</p>
+<p>Você poderá indicar se deseja fazer uma doação anônima, dessa forma, somente seu login ficará disponível para a entidade beneficiada. Você também pode optar por criar um apelido, caso seu login seja muito parecido como seu nome. Uma vez preenchido o Formulário, o Click Solidário irá informar-lhe os dados bancários da entidade para a realização da doação.</p>
+<p>A Entidade será informada pelo Click Solidário sobre a doação declarada, sendo orientada a verificar o recebimento da mesma e, uma vez recebida a doação, a emitir um feedback para você, informando-o sobre como ela foi usada. Depois de receber o feedback, você poderá avaliar a entidade. A média das avaliações de cada entidade será disponibilizada para os demais usuários no Click Solidário, ao lado das informações dessa entidade, orientando-os na hora de escolher qual entidade ajudar.</p>
+<p><span class="cinza">Importante:</span> caso você faça uma doação em uma data diferente daquela que você inseriu no Formulário de Doações em Dinheiro ou caso você faça uma doação de um valor diferente do declarado, você deverá atualizar as informações na seção Minhas Doações em Dinheiro. Caso contrário, a entidade não terá como verificar se a sua doação foi recebida.</p>
+<p class="laranja">Doação de Bens</p>
+<p>Ao optar por fazer doação de bens através do Click Solidário, você deverá se cadastrar o Portal e, em seguida preencher o Formulário de Doação de Bens informando o bem que deseja doar, as entidades que deseja ajudar e se deseja disponibilizar seu nome e telefone para as entidades ou se deseja permanecer anônimo (neste caso, somente seu login e e-mail serão disponibilizados). Caso você não tenha uma escolha definida de qual entidade deseja ajudar, você deverá apontar a (s) área (s) de atuação temática e região (ões) para a qual deseja doar seu bem. Preenchido o Formulário, seu bem estará cadastrado no Banco de Doação de Bens. Todas as entidades que se encaixarem no perfil definido poderão visualizar seu bem no Banco de Doações de Bens e entrar em contato com você via e-mail caso tenha interesse no mesmo.</p>
+<p><span class="cinza">Importante:</span> seu bem estará disponível somente para a entidade selecionada ou para as entidades que se encaixarem no perfil escolhido.</p>
+<p class="laranja">Voluntariado</p>
+<p>Ao optar por ser tornar um voluntário através do Click Solidário, você deverá se cadastrar no Portal e, em seguida, preencher o Formulário de Voluntariado, informando qual (is) entidade (s) deseja ajudar como voluntário, qual o tempo disponível, qual local você prefere para ajudar (na entidade, fora da entidade, via Internet) e se deseja disponibilizar seu telefone para a entidade poder contatá-lo mais rapidamente. Preenchido o Formulário, você estará cadastrado no banco de voluntários. Caso alguma entidade tenha interesse em tê-lo como voluntário, ela entrará em contato com você via e-mail ou por telefone (se você tiver disponibilizado o número). O Click Solidário também poderá entrar em contato com você a pedido da entidade.</p>
+<p><span class="cinza">Importante:</span> seu cadastro estará disponível somente para as entidades que se encaixarem no perfil escolhido.</p>
+<p>Uma vez alocado como voluntário, você deverá retirar o seu cadastro do Banco de voluntários. Para isso, efetue seu login no Click Solidário, clique em "Minha Ajuda" e depois em "Meu Cadastro de Voluntário". Lá você encontra a opção "Atualizar status". Clique nesse link e informe a data de alocação, a entidade e o projeto beneficiados e a data estimada de término.</p>
+<p>Quando o seu trabalho voluntário terminar, você deverá atualizar novamente as informações do seu cadastro de voluntário. Para isso, efetue seu login no Click Solidário, clique em "Minha Ajuda" e depois em "Meu Cadastro de Voluntário". Nessa página, clique em finalizar voluntariado.</p>
+<p class="laranja">Campanhas em Destaque - Emergência</p>
+<p>O Click Solidário, além de destacar importantes campanhas andamento no País, realiza campanhas sazonais e emergenciais em casos de catástrofes. Consultando a seção Emergência, em destaque na primeira página do Portal, você poderá consultar informações sobre essas campanhas e receber orientações sobre como ajudar.</p>
+<p class="laranja">Apresentação do Click Solidário</p>
+<p>Para baixar a apresentação do Click Solidário, click no link abaixo e faça o download.</p>
+<p><a href="#">Apresentação Click Solidário</a>.</p>     

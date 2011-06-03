@@ -15,7 +15,92 @@
   </head>
   <body>
 
-    <%= yield %>
+    <!-- NavBar -->
+    <div id="navBar">
+
+      <div class="barra">
+
+        <!-- login usuário -->
+        <%= render :partial => 'portal/login' %>
+
+        <!-- login entidades -->
+        <%= render :partial => 'portal/login_entidade' %>
+
+        <!-- mapa do portal -->
+        <div class="mapaPortal"><a href="#">mapa do portal</a></div>
+
+        <!-- rede social -->
+        <%= render :partial => 'portal/rede_social' %>
+
+      </div>
+
+    </div>
+
+
+    <!-- Corpo do Site -->
+    <div id="corpoSite">
+
+      <div class="cabecalho">
+
+        <div class="logo"></div>
+
+        <!-- menu -->
+        <%= render :partial => 'portal/menu' %>
+
+        <!-- CorpoConteudo -->
+        <div id="conteudo">
+
+          <div id="colunaEsquerda">
+
+            <!-- Busca Solidaria -->
+            <%= render :partial => 'portal/busca_solidaria' %>
+
+            <!-- Menu Lateral -->
+            <%= render :partial => 'portal/menu_lateral' %>
+
+            <!-- Conheça essas Iniciativas -->
+            <%= render :partial => 'portal/conheca_iniciativas' %>
+
+            <!-- Saiba Como -->
+            <%= render :partial => 'portal/saiba_como' %>
+
+            <!-- Veja Como -->
+            <%= render :partial => 'portal/veja_como' %>
+
+            <!-- Eu apóio o Click Solidário -->
+            <div id="EuApoio">
+              <h1>Eu apóio o Click Solidário</h1>
+              <p>Seu apoio é fundamental para o crescimento desse movimento.
+                <a href="#">» Participe!</a></p>
+            </div>
+
+            <!--Indique Um Amigo -->
+            <div id="IndiqueAmigo">
+              <h1>Indique um Amigo</h1>
+              <p>Indique o Click Solidário para seus amigos. <a href="/newsletters/new">» Indique</a></p>
+            </div>
+
+          </div>
+
+          <!-- COLUNA DIREITA -->
+          <div id="colunaDireita">
+
+            <%= yield %>
+
+          </div>
+          <div class="clear"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Depoimento -->
+    <%= render :partial => 'portal/depoimento' %>
+
+
+    <!-- rodapé -->
+    <%= render :partial => 'portal/rodape' %>
 
     <div id="rodapeFinal">
       <div class="tamanho">© Copyright 2011 <%= "- #{Date.today.year}" if Date.today.year != 2011 %>Click Solidário - Nossas crianças, nosso futuro.</div>

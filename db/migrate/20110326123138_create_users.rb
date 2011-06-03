@@ -16,7 +16,16 @@ class CreateUsers < ActiveRecord::Migration
 
       t.timestamps
     end
+#    user = User.create do |u|
+#      u.id = 1
+#      u.name = 'Administrador'
+#      u.login = 'admin'
+#      u.password = u.password_confirmation = 'admin'
+#      u.email = 'admin@domain.com'
+#      u.type = 'Admin'
+#    end
 
+    add_index :users, :email
   end
 
   def self.down

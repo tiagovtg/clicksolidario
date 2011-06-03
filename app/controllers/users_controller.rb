@@ -34,6 +34,7 @@ class UsersController < ApplicationController
 
   def new
     @user = User.new
+    render :layout=> 'portal'
   end
 
   def create

@@ -37,6 +37,7 @@ class EntidadesController < ApplicationController
       @entidade = Entidade.new
       2.times {@entidade.telefones.build}
       1.times {@entidade.conta.build}
+#      render :layout=> 'portal'
     else
       redirect_to :action => "index"
     end
