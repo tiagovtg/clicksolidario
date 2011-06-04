@@ -48,6 +48,7 @@ Sgss::Application.routes.draw do
   resources :empresas#menu
   resources :voluntarios#dentro de usuario
   resources :doacaos#menu
+  match "valida_doacoes" => "doacaos#valida_doacoes"
   resources :newsletters#nao definido
 
   match "sobre" => "sobre#index"

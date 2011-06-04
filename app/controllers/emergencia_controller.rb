@@ -134,7 +134,7 @@ class EmergenciaController < ApplicationController
     end
   end
 
-  #Função para validar noticia
+  #Função para validar emergencia
   def valida_emergencia
    @emergencium = Emergencium.find(params[:id])
 

@@ -4,7 +4,7 @@ class DoacaosController < ApplicationController
     allow :entidade,      :to => [:index, :show ]
     allow :empresa,       :to => [:index, :show, :new, :edit, :create, :update]
     allow :voluntario,    :to => [:index, :show, :new, :edit, :create, :update]
-    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
+    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :valida_doacoes ]
   end
 
   def index
@@ -12,7 +12,11 @@ class DoacaosController < ApplicationController
       if administrador?
         @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC')
       else
-        @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" user_id = ?", current_user.id], :limit=>1) rescue nil
+        if entidade?
+          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = ?", current_user.id], :limit=>1) rescue nil
+        else
+          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" voluntario_id = ?", current_user.id], :limit=>1) rescue nil
+        end
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
@@ -21,7 +25,11 @@ class DoacaosController < ApplicationController
         if administrador?
           @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => ['doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
-          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" user_id = #{current_user.id}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          if entidade?
+            @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = #{current_user.id}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          else
+            @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" voluntario_id = #{current_user.id}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+          end
         end
       end
     end
@@ -33,6 +41,7 @@ class DoacaosController < ApplicationController
 
   def new
     @doacao = Doacao.new
+    render :layout=> 'portal'
   end
 
   def edit
@@ -41,11 +50,12 @@ class DoacaosController < ApplicationController
 
   def create
     @doacao = Doacao.new(params[:doacao])
-    #    @doacao.voluntario_id
-    #    @doacao.empresa_id
-    #    @doacao.entidade_id
-
-    #       @voluntario.user_id = current_user.id
+    if voluntario?
+      @doacao.voluntario_id= current_user.id
+    end
+    if empresa?
+      @doacao.empresa_id = current_user.id
+    end
 
     respond_to do |format|
       if @doacao.save
@@ -81,4 +91,25 @@ class DoacaosController < ApplicationController
       format.xml  { head :ok }
     end
   end
+
+  #Função para validar doações
+  def valida_doacoes
+    @doacao = Doacao.find(params[:id])
+
+    if @doacao.valida==true
+      @doacao.valida = false
+      flash[:notice] = "Validado com sucesso."
+    else
+      @doacao.valida = true
+      flash[:notice] = "Invalidado com sucesso."
+    end
+
+    if @doacao.update_attributes(params[:doacao])
+      redirect_to doacaos_url
+    else
+      flash[:alert] = "Erro na tentiva de alteração."
+    end
+  end
+
+  
 end

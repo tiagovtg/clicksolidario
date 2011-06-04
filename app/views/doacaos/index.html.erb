@@ -4,16 +4,15 @@
     <div id="buscaDados">
       <select name="filtro" id="filtro">
         <option value="" selected="selected">Buscar por...</option>
-        <option value="entidade">Entidade</option>
-        <option value="voluntario">Voluntario</option>
-        <option value="empresa">Empresa</option>
+        <option value="valor">Valor</option>
+        <option value="obs">Observação</option>
       </select>
     </div>
     <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
     <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
   <% end %>
 <% end %>
-
+<%= link_to 'Cadastrar Doacao', new_doacao_path %>
 <br/><br/>
 <br/>
 <% if @doacaos.nil? or @doacaos.empty? %>
@@ -23,10 +22,11 @@
 <% else %>
   <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
     <tr>
-      <th>Valor</th>
       <th>Data</th>
-      <th>Valida</th>
       <th>Obs</th>
+      <th>Entidade</th>
+      <th>Valida</th>
+      <th>Valor</th>
       <th><img src="/images/file_document.png" alt=""/></th>
       <th><img src="/images/file_edit.png" alt=""/></th>
       <th><img src="/images/file_exclude.png" alt=""/></th>
@@ -34,10 +34,17 @@
 
     <% @doacaos.each do |doacao| %>
       <tr class="<%= cycle("odd", "even") %>">
-        <td><%= doacao.valor %></td>
         <td><%= doacao.data %></td>
-        <td><%= doacao.valida %></td>
         <td><%= doacao.obs %></td>
+        <td><%= doacao.entidade.nomefantasia %></td>
+        <%  if administrador? %>
+          <td class="edicao"><%= link_to (doacao.valida==true ? 'Valido' : 'Invalido'), {:controller => :doacaos, :action => :valida_doacoes, :id => doacao } %></td>
+        <% else %>
+          <td><%= doacao.valida==true ? 'Valida' : 'Invalida' %></td>
+        <% end %>
+
+        <td><%= doacao.valor %></td>
+
         <td class="edicao"><%= link_to 'Mostrar', doacao %></td>
         <td class="edicao"><%= link_to 'Alterar', edit_doacao_path(doacao) %></td>
         <td class="edicao"><%= link_to 'Deletar', doacao, :confirm => 'Voce tem certeza?', :method => :delete %></td>
@@ -48,7 +55,4 @@
     <%= will_paginate @doacaos %>
   </div>
 <% end %>
-
-<br />
-
-<%= link_to 'Cadastrar Doacao', new_doacao_path %>
+<br/>

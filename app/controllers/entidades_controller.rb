@@ -1,6 +1,8 @@
 class EntidadesController < ApplicationController
 
   access_control do
+    allow :empresa,       :to => [:index, :show ]
+    allow :voluntario,    :to => [:index, :show ]
     allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
@@ -27,7 +29,7 @@ class EntidadesController < ApplicationController
 
   def show
     load_entidade
-    render :action => "index" if @entidade.nil?
+    render  :layout=> 'portal', :action => "index" if @entidade.nil?
   end
 
   def new
@@ -37,7 +39,7 @@ class EntidadesController < ApplicationController
       @entidade = Entidade.new
       2.times {@entidade.telefones.build}
       1.times {@entidade.conta.build}
-#      render :layout=> 'portal'
+      #      render :layout=> 'portal'
     else
       redirect_to :action => "index"
     end
@@ -98,7 +100,7 @@ class EntidadesController < ApplicationController
 
   private
   def load_entidade
-    if administrador?
+    if administrador? or empresa? or voluntario?
       @entidade = Entidade.find(params[:id])
     else
       @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil

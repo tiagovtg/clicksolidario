@@ -1,6 +1,7 @@
 <div class="MenuBar">
   <ul>
     <% if current_user %>
+      <li><a href="/" class="<%= controller.controller_path == 'user_sessions' ? 'active' : '' %>"><span class="l"> </span><span class="r"> </span><span class="t">Home</span></a></li>
       <li><a href="<%= users_path %>" class="<%= controller.controller_path == 'users' ? 'active' : '' %>"><span class="l"> </span><span class="r"> </span><span class="t">Usuários</span></a></li>
       <% if administrador? %>
         <li><a href="<%= newsletters_path %>" class="<%= controller.controller_path == 'newsletters' ? 'active' : '' %>"><span class="l"> </span><span class="r"> </span><span class="t">Newsletters</span></a></li>

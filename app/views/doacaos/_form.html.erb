@@ -1,33 +1,45 @@
 <%= form_for(@doacao) do |f| %>
   <%= render :partial => 'generals/model_errors', :locals => {:obj => @doacao}%>
 
-  <div class="field">
-    <%= f.label :valor %><br />
-    <%= f.text_field :valor %>
-  </div>
+
   <div class="field">
     <%= f.label :data %><br />
     <%= f.date_select(:data, :start_year => Date.today.year, :end_year => 2099 ) %>
   </div>
+  <br/>
   <div class="field">
-    <%= f.label :obs %><br />
-    <%= f.text_area :obs %>
+    <%= f.label :obs, 'Observação' %><br />
+    <%= f.text_area :obs, :rows=> 10 %>
   </div>
+
   <div class="field"><br/>
     <%= f.label :doatipo_id, "Tipo Doação" %><br />
     <%= f.collection_select(:doatipo_id, Doatipo.all, :id, :nome, :prompt => 'Selecione um') %>
   </div>
+
+  <% if voluntario? %>
   <div class="field"><br/>
     <%= f.label :entidade_id, "Entidade Social Favorecida:" %><br />
     <%= f.collection_select(:entidade_id, Entidade.all, :id, :nomefantasia, :prompt => 'Selecione Entidade') %>
   </div>
+  
+  <br/>
+  <div class="field">
+    <%= f.label :valor %><br />
+    <%= f.text_field :valor %>
+  </div>
+  <% end %>
+  
   <% if administrador? %>
     <div class="field"><br/>
       <%= f.check_box :valida %>
       <%= f.label :valida, "Valida Doação." %><br/>
     </div><br/>
   <% end %>
+
+  <br/>
   <div class="actions">
     <%= f.submit 'Salvar' %>
   </div>
+  <br/>
 <% end %>

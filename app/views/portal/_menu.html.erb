@@ -6,5 +6,8 @@
     <li><a href="/join" class="<%= controller.controller_path == 'users' ? 'active' : '' %>">Cadastre-se</a></li>
     <li><a href="/duvida" class="<%= controller.controller_path == 'duvida' ? 'active' : '' %>">Dúvidas</a></li>
     <li><a href="/contato"  class="<%= controller.controller_path == 'contato' ? 'active' : '' %>">Contato</a></li>
+    <% if current_user %>
+      <li><a href="<%= users_path %>" class="<%= controller.controller_path == 'users' ? 'active' : '' %>"><span class="l"> </span><span class="r"> </span><span class="t">S.G.S</span></a></li>
+    <% end %>
   </ul>
 </div>

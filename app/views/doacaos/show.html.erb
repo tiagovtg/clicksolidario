@@ -1,23 +1,31 @@
 <%= render :partial => 'generals/message' %>
 
-<p>
-  <b>Valor:</b>
-  <%= @doacao.valor %>
-</p>
 
 <p>
   <b>Data:</b>
   <%= @doacao.data %>
 </p>
 
-<p>
-  <b>Valida:</b>
-  <%= @doacao.valida %>
-</p>
+<% if administrador? %>
+  <p>
+    <b>Valida:</b>
+    <%= @doacao.valida %>
+  </p>
+<% end %>
 
 <p>
   <b>Obs:</b>
   <%= @doacao.obs %>
+</p>
+
+<p>
+  <b>Valor:</b>
+  <%= @doacao.valor %>
+</p>
+
+<p>
+  <b>Entidade:</b>
+  <%= @doacao.entidade.nomefantasia %>
 </p>
 
 
