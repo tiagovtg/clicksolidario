@@ -9,6 +9,7 @@
   </div>
   <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
   <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
+  <div id="buscaDados"><%= link_to 'Cadastrar Newsletter', new_newsletter_path %></div>
 <% end %>
 
 <br/><br/>
@@ -40,5 +41,3 @@
   </div>
 <% end %>
 <br />
-
-<%= link_to 'Cadastrar Newsletter', new_newsletter_path %>

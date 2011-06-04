@@ -3,8 +3,9 @@
   <div id="buscaDados">
     <select name="filtro" id="filtro">
       <option value="" selected="selected">Buscar por...</option>
-      <option value="nome">Nome</option>
-      <option value="desc">Descrição</option>
+      <option value="titulo">Titulo</option>
+      <option value="resumo">Resumo</option>
+      <option value="emergencia">Emergencia</option>
     </select>
   </div>
   <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
@@ -24,7 +25,6 @@
       <th>Resumo</th>
       <th>Emergencia</th>
       <th>Data</th>
-      <th>Status</th>
       <th>Entidade</th>
       <th>Validação</th>
       <th><img src="/images/file_document.png" alt=""/></th>
@@ -38,7 +38,6 @@
         <td><%= emergencium.resumo %></td>
         <td><%= emergencium.emergencia %></td>
         <td><%= emergencium.data %></td>
-        <td><%= emergencium.status %></td>
         <td><%= emergencium.entidade.nomefantasia %></td>
 
         <%  if administrador? %>

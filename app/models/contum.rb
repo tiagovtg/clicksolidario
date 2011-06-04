@@ -3,6 +3,6 @@ class Contum < ActiveRecord::Base
   belongs_to :banco
 
   #Campos obrigatorios
-  validates :nome, :numero, :operacao, :agencia, :banco_id, :presence => true
+  validates :nome, :numero, :agencia, :banco_id, :presence => true
 
 end

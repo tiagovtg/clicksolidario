@@ -48,10 +48,11 @@ class UsersController < ApplicationController
       if @user.save
         #cria um newsletter caso o user tenha aceitado a opção.
         if @user.newsletter
+          #          Salvando email para newsletter
           @email = Newsletter.new(:nome=>@user.nome, :email=>@user.email)
           @email.save
-          #          logger.info "\n\n=> meleca email: #{CountMail.enviar_email(@email)}\n"
-          CountMail.enviar_email(@email)
+          #          mandando email via web
+          #          CountMail.enviar_email(@email)
         end
 
         #limpa todas as regras antes.

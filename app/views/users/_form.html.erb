@@ -78,7 +78,10 @@
           </tr>
         </table>
         <br/>
-        *Tipo de Cadastro
+        <b>*Tipo de Cadastro</b>
+        <br/>
+        <br/>
+       
         <% if administrador? or entidade? %>
           <%= radio_button_tag(:tipo, value="administrador", @user.administrador? ? checked=true : checked=false ) %>&nbsp;Administrador&nbsp;&nbsp;
         <% end %>

@@ -5,10 +5,10 @@
       <% if administrador? %>
         <li><a href="<%= newsletters_path %>" class="<%= controller.controller_path == 'newsletters' ? 'active' : '' %>"><span class="l"> </span><span class="r"> </span><span class="t">Newsletters</span></a></li>
       <% end %>
-      <% if empresa? or administrador? %>
+      <% if empresa? or administrador? or entidade? %>
         <li><a href="<%= empresas_path %>" class="<%= controller.controller_path == 'empresas' ? 'active' : '' %>" ><span class="l"> </span><span class="r"> </span><span class="t">Empresas</span></a></li>
       <% end %>
-      <% if voluntario? or administrador? %>
+      <% if voluntario? or administrador? or entidade? %>
         <li><a href="<%= voluntarios_path %>" class="<%= controller.controller_path == 'voluntarios' ? 'active' : '' %>" ><span class="l"> </span><span class="r"> </span><span class="t">Voluntarios</span></a></li>
       <% end %>
       <% if entidade? or administrador? %>

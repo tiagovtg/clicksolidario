@@ -1,12 +1,3 @@
-<% if administrador? %>
-  <div class="secondary-navigation">
-    <ul class="wat-cf">
-      <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>
-      <li><a href="<%= new_user_path %>" class="<%= current_page?(:controller => 'users', :action => 'new') == true ? 'active' : '' %>">Novo</a></li>
-    </ul>
-  </div>
-<% end %>
-
 <%= form_tag(users_path, :method => "get") do %>
   <div id="buscaDados"><span>Listando Usuários</span></div>
   <div id="buscaDados">

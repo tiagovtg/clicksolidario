@@ -1,13 +1,14 @@
 class EmpresasController < ApplicationController
 
   access_control do
+    allow :entidade,   :to => [:index, :show ]
     allow :empresa,       :to => [:index, :show, :new, :edit, :create, :update]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
 
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
-      if administrador?
+      if administrador? or entidade?
         @empresas = Empresa.paginate(:page => params[:page], :order => 'cnpj')
       else
         @empresas = Empresa.paginate(:page => params[:page], :order => 'cnpj', :conditions => [" user_id = ?", current_user.id], :limit=>1)
@@ -16,7 +17,7 @@ class EmpresasController < ApplicationController
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
-        if administrador?
+        if administrador? or entidade?
           @empresas = Empresa.paginate(:page => params[:page], :order => 'cnpj', :conditions => ['empresas.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
           @empresas = Empresa.paginate(:page => params[:page], :order => 'cnpj', :conditions => [" user_id = #{current_user.id}" + ' and empresas.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
@@ -28,7 +29,7 @@ class EmpresasController < ApplicationController
   # GET /empresas/1
   # GET /empresas/1.xml
   def show
-    if administrador?
+    if administrador? or entidade?
       @empresa = Empresa.find(params[:id])
     else
       @empresa = Empresa.find_by_user_id(current_user.id) rescue nil
@@ -54,7 +55,14 @@ class EmpresasController < ApplicationController
 
   # GET /empresas/1/edit
   def edit
-    @empresa = Empresa.find(params[:id])
+
+
+    if administrador?
+      @empresa = Empresa.find(params[:id])
+    else
+      @empresa = Empresa.find(params[:id],:conditions => [" user_id = ?", current_user.id] ) rescue nil
+      render :action => "index" if @empresa.nil?
+    end
   end
 
   # POST /empresas
@@ -77,8 +85,6 @@ class EmpresasController < ApplicationController
   # PUT /empresas/1
   # PUT /empresas/1.xml
   def update
-
-
     if administrador?
       @empresa = Empresa.find(params[:id])
 

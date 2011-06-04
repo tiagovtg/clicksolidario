@@ -100,3 +100,6 @@ table.bordasimples tr.even      { background: #ebebeb; }
 /* cor para cada tipo de alerta de menssagem */
 #message.alert       { border-radius: 6px 6px 6px 6px; width: 600px; margin: 0px auto 0px; text-align: center; background-color: #FFDDDD; border: 1px solid #FFBBBB; }
 #message.notice      { border-radius: 6px 6px 6px 6px; width: 600px; margin: 0px auto 0px; text-align: center; background-color: #BBFFB6; border: 1px solid #1FDF00; }
+
+.botaoLimpar          { float: right; width: 80px; height: 26px; background: url(/images/cadastroBotLimpar.gif) no-repeat; padding: 0; border: 0; }
+.botaoEnviar          { float: left; width: 84px; height: 26px; background: url(/images/cadastroBotEnviar.gif) no-repeat; padding: 0; border: 0; }

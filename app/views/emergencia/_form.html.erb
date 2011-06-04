@@ -17,12 +17,9 @@
     <%= f.label :data %><br />
     <%= f.date_select :data %>
   </div>
+  <br/>
   <div class="field">
-    <%= f.label :status %><br />
-    <%= f.text_field :status %>
-  </div>
-  <div class="field">
-    <%= f.file_field :imagem %>
+    <%= f.file_field :imagem, :style=>" width: 340px; height: 30px" %>
     <span class="description">Ex: Imagem.</span>
   </div>
   <% if administrador? %>
@@ -32,7 +29,18 @@
     </div><br/>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit 'Salvar' %>
+  <div class="field" align="center">
+    <!-- tabela envio inicio -->
+    <table width="720" border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td><input type="reset" name="limpar" value="" class="botaoLimpar" /></td>
+        <td style=" width: 20px; "><img src="/images/dot.gif" width="20px" height="1" alt=""/></td>
+        <td><input type="image" name="enviar" value="" class="botaoEnviar" /></td>
+      </tr>
+    </table>
+    <!-- tabela envio fim -->
   </div>
+  <br/>
+  <br/>
+  <br/>
 <% end %>

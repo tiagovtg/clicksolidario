@@ -1,13 +1,14 @@
 class VoluntariosController < ApplicationController
 
   access_control do
+    allow :entidade,   :to => [:index, :show ]
     allow :voluntario,   :to => [:index, :show, :new, :edit, :create, :update]
     allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
   end
   
   def index
     if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
-      if administrador?
+      if administrador? or entidade?
         @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf')
       else
         @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf', :conditions => [" user_id = ?", current_user.id], :limit=>1)
@@ -16,7 +17,7 @@ class VoluntariosController < ApplicationController
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
         #        flash[:notice] = "Favor preencher o campo de busca por..."
       else
-        if administrador?
+        if administrador? or entidade?
           @voluntarios = Voluntario.paginate(:page => params[:page], :order => 'cpf',
             :conditions => ['voluntarios.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
@@ -28,7 +29,7 @@ class VoluntariosController < ApplicationController
   end
 
   def show
-    if administrador?
+    if administrador? or entidade?
       @voluntario = Voluntario.find(params[:id])
     else
       @voluntario = Voluntario.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
@@ -50,6 +51,7 @@ class VoluntariosController < ApplicationController
         redirect_to :action => "index"
       end
     end
+#    render :layout=> 'portal'
   end
 
   def edit

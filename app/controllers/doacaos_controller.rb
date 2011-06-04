@@ -12,7 +12,7 @@ class DoacaosController < ApplicationController
       if administrador?
         @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC')
       else
-        @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" user_id = ?", current_user.id], :limit=>1)
+        @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" user_id = ?", current_user.id], :limit=>1) rescue nil
       end
     else
       if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
