@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     allow :entidade,      :to => [:index, :show, :edit, :update]
     allow :voluntario,    :to => [:index, :show, :edit, :update]
     allow :empresa,       :to => [:index, :show, :edit, :update]
-    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :activate_deactivate ]
+    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :valida_usuario ]
   end
 
   #    logger.info "\n\n=> meleca tipo: #{params[:tipo]}\n"
