@@ -6,110 +6,248 @@
 <%= form_for(@entidade) do |f| %>
   <%= render :partial => 'generals/model_errors', :locals => {:obj => @entidade}%>
 
-  <div class="field">
-    <%= f.label :nomefantasia, "Nome Fantasia" %><br />
-    <%= f.text_field :nomefantasia, :onkeypress=> 'return letrasNumeros(event)' %>
-  </div>
-  <div class="field">
-    <%= f.label :razaosocial, "Razão Social" %><br />
-    <%= f.text_field :razaosocial, :onkeypress=> 'return letrasNumeros(event)' %>
-  </div>
-  <div class="field">
-    <%= f.label :cnpj, "Cnpj" %><br />
-    <%= f.text_field :cnpj, :class=>"cnpj", :size=>"30" %>
-  </div>
-  <div class="field">
-    <%= f.label :areaatuacao, "Area Atuação" %><br />
-    <%= f.text_field :areaatuacao, :onkeypress=> 'return letrasNumeros(event)' %>
-  </div>
-  <div class="field">
-    <%= f.label :causa_id %><br/>
-    <%= collection_select(:entidade, :causa_id, Causa.all, :id, :nome, :prompt => 'Selecione uma causa') %>
-  </div>
-  <div class="field">
-    <%= f.label :datafunda, "Data da Fundação" %><br />
-    <%= f.date_select(:datafunda, :start_year => 1920, :end_year => 2050 ) %>
-  </div>
-  <div class="field">
-    <%= f.label :site, "Site" %><br />
-    <%= f.text_field :site %>
-  </div>
-  <div class="field">
-    <%= f.label :siteproprio, "Site Proprio?" %><br />
-    <%= f.radio_button(:siteproprio, "sim" ) %>&nbsp;Sim&nbsp;&nbsp;
-    <%= f.radio_button(:siteproprio, "nao" ) %>&nbsp;Não&nbsp;&nbsp;
-  </div>
-  <% f.fields_for :telefones do |builder| %>
-    <%= render 'generals/telefones', :f => builder %>
-  <% end %>
-  <div><br/><%= add_child_link "Adiciona Telefone", f, :telefones %><br/></div>
-  <% f.fields_for :conta do |builder| %>
-    <%= render 'generals/conta', :f => builder %>
-  <% end %>
-  <div><br/><%= add_child_link "Adiciona Conta", f, :conta %><br/></div>
+  <div class="dEntidade">Dados da Entidade</div>
 
-  <hr/>
-  <div class="field">
-    <%= f.label :nome, "Nome" %><br />
-    <%= f.text_field :nome, :size=>70, :maxlenght=>70, :onkeypress=> 'return SomenteLetras(event)' %>
-  </div>
-  <div class="field">
-    <%= f.label :apelido, "Como gosta de ser chamado?" %><br />
-    <%= f.text_field :apelido, :size=>30, :maxlenght=>30, :onkeypress=> 'return SomenteLetras(event)' %>
-  </div>
-  <div class="field">
-    <%= f.label :datanasc, "Data Nascimento" %><br />
-    <%= f.date_select(:datanasc, :start_year => 1920, :end_year => Time.now.year - 16, :order => [:day, :month, :year] ) %>
-  </div>
-  <div class="field">
-    <%= f.label :cpf, "Cpf" %><br />
-    <%= f.text_field :cpf, :class=>"cpf", :size=>"30" %>
-  </div>
-  <div class="field">
-    <%= f.label :sexo, "Sexo" %><br />
-    <%= f.radio_button(:sexo, value="Masculino" ) %>&nbsp;Masculino&nbsp;&nbsp;
-    <%= f.radio_button(:sexo, value="Feminino" ) %>&nbsp;Feminino&nbsp;&nbsp;
-  </div>
+  <!-- tabela dados da entidade inicio -->
+  <table width="720px" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="_img/dot.gif" width="20px" height="1" alt=""/></td>
+      <td>
 
-  <hr/>
-  <div class="field">
-    <%= f.label :cep, "Cep" %><br />
-    <%= f.text_field :cep, :class=>"cep", :size=>"10" %>
-  </div>
-  <div class="field">
-    <%= f.label :endereco, "Endereço" %><br />
-    <%= f.text_field :endereco, :class=>"endereco", :size=>70, :maxlenght=>70, :onkeypress=> 'return letrasNumeros(event)' %>
-  </div>
-  <div class="field">
-    <%= f.label :numero, "Numero" %><br />
-    <%= f.text_field :numero, :size=>10, :maxlenght=>10 %>
-  </div>
-  <div class="field">
-    <%= f.label :complemento, "Complemento" %><br />
-    <%= f.text_field :complemento, :class=>"complemento" %>
-  </div>
-  <div class="field">
-    <%= f.label :bairro, "Bairro" %><br />
-    <%= f.text_field :bairro, :class=>"bairro" %>
-  </div>
-  <div class="field">
-    <%= f.label :cidade, "Cidade" %><br />
-    <%= f.text_field :cidade, :class=>"cidade", :size=>40, :maxlenght=>40, :onkeypress=> 'return SomenteLetras(event)' %>
-  </div>
-  <div class="field">
-    <%= f.label :estado, "Estado" %><br />
-    <%= f.select :estado, ([["Acre-AC", "AC"], ["Alagoas-AL", "AL"], ["Amapá-AP", "AP"],
-        ["Amazonas-AM", "AM"], ["Bahia-BA", "BA"], ["Ceara-CE", "CE"], ["Distrito Federal-DF", "DF"], ["Espirito Santo-ES", "ES"],
-        ["Goias-GO", "GO"], ["Maranhão-MA", "MA"], ["Mato Grosso-MT", "MT"], ["Mato Grosso do Sul-MS", "MS"], ["Minas Gerais-MG", "MG"],
-        ["Para-PA", "PA"], ["Paraiba-PB", "PB"], ["Parana-PR", "PR"], ["Pernabuco-PE", "PE"], ["Piaui-PI", "PI"],
-        ["Rio de Janeiro-RJ", "RJ"], ["Rio Grande do Norte-RN", "RN"], ["Rio Grande do Sul-RS", "RS"], ["Rondonia-RO", "RO"], ["Roraima-RR", "RR"],
-        ["Santa Catarina-SC", "SC"], ["São Paulo-SP", "SP"], ["Sergipe-SE", "SE"], ["Tocantins-TO", "TO"]]), { :prompt => 'Escolha a região' } %>
-  </div>
-  <div class="field">
-    <br/><span style="color:#ff0000;">* Campos de preenchimento obrigatorio!</span><br/>
-  </div>
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Nome Fantasia</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Razão Social</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :nomefantasia, :style=>" width: 318px ", :onkeypress=> 'return letrasNumeros(event)' %></td>
+            <td><img src="images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td><%= f.text_field :razaosocial, :style=>" width: 318px ", :onkeypress=> 'return letrasNumeros(event)' %></td>
+          </tr>
+        </table>
 
-    <!-- tabela envio inicio -->
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">CNPJ</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Área de Atuação</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :cnpj, :style=>" width: 205px ", :class=>"cnpj" %></td>
+            <td><img src="_img/dot.gif" width="20px" height="1" alt=""/></td>
+            <td><%= f.text_field :areaatuacao, :style=>" width: 431px ", :onkeypress=> 'return letrasNumeros(event)' %></td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+        <table width="700" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Data de Fundação</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Site</td>
+            <td>&nbsp;</td>
+            <td colspan="5" style=" padding-bottom: 10px; ">Tem Site Próprio?</td>
+          </tr>
+          <tr>
+            <td><%= f.date_select(:datafunda, :style=>"width: 130px", :start_year => 1920, :end_year => 2050 ) %></td>
+            <td class="exDataFun">Ex: 02/01/1979</td>
+            <td><img src="_img/dot.gif" width="20px" height="1" alt=""/></td>
+            <td><%= f.text_field :site, :style=>" width: 260px " %></td>
+            <td><%= f.radio_button(:siteproprio, "sim" ) %></td>
+            <td>Sim</td>
+            <td><%= f.radio_button(:siteproprio, "nao" ) %></td>
+            <td>Não</td>
+            <td><img src="_img/dot.gif" width="54px" height="1" alt="" /></td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+        <table width="700" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>&nbsp;</td>
+            <td>
+              <% f.fields_for :telefones do |builder| %>
+                <%= render 'generals/telefones', :f => builder %>
+              <% end %>
+              <div><br/><%= add_child_link "Adiciona Telefone", f, :telefones %><br/></div>
+            </td>
+          </tr>
+        </table>
+        <table width="700" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <%= f.label :causa_id %>
+              <%= collection_select(:entidade, :causa_id, Causa.all, :id, :nome, :prompt => 'Selecione uma causa') %>
+            </td>
+          </tr>
+        </table>
+        <table width="700" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>
+              <% f.fields_for :conta do |builder| %>
+                <%= render 'generals/conta', :f => builder %>
+              <% end %>
+              <div><br/><%= add_child_link "Adiciona Conta", f, :conta %><br/></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="_img/dot.gif" width="1px" height="42" alt=""/></td>
+    </tr>
+
+  </table>
+  <!-- tabela dados da entidade fim -->
+
+
+  <div class="iPessoais">Informações Pessoais</div>
+
+  <!-- tabela informações pessoais inicio -->
+  <table width="720px" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Nome Completo</td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td style=" padding-bottom: 10px; ">Como Gostaria de ser Chamado</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :nome, :style=>"width: 403px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+            <td>&nbsp;</td>
+            <td><%= f.text_field :apelido, :style=>"width: 233px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Data de Nascimento</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">CPF</td>
+            <td>&nbsp;</td>
+            <td colspan="5" style=" padding-bottom: 10px; ">Sexo</td>
+          </tr>
+          <tr>
+            <td><%= f.date_select(:datanasc, :style=>"width: 130px", :start_year => 1920, :end_year => Time.now.year - 16, :order => [:day, :month, :year] ) %></td>
+            <td class="exData">Ex: 02/01/1979</td>
+            <td><%= f.text_field :cpf, :style=>"width: 231px", :class=>"cpf" %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+            <td><%= f.radio_button(:sexo, value="Masculino" ) %></td>
+            <td>Masculino</td>
+            <td><img src="../images/dot.gif" width="10px" height="1" alt="" /></td>
+            <td><%= f.radio_button(:sexo, value="Feminino" ) %></td>
+            <td>Feminino</td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="../images/dot.gif" width="1px" height="30" alt=""/></td>
+    </tr>
+  </table>
+  <!-- tabela informações pessoais fim -->
+
+  <div class="endereco">Endereço</div>
+
+  <!-- tabela endereço inicio -->
+  <table width="720px" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="images/dot.gif" width="20px" height="1" alt=""/></td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">CEP</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Endereço</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Número</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :cep, :style=>"width: 58px; height: 30px;", :class=>"cep" %></td>
+            <td class="cep"><a href="#">Não sei meu CEP</a></td>
+            <td><%= f.text_field :endereco, :style=>"width: 348px", :onkeypress=> 'return letrasNumeros(event)' %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+            <td><%= f.text_field :numero, :style=>"width: 60px" %></td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="images/dot.gif" width="1px" height="30" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Complemento</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Bairro</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Cidade</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">Estado</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :complemento, :style=>" width: 204px " %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td><%= f.text_field :bairro, :style=>" width: 150px " %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td><%= f.text_field :cidade, :style=>" width: 150px ", :onkeypress=> 'return SomenteLetras(event)' %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td>
+              <%= f.select :estado, ([["Acre-AC", "AC"], ["Alagoas-AL", "AL"], ["Amapá-AP", "AP"],
+                  ["Amazonas-AM", "AM"], ["Bahia-BA", "BA"], ["Ceara-CE", "CE"], ["Distrito Federal-DF", "DF"], ["Espirito Santo-ES", "ES"],
+                  ["Goias-GO", "GO"], ["Maranhão-MA", "MA"], ["Mato Grosso-MT", "MT"], ["Mato Grosso do Sul-MS", "MS"], ["Minas Gerais-MG", "MG"],
+                  ["Para-PA", "PA"], ["Paraiba-PB", "PB"], ["Parana-PR", "PR"], ["Pernabuco-PE", "PE"], ["Piaui-PI", "PI"],
+                  ["Rio de Janeiro-RJ", "RJ"], ["Rio Grande do Norte-RN", "RN"], ["Rio Grande do Sul-RS", "RS"], ["Rondonia-RO", "RO"], ["Roraima-RR", "RR"],
+                  ["Santa Catarina-SC", "SC"], ["São Paulo-SP", "SP"], ["Sergipe-SE", "SE"], ["Tocantins-TO", "TO"]]), { :prompt => 'Escolha a região' } %>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="../images/dot.gif" width="1px" height="42" alt="" /></td>
+    </tr>
+  </table>
+  <!-- tabela endereço fim -->
+
+  <!-- tabela envio inicio -->
   <table width="720" border="0" cellspacing="0" cellpadding="0">
     <tr>
       <td><input type="reset" name="limpar" value="" class="botaoLimpar" /></td>
@@ -123,3 +261,4 @@
   <br/>
   <br/>
 <% end %>
+

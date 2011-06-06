@@ -9,7 +9,7 @@ class Empresa < ActiveRecord::Base
 
   #tem muitos telefones atraves do nested
   has_many :telefones, :dependent => :destroy
-  accepts_nested_attributes_for :telefones, :reject_if => lambda { |a| a[:numero].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :telefones, :reject_if => lambda { |a| a[:numero].blank? || a[:tipo].blank? }, :allow_destroy => true
 
   # Campos obrigatorios
   # Campos da empresa

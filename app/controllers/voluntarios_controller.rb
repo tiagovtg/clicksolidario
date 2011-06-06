@@ -42,7 +42,7 @@ class VoluntariosController < ApplicationController
     # verifica se ja existe uma entidade criada.
     if administrador?
       @voluntario = Voluntario.new
-      3.times {@voluntario.telefones.build}
+      1.times {@voluntario.telefones.build}
     else
       if @empresa.nil? or @empresa.empty?
         @voluntario = Voluntario.new

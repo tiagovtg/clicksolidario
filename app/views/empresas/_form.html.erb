@@ -104,7 +104,71 @@
   </table>
   <!-- tabela dados da empresa fim -->
 
-  
+  <div class="iPessoais">Informações Pessoais</div>
+
+  <!-- tabela informações pessoais inicio -->
+  <table width="720px" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Nome Completo</td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+            <td style=" padding-bottom: 10px; ">Como Gostaria de ser Chamado</td>
+          </tr>
+          <tr>
+            <td><%= f.text_field :nome, :style=>"width: 403px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+            <td>&nbsp;</td>
+            <td><%= f.text_field :apelido, :style=>"width: 233px", :onkeypress=> 'return SomenteLetras(event)' %></td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="../images/dot.gif" width="1px" height="30" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td>
+
+        <table width="700px" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td style=" padding-bottom: 10px; ">Data de Nascimento</td>
+            <td>&nbsp;</td>
+            <td style=" padding-bottom: 10px; ">CPF</td>
+            <td>&nbsp;</td>
+            <td colspan="5" style=" padding-bottom: 10px; ">Sexo</td>
+          </tr>
+          <tr>
+            <td><%= f.date_select(:datanasc, :style=>"width: 130px", :start_year => 1920, :end_year => Time.now.year - 16, :order => [:day, :month, :year] ) %></td>
+            <td class="exData">Ex: 02/01/1979</td>
+            <td><%= f.text_field :cpf, :style=>"width: 231px", :class=>"cpf" %></td>
+            <td><img src="../images/dot.gif" width="20px" height="1" alt="" /></td>
+            <td><%= f.radio_button(:sexo, value="Masculino" ) %></td>
+            <td>Masculino</td>
+            <td><img src="../images/dot.gif" width="10px" height="1" alt="" /></td>
+            <td><%= f.radio_button(:sexo, value="Feminino" ) %></td>
+            <td>Feminino</td>
+          </tr>
+        </table>
+
+      </td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="../images/dot.gif" width="1px" height="30" alt=""/></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td><img src="../images/dot.gif" width="1px" height="42" alt=""/></td>
+    </tr>
+  </table>
+  <!-- tabela informações pessoais fim -->
+
   <div class="endereco">Endereço</div>
 
   <!-- tabela endereço inicio -->
@@ -116,8 +180,6 @@
         <table width="700px" border="0" cellspacing="0" cellpadding="0">
           <tr>
             <td style=" padding-bottom: 10px; ">CEP</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td style=" padding-bottom: 10px; ">Endereço</td>
             <td>&nbsp;</td>
@@ -178,4 +240,17 @@
   </table>
   <!-- tabela endereço fim -->
 
+  <!-- tabela envio inicio -->
+  <table width="720" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td><input type="reset" name="limpar" value="" class="botaoLimpar" /></td>
+      <td style=" width: 20px; "><img src="../images/dot.gif" width="20px" height="1" alt=""/></td>
+      <td><input type="image" name="enviar" value="" class="botaoEnviar" /></td>
+    </tr>
+  </table>
+  <!-- tabela envio fim -->
+  <br/>
+  <br/>
+  <br/>
+  <br/>
 <% end %>

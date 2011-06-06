@@ -40,5 +40,15 @@
   <%= @voluntario.cep %>
 </p>
 
+<% unless @voluntario.telefones[0].nil? %>
+  <p>
+    <b>Telefone:</b>
+    <%= @voluntario.telefones[0].ddd %>
+    <%= @voluntario.telefones[0].numero %>
+    <%= @voluntario.telefones[0].tipo %>
+    <br/>
+  </p>
+<% end  %>
+
 <%= link_to 'Alterar', edit_voluntario_path(@voluntario) %> |
 <%= link_to 'Voltar', voluntarios_path %>

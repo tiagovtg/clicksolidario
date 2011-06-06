@@ -13,9 +13,9 @@ class DoacaosController < ApplicationController
         @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC')
       else
         if entidade?
-          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = ?", current_user.id], :limit=>1) rescue nil
+          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = ?", entidade_id?], :limit=>1) rescue nil
         else
-          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" voluntario_id = ?", current_user.id], :limit=>1) rescue nil
+          @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" user_id = ?", current_user.id], :limit=>1) rescue nil
         end
       end
     else
@@ -26,9 +26,9 @@ class DoacaosController < ApplicationController
           @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => ['doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
         else
           if entidade?
-            @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = #{current_user.id}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+            @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" entidade_id = #{entidade_id?}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
           else
-            @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" voluntario_id = #{current_user.id}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
+            @doacaos = Doacao.paginate(:page => params[:page], :order => 'data DESC', :conditions => [" user_id = #{current_user.id}" + ' and doacaos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"])
           end
         end
       end
@@ -50,12 +50,7 @@ class DoacaosController < ApplicationController
 
   def create
     @doacao = Doacao.new(params[:doacao])
-    if voluntario?
-      @doacao.voluntario_id= current_user.id
-    end
-    if empresa?
-      @doacao.empresa_id = current_user.id
-    end
+    @doacao.user_id= current_user.id
 
     respond_to do |format|
       if @doacao.save
@@ -111,5 +106,11 @@ class DoacaosController < ApplicationController
     end
   end
 
-  
+  private
+  def entidade_id?
+    id = Entidade.where(" user_id = #{current_user.id} ").order('updated_at DESC') rescue nil
+    return id[0].id unless id.nil?
+  end
+
 end
+

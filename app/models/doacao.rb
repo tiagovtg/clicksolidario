@@ -11,4 +11,5 @@ class Doacao < ActiveRecord::Base
 
   #campos com validação obrigatoria
   validates :data, :presence => true
+
 end

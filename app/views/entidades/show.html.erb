@@ -19,14 +19,15 @@
   <b>Causa:</b>
   <%= @entidade.causa.nome %>
 </p>
-
-<p>
-  <b>Telefone:</b>
-  <%= @entidade.telefones[0].ddd %>
-  <%= @entidade.telefones[0].numero %>
-  <%= @entidade.telefones[0].tipo %>
-  <br/>
-</p>
+<% unless @entidade.telefones[0].nil? %>
+  <p>
+    <b>Telefone:</b>
+    <%= @entidade.telefones[0].ddd %>
+    <%= @entidade.telefones[0].numero %>
+    <%= @entidade.telefones[0].tipo %>
+    <br/>
+  </p>
+<% end  %>
 
 <%= link_to 'Alterar', edit_entidade_path(@entidade) %> |
 <%= link_to 'Voltar', entidades_path %>

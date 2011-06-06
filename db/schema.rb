@@ -42,12 +42,11 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "doacaos", :force => true do |t|
-    t.decimal  "valor",         :precision => 9, :scale => 2
+    t.decimal  "valor",       :precision => 9, :scale => 2
     t.date     "data"
     t.boolean  "valida"
     t.text     "obs"
-    t.integer  "voluntario_id"
-    t.integer  "empresa_id"
+    t.integer  "user_id"
     t.integer  "entidade_id"
     t.integer  "doatipo_id"
     t.datetime "created_at"
@@ -61,15 +60,14 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "emergencia", :force => true do |t|
-    t.string   "titulo"
-    t.string   "resumo"
+    t.string   "titulo",              :limit => 50
+    t.string   "resumo",              :limit => 100
     t.text     "emergencia"
     t.date     "data"
-    t.string   "status"
-    t.string   "imagem_file_name",    :null => false
-    t.string   "imagem_content_type", :null => false
-    t.integer  "imagem_file_size",    :null => false
-    t.datetime "imagem_updated_at",   :null => false
+    t.string   "imagem_file_name",                   :null => false
+    t.string   "imagem_content_type",                :null => false
+    t.integer  "imagem_file_size",                   :null => false
+    t.datetime "imagem_updated_at",                  :null => false
     t.boolean  "validacao"
     t.integer  "entidade_id"
     t.datetime "created_at"
@@ -134,8 +132,8 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "noticia", :force => true do |t|
-    t.string   "titulo"
-    t.string   "resumo"
+    t.string   "titulo",      :limit => 50
+    t.string   "resumo",      :limit => 100
     t.text     "noticia"
     t.date     "data"
     t.boolean  "validacao"

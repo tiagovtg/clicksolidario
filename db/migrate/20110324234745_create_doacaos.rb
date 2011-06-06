@@ -5,8 +5,7 @@ class CreateDoacaos < ActiveRecord::Migration
       t.date    :data
       t.boolean :valida
       t.text    :obs
-      t.integer :voluntario_id
-      t.integer :empresa_id
+      t.integer :user_id
       t.integer :entidade_id
       t.integer :doatipo_id
 

@@ -17,7 +17,7 @@
     <%= f.collection_select(:doatipo_id, Doatipo.all, :id, :nome, :prompt => 'Selecione um') %>
   </div>
 
-  <% if voluntario? %>
+  <% if voluntario? or empresa? %>
   <div class="field"><br/>
     <%= f.label :entidade_id, "Entidade Social Favorecida:" %><br />
     <%= f.collection_select(:entidade_id, Entidade.all, :id, :nomefantasia, :prompt => 'Selecione Entidade') %>

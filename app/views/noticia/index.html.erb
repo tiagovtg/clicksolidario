@@ -11,7 +11,9 @@
   <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
   <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
 <% end %>
-
+<% if entidade? %>
+  <%= link_to 'Cadastrar Noticia', new_noticium_path %>
+<% end %>
 <br/><br/>
 <br/>
 <% if @noticia.nil? or @noticia.empty? %>
@@ -55,9 +57,3 @@
   </div>
 <% end %>
 <br />
-
-<% if entidade? %>
-  <%= link_to 'Cadastrar Noticia', new_noticium_path %>
-<% end %>
-
-

@@ -1,5 +1,5 @@
 <%= form_tag(doacaos_path, :method => "get") do %>
-  <% if administrador? %>
+  <% if administrador? or entidade? %>
     <div id="buscaDados"><span>Listando Doações</span></div>
     <div id="buscaDados">
       <select name="filtro" id="filtro">
@@ -12,7 +12,10 @@
     <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
   <% end %>
 <% end %>
-<%= link_to 'Cadastrar Doacao', new_doacao_path %>
+<% if voluntario? or empresa? %>
+  <%= link_to 'Cadastrar Doacao', new_doacao_path %>
+<% end %>
+
 <br/><br/>
 <br/>
 <% if @doacaos.nil? or @doacaos.empty? %>

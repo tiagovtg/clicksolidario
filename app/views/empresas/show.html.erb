@@ -25,6 +25,16 @@
   <%= @empresa.site %>
 </p>
 
+<% unless @empresa.telefones[0].nil? %>
+  <p>
+    <b>Telefone:</b>
+    <%= @empresa.telefones[0].ddd %>
+    <%= @empresa.telefones[0].numero %>
+    <%= @empresa.telefones[0].tipo %>
+    <br/>
+  </p>
+<% end  %>
+
 
 <%= link_to 'Alterar', edit_empresa_path(@empresa) %> |
 <%= link_to 'Voltar', empresas_path %>

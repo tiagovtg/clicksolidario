@@ -46,7 +46,7 @@ class EmpresasController < ApplicationController
     else
       if @empresa.nil? or @empresa.empty?
         @empresa = Empresa.new
-        3.times {@empresa.telefones.build}
+        1.times {@empresa.telefones.build}
       else
         redirect_to :action => "index"
       end

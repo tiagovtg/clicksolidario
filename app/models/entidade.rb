@@ -13,14 +13,13 @@ class Entidade < ActiveRecord::Base
 
   #tem muitos telefones atraves do nested
   has_many :telefones, :dependent => :destroy
-  accepts_nested_attributes_for :telefones, :reject_if => lambda { |a| a[:numero].blank? }, :allow_destroy => true
+  accepts_nested_attributes_for :telefones, :reject_if => lambda { |a| a[:numero].blank? || a[:tipo].blank? }, :allow_destroy => true
 
   #tem muitas contas atraves do nested
   has_many :conta, :dependent => :destroy
   accepts_nested_attributes_for :conta, :reject_if => lambda { |a| a[:nome || :numero].blank? }, :allow_destroy => true
 
   # Campos obrigatorios
-  # Campos da entidade
   validates :nomefantasia, :razaosocial, :cnpj, :areaatuacao, :datafunda, :causa_id,
     :cep, :endereco, :numero, :cidade, :estado, :nome, :cpf, :presence => true
 
@@ -67,8 +66,6 @@ class Entidade < ActiveRecord::Base
 
     a = query << uf << causa
     
-    #    paginate(:page => 10,  :order => 'cnpj')
-    #:conditions => ["#{a}"],
     where(a).order('cnpj').limit(10)
   end
   

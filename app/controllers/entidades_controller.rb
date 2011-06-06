@@ -37,7 +37,7 @@ class EntidadesController < ApplicationController
     @entidades = Entidade.all(:conditions => [" user_id = ?", current_user.id])
     if @entidades.nil? or @entidades.empty?
       @entidade = Entidade.new
-      2.times {@entidade.telefones.build}
+      1.times {@entidade.telefones.build}
       1.times {@entidade.conta.build}
       #      render :layout=> 'portal'
     else
