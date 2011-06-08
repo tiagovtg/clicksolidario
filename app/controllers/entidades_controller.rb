@@ -4,7 +4,7 @@ class EntidadesController < ApplicationController
     allow :empresa,       :to => [:index, :show ]
     allow :voluntario,    :to => [:index, :show ]
     allow :entidade,      :to => [:index, :show, :new, :edit, :create, :update]
-    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy ]
+    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :impressao_entidade ]
   end
   
   def index
@@ -98,6 +98,21 @@ class EntidadesController < ApplicationController
   end
 
 
+  def impressao_entidade
+    @conteudo = $conteudo
+    render :layout=> 'impressao'
+    #        respond_to do |format|
+    #      format.html
+    #      format.pdf {
+    #        html = render_to_string(:layout => 'impressao' ),
+    #        kit = PDFKit.new(html, :quality => 25),
+    #        kit.stylesheets << "#{Rails.root}/public/stylesheets/impressao.css",
+    #        send_data(kit.to_pdf, :filename => 'impressao.pdf', :type => "pdf")
+    #      }
+    #    end
+  end
+
+  #DAQUI PRA BAIXO É PRIVADO, NAO ADICIONE MAIS NADA, A NAO SER QUE NAO QUEIRA VE-LO NA TELA.
   private
   def load_entidade
     if administrador? or empresa? or voluntario?
@@ -106,4 +121,5 @@ class EntidadesController < ApplicationController
       @entidade = Entidade.find(params[:id], :conditions => [" user_id = ?", current_user.id]) rescue nil
     end
   end
+  
 end

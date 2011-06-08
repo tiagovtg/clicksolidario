@@ -4,6 +4,7 @@ Sgss::Application.routes.draw do
 
   #todas rotas necessarias para rodar o authlogic
   resources :users
+  match "impressao_user" => "users#impressao_user"
   match "join" => "users#new"
   match "valida_usuario" => "users#valida_usuario"
 
@@ -41,6 +42,8 @@ Sgss::Application.routes.draw do
 
   #sgs
   resources :entidades#menu
+  match "impressao_entidade" => "entidades#impressao_entidade"
+  
   resources :emergencia#menu
   match "valida_emergencia" => "emergencia#valida_emergencia"
   resources :noticia#menu

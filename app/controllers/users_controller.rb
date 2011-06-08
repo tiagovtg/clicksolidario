@@ -5,7 +5,7 @@ class UsersController < ApplicationController
     allow :entidade,      :to => [:index, :show, :edit, :update]
     allow :voluntario,    :to => [:index, :show, :edit, :update]
     allow :empresa,       :to => [:index, :show, :edit, :update]
-    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :valida_usuario ]
+    allow :administrador, :to => [:index, :show, :new, :edit, :create, :update, :destroy, :valida_usuario, :impressao_user ]
   end
 
   #    logger.info "\n\n=> meleca tipo: #{params[:tipo]}\n"
@@ -179,6 +179,11 @@ class UsersController < ApplicationController
       flash[:notice] = "Usuário não tem permissão para esta ação."
       redirect_to users_url
     end
+  end
+
+  def impressao_user
+    @conteudo = $conteudo
+    render :layout=> 'impressao'
   end
 
   private

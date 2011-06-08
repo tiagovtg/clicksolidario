@@ -23,6 +23,10 @@
       <th><img src="/images/file_document.png" alt=""/></th>
       <th><img src="/images/file_edit.png" alt=""/></th>
       <th><img src="/images/file_exclude.png" alt=""/></th>
+      <% if administrador? %>
+      <% $conteudo = @user %>
+        <th><%= link_to image_tag("/images/pdf_button.png"), impressao_user_path(:format => "pdf") %></th>
+      <% end %>
     </tr>
     <% @user.each do |user| %>
       <tr class="<%= cycle("odd", "even") %>">

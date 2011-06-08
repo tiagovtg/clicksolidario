@@ -24,6 +24,11 @@ class EmergenciaController < ApplicationController
         end
       end
     end
+
+    respond_to do |format|
+      format.html
+      format.rss { render :layout => false }
+    end
   end
 
   # GET /emergencia/1
@@ -136,7 +141,7 @@ class EmergenciaController < ApplicationController
 
   #Função para validar emergencia
   def valida_emergencia
-   @emergencium = Emergencium.find(params[:id])
+    @emergencium = Emergencium.find(params[:id])
 
     if @emergencium.validacao==true
       @emergencium.validacao = false

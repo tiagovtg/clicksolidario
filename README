@@ -1,5 +1,34 @@
 #Requisitos para rodar a aplicação, se necessario.
 
+#ReCaptcha
+
+    #Adicione a seguinte linha no Gemfile
+
+        gem 'recaptcha', :require => 'recaptcha/rails'
+
+    #Crie um initializer para o Recaptcha (ex.: config/initializers/recaptcha.rb) com as seguintes linhas
+
+        require 'net/http'
+
+        Recaptcha.configure do |config|
+            config.public_key  = '6LdBz8MSAAAAAF51L5mENofF997uOHzYlPWKf1av'
+            config.private_key = '6LdBz8MSAAAAAIM4n4ti-haQa3oyfAMONhhJL8Xt'
+        end
+
+    #Adicione a tag do recaptcha na view em que ele aparecerá
+
+        <%= recaptcha_tags %>
+
+    #Faça a validação na controller dessa view
+
+        if verify_recaptcha
+            puts 'Captcha inserido corretamente'
+        else
+            puts 'Captcha inserido incorretamente'
+        end
+
+    #Antes de rodar o servidor, rode o 'bundle install'
+
 #Ajax
     # o nome da action, tem que conter na pasta da view, um arquivo com extensao, js.erb, de nome da action.
     # o nome da variavel de instancia, dentro do js.erb, e na action, tem que ser o nome da partial, que

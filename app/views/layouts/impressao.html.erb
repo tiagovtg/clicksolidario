@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US" xml:lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+    <title>SGS - Sistema de Soluções Solidários</title>
+
+    <%= stylesheet_link_tag 'impressao' %>
+    <%= stylesheet_link_tag 'impressao', :media => "print" %>
+    
+    <%= csrf_meta_tag %>
+  </head>
+
+  <body style="margin: 0">
+
+    <div id="wrap">
+      <!-- header -->
+      <div id="logo"></div>
+
+      <div id="conteudo">
+        <%= yield %>
+      </div>
+
+    </div>
+  </body>
+</html>

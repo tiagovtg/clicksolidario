@@ -1,0 +1,44 @@
+/*@import url('certificado.css'); */
+
+body, html		{ height:100%; font-family: Arial, Helvetica, sans-serif; background: url(/images/bg_Cores.jpg) repeat-x; }
+#logo			{ width: 370px; height: 81px; margin: 10px 20px; background: url(/images/logo.png) no-repeat; }
+body {
+    background-color: #FFF;
+    font: 12px Arial,Helvetica,Verdana,sans-serif;
+    border-collapse: collapse;
+    border-spacing: 0px;
+    color: #000000;
+    text-align:center;
+    margin: 0px 0px 0px 0px;
+}
+
+#container {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#line_items {
+    page-break-before: always;
+}
+
+#pdf_link {
+    display: none;
+    text-decoration: none;
+    color: #000;
+}
+
+a:link, a:visited, a:active {
+    text-decoration: none;
+    color: #000;
+}
+
+/* borda de tabelas de resultados */
+table.bordasimples		{ border-collapse: collapse; font-family: arial; font-size: 12px;  }
+table.bordasimples tr td	{ border: 1px solid #dfdfdf; }
+table.bordasimples th		{ height: 30px; padding: 10px; border: 1px solid #dfdfdf; font-size: 15px; color: #8f8f8f; background: #f4f7fa; }
+table.bordasimples .edicao	{ font-size: 12px; color: #fc8800; text-align: center; text-decoration: underline; }
+table.bordasimples .edicao a	{ color: #fc8800; }
+td				{ padding: 10px 5px 10px 5px; }
+table.bordasimples tr.even      { background: #ebebeb; }

@@ -4,9 +4,12 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <title>SGS - Sistema de Soluções Solidários</title>
 
-    <%= stylesheet_link_tag 'style' %>
+    <%= stylesheet_link_tag 'style', :media => 'screen' %>
+
     <%= javascript_include_tag :defaults , 'script', 'jquery.meio.mask', 'addressCEP' %>
     <%= csrf_meta_tag %>
+
+    <%= auto_discovery_link_tag(:rss, emergencia_url(:format => :rss)) %>
   </head>
 
   <body style="margin: 0">
