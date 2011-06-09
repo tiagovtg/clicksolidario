@@ -9,7 +9,7 @@ gem 'rails', '3.0.5'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 # Gem para geração de pdf a partir de html
-gem 'pdfkit'
+gem 'pdfkit', '0.4.6'
 
 # Gem para auxiliar processo de upload
 gem "paperclip", "~> 2.3"

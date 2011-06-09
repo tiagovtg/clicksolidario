@@ -123,7 +123,7 @@ DEPENDENCIES
   mail (= 2.2.15)
   mysql2
   paperclip (~> 2.3)
-  pdfkit
+  pdfkit (= 0.4.6)
   rails (= 3.0.5)
   rails-erd
   rmagick
