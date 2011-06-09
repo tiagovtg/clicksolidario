@@ -1,6 +1,19 @@
-<h1>Editando empresa</h1>
+<div id="barraIdentificacao" align="center">
+
+  <!-- migalhas de pão -->
+  <div id="breadCrumb">
+    <ul>
+      <li class="first" title="Voltar para página Inicial"><a href="/" title="Voltar para página Inicial">Página Inicial</a></li>
+      <li title="Empresa">Empresa</li>
+      <li class="last" title="Alterar">Alterar</li>
+    </ul>
+  </div>
+
+  <!-- acessibilidade -->
+  <div id="aMais"><a href="#" title="Aumenta tamanho da fonte" id="aumenta_fonte"></a></div>
+  <div id="aMenos"><a href="#" title="Diminue tamanho da fonte" id="reduz_fonte"></a></div>
+  <div id="tFonte">tamanho da fonte</div>
+</div>
 
 <%= render 'form' %>
 
-<%= link_to 'Mostrar', @empresa %> |
-<%= link_to 'Voltar', empresas_path %>

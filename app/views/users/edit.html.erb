@@ -1,15 +1,22 @@
-<% if administrador? %>
-  <div class="secondary-navigation">
-    <ul class="wat-cf">
-      <li><a href="<%= users_path %>" class="<%= current_page?(:controller => 'users', :action => 'index') == true ? 'active' : '' %>">Listar</a></li>
-      <li><a href="<%= new_user_path %>" class="<%= current_page?(:controller => 'users', :action => 'new') == true ? 'active' : '' %>">Novo</a></li>
+<div id="barraIdentificacao">
+
+  <!-- migalhas de pão -->
+  <div id="breadCrumb">
+    <ul>
+      <li class="first" title="Voltar para página Inicial"><a href="/" title="Voltar para página Inicial">Página Inicial</a></li>
+      <li title="Saiba Como">Usuário</li>
+      <li class="last" title="Cadastre-se">Alterar</li>
     </ul>
   </div>
-<% end %>
 
-<h2 class="postheader">Editando Conta</h2>
-<div class="postcontent">
-  <% form_for @user, :url => user_path(@user), :html => { :class => :form } do |f| -%>
-    <%= render :partial => "form", :locals => {:f => f} %>
-  <% end -%>
+  <!-- acessibilidade -->
+  <div id="aMais"><a href="#" title="Aumenta tamanho da fonte" id="aumenta_fonte"></a></div>
+  <div id="aMenos"><a href="#" title="Diminue tamanho da fonte" id="reduz_fonte"></a></div>
+  <div id="tFonte">tamanho da fonte</div>
+
 </div>
+
+
+<% form_for @user, :url => user_path(@user), :html => { :class => :form } do |f| -%>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end -%>

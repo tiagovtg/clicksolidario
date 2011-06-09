@@ -2,12 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
 
-#Prototype Legacy Helper
-#gem 'prototype_legacy_helper', '~>0.0.0', :git => 'git://github.com/rails/prototype_legacy_helper.git'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 # Gem para geração de pdf a partir de html
 gem 'pdfkit', '0.4.6'
 
