@@ -7,7 +7,8 @@ class NewsletterMailer < ActionMailer::Base
     @user = user
     @url  = "localhost:3000"
     #    attachments["rails.png"] = File.read("#{Rails.root}/public/images/rails.png")
-    mail(:to => "#{user.nome} <#{user.email}>", :subject => "Registrado no newsletter do Click Solidario.", :body=>"Obrigado. Voce recebera em breve conteúdo e novidades do Click Solidario.")
+    mail(:to => "#{user.nome} <#{user.email}>", :subject => "Registrado no newsletter do Click Solidario.",
+      :body=>"Obrigado. Voce recebera em breve conteúdo e novidades do Click Solidario.")
   end
 
   def recupera_sehna(user)

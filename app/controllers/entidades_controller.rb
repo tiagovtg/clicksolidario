@@ -112,6 +112,10 @@ class EntidadesController < ApplicationController
     #    end
   end
 
+  def pegaCep()
+    obter_cep(cep)
+  end
+
   #DAQUI PRA BAIXO É PRIVADO, NAO ADICIONE MAIS NADA, A NAO SER QUE NAO QUEIRA VE-LO NA TELA.
   private
   def load_entidade

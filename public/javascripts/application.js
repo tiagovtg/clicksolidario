@@ -29,4 +29,9 @@ $(document).ready(function() {
                 });
         }
     });
+
+    $(".cep").blur(aqui());
+    function aqui(){
+        
+    }
 });

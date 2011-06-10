@@ -5,12 +5,13 @@
   </p>
 <% else %>
   <% emergencias.each do |emergencia| %>
+    <a name="emergencias/<%= emergencia.id%>"></a>
     <ul>
       <li>
         <p><%= emergencia.updated_at.strftime("%H:%M") %></p>
         <div style="float: left;">
           <%= image_tag(emergencia.imagem.url(:thumb)) %><br/>
-          
+
           <div class="botao"><a href="#"><img src="images/emergencia_Bt.jpg" alt=""/></a></div>
         </div>
         <div style="float:right; width: 170px; ">

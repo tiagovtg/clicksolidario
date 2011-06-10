@@ -29,6 +29,8 @@ gem "will_paginate", "~> 3.0.pre2"
 
 # Usando jquery inves de prototype.
 # para instalar, digite tambem no root do projeto, rails g jquery:intall
+#gem 'jquery-rails', '>= 0.2.7'
+#gem 'jquery-rails', '>= 1.0.3'
 gem 'jquery-rails', '0.2.7'
 
 #Gem para ReCapctha by google

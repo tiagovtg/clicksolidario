@@ -10,7 +10,7 @@ xml.rss :version => "2.0" do
           xml.title emergencia.titulo
           xml.description emergencia.resumo
           xml.pubDate emergencia.updated_at.to_s(:rfc822)
-          xml.link root_url
+          xml.link root_url+"#emergencias"+"/#{emergencia.id}"
           xml.guid root_url
         end
       end

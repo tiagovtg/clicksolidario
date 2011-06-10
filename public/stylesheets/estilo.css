@@ -193,7 +193,7 @@ body				{ margin: 0; font-family: Arial, Helvetica, sans-serif; }
 #FacaComoTb03 a			{ text-decoration: none; }
 #FacaComoTb03 a:hover           { text-decoration: underline; color: #ccc; }
 
-#FacaComoBoxLink		{ padding: 15px 0 15px 10px; border-top: dotted 1px #c1c1c0; border-bottom: dotted 1px #c1c1c0; font-size: 14px; color: #333333; text-decoration:none; }
+#FacaComoBoxLink		{ padding: 15px 0 15px 10px; border-top: dotted 1px #c1c1c0; border-bottom: dotted 1px #c1c1c0; font-size: 14px; color: #333333; text-decoration:none; margin-top: 10px;}
 #FacaComoBoxLink a		{ font-size: 14px; color: #006bb9; text-decoration:none; }
 #FacaComoBoxLink:hover          { background-color:#EFEFEF; }
 
