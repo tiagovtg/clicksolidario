@@ -41,7 +41,7 @@ class DoacaosController < ApplicationController
 
   def new
     @doacao = Doacao.new
-    render :layout=> 'portal'
+#    render :layout=> 'portal'
   end
 
   def edit
