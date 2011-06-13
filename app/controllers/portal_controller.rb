@@ -14,11 +14,6 @@ class PortalController < ApplicationController
 
   def busca_solidaria
     @entidades = Entidade.busca_solidaria(params[:query], params[:filtroUF][0], params[:filtroCausa])
-
-    respond_to do |format|
-      format.html
-      format.js
-    end
   end
 
 end

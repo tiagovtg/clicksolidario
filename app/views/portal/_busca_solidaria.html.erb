@@ -6,7 +6,7 @@
   <h5>Buscar por Perfil</h5>
 
   <!-- Campos de seleção -->
-  <%= form_tag(busca_solidaria_path, :id=>"form_busca_solidaria", :method => :get, :remote => false) do %>
+  <%= form_tag(busca_solidaria_path, :id=>"form_busca_solidaria", :method => :get, :remote => true) do %>
     <select name="filtroCausa" id="filtroCausa">
       <option value="" selected="selected">Escolha a causa</option>
       <option value="1">Saúde</option>

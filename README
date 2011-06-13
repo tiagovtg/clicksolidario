@@ -30,10 +30,11 @@
     #Antes de rodar o servidor, rode o 'bundle install'
 
 #Ajax
-    # o nome da action, tem que conter na pasta da view, um arquivo com extensao, js.erb, de nome da action.
-    # o nome da variavel de instancia, dentro do js.erb, e na action, tem que ser o nome da partial, que
-    # tera o nome da classe e ficara dentro da view da classe. ex view/pessoa/_pessoa.html.erb, variavel @pessoas
-    # para mostrar, na .js  $("# div a trocar").html("<%= escape_javascript(render(@pessoas)) %>");
+    # remote true, para button, link e form
+    # o nome da action tem que ter na mesma pasta da view um arquivo com extensao(js), actionX.js.erb.
+    # dentro do .js o id pra onde vai o html, o :partial, pra chamar uma partial e o nome da view, no caso abaixo entidades.
+    # ex: $("#colunaDireita").html("<%= escape_javascript(render(:partial => "entidades")) %>");
+    # 
 
 #GITHUB
     Guia Rápido sobre Git
