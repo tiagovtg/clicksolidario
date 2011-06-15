@@ -60,8 +60,8 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "emergencia", :force => true do |t|
-    t.string   "titulo",              :limit => 50
-    t.string   "resumo",              :limit => 100
+    t.string   "titulo",              :limit => 90
+    t.string   "resumo",              :limit => 170
     t.text     "emergencia"
     t.date     "data"
     t.string   "imagem_file_name",                   :null => false
@@ -132,8 +132,8 @@ ActiveRecord::Schema.define(:version => 20110512145628) do
   end
 
   create_table "noticia", :force => true do |t|
-    t.string   "titulo",      :limit => 50
-    t.string   "resumo",      :limit => 100
+    t.string   "titulo",      :limit => 90
+    t.string   "resumo",      :limit => 180
     t.text     "noticia"
     t.date     "data"
     t.boolean  "validacao"
