@@ -195,14 +195,27 @@
 
 
 # WEBSVN
-    1 - Crie o projeto no SVN:
-    # svnadmin create --fs-type fsfs /home/svn-repos/nome_projeto
+    1 - Crier o diretório do projeto:
+
+   # mkdir /home/svn-repos/nome_do_projeto
 
 
-    2 - Criar arquivo com nome do projeto:
-    # pico /etc/apache2/nome_do_projeto.conf
+    2 - Altere o dono da pasta
 
-    3 - Acrescente ao arquivo as seguintes linhas:
+   # chown www-data:subversion nome_do_projeto -R
+
+
+    3 - Crie o projeto no SVN:
+
+   # svnadmin create --fs-type fsfs /home/svn-repos/nome_projeto
+
+
+    4 - Edite no apache o arquivo dav_svn.conf
+
+   # pico /etc/apache2/mods-available/dav_svn.conf
+
+
+    5 - Acrescente ao arquivo as seguintes linhas:
 
     <Location /nome_do_projeto>
         DAV svn
@@ -214,10 +227,9 @@
     </Location>
 
 
-    4 - Edite no apache o arquivo dav_svn.conf
-    # pico /etc/apache2/mods-available/dav_svn.conf
+    6 - Reinicie o servidor web (Apache)
 
-    5 - Reinicie o servidor web (Apache)
     # /etc/init.d/apache2 restart
+
 
 # SubVersion
