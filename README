@@ -165,11 +165,14 @@
 
 # PASSENGER
 
-    # 1 configurar permissao local e rota.
+    # 1 configurar permissao local e rota. usar tab como separador
     sudo gedit /etc/hosts
-    127.0.1.1 www.teste.com
+    127.0.1.1   www.teste.com
 
-    # 2 configurar o arquivo do virtual host.
+    # 2 configurar o arquivo do virtual host, dentro de apache2/sites-avaliable/
+    # sudo gedit teste
+
+    #inclua esssas linhas
     <VirtualHost *:80>
       ServerName www.teste.com
       DocumentRoot /home/www/teste/public
@@ -179,20 +182,25 @@
       </Directory>
     </VirtualHost>
 
-    # 3 criar permissao para o apache na pasta home/www
+    # 3 copie seus arquivos para a pasta home/www/teste
+    sudo cp -r origem home/www/teste
+
+    # 4 criar permissao(owner) para o apache na pasta home/www
     chown -R www-data:www-data www
 
-    # 4 criar link simbolico, de dentro do diretorio sites-enabled
+    # 5 criar link simbolico, de dentro do diretorio apache2/sites-enabled/
     a2ensites teste
 
-    # 5 configurar o arquivo apache.conf
+    # 6 configurar o arquivo apache.conf
     LoadModule passenger_module /usr/lib/ruby/gems/1.8/gems/passenger-3.0.7/ext/apache2/mod_passenger.so
     PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-3.0.7
     PassengerRuby /usr/bin/ruby1.8
+    RailsEnv development #ambiente que quiser usar
 
-    # 6 reiniciar o servidor
+    # 7 reiniciar o servidor
     /etc/init.d/apache2 restart
 
+    be happy!
 
 # WEBSVN
     1 - Crier o diretório do projeto:

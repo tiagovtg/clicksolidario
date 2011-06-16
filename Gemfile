@@ -1,4 +1,5 @@
 source 'http://rubygems.org'
+# é necessario passenger instalado.
 
 gem 'rails', '3.0.5'
 
