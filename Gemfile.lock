@@ -126,5 +126,6 @@ DEPENDENCIES
   pdfkit (= 0.4.6)
   rails (= 3.0.5)
   rails-erd
+  rake (~> 0.8.7)
   rmagick
   will_paginate (~> 3.0.pre2)

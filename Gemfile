@@ -3,6 +3,8 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.5'
 
+gem 'rake', '~>0.8.7'
+
 # Gem para geração de pdf a partir de html
 gem 'pdfkit', '0.4.6'
 
@@ -66,5 +68,5 @@ gem 'jquery-rails', '0.2.7'
 # end
 
  group :development, :test do
-   gem 'rails-erd'
+   gem 'rails-erd'   
  end
