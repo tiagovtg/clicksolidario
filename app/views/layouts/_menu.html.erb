@@ -18,6 +18,9 @@
         <li><a href="<%= noticia_path %>" class="<%= controller.controller_path == 'noticia' ? 'active' : '' %>" ><span class="l"> </span><span class="r"> </span><span class="t">Noticias</span></a></li>
       <% end %>
       <li><a href="<%= doacaos_path %>" class="<%= controller.controller_path == 'doacaos' ? 'active' : '' %>" ><span class="l"> </span><span class="r"> </span><span class="t">Doações</span></a></li>
+      <% if administrador? %>
+        <li><a href="/contatos"  class="<%= controller.controller_path == 'contatos' ? 'active' : '' %>">Contato</a></li>
+      <% end %>
       <li><a href="/sobre" class="<%= controller.controller_path == 'sobre' ? 'active' : '' %>"><span class="l"> </span><span class="r"> </span><span class="t">Sobre</span></a></li>
     <% else %>
       <li><a href="/" class="<%= controller.controller_path == 'user_sessions' ? 'active' : '' %>"><span class="l"> </span><span class="r"> </span><span class="t">Home</span></a></li>

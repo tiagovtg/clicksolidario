@@ -45,7 +45,8 @@ class NewslettersController < ApplicationController
     respond_to do |format|
       if @newsletter.save
         format.html { redirect_to(@newsletter, :notice => 'Newsletter criado(a) com sucesso.'+
-              "#{CountMail.enviar_email(@newsletter)}") }#manda email
+              "#{CountMail.enviar_email(@newsletter.nome, @newsletter.email, "Registrado no newsletter do Click Solidario.",
+            "Obrigado. Voce recebera em breve conteúdo e novidades do Click Solidario.")}") }#manda email
         format.xml  { render :xml => @newsletter, :status => :created, :location => @newsletter }
       else
         format.html { render :action => "new" }

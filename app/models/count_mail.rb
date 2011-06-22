@@ -51,10 +51,10 @@ class CountMail < ActiveRecord::Base
     @limit.update_attributes(:enviados=> soma)
   end
 
-  def self.enviar_email(dados)
+  def self.enviar_email(nome, email, subject, body)
     if adiciona_um!
       begin
-        NewsletterMailer.envia_email(dados).deliver
+        NewsletterMailer.envia_email(nome, email, subject, body).deliver
         return "E email, enviado!"
       rescue => e
         remove_um!

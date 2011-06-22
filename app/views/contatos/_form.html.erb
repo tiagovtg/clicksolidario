@@ -1,0 +1,44 @@
+<%= javascript_include_tag 'jquery.meio.mask', 'script' %>
+
+<%= form_for(@contato) do |f| %>
+  <% if @contato.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @contato.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nome %><br />
+    <%= f.text_field :nome %>
+  </div>
+
+  <div class="field"><br />
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field"><br />
+    Assunto:&nbsp;&nbsp;&nbsp;
+    <%= f.select(:assunto, ([["Elogio", "Elogio"], ["Sugestão", "Sugestão"], ["Reclamação", "Reclamação"],
+            ["Outros","Outros"]]), :prompt => 'Selecione Assunto') %>
+  </div>
+
+  <div class="field"><br />
+    <%= f.label :telefone %><br />
+    <%= f.text_field :telefone, :class=>'tel' %>
+  </div>
+
+  <div class="field"><br />
+    <%= f.label :mensagem %><br />
+    <%= f.text_area :mensagem, :rows=> 5 %>
+  </div>
+
+  <div class="actions">
+    <br/>
+    <%= f.submit('Enviar') %>
+  </div>
+<% end %>

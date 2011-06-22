@@ -1,0 +1,40 @@
+<div id="barraIdentificacao">
+
+  <!-- migalhas de pão -->
+  <div id="breadCrumb">
+    <ul>
+      <li class="first" title="Voltar para página Inicial"><a href="default.htm" title="Voltar para página Inicial">Página Inicial</a></li>
+      <li class="last" title="Contato">Contato</li>
+    </ul>
+  </div>
+</div>
+<%= render :partial => 'generals/message' %>
+
+<% if administrador? %>
+  <p>
+  <b>Nome:</b>
+  <%= @contato.nome %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @contato.email %>
+</p>
+
+<p>
+  <b>Assunto:</b>
+  <%= @contato.assunto %>
+</p>
+
+<p>
+  <b>Telefone:</b>
+  <%= @contato.telefone %>
+</p>
+
+<p>
+  <b>Mensagem:</b>
+  <%= @contato.mensagem %>
+</p>
+
+
+<% end %>

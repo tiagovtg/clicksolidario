@@ -1,4 +1,5 @@
 Sgss::Application.routes.draw do
+
   # rota principal
   root :to => "portal#index"
 
@@ -21,7 +22,7 @@ Sgss::Application.routes.draw do
   match "ajude"             => "ajude#index"
   match "conheca"           => "conheca#index"
   match "duvida"            => "duvida#index"
-  match "contato"           => "contato#index"
+  resources :contatos
 
   #menu esquerdo
   match "quemsomos"        => "quemsomos#index"

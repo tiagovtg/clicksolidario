@@ -39,6 +39,9 @@ jQuery(function(){
         jQuery(".ddd").setMask({
             mask: '99'
         });
+        jQuery(".tel").setMask({
+            mask: '(99)9999-9999'
+        });
     }
 
     /* funçoes*/

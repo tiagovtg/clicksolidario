@@ -103,3 +103,8 @@ table.bordasimples tr.even      { background: #ebebeb; }
 
 .botaoLimpar          { float: right; width: 80px; height: 26px; background: url(/images/cadastroBotLimpar.gif) no-repeat; padding: 0; border: 0; }
 .botaoEnviar          { float: left; width: 84px; height: 26px; background: url(/images/cadastroBotEnviar.gif) no-repeat; padding: 0; border: 0; }
+
+/* campo com erros, form*/
+form .field_with_errors input     {border: 1px solid #FFBBBB; border-radius: 6px 6px 6px 6px;}
+form .field_with_errors textarea  {border: 1px solid #FFBBBB; border-radius: 6px 6px 6px 6px;}
+#error_explanation ul             {border: 1px solid #FFBBBB; border-radius: 6px 6px 6px 6px;}

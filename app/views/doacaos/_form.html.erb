@@ -14,7 +14,7 @@
 
   <div class="field"><br/>
     <%= f.label :doatipo_id, "Tipo Doação" %><br />
-    <%= f.collection_select(:doatipo_id, Doatipo.all, :id, :nome, :prompt => 'Selecione um') %>
+    <%= f.collection_select(:doatipo_id, Doatipo.all, :id, :nome, :prompt => 'Selecione um Tipo') %>
   </div>
 
   <% if voluntario? or empresa? %>
