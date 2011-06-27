@@ -43,8 +43,8 @@ module Sgss
     #    config.action_view.javascript_expansions[:defaults] = ['jquery-1.5.1.min', 'script', 'rails']
 
     # Configure the default encoding used in templates for Ruby 1.9.
-    config.encoding = "ISO-8859-1"
-    #    config.encoding = "utf-8"
+    #    config.encoding = "ISO-8859-1"
+    config.encoding = "utf-8"
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
