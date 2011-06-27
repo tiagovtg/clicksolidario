@@ -20,30 +20,30 @@ module ApplicationHelper
 
   #obtem cep via webservice.
   def obter_cep(cep)
-    url = URI.parse("http://cep.republicavirtual.com.br/web_cep.php?cep=#{cep}&formato=query_string")
-    consulta = Net::HTTP.get_response(url)
-    pesquisa = CGI::parse(consulta.body)
-
-    # o CGI::parse retorna um hash cujos valores são arrays de um elemento só.
-    # para facilitar tratamento posterior vamos retirar os valores destes arrays
-    # exemplo:  'tipo_logradouro' => ['Rua']  vira  'tipo_logradouro' => 'Rua'
-    pesquisa = Hash[*pesquisa.map { |k, v| [k, v[0]] }.flatten]
-
-    case pesquisa['resultado'].to_i
-    when 1:
-       # puts "Cidade com logradouro completo:"
-      puts "Tipo: \t\t" + pesquisa['tipo_logradouro']
-      puts "Logradouro: \t" + pesquisa['logradouro']
-      puts "Bairro: \t" + pesquisa['bairro']
-      puts "Cidade: \t" + pesquisa['cidade']
-      puts "UF: \t\t" + pesquisa['uf']
-    when 2:
-        #puts "Cidade com logradouro único:"
-      puts "Cidade: \t" + pesquisa['cidade']
-      puts "UF: \t\t" + pesquisa['uf']
-    else
-      puts "Falha ao procurar o CEP #{cep}"
-    end
+#    url = URI.parse("http://cep.republicavirtual.com.br/web_cep.php?cep=#{cep}&formato=query_string")
+#    consulta = Net::HTTP.get_response(url)
+#    pesquisa = CGI::parse(consulta.body)
+#
+#    # o CGI::parse retorna um hash cujos valores são arrays de um elemento só.
+#    # para facilitar tratamento posterior vamos retirar os valores destes arrays
+#    # exemplo:  'tipo_logradouro' => ['Rua']  vira  'tipo_logradouro' => 'Rua'
+#    pesquisa = Hash[*pesquisa.map { |k, v| [k, v[0]] }.flatten]
+#
+#    case pesquisa['resultado'].to_i
+#    when 1:
+#       # puts "Cidade com logradouro completo:"
+#      puts "Tipo: \t\t" + pesquisa['tipo_logradouro']
+#      puts "Logradouro: \t" + pesquisa['logradouro']
+#      puts "Bairro: \t" + pesquisa['bairro']
+#      puts "Cidade: \t" + pesquisa['cidade']
+#      puts "UF: \t\t" + pesquisa['uf']
+#    when 2:
+#        #puts "Cidade com logradouro único:"
+#      puts "Cidade: \t" + pesquisa['cidade']
+#      puts "UF: \t\t" + pesquisa['uf']
+#    else
+#      puts "Falha ao procurar o CEP #{cep}"
+#    end
   end
 
 end
