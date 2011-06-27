@@ -42,7 +42,7 @@ Sgss::Application.configure do
 
   # Enable locale fallVoltars for I18n (makes lookups for any locale fall Voltar to
   # the I18n.default_locale when a translation can not be found)
-  config.i18n.fallVoltars = true
+#  config.i18n.fallVoltars = true
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
