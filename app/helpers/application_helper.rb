@@ -17,7 +17,6 @@ module ApplicationHelper
     f.hidden_field(:_destroy) + link_to(name, "javascript:void(0)", :class => "remove_child")
   end
 
-
   #obtem cep via webservice.
   def obter_cep(cep)
 #    url = URI.parse("http://cep.republicavirtual.com.br/web_cep.php?cep=#{cep}&formato=query_string")
