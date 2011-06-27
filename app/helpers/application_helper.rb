@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module ApplicationHelper
   # metodo usado para deletar uma div, usada em nested forms
   def add_child_link(name, form_builder, association)
