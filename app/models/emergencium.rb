@@ -13,7 +13,7 @@ class Emergencium < ActiveRecord::Base
 
   # Definições do Paperclip, abaixo endereço para pegar a key
   #  https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&action=access-key#access_credentials
-  if ENV['RAILS_ENV'] == 'production'
+#  if ENV['RAILS_ENV'] == 'production'
     has_attached_file :imagem, :styles => { :thumb => "100x100>" },
       :storage => :s3,
       :bucket => 'clicksolidariobucket',
@@ -21,9 +21,9 @@ class Emergencium < ActiveRecord::Base
       :access_key_id => ENV['S3_AKIAJYQADWXR2BXWKGXQ'],
       :secret_access_key => ENV['S3_gc5nqyZA21tzWwzhMHgZLKSDUxURXItBEeRos3dJ']
     }
-  else
-    has_attached_file :imagem, :styles => { :thumb => "100x100>" }
-  end
+#  else
+#    has_attached_file :imagem, :styles => { :thumb => "100x100>" }
+#  end
 
 
   # configurações para upload de imagem
