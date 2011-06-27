@@ -11,8 +11,15 @@ class Emergencium < ActiveRecord::Base
   # Campos obrigatorios
   validates :titulo, :resumo, :emergencia, :data, :presence => true
 
-  # Definições do Paperclip
-  has_attached_file :imagem, :styles => { :thumb => "100x100>" }
+  # Definições do Paperclip, abaixo endereço para pegar a key
+  #  https://aws-portal.amazon.com/gp/aws/developer/account/index.html?ie=UTF8&action=access-key#access_credentials
+  has_attached_file :imagem, :styles => { :thumb => "100x100>" },
+    :storage => :s3,
+    :bucket => 'clicksolidariobucket',
+    :s3_credentials => {
+    :access_key_id => ENV['AKIAJYQADWXR2BXWKGXQ'],
+    :secret_access_key => ENV['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']
+  }
 
   # configurações para upload de imagem
   validates_attachment_content_type :imagem, :content_type => [ 'image/png', 'image/jpeg' ]
@@ -24,4 +31,12 @@ class Emergencium < ActiveRecord::Base
     errors.add(:imagem, " não pode ficar em branco! Deve ser feito o upload de um arquivo de imagem") if
     imagem_file_name == nil
   end
+
+  #  has_attached_file :photo,
+  #    :storage => :s3,
+  #    :bucket => 'mybucket',
+  #    :s3_credentials => {
+  #      :access_key_id => ENV['S3_KEY'],
+  #      :secret_access_key => ENV['S3_SECRET']
+  #    }
 end
