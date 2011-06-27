@@ -6,7 +6,19 @@ class ContatosController < ApplicationController
   end
 
   def index
-    @contatos = Contato.all
+    if params[:query]=="Digitar..." or params[:query].nil? or params[:query].empty?
+      @contatos = Contato.paginate(:page => params[:page], :order => 'created_at') rescue nil
+    else
+      if params[:filtro]=="Buscar por..." or params[:filtro].nil? or params[:filtro].empty?
+        flash[:notice] = "Buscar por... nao foi preenchido"
+      else
+        @contatos = Contato.paginate(:page => params[:page], :order => 'created_at',
+          :conditions => ['contatos.'+"#{params[:filtro]}"+' LIKE ?', "%#{params[:query]}%"]) rescue nil
+      end
+    end
+    if @contatos.nil? or @contatos.empty?
+      flash[:alert] = "Nenhum registro foi encontrado"
+    end
   end
 
   def show

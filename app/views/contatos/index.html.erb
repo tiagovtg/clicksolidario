@@ -1,27 +1,52 @@
-<h1>Listing contatos</h1>
-
-<table>
-  <tr>
-    <th>Nome</th>
-    <th>Email</th>
-    <th>Assunto</th>
-    <th>Telefone</th>
-    <th>Mensagem</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @contatos.each do |contato| %>
-  <tr>
-    <td><%= contato.nome %></td>
-    <td><%= contato.email %></td>
-    <td><%= contato.assunto %></td>
-    <td><%= contato.telefone %></td>
-    <td><%= contato.mensagem %></td>
-    <td><%= link_to 'Show', contato %></td>
-    <td><%= link_to 'Edit', edit_contato_path(contato) %></td>
-    <td><%= link_to 'Destroy', contato, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<%= form_tag(contatos_path, :method => "get") do %>
+  <% if administrador? %>
+    <div id="buscaDados"><span>Listando Contatos</span></div>
+    <div id="buscaDados">
+      <select name="filtro" id="filtro">
+        <option value="" selected="selected">Buscar por...</option>
+        <option value="nome">Nome</option>
+        <option value="email">Email</option>
+        <option value="assunto">Assunto</option>
+      </select>
+    </div>
+    <div id="buscaDados"><input id="query" class="search" type="text" value="Digitar..." name="query" onfocus="this.value='';"/></div>
+    <div id="buscaDados"><input id="queryImage" class="searchImg" type="image" src="/images/search_icon.png"/></div>
+  <% end %>
 <% end %>
-</table>
+
+<br/><br/>
+<br/>
+<% if @contatos.nil? or @contatos.empty? %>
+  <%= render :partial => 'generals/message' %>
+<% else %>
+  <table width="778px" cellpadding="0" cellspacing="0" border="0" class="bordasimples">
+    <tr>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Assunto</th>
+      <th>Telefone</th>
+      <th>Mensagem</th>
+      <th><img src="/images/file_document.png" alt=""/></th>
+      <th><img src="/images/file_edit.png" alt=""/></th>
+      <th><img src="/images/file_exclude.png" alt=""/></th>
+    </tr>
+
+    <% @contatos.each do |contato| %>
+      <tr class="<%= cycle("odd", "even") %>">
+        <td><%= contato.nome %></td>
+        <td><%= contato.email %></td>
+        <td><%= contato.assunto %></td>
+        <td><%= contato.telefone %></td>
+        <td><%= contato.mensagem %></td>
+        <td><%= link_to 'Show', contato %></td>
+        <td><%= link_to 'Edit', edit_contato_path(contato) %></td>
+        <td><%= link_to 'Destroy', contato, :confirm => 'Are you sure?', :method => :delete %></td>
+      </tr>
+    <% end %>
+  </table>
+  <div align="right">
+    <%= will_paginate @contatos %>
+  </div>
+<% end %>
+<br/>
+
