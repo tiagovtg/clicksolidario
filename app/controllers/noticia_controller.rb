@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class NoticiaController < ApplicationController
 
   access_control do

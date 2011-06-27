@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class VoluntariosController < ApplicationController
 
   access_control do

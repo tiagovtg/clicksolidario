@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class NewslettersController < ApplicationController
   access_control do
     allow anonymous,      :to => [:index, :show, :new, :create]

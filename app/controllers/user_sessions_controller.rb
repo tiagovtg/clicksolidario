@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class UserSessionsController < ApplicationController
   #skip_before_filter :require_user, :check_role
 

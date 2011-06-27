@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ContatosController < ApplicationController
 
   access_control do

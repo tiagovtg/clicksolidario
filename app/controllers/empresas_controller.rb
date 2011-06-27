@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class EmpresasController < ApplicationController
 
   access_control do

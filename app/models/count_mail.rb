@@ -55,7 +55,7 @@ class CountMail < ActiveRecord::Base
     if adiciona_um!
       begin
         NewsletterMailer.envia_email(nome, email, subject, body).deliver
-        return "E email, enviado!"
+        return "email, enviado!"
       rescue => e
         remove_um!
         logger.info "\n\n=> email error: #{e.message}\n"
