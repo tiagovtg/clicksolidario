@@ -6,6 +6,8 @@ class CreateRoles < ActiveRecord::Migration
       t.integer  "authorizable_id"
       t.timestamps
     end
+    Role.create :name => 'administrador'
+    Role.create :name => 'gestor'
   end
 
   def self.down

@@ -44,15 +44,20 @@ class CreateAdmins < ActiveRecord::Migration
 
 
 
-    execute " INSERT INTO users (id, email, crypted_password, password_salt, persistence_token, single_access_token, perishable_token, failed_login_count, last_request_at, current_login_ip, status, nome, created_at, updated_at) VALUES
-                    (1, 'admin@admin.com', 'd5da8ae181962dbc02da9308157c396e60e5c15573ab75c7458ef99e1944823420961f63d6d8b24c9eda7477b2d97fb96140e3914ab53e914f749623b5299117', '0jiuJcXPwgA2j1L0IPDk', 'c18c1de546069ba433d986bad0ead6aa2526a60d3f689000ab0281506d973039aea47925795cfec4b00ae782174aae16e6c01c2ea853e04b441321b6bcee7f2d', 'aKayLPR6aXEN3HQfqQF', 'mXcJ3HHpeJ8LAZ5jsLoU', 0, '', '127.0.0.1', 'Ativo','Admin', '2011-03-07 15:50:36', '')"
-    
-    execute " INSERT INTO roles (id, name, authorizable_type, authorizable_id, created_at, updated_at) VALUES
-                    (1, 'administrador', NULL, NULL, '2010-10-27 14:51:23', '') "
-    
-    execute " INSERT INTO roles_users (user_id, role_id, created_at, updated_at ) VALUES
-                (1, 1, '2010-10-27 14:51:23', null)"
+    #    execute " INSERT INTO users (id, email, crypted_password, password_salt, persistence_token, single_access_token, perishable_token, failed_login_count, last_request_at, current_login_ip, status, nome, created_at, updated_at) VALUES
+    #    (1, 'admin@admin.com', 'd5da8ae181962dbc02da9308157c396e60e5c15573ab75c7458ef99e1944823420961f63d6d8b24c9eda7477b2d97fb96140e3914ab53e914f749623b5299117', '0jiuJcXPwgA2j1L0IPDk', 'c18c1de546069ba433d986bad0ead6aa2526a60d3f689000ab0281506d973039aea47925795cfec4b00ae782174aae16e6c01c2ea853e04b441321b6bcee7f2d', 'aKayLPR6aXEN3HQfqQF', 'mXcJ3HHpeJ8LAZ5jsLoU', 0, '', '127.0.0.1', 'Ativo','Admin', '2011-03-07 15:50:36', '')"
+    #
+    #    execute " INSERT INTO roles (id, name, authorizable_type, authorizable_id, created_at, updated_at) VALUES
+    #    (1, 'administrador', NULL, NULL, '2010-10-27 14:51:23', '') "
+    #
+    #    execute " INSERT INTO roles_users (user_id, role_id, created_at, updated_at ) VALUES
+    #    (1, 1, '2010-10-27 14:51:23', null)"
 
+    execute " INSERT INTO users (email, crypted_password, password_salt, persistence_token, single_access_token, perishable_token, failed_login_count, current_login_ip, status, nome) VALUES
+                    ('admin@admin.com', 'd5da8ae181962dbc02da9308157c396e60e5c15573ab75c7458ef99e1944823420961f63d6d8b24c9eda7477b2d97fb96140e3914ab53e914f749623b5299117', '0jiuJcXPwgA2j1L0IPDk', 'c18c1de546069ba433d986bad0ead6aa2526a60d3f689000ab0281506d973039aea47925795cfec4b00ae782174aae16e6c01c2ea853e04b441321b6bcee7f2d', 'aKayLPR6aXEN3HQfqQF', 'mXcJ3HHpeJ8LAZ5jsLoU', 0, '127.0.0.1', 'Ativo','Admin')"
+
+    execute " INSERT INTO roles_users (user_id, role_id, created_at, updated_at ) VALUES
+               (1, 1, '2010-10-27 14:51:23', null)"
 
     # cria as regras de configuraçoes padroes da aplicação
     #    conf = Configuracoe.new
