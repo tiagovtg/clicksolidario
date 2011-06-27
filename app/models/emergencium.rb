@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class Emergencium < ActiveRecord::Base
 
   #Itens por página (will_paginate)
