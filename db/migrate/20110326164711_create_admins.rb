@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class CreateAdmins < ActiveRecord::Migration
   #classe para inclusao da administração do sistema
 
