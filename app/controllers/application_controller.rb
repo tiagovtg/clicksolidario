@@ -1,3 +1,4 @@
+# encoding: UTF-8
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
@@ -59,7 +60,7 @@ class ApplicationController < ActionController::Base
       #TODO fazer tela de acesso negado.
       render :template => 'generals/denied'
     else
-      flash[:notice] = 'Tempo expirou ou você precisa estar logado para esse acesso.'
+      flash[:notice] = 'Tempo expirou ou voce precisa estar logado para esse acesso.'
       session[:return_to] = request.request_uri
       redirect_to login_path
     end
