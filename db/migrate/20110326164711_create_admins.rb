@@ -69,16 +69,16 @@ class CreateAdmins < ActiveRecord::Migration
 
   def self.down
     # O metodo down, elimina o unico usuario que deveria existir nesse ponto, o administrador.
-    @user = User.all
-    @user.destroy
+#    @user = User.all
+#    @user.destroy
     
-    @role =  Role.all
-    @role.destroy
+#    @role =  Role.all
+#    @role.destroy
     
     #    @role_user = Role_User.all
     #    @role_user.destroy
 
-    execute "DELETE * from roles_users where user_id = 1"
+#    execute "DELETE * from roles_users where user_id = 1"
 
     #    conf = Configuracoe.find_by_nome(:nome => 'paginacao')
     #    conf.destroy
