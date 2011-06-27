@@ -11,6 +11,7 @@ gem 'pdfkit', '0.4.6'
 # Gem para auxiliar processo de upload
 gem "paperclip", "~> 2.3"
 gem "rmagick"
+gem 'aws-s3'
 
 #email
 gem "mail", "2.2.15"

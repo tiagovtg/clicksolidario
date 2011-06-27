@@ -34057,3 +34057,148 @@ Started GET "/busca_solidaria?utf8=%E2%9C%93&filtroCausa=&filtroUF%5B%5D=&query=
 Rendered portal/_entidades.html.erb (101.5ms)
 Rendered portal/busca_solidaria.js.erb (103.1ms)
 Completed 200 OK in 122ms (Views: 107.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/emergencia" for 127.0.0.1 at Mon Jun 27 12:53:42 -0300 2011
+  Processing by EmergenciaController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed   in 25ms
+DEPRECATION WARNING: Using #request_uri is deprecated. Use fullpath instead. (called from access_denied at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:64)
+Redirected to http://localhost:1024/login
+
+
+Started GET "/login" for 127.0.0.1 at Mon Jun 27 12:53:42 -0300 2011
+  Processing by UserSessionsController#new as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+Rendered generals/_model_errors.html.erb (0.5ms)
+Rendered generals/_message.html.erb (0.3ms)
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Rendered layouts/_header.html.erb (8.4ms)
+Rendered layouts/_menu.html.erb (1.2ms)
+Rendered user_sessions/new.html.erb within layouts/application (17.5ms)
+Completed 200 OK in 40ms (Views: 20.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/user_session" for 127.0.0.1 at Mon Jun 27 12:53:58 -0300 2011
+  Processing by UserSessionsController#create as HTML
+  Parameters: {"user_session"=>{"password"=>"[FILTERED]", "email"=>"entidade@teste.com"}, "authenticity_token"=>"hWvpGItNT0jew7XLLV7Ml6k22mL8rA8eJFFQ08uSZFM=", "utf8"=>"✓"}
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.5ms)[0m  describe `roles_users`
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE (LOWER(`users`.email) = 'entidade@teste.com') LIMIT 1[0m
+  [1m[35mSQL (0.1ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from create at /home/tiagogarcia/projetos/sgss/app/controllers/user_sessions_controller.rb:12)
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE `users` SET `updated_at` = '2011-06-27 15:53:58', `perishable_token` = 'enITop3Gad83xOclE5Qp', `last_request_at` = '2011-06-27 15:53:58' WHERE `users`.`id` = 2[0m
+  [1m[35mSQL (56.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:15)
+  [1m[35mAREL (0.2ms)[0m  UPDATE `users` SET `updated_at` = '2011-06-27 15:53:58', `perishable_token` = 'B5n2A8reWPh5KAmbIBle', `last_request_at` = '2011-06-27 15:53:58' WHERE `users`.`id` = 2
+  [1m[36mSQL (45.3ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:1024/emergencia
+Completed 302 Found in 137ms
+
+
+Started GET "/emergencia" for 127.0.0.1 at Mon Jun 27 12:53:58 -0300 2011
+  Processing by EmergenciaController#index as HTML
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mSQL (0.0ms)[0m  [1mBEGIN[0m
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:15)
+  [1m[35mAREL (0.2ms)[0m  UPDATE `users` SET `last_request_at` = '2011-06-27 15:53:58', `perishable_token` = 'cavMRckEepR90R3XBP', `updated_at` = '2011-06-27 15:53:58' WHERE `users`.`id` = 2
+  [1m[36mSQL (54.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  describe `roles_users`
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from service at /usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 )
+  [1m[36mEntidade Load (0.2ms)[0m  [1mSELECT `entidades`.* FROM `entidades` WHERE ( user_id = 2)[0m
+  [1m[35mEmergencium Load (0.2ms)[0m  SELECT `emergencia`.* FROM `emergencia` WHERE ( entidade_id = 1) ORDER BY validacao, data DESC LIMIT 10 OFFSET 0
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mEntidade Load (0.0ms)[0m  SELECT `entidades`.* FROM `entidades` WHERE `entidades`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `entidades`.* FROM `entidades` WHERE `entidades`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `entidades`.* FROM `entidades` WHERE `entidades`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `entidades`.* FROM `entidades` WHERE `entidades`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+Rendered layouts/_header.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mRole Load (0.1ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'voluntario' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'voluntario' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+Rendered layouts/_menu.html.erb (11.0ms)
+Rendered emergencia/index.html.erb within layouts/application (35.1ms)
+Completed 200 OK in 237ms (Views: 38.0ms | ActiveRecord: 160.1ms)
+
+
+Started GET "/emergencia/4/edit" for 127.0.0.1 at Mon Jun 27 12:54:08 -0300 2011
+  Processing by EmergenciaController#edit as HTML
+  Parameters: {"id"=>"4"}
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+DEPRECATION WARNING: Base.named_scope has been deprecated, please use Base.scope instead. (called from /home/tiagogarcia/projetos/sgss/app/models/user.rb:9)
+  [1m[36mSQL (0.3ms)[0m  [1mdescribe `roles_users`[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (0.0ms)[0m  BEGIN
+DEPRECATION WARNING: save(false) is deprecated, please give save(:validate => false) instead. (called from current_user_session at /home/tiagogarcia/projetos/sgss/app/controllers/application_controller.rb:15)
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE `users` SET `last_request_at` = '2011-06-27 15:54:08', `perishable_token` = 'V1FBaHY4y2xZkceP9PWD', `updated_at` = '2011-06-27 15:54:08' WHERE `users`.`id` = 2[0m
+  [1m[35mSQL (61.0ms)[0m  COMMIT
+  [1m[36mSQL (0.4ms)[0m  [1mdescribe `roles_users`[0m
+DEPRECATION WARNING: Having additional attributes on the join table of a has_and_belongs_to_many association is deprecated and will be removed in Rails 3.1. Please use a has_many :through association instead. (called from service at /usr/lib/ruby/1.8/webrick/httpserver.rb:104)
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mRole Load (0.0ms)[0m  [1mSELECT * FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE (`roles_users`.user_id = 2 )[0m
+  [1m[35mEntidade Load (0.1ms)[0m  SELECT `entidades`.* FROM `entidades` WHERE ( user_id = 2)
+  [1m[36mEmergencium Load (0.2ms)[0m  [1mSELECT `emergencia`.* FROM `emergencia` WHERE `emergencia`.`id` = 4 AND ( entidade_id = 1) LIMIT 1[0m
+Rendered generals/_model_errors.html.erb (0.5ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+Rendered emergencia/_form.html.erb (11.7ms)
+Rendered layouts/_header.html.erb (0.3ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mRole Load (1.9ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'empresa' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'empresa' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mRole Load (0.1ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'voluntario' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mRole Load (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'voluntario' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'entidade' AND (`roles_users`.user_id = 2 ) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT `roles`.* FROM `roles` INNER JOIN `roles_users` ON `roles`.id = `roles_users`.role_id WHERE `roles`.`name` = 'administrador' AND (`roles_users`.user_id = 2 ) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT `roles`.* FROM `roles` WHERE (name = 'administrador' and authorizable_type IS NULL and authorizable_id IS NULL) LIMIT 1
+Rendered layouts/_menu.html.erb (80.4ms)
+Rendered emergencia/edit.html.erb within layouts/application (96.8ms)
+Completed 200 OK in 233ms (Views: 97.8ms | ActiveRecord: 64.5ms)
