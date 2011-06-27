@@ -37,11 +37,4 @@ class Emergencium < ActiveRecord::Base
     imagem_file_name == nil
   end
 
-  #  has_attached_file :photo,
-  #    :storage => :s3,
-  #    :bucket => 'mybucket',
-  #    :s3_credentials => {
-  #      :access_key_id => ENV['S3_KEY'],
-  #      :secret_access_key => ENV['S3_SECRET']
-  #    }
 end
